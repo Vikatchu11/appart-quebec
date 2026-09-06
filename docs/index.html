@@ -4,12 +4,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Les appartements repérés à Québec : photos, détails et l'ambiance des quartiers.">
 <meta charset="utf-8">
+<meta name="color-scheme" content="light">
 <title>Notre appart à Québec</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=Libre+Franklin:wght@400;500;600&display=swap">
 <style>
 :root{
+  color-scheme:light;
   --papier:#F2F1EC; --feuille:#FFFFFF; --creux:#E9E7E0;
   --encre:#16171A; --encre-2:#55575D; --encre-3:#8A8B90;
   --filet:#DBD8D0; --filet-fort:#C4C0B6;
@@ -19,6 +21,7 @@
   --sans:"Libre Franklin","Helvetica Neue",Arial,sans-serif;
 }
 *{box-sizing:border-box}
+html{background:var(--papier)}
 body{margin:0;background:var(--papier);color:var(--encre);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
 img{display:block;max-width:100%}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:0}
