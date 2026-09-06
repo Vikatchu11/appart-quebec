@@ -13,9 +13,11 @@ https://claude.ai/code/artifact/f139503c-dc39-4e9b-aa44-8a790c021386
 
     data/appartements.json   la liste des appartements (c'est le fichier à remplir)
     data/quartiers.json      les 3 quartiers : textes, repères, photos, crédits
-    photos/quartiers/…       photos des quartiers (17, sous licence libre)
+    photos/quartiers/…       photos des quartiers (licence libre)
+    photos/quartiers/_noel/  photos de Noël, communes à tous les quartiers
     photos/apparts/<id>/…    photos d'un appartement, une dossier par annonce
     scripts/template.html    le gabarit du site (design + interactions)
+    netlify/functions/       la fonction /api/notes (notes partagées)
     scripts/build.py         assemble tout dans site.html
     site.html                le fichier final, photos incluses — c'est lui qu'on publie
 
@@ -88,10 +90,15 @@ pour Lou, plus la moyenne. Les deux lignes sont cliquables sur n'importe quel
 appareil — la moitié gauche d'un bloc donne le demi-point, la moitié droite le
 point entier.
 
-Les notes sont gardées dans le navigateur (`localStorage`) : une page publiée ne
-peut pas les synchroniser toute seule sans restreindre le partage du lien. Pour
-les mettre en commun : « Copier nos notes » donne un code d'une ligne
-(`APPART1.…`) à envoyer, que l'autre colle dans « Coller les notes reçues ».
+**Sur Netlify**, les notes sont partagées : la page lit et écrit `/api/notes`,
+servi par `netlify/functions/notes.mjs` (stockage Netlify Blobs). Toute
+modification est envoyée en 0,4 s et la page relit le document toutes les 20 s,
+donc les deux appareils restent alignés sans rien faire.
+
+**Sur GitHub Pages**, il n'y a pas de serveur : la page le détecte, retombe sur
+le stockage local et réaffiche l'échange par code (`APPART1.…`).
+
+Le fichier partagé vit sous la clé `partagees` du store `notes-appart`.
 
 ## Le poids des photos
 
