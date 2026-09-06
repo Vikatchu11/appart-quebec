@@ -326,5 +326,84 @@
         "source": "https://commons.wikimedia.org/wiki/File:Parc_riviere_Saint-Charles_-_05.jpg"
       }
     ]
+  },
+  "saint-roch": {
+    "nom": "Saint-Roch",
+    "etiquette": "Le plus bouillonnant",
+    "resume": "La basse-ville qui bouge : rue Saint-Joseph, restos, salles de spectacle, tout à pied.",
+    "description": "Le quartier qui a le plus changé à Québec. La rue Saint-Joseph aligne les restaurants, les cafés, les disquaires et les salles de spectacle sur un kilomètre ; le jardin Jean-Paul-L'Allier fait respirer le tout. C'est plat — donc marchable et cyclable — bien desservi par le bus, et à quinze minutes à pied du Vieux-Québec par la côte ou l'ascenseur du Faubourg. En contrepartie, c'est dense, parfois bruyant, et la haute-ville se mérite par une montée.",
+    "reperes": [
+      "La rue Saint-Joseph et ses commerces",
+      "Le jardin Jean-Paul-L'Allier",
+      "La côte d'Abraham vers la haute-ville",
+      "Le Grand Théâtre et le Diamant, à pied"
+    ],
+    "carte": "https://www.google.com/maps/search/Quartier+Saint-Roch,+Qu%C3%A9bec,+QC",
+    "photos": [
+      {
+        "f": "01-saint-joseph.jpg",
+        "legende": "La rue Saint-Joseph",
+        "auteur": "Lacombelle",
+        "licence": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Rue_Saint-Joseph_Qu%C3%A9bec.jpg"
+      },
+      {
+        "f": "02-trottoir.jpg",
+        "legende": "Les trottoirs de Saint-Joseph, en automne",
+        "auteur": "Wilfredor",
+        "licence": "CC0",
+        "source": "https://commons.wikimedia.org/wiki/File:Rue_Saint-Joseph,_Quebec_City,_Quebec,_Canada_2340_19.jpg"
+      },
+      {
+        "f": "03-coin-hiver.jpg",
+        "legende": "Un édifice de coin, l'hiver",
+        "auteur": "Wilfredor",
+        "licence": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Corner_building_in_Saint-Roch,_Quebec_City.jpg"
+      },
+      {
+        "f": "04-jardin-automne.jpg",
+        "legende": "Le jardin Jean-Paul-L'Allier",
+        "auteur": "Wilfredor",
+        "licence": "CC0",
+        "source": "https://commons.wikimedia.org/wiki/File:Autumn_trees_at_Jardin_Jean-Paul-L%27Allier.jpg"
+      }
+    ]
+  },
+  "charlesbourg": {
+    "nom": "Charlesbourg · Orsainville",
+    "etiquette": "Le plus familial",
+    "resume": "Banlieue verte au nord de la ville, organisée autour du Trait-Carré historique.",
+    "description": "Ancienne ville de banlieue rattachée à Québec, à une dizaine de kilomètres au nord du centre. Son cœur historique, le Trait-Carré, garde le plan en étoile hérité du Régime français, avec le Moulin des Jésuites et l'église Saint-Charles-Borromée. Orsainville, au nord-est, est plus récent : bungalows, immeubles neufs, grandes surfaces et beaucoup de vert, avec la forêt qui commence au bout des rues. C'est calme et familial ; en transport en commun, le centre-ville reste loin.",
+    "reperes": [
+      "Le Trait-Carré et le Moulin des Jésuites",
+      "L'église Saint-Charles-Borromée",
+      "Le parc Henri-Casault et les boisés d'Orsainville",
+      "Les Galeries Charlesbourg"
+    ],
+    "carte": "https://www.google.com/maps/search/Orsainville,+Charlesbourg,+Qu%C3%A9bec,+QC",
+    "photos": [
+      {
+        "f": "01-moulin.jpg",
+        "legende": "Le Moulin des Jésuites, au Trait-Carré",
+        "auteur": "Gilbert Bochenek",
+        "licence": "CC BY-SA 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Moulin_des_J%C3%A9suites-Qu%C3%A9bec-1.JPG"
+      },
+      {
+        "f": "02-eglise.jpg",
+        "legende": "L'église Saint-Charles-Borromée",
+        "auteur": "Bouchecl",
+        "licence": "CC BY-SA 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:%C3%89glise_Saint-Charles_Borrom%C3%A9e_-_Charlesbourg_02.JPG"
+      },
+      {
+        "f": "03-eglise-interieur.jpg",
+        "legende": "L'intérieur de l'église Saint-Charles-Borromée",
+        "auteur": "Wilfredor",
+        "licence": "CC0",
+        "source": "https://commons.wikimedia.org/wiki/File:Saint-Charles-Borrom%C3%A9e_Church,_Charlesbourg,_Quebec_03.jpg"
+      }
+    ]
   }
 }

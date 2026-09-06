@@ -282,6 +282,7 @@ const REPERES = [
   {cle: "cegep-sainte-foy", nom: "Cégep de Sainte-Foy", court: "Cégep", coord: [-71.2868410, 46.7866582]},
 ];
 const duree = m => m < 60 ? m + " min" : Math.floor(m / 60) + " h " + String(m % 60).padStart(2, "0");
+const dureeBus = m => duree(m);
 const km = n => n.toLocaleString("fr-CA", {minimumFractionDigits: 1, maximumFractionDigits: 1}) + " km";
 
 function itineraire(a, rep, mode){
@@ -295,27 +296,27 @@ function blocTrajets(a){
     const t = a.trajets[r.cle];
     return `<tr>
       <td class="lieu">${echap(r.nom)}</td>
-      <td class="n">${km(t.voiture.km)}</td>
-      <td class="n"><strong>${duree(t.voiture.min)}</strong></td>
+      <td class="n"><strong>${duree(t.bus.min)}</strong></td>
+      <td class="n">${duree(t.velo.min)}</td>
       <td class="n">${duree(t.pied.min)}</td>
-      <td><a href="${itineraire(a, r, "driving")}" target="_blank" rel="noopener">Itinéraire ↗</a></td>
+      <td><a href="${itineraire(a, r, "transit")}" target="_blank" rel="noopener">Horaires ↗</a></td>
     </tr>`;
   }).join("");
   return `<div class="trajets">
-    <p class="oeil">Distances</p>
+    <p class="oeil">Combien de temps pour y aller</p>
     <div class="cadre"><table>
-      <thead><tr><th>Depuis l'appartement</th><th>Distance</th><th>En voiture</th><th>À pied</th><th></th></tr></thead>
+      <thead><tr><th>Depuis l'appartement</th><th>En bus</th><th>À vélo</th><th>À pied</th><th></th></tr></thead>
       <tbody>${lignes}</tbody>
     </table></div>
-    <p class="source">Trajets par la route, calculés sur OpenStreetMap. Hors circulation et hors transport en commun — le lien ouvre l'itinéraire réel.</p>
+    <p class="source">Temps relevés sur Google Maps (réseau RTC), un samedi en soirée : aux heures de pointe, le bus est souvent plus rapide. « Horaires » ouvre le trajet en bus à l'heure où tu cliques.</p>
   </div>`;
 }
 
 function trajetsMini(a){
   if (!a.trajets) return "";
   const bouts = REPERES.filter(r => a.trajets[r.cle])
-    .map(r => `${r.court} ${a.trajets[r.cle].voiture.min} min`).join(" · ");
-  return `<p class="trajets-mini" title="En voiture">En voiture — ${bouts}</p>`;
+    .map(r => `${r.court} ${duree(a.trajets[r.cle].bus.min)}`).join(" · ");
+  return `<p class="trajets-mini" title="Temps de trajet en bus">En bus — ${bouts}</p>`;
 }
 
 /* ————— notes : une par personne, gardées sur cet appareil ————— */
@@ -475,6 +476,7 @@ function filtres(){
          <option value="ajout">Ordre d'ajout</option>
          <option value="prix">Loyer croissant</option>
          <option value="prix-desc">Loyer décroissant</option>
+         <option value="bus">Temps de bus (Vieux-Québec)</option>
          <option value="note">Meilleure moyenne</option>
          <option value="dispo">Disponibilité</option>
        </select></label>`;
@@ -493,6 +495,8 @@ function selection(){
   if (etat.tri === "prix-desc") l.sort((a, b) => p(b) - p(a));
   if (etat.tri === "dispo") l.sort((a, b) => String(a.dispo || "9").localeCompare(String(b.dispo || "9")));
   if (etat.tri === "note") l.sort((a, b) => (moyenne(b.id) ?? -1) - (moyenne(a.id) ?? -1));
+  const bus = x => x.trajets && x.trajets["vieux-quebec"] ? x.trajets["vieux-quebec"].bus.min : Infinity;
+  if (etat.tri === "bus") l.sort((a, b) => bus(a) - bus(b));
   return l;
 }
 

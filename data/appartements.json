@@ -72,23 +72,25 @@
       ],
       "trajets": {
         "vieux-quebec": {
-          "voiture": {
-            "km": 2.0,
-            "min": 4
+          "bus": {
+            "min": 21
           },
           "pied": {
-            "km": 2.2,
-            "min": 29
+            "min": 26
+          },
+          "velo": {
+            "min": 12
           }
         },
         "cegep-sainte-foy": {
-          "voiture": {
-            "km": 5.7,
-            "min": 12
+          "bus": {
+            "min": 32
           },
           "pied": {
-            "km": 6.1,
-            "min": 82
+            "min": 76
+          },
+          "velo": {
+            "min": 21
           }
         }
       }
@@ -158,23 +160,25 @@
       ],
       "trajets": {
         "vieux-quebec": {
-          "voiture": {
-            "km": 5.5,
-            "min": 10
+          "bus": {
+            "min": 37
           },
           "pied": {
-            "km": 5.8,
-            "min": 77
+            "min": 74
+          },
+          "velo": {
+            "min": 25
           }
         },
         "cegep-sainte-foy": {
-          "voiture": {
-            "km": 4.0,
-            "min": 8
+          "bus": {
+            "min": 32
           },
           "pied": {
-            "km": 3.8,
-            "min": 51
+            "min": 49
+          },
+          "velo": {
+            "min": 13
           }
         }
       }
@@ -256,23 +260,25 @@
       ],
       "trajets": {
         "vieux-quebec": {
-          "voiture": {
-            "km": 1.8,
-            "min": 4
+          "bus": {
+            "min": 20
           },
           "pied": {
-            "km": 1.5,
-            "min": 20
+            "min": 22
+          },
+          "velo": {
+            "min": 10
           }
         },
         "cegep-sainte-foy": {
-          "voiture": {
-            "km": 6.0,
-            "min": 12
+          "bus": {
+            "min": 28
           },
           "pied": {
-            "km": 6.7,
-            "min": 89
+            "min": 82
+          },
+          "velo": {
+            "min": 20
           }
         }
       }
@@ -354,23 +360,25 @@
       ],
       "trajets": {
         "vieux-quebec": {
-          "voiture": {
-            "km": 5.9,
-            "min": 10
+          "bus": {
+            "min": 56
           },
           "pied": {
-            "km": 5.3,
-            "min": 70
+            "min": 75
+          },
+          "velo": {
+            "min": 23
           }
         },
         "cegep-sainte-foy": {
-          "voiture": {
-            "km": 13.8,
-            "min": 15
+          "bus": {
+            "min": 59
           },
           "pied": {
-            "km": 10.6,
-            "min": 141
+            "min": 148
+          },
+          "velo": {
+            "min": 42
           }
         }
       }
@@ -450,23 +458,295 @@
       ],
       "trajets": {
         "vieux-quebec": {
-          "voiture": {
-            "km": 14.2,
-            "min": 18
+          "bus": {
+            "min": 64
           },
           "pied": {
-            "km": 14.2,
-            "min": 189
+            "min": 186
+          },
+          "velo": {
+            "min": 50
           }
         },
         "cegep-sainte-foy": {
-          "voiture": {
-            "km": 11.1,
-            "min": 14
+          "bus": {
+            "min": 42
           },
           "pied": {
-            "km": 13.2,
-            "min": 176
+            "min": 179
+          },
+          "velo": {
+            "min": 44
+          }
+        }
+      }
+    },
+    {
+      "id": "des-loutres-4",
+      "titre": "4½ neuf, rue des Loutres",
+      "adresse": "7256, rue des Loutres, app. 4",
+      "quartier": "charlesbourg",
+      "coord": [
+        -71.2923407,
+        46.8886284
+      ],
+      "loyer": 1991,
+      "charges": "Internet haute vitesse et 2 stationnements inclus",
+      "pieces": "4½",
+      "chambres": 2,
+      "etage": "1er (immeuble de 3)",
+      "meuble": "Non meublé",
+      "dispo": "2026-11-01",
+      "bail": "À confirmer",
+      "atouts": [
+        "Neuf : construction 2024",
+        "Vue complète sur la forêt",
+        "Chambre principale avec walk-in",
+        "Cuisine spacieuse, salle de lavage distincte",
+        "Thermopompe murale (chauffage et climatisation)",
+        "Internet haute vitesse inclus",
+        "Animaux permis sous conditions"
+      ],
+      "bemols": [
+        "Le plus cher de la liste, à 1 991 $",
+        "Presque une heure de bus du Vieux-Québec",
+        "Deux stationnements inclus… dont vous n'avez pas l'usage",
+        "Cul-de-sac résidentiel : rien à pied",
+        "Enquête de crédit"
+      ],
+      "notes": "MLS 21118905, en ligne depuis 36 jours. Libre au 1er novembre 2026. Orsainville, à la limite nord de la ville.",
+      "lien": "https://www.realtor.ca/immobilier/30098753/7256-rue-des-loutres-4-quebec-charlesbourg-orsainville",
+      "source": "REALTOR.ca",
+      "carte": "https://www.google.com/maps/search/7256+rue+des+Loutres,+Qu%C3%A9bec,+QC",
+      "statut": "a_visiter",
+      "photos": [
+        {
+          "f": "01.jpg",
+          "legende": "Le salon"
+        },
+        {
+          "f": "02.jpg",
+          "legende": "La salle à manger, vue sur la forêt"
+        },
+        {
+          "f": "03.jpg",
+          "legende": "La cuisine et son îlot"
+        },
+        {
+          "f": "04.jpg",
+          "legende": "La cuisine, côté électros"
+        },
+        {
+          "f": "05.jpg",
+          "legende": "La chambre principale"
+        },
+        {
+          "f": "06.jpg",
+          "legende": "La deuxième chambre"
+        },
+        {
+          "f": "07.jpg",
+          "legende": "La salle de bain"
+        },
+        {
+          "f": "08.jpg",
+          "legende": "Le couloir de l'immeuble"
+        }
+      ],
+      "trajets": {
+        "vieux-quebec": {
+          "bus": {
+            "min": 57
+          },
+          "pied": {
+            "min": 161
+          },
+          "velo": {
+            "min": 47
+          }
+        },
+        "cegep-sainte-foy": {
+          "bus": {
+            "min": 66
+          },
+          "pied": {
+            "min": 212
+          },
+          "velo": {
+            "min": 60
+          }
+        }
+      }
+    },
+    {
+      "id": "st-jean-491",
+      "titre": "3½ semi-meublé, rue Saint-Jean",
+      "adresse": "491, rue Saint-Jean, app. 1",
+      "quartier": "saint-jean-baptiste",
+      "coord": [
+        -71.2212317,
+        46.8093712
+      ],
+      "loyer": 1050,
+      "charges": "Non précisé dans l'annonce",
+      "pieces": "3½",
+      "chambres": 1,
+      "etage": "2e",
+      "meuble": "Semi-meublé",
+      "dispo": "Immédiatement",
+      "bail": "À confirmer",
+      "atouts": [
+        "De loin le moins cher : 1 050 $",
+        "En plein cœur de la rue Saint-Jean",
+        "Vaste, avec de grandes fenêtres",
+        "Espace laveuse-sécheuse",
+        "Animaux acceptés sous conditions",
+        "20 min de bus du Vieux-Québec, 23 min à pied"
+      ],
+      "bemols": [
+        "En ligne depuis 331 jours — à vérifier qu'il est toujours libre",
+        "Deux photos seulement dans l'annonce",
+        "Mobilier existant très daté sur les photos",
+        "Au-dessus des commerces : bruit de la rue Saint-Jean"
+      ],
+      "notes": "Courtière : Marie-Pier Belley, 418-694-2026. MLS 13162241. L'ancienneté de l'annonce (près d'un an) mérite un appel avant de s'emballer.",
+      "lien": "https://www.realtor.ca/immobilier/28974470/491-rue-st-jean-1-quebec-la-cite-limoilou-saint-jean-baptiste",
+      "source": "REALTOR.ca",
+      "carte": "https://www.google.com/maps/search/491+rue+Saint-Jean,+Qu%C3%A9bec,+QC",
+      "statut": "a_visiter",
+      "photos": [
+        {
+          "f": "01.jpg",
+          "legende": "Le salon, meublé tel quel"
+        },
+        {
+          "f": "02.jpg",
+          "legende": "Le salon, autre angle"
+        },
+        {
+          "f": "03.jpg",
+          "legende": "L'immeuble, rue Saint-Jean"
+        }
+      ],
+      "trajets": {
+        "vieux-quebec": {
+          "bus": {
+            "min": 20
+          },
+          "pied": {
+            "min": 23
+          },
+          "velo": {
+            "min": 8
+          }
+        },
+        "cegep-sainte-foy": {
+          "bus": {
+            "min": 28
+          },
+          "pied": {
+            "min": 79
+          },
+          "velo": {
+            "min": 21
+          }
+        }
+      }
+    },
+    {
+      "id": "jerome-610",
+      "titre": "Duplex sur deux étages, rue Jérôme",
+      "adresse": "610, rue Jérôme, app. 2",
+      "quartier": "saint-roch",
+      "coord": [
+        -71.2289913,
+        46.8091716
+      ],
+      "loyer": 1850,
+      "charges": "Meublé et équipé",
+      "pieces": "5½ sur deux étages",
+      "chambres": 2,
+      "superficie": 98,
+      "etage": "2e et 3e",
+      "meuble": "Entièrement meublé et équipé",
+      "dispo": "2026-09-15",
+      "bail": "À confirmer",
+      "atouts": [
+        "1 056 pi² (98 m²) sur deux étages",
+        "Entièrement rénové en 2022",
+        "Deux terrasses",
+        "Un espace bureau en plus des deux chambres",
+        "Salle de bain + salle d'eau",
+        "Climatiseur mural",
+        "Meublé et équipé : rien à acheter",
+        "Saint-Roch à pied, 27 min de bus du Vieux-Québec"
+      ],
+      "bemols": [
+        "Meublé : peu de place pour vos propres meubles",
+        "Non-fumeur, animaux non permis",
+        "Immeuble de 1947, rénové mais ancien",
+        "Libre à la mi-septembre — c'est bientôt"
+      ],
+      "notes": "MLS 16809546, en ligne depuis 93 jours. Duplex de 1947 entièrement rénové en 2022, loué meublé.",
+      "lien": "https://www.realtor.ca/immobilier/29856772/610-rue-jerome-2-quebec-la-cite-limoilou-saint-roch",
+      "source": "REALTOR.ca",
+      "carte": "https://www.google.com/maps/search/610+rue+J%C3%A9r%C3%B4me,+Qu%C3%A9bec,+QC",
+      "statut": "a_visiter",
+      "photos": [
+        {
+          "f": "01.jpg",
+          "legende": "Le salon et la salle à manger"
+        },
+        {
+          "f": "02.jpg",
+          "legende": "Le salon, vers la cuisine"
+        },
+        {
+          "f": "03.jpg",
+          "legende": "La cuisine et son îlot"
+        },
+        {
+          "f": "04.jpg",
+          "legende": "La cuisine, côté fenêtres"
+        },
+        {
+          "f": "05.jpg",
+          "legende": "La chambre principale"
+        },
+        {
+          "f": "06.jpg",
+          "legende": "La deuxième chambre"
+        },
+        {
+          "f": "07.jpg",
+          "legende": "L'espace bureau et l'escalier"
+        },
+        {
+          "f": "08.jpg",
+          "legende": "Le salon, autre angle"
+        }
+      ],
+      "trajets": {
+        "vieux-quebec": {
+          "bus": {
+            "min": 27
+          },
+          "pied": {
+            "min": 35
+          },
+          "velo": {
+            "min": 16
+          }
+        },
+        "cegep-sainte-foy": {
+          "bus": {
+            "min": 26
+          },
+          "pied": {
+            "min": 79
+          },
+          "velo": {
+            "min": 24
           }
         }
       }
