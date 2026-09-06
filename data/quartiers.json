@@ -405,5 +405,77 @@
         "source": "https://commons.wikimedia.org/wiki/File:Saint-Charles-Borrom%C3%A9e_Church,_Charlesbourg,_Quebec_03.jpg"
       }
     ]
+  },
+  "beauport": {
+    "nom": "Beauport · Laurentides",
+    "etiquette": "Le plus près de la nature",
+    "resume": "À l'est, entre la chute Montmorency et l'avenue Royale — grand, vert, et loin en bus.",
+    "description": "Arrondissement de l'est, ancien village devenu banlieue. Le secteur Laurentides est résidentiel et récent : jumelés, terrains, rues tranquilles. Le patrimoine est du côté du Vieux-Bourg et de l'avenue Royale, et la chute Montmorency — plus haute que le Niagara — est à quelques minutes. C'est vert, familial, avec de l'espace pour le prix ; en bus, le centre-ville demande près d'une heure.",
+    "reperes": [
+      "La chute Montmorency",
+      "L'avenue Royale et le Vieux-Bourg",
+      "Les Galeries de la Canardière et les services",
+      "L'autoroute Félix-Leclerc vers le centre"
+    ],
+    "carte": "https://www.google.com/maps/search/Laurentides,+Beauport,+Qu%C3%A9bec,+QC",
+    "photos": [
+      {
+        "f": "01-chute.jpg",
+        "legende": "La chute Montmorency",
+        "auteur": "Eric Fortin",
+        "licence": "CC BY-SA 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Chute-Montmorency.jpg"
+      },
+      {
+        "f": "02-avenue-royale.jpg",
+        "legende": "Une maison ancienne de l'avenue Royale",
+        "auteur": "The Cosmonaut",
+        "licence": "CC BY-SA 2.5",
+        "source": "https://commons.wikimedia.org/wiki/File:Avenue_Royale.jpg"
+      },
+      {
+        "f": "03-maison-parc.jpg",
+        "legende": "Une maison au bord du parc de la Chute-Montmorency",
+        "auteur": "Wilfredor",
+        "licence": "CC0",
+        "source": "https://commons.wikimedia.org/wiki/File:House_in_the_Parc_de_la_Chute-Montmorency_009.jpg"
+      }
+    ]
+  },
+  "val-belair": {
+    "nom": "Val-Bélair",
+    "etiquette": "Le plus au vert",
+    "resume": "Au pied du mont Bélair : forêt, sentiers, tranquillité — et très peu de bus.",
+    "description": "Le secteur le plus éloigné et le plus rural de la ville, à l'ouest, au pied du mont Bélair. On y vient pour la nature : randonnée, vélo de montagne, ski, la tourbière et les sentiers commencent au bout des rues. Les maisons sont sur de grands terrains, l'air est calme. Le revers est net : le réseau de bus y est très mince — Google ne propose même aucun trajet en transport en commun vers le centre en soirée.",
+    "reperes": [
+      "Le mont Bélair et ses sentiers",
+      "La tourbière et les boisés",
+      "La base de plein air de Sainte-Foy, plus au sud",
+      "L'autoroute Henri-IV, à une quinzaine de minutes"
+    ],
+    "carte": "https://www.google.com/maps/search/Val-B%C3%A9lair,+Qu%C3%A9bec,+QC",
+    "photos": [
+      {
+        "f": "01-tourbiere.jpg",
+        "legende": "La tourbière du mont Bélair",
+        "auteur": "Cephas",
+        "licence": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Tourbi%C3%A8re_du_Mont_B%C3%A9lair_01.jpg"
+      },
+      {
+        "f": "02-mont-belair.jpg",
+        "legende": "Le mont Bélair vu des champs",
+        "auteur": "Boréal",
+        "licence": "CC BY-SA 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Mont_Belair_-_septembre_2011_-_01.jpg"
+      },
+      {
+        "f": "03-boise.jpg",
+        "legende": "Les boisés au pied du mont",
+        "auteur": "Boréal",
+        "licence": "CC BY-SA 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Mont_Belair_-_septembre_2011_-_02.jpg"
+      }
+    ]
   }
 }

@@ -750,6 +750,189 @@
           }
         }
       }
+    },
+    {
+      "id": "ste-therese-476a",
+      "titre": "Jumelé 3 chambres, avenue Sainte-Thérèse",
+      "adresse": "476A, avenue Sainte-Thérèse",
+      "quartier": "beauport",
+      "coord": [
+        -71.213941,
+        46.8967685
+      ],
+      "loyer": 1850,
+      "charges": "2 stationnements inclus",
+      "pieces": "5½",
+      "chambres": 3,
+      "superficie": 56,
+      "etage": "Jumelé avec sous-sol aménagé",
+      "meuble": "Non meublé",
+      "dispo": "À confirmer",
+      "bail": "1 an (bail de transition)",
+      "atouts": [
+        "Une maison entière, pas un appartement",
+        "3 chambres et un sous-sol aménagé",
+        "Grande terrasse couverte",
+        "Construction 2013",
+        "Terrain de 4 484 pi²"
+      ],
+      "bemols": [
+        "Bail d'un an seulement — l'annonce parle d'un « entre-deux »",
+        "Près d'une heure de bus du Vieux-Québec, 1 h 17 du Cégep",
+        "604 pi² au rez-de-chaussée : le sous-sol fait le reste",
+        "Deux stationnements dont vous n'avez pas l'usage"
+      ],
+      "notes": "MLS 20506315, en ligne depuis 44 jours. Secteur Laurentides, à Beauport. L'annonce vise explicitement une location d'un an.",
+      "lien": "https://www.realtor.ca/immobilier/30071843/476a-av-ste-therese-quebec-beauport-laurentides",
+      "source": "REALTOR.ca",
+      "carte": "https://www.google.com/maps/search/476+avenue+Sainte-Th%C3%A9r%C3%A8se,+Qu%C3%A9bec,+QC",
+      "statut": "a_visiter",
+      "photos": [
+        {
+          "f": "01.jpg",
+          "legende": "Le salon"
+        },
+        {
+          "f": "02.jpg",
+          "legende": "Le salon, côté fenêtre"
+        },
+        {
+          "f": "03.jpg",
+          "legende": "La salle à manger, vers la terrasse"
+        },
+        {
+          "f": "04.jpg",
+          "legende": "La cuisine"
+        },
+        {
+          "f": "05.jpg",
+          "legende": "La cuisine vue de l'entrée"
+        },
+        {
+          "f": "06.jpg",
+          "legende": "La chambre principale"
+        },
+        {
+          "f": "07.jpg",
+          "legende": "La terrasse couverte"
+        },
+        {
+          "f": "08.jpg",
+          "legende": "Le jumelé, avenue Sainte-Thérèse"
+        }
+      ],
+      "trajets": {
+        "vieux-quebec": {
+          "bus": {
+            "min": 57
+          },
+          "pied": {
+            "min": 163
+          },
+          "velo": {
+            "min": 44
+          }
+        },
+        "cegep-sainte-foy": {
+          "bus": {
+            "min": 77
+          },
+          "pied": {
+            "min": 238
+          },
+          "velo": {
+            "min": 68
+          }
+        }
+      }
+    },
+    {
+      "id": "montagne-1635b",
+      "titre": "3½ dans une maison, au pied du mont Bélair",
+      "adresse": "1635, avenue de la Montagne Ouest, app. B",
+      "quartier": "val-belair",
+      "coord": [
+        -71.4565788,
+        46.8250974
+      ],
+      "loyer": 1200,
+      "charges": "Non précisé dans l'annonce",
+      "pieces": "3½",
+      "chambres": 1,
+      "etage": "Logement dans une maison de 1970",
+      "meuble": "Non meublé",
+      "dispo": "Immédiatement",
+      "bail": "À confirmer",
+      "atouts": [
+        "1 200 $ — le deuxième moins cher",
+        "Vastes pièces, grande chambre, beaucoup de rangement",
+        "Deux entrées indépendantes (porte et porte-patio)",
+        "Au pied du mont Bélair : randonnée, vélo, ski",
+        "Stationnement disponible",
+        "Terrain de 3 561 m²"
+      ],
+      "bemols": [
+        "Aucun trajet en bus proposé vers le centre — c'est le point noir",
+        "1 h 25 de vélo du Vieux-Québec, 5 h à pied",
+        "Logement dans la maison d'un propriétaire",
+        "Maison de 1970, finitions d'époque sur les photos",
+        "Annonce en ligne depuis 93 jours, libre « dès le 1er juillet »"
+      ],
+      "notes": "MLS 27453629. Sans voiture, ce secteur est difficilement tenable : Google ne trouve aucun itinéraire de bus vers le Vieux-Québec ni vers le Cégep aux heures testées. À vérifier auprès du RTC pour les heures de pointe.",
+      "lien": "https://www.realtor.ca/immobilier/29852588/1635-av-de-la-montagne-o-b-quebec-la-haute-saint-charles-val-belair",
+      "source": "REALTOR.ca",
+      "carte": "https://www.google.com/maps/search/1635+avenue+de+la+Montagne+Ouest,+Qu%C3%A9bec,+QC",
+      "statut": "a_visiter",
+      "photos": [
+        {
+          "f": "01.jpg",
+          "legende": "Le salon"
+        },
+        {
+          "f": "02.jpg",
+          "legende": "La cuisine"
+        },
+        {
+          "f": "03.jpg",
+          "legende": "La cuisine, vers l'entrée"
+        },
+        {
+          "f": "04.jpg",
+          "legende": "La chambre"
+        },
+        {
+          "f": "05.jpg",
+          "legende": "La salle de bain"
+        },
+        {
+          "f": "06.jpg",
+          "legende": "La buanderie"
+        },
+        {
+          "f": "07.jpg",
+          "legende": "La maison, avenue de la Montagne"
+        }
+      ],
+      "trajets": {
+        "vieux-quebec": {
+          "bus": null,
+          "pied": {
+            "min": 300
+          },
+          "velo": {
+            "min": 85
+          }
+        },
+        "cegep-sainte-foy": {
+          "bus": null,
+          "pied": {
+            "min": 242
+          },
+          "velo": {
+            "min": 61
+          }
+        }
+      }
     }
   ]
 }

@@ -296,7 +296,7 @@ function blocTrajets(a){
     const t = a.trajets[r.cle];
     return `<tr>
       <td class="lieu">${echap(r.nom)}</td>
-      <td class="n"><strong>${duree(t.bus.min)}</strong></td>
+      <td class="n">${t.bus ? `<strong>${duree(t.bus.min)}</strong>` : `<span style="color:var(--rose)">aucun trajet</span>`}</td>
       <td class="n">${duree(t.velo.min)}</td>
       <td class="n">${duree(t.pied.min)}</td>
       <td><a href="${itineraire(a, r, "transit")}" target="_blank" rel="noopener">Horaires ↗</a></td>
@@ -315,7 +315,7 @@ function blocTrajets(a){
 function trajetsMini(a){
   if (!a.trajets) return "";
   const bouts = REPERES.filter(r => a.trajets[r.cle])
-    .map(r => `${r.court} ${duree(a.trajets[r.cle].bus.min)}`).join(" · ");
+    .map(r => `${r.court} ${a.trajets[r.cle].bus ? duree(a.trajets[r.cle].bus.min) : "—"}`).join(" · ");
   return `<p class="trajets-mini" title="Temps de trajet en bus">En bus — ${bouts}</p>`;
 }
 
@@ -495,7 +495,7 @@ function selection(){
   if (etat.tri === "prix-desc") l.sort((a, b) => p(b) - p(a));
   if (etat.tri === "dispo") l.sort((a, b) => String(a.dispo || "9").localeCompare(String(b.dispo || "9")));
   if (etat.tri === "note") l.sort((a, b) => (moyenne(b.id) ?? -1) - (moyenne(a.id) ?? -1));
-  const bus = x => x.trajets && x.trajets["vieux-quebec"] ? x.trajets["vieux-quebec"].bus.min : Infinity;
+  const bus = x => x.trajets && x.trajets["vieux-quebec"] && x.trajets["vieux-quebec"].bus ? x.trajets["vieux-quebec"].bus.min : Infinity;
   if (etat.tri === "bus") l.sort((a, b) => bus(a) - bus(b));
   return l;
 }
