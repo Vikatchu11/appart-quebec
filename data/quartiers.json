@@ -368,7 +368,8 @@
         "licence": "CC0",
         "source": "https://commons.wikimedia.org/wiki/File:Autumn_trees_at_Jardin_Jean-Paul-L%27Allier.jpg"
       }
-    ]
+    ],
+    "exclu": true
   },
   "charlesbourg": {
     "nom": "Charlesbourg · Orsainville",

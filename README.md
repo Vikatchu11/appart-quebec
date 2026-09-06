@@ -53,10 +53,12 @@ https://claude.ai/code/artifact/f139503c-dc39-4e9b-aa44-8a790c021386
 ```
 
 Tout est facultatif sauf `id`, `titre`, `quartier` et `photos`.
-`quartier` vaut `montcalm`, `sillery`, `saint-sacrement`, `saint-jean-baptiste`,
-`maizerets` ou `loretteville`.
+`quartier` renvoie à une clé de `data/quartiers.json`.
 `statut` vaut `a_visiter`, `visite_prevue`, `visite` ou `ecarte`.
 
+Un quartier peut être écarté d'office : ajoutez-lui `"exclu": true` dans
+`data/quartiers.json`. Son nom s'affiche alors en rouge partout, et les fiches
+concernées portent « On ne prend pas » à la place du bouton « Garder ».
 3. Ajouter `"coord": [longitude, latitude]` (relevé sur OpenStreetMap ou Google
    Maps), puis calculer les distances vers le Vieux-Québec et le Cégep de
    Sainte-Foy :

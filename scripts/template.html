@@ -51,14 +51,14 @@ h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.12;letter-spacin
 .sommaire b{display:block;font-family:var(--serif);font-size:27px;font-weight:400;font-variant-numeric:tabular-nums}
 .sommaire span{font-size:12.5px;color:var(--encre-3)}
 
-section{margin-top:64px}
-.tete{border-bottom:1px solid var(--encre);padding-bottom:12px;margin-bottom:26px;display:flex;align-items:flex-end;gap:18px;flex-wrap:wrap}
+section{margin-top:64px;scroll-margin-top:78px}
+.tete{border-bottom:1px solid var(--encre);padding-bottom:13px;margin-bottom:30px;display:flex;align-items:flex-end;gap:18px;flex-wrap:wrap}
 .tete h2{font-size:clamp(25px,3.2vw,34px)}
 .tete .compte{margin-left:auto;font-size:13px;color:var(--encre-3)}
 .intro-section{margin:-14px 0 24px;color:var(--encre-2);max-width:62ch;font-size:15.5px}
 
 /* filtres */
-.filtres{display:flex;flex-wrap:wrap;align-items:center;gap:18px;margin:0 0 30px;padding-bottom:14px;border-bottom:1px solid var(--filet)}
+.filtres{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;margin:0 0 16px;padding-bottom:15px;border-bottom:1px solid var(--filet)}
 .puce{font-size:13.5px;color:var(--encre-2);padding-bottom:3px;border-bottom:1.5px solid transparent}
 .puce:hover{color:var(--encre)}
 .puce[aria-pressed="true"]{color:var(--encre);border-bottom-color:var(--encre);font-weight:600}
@@ -66,43 +66,50 @@ section{margin-top:64px}
 .tri select{font-family:var(--sans);font-size:13.5px;color:var(--encre);background:none;border:0;border-bottom:1px solid var(--filet-fort);padding:3px 2px}
 
 /* liste */
-.grille{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:42px 30px}
-.carte{display:flex;flex-direction:column;gap:0;text-align:left}
-.carte-photo{position:relative;overflow:hidden;background:var(--creux);border:0;width:100%;display:block;padding:0}
+.grille{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:46px 32px}
+.carte{display:flex;flex-direction:column}
+.carte-lien{display:flex;flex-direction:column;flex:1;color:inherit;text-decoration:none}
+.carte-photo{display:block;overflow:hidden;background:var(--creux)}
 .carte-photo img{width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .5s cubic-bezier(.2,.6,.2,1)}
-.carte:hover .carte-photo img{transform:scale(1.03)}
-.sans-photo{aspect-ratio:4/3;display:grid;place-items:center;color:var(--encre-3);font-size:12px;letter-spacing:.14em;text-transform:uppercase}
-.carte-texte{padding:14px 0 0;text-align:left;display:flex;flex-direction:column;gap:5px;flex:1;width:100%}
-.ligne-haut{display:flex;align-items:baseline;gap:14px}
-.ligne-haut h3{font-size:21px;flex:1}
+.carte-lien:hover .carte-photo img{transform:scale(1.03)}
+.sans-photo{display:grid;place-items:center;aspect-ratio:4/3;color:var(--encre-3);font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.carte-texte{display:block;padding-top:15px}
+.carte-texte .etiq{display:block;margin-bottom:7px}
+.ligne-haut{display:flex;align-items:baseline;gap:14px;justify-content:space-between}
+.titre-carte{font-family:var(--serif);font-size:21px;line-height:1.15;letter-spacing:-.005em}
+.carte-lien:hover .titre-carte{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
 .loyer-carte{font-family:var(--serif);font-size:21px;white-space:nowrap;font-variant-numeric:tabular-nums}
-.adresse{margin:0;color:var(--encre-2);font-size:14px}
-.meta{margin:9px 0 0;padding:9px 0 0;border-top:1px solid var(--filet);display:flex;flex-wrap:wrap;gap:4px 16px;font-size:13px;color:var(--encre-2);font-variant-numeric:tabular-nums}
-.pied-carte{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:auto;padding-top:11px}
+.carte-texte .adresse{display:block;margin-top:5px;color:var(--encre-2);font-size:14px}
+.meta{display:flex;flex-wrap:wrap;gap:3px 16px;margin-top:12px;padding-top:11px;border-top:1px solid var(--filet);font-size:13px;color:var(--encre-2);font-variant-numeric:tabular-nums}
+.meta.sans-filet{border-top:0;padding-top:4px;margin-top:0}
+.pied-carte{display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding-top:13px}
 .statut{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:600;letter-spacing:.13em;text-transform:uppercase}
 .statut::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor;flex:0 0 auto}
 .statut.a_visiter{color:var(--bleu)} .statut.visite_prevue{color:var(--ocre)}
 .statut.visite{color:var(--vert)} .statut.ecarte{color:var(--gris)}
 .carte.ecarte .carte-photo img{filter:grayscale(1);opacity:.55}
-.garder{font-size:12.5px;color:var(--encre-3);border-bottom:1px solid var(--filet-fort);padding-bottom:1px}
+.garder{font-size:12.5px;color:var(--encre-3);border-bottom:1px solid var(--filet-fort);padding-bottom:1px;margin-left:auto}
 .garder:hover{color:var(--encre);border-bottom-color:var(--encre)}
 .garder[aria-pressed="true"]{color:var(--accent);border-bottom-color:var(--accent);font-weight:600}
+.exclu{color:var(--brique)}
+.refuse{font-size:12.5px;font-weight:600;color:var(--brique);letter-spacing:.02em;margin-left:auto}
 .note-carte{display:flex;align-items:center;gap:9px;font-size:13px;color:var(--encre-2);font-variant-numeric:tabular-nums}
 
 /* quartiers */
-.quartiers{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:40px 30px}
-.qcarte{text-align:left;display:flex;flex-direction:column}
+.quartiers{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:46px 32px}
+.qcarte{display:flex;flex-direction:column;color:inherit;text-decoration:none}
+.qcarte .cadre-img{display:block;overflow:hidden;background:var(--creux)}
 .qcarte img{width:100%;aspect-ratio:5/4;object-fit:cover;transition:transform .5s cubic-bezier(.2,.6,.2,1)}
-.qcarte .cadre-img{overflow:hidden;background:var(--creux)}
 .qcarte:hover img{transform:scale(1.03)}
-.qcarte h3{font-size:22px;margin-top:12px}
-.qcarte p{margin:6px 0 0;color:var(--encre-2);font-size:14.5px}
-.qcarte .lire{margin-top:11px;font-size:13px;color:var(--accent);border-bottom:1px solid var(--filet-fort);align-self:flex-start;padding-bottom:1px}
-.qcarte:hover .lire{border-bottom-color:var(--accent)}
+.qcarte .etiq{display:block;margin-top:15px}
+.titre-quartier{display:block;font-family:var(--serif);font-size:22px;line-height:1.15;margin-top:6px}
+.qcarte:hover .titre-quartier{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
+.qcarte .resume{display:block;margin-top:7px;color:var(--encre-2);font-size:14.5px;line-height:1.55}
+.qcarte .lire{display:block;margin-top:12px;font-size:13px;color:var(--accent)}
 
 /* échange de notes */
-.echange{margin:0 0 30px;padding:14px 0;border-top:1px solid var(--filet);border-bottom:1px solid var(--filet);display:flex;flex-wrap:wrap;align-items:center;gap:8px 20px;font-size:13.5px;color:var(--encre-2)}
-.echange .lien{color:var(--accent);border-bottom:1px solid var(--filet-fort);padding-bottom:1px;font-size:13.5px}
+.echange{margin:0 0 34px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px;font-size:12.5px;color:var(--encre-3)}
+.echange .lien{color:var(--accent);border-bottom:1px solid var(--filet-fort);padding-bottom:1px;font-size:12.5px}
 .echange .lien:hover{border-bottom-color:var(--accent)}
 .echange .zone{flex-basis:100%;display:grid;gap:10px;justify-items:start;padding-top:4px}
 .echange textarea{width:100%;min-height:70px;background:var(--feuille);border:1px solid var(--filet-fort);color:var(--encre);font-family:var(--sans);font-size:13px;padding:11px;resize:vertical}
@@ -270,8 +277,8 @@ footer h3{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:
       <h2>Les appartements</h2>
       <span class="compte" id="compte"></span>
     </div>
-    <div class="echange" id="echange"></div>
     <div class="filtres" id="filtres"></div>
+    <div class="echange" id="echange"></div>
     <div class="grille" id="grille"></div>
   </section>
 
@@ -556,25 +563,27 @@ function liste(){
                    a.dispo ? (/^\d{4}-/.test(a.dispo) ? "Libre le " + date(a.dispo) : a.dispo) : null].filter(Boolean);
     const moy = moyenne(a.id);
     return `<article class="carte ${a.statut === "ecarte" ? "ecarte" : ""}">
-      <button class="carte-photo" data-appart="${echap(a.id)}" aria-label="Ouvrir la fiche : ${echap(a.titre)}">
-        ${ph ? `<img src="${ph.vignette}" alt="${echap(a.titre)}" loading="lazy">` : `<div class="sans-photo">sans photo</div>`}
-      </button>
-      <button class="carte-texte" data-appart="${echap(a.id)}">
-        <p class="etiq">${echap(q ? q.nom : a.quartier || "")}</p>
-        <span class="ligne-haut"><h3>${echap(a.titre)}</h3>${a.loyer ? `<span class="loyer-carte">${argent(a.loyer)}</span>` : ""}</span>
-        ${a.adresse ? `<p class="adresse">${echap(a.adresse)}</p>` : ""}
-        ${faits.length ? `<span class="meta">${faits.map(f => `<span>${echap(f)}</span>`).join("")}</span>` : ""}
-        ${a.trajets ? `<span class="meta" style="border:0;padding-top:2px;margin-top:0">${trajetsCarte(a)}</span>` : ""}
-      </button>
+      <a class="carte-lien" href="#appart/${encodeURIComponent(a.id)}">
+        <span class="carte-photo">
+          ${ph ? `<img src="${ph.vignette}" alt="${echap(a.titre)}" loading="lazy">` : `<span class="sans-photo">sans photo</span>`}
+        </span>
+        <span class="carte-texte">
+          <span class="etiq${q && q.exclu ? " exclu" : ""}">${echap(q ? q.nom : a.quartier || "")}</span>
+          <span class="ligne-haut"><span class="titre-carte">${echap(a.titre)}</span>${a.loyer ? `<span class="loyer-carte">${argent(a.loyer)}</span>` : ""}</span>
+          ${a.adresse ? `<span class="adresse">${echap(a.adresse)}</span>` : ""}
+          ${faits.length ? `<span class="meta">${faits.map(f => `<span>${echap(f)}</span>`).join("")}</span>` : ""}
+          ${a.trajets ? `<span class="meta sans-filet">${trajetsCarte(a)}</span>` : ""}
+        </span>
+      </a>
       <div class="pied-carte">
         ${a.statut ? `<span class="statut ${a.statut}">${ETATS[a.statut] || a.statut}</span>` : ""}
         ${moy === null ? "" : `<span class="note-carte">${nombre(moy)} / 5 <span style="color:var(--encre-3)">${["victorien","lou"].filter(k => NOTES[k][a.id]).map(k => PERSONNES[k][0] + " " + nombre(NOTES[k][a.id])).join(" · ")}</span></span>`}
-        <button class="garder" data-garder="${echap(a.id)}" aria-pressed="${GARDES.has(a.id)}" style="margin-left:auto">${GARDES.has(a.id) ? "Gardé" : "Garder"}</button>
+        ${q && q.exclu ? `<span class="refuse">On ne prend pas</span>`
+          : `<button class="garder" data-garder="${echap(a.id)}" aria-pressed="${GARDES.has(a.id)}">${GARDES.has(a.id) ? "Gardé" : "Garder"}</button>`}
       </div>
     </article>`;
   }).join("");
   g.classList.add("grille");
-  g.querySelectorAll("[data-appart]").forEach(b => b.onclick = () => location.hash = "appart/" + b.dataset.appart);
   g.querySelectorAll("[data-garder]").forEach(b => b.onclick = e => { e.stopPropagation(); basculerGarde(b.dataset.garder); filtres(); liste(); });
 }
 
@@ -583,14 +592,13 @@ function quartiers(){
   const c = $("#compte-quartiers");
   if (c) c.textContent = Object.keys(QUARTIERS).length + " secteurs";
   $("#grille-quartiers").innerHTML = Object.entries(QUARTIERS).map(([id,q]) => `
-    <button class="qcarte" data-quartier="${id}">
+    <a class="qcarte" href="#quartier/${encodeURIComponent(id)}">
       <span class="cadre-img"><img src="${q.photos[0].vignette}" alt="${echap(q.photos[0].legende)}" loading="lazy"></span>
-      <p class="etiq" style="margin-top:12px">${echap(q.etiquette)}</p>
-      <h3 style="margin-top:4px">${echap(q.nom)}</h3>
-      <p>${echap(q.resume)}</p>
+      <span class="etiq${q.exclu ? " exclu" : ""}">${q.exclu ? "On ne prend pas" : echap(q.etiquette)}</span>
+      <span class="titre-quartier${q.exclu ? " exclu" : ""}">${echap(q.nom)}</span>
+      <span class="resume">${echap(q.resume)}</span>
       <span class="lire">Voir le quartier</span>
-    </button>`).join("");
-  document.querySelectorAll("[data-quartier]").forEach(b => b.onclick = () => location.hash = "quartier/" + b.dataset.quartier);
+    </a>`).join("");
 }
 
 function credits(){
@@ -607,16 +615,28 @@ function credits(){
 const panneau = $("#panneau");
 let galerie = {photos:[], i:0};
 
+let retourY = 0;
+function quitterFiche(){
+  if (history.length > 1 && (history.state || {}).fiche) history.back();
+  else { history.replaceState({}, "", location.pathname + location.search); fermer(); }
+}
 function ouvrir(html){
+  if (panneau.hidden) retourY = window.scrollY;
   panneau.innerHTML = `<div class="feuille"><div class="fermer"><button aria-label="Fermer">✕</button></div><div class="corps">${html}</div></div>`;
   panneau.hidden = false;
   document.body.style.overflow = "hidden";
-  panneau.querySelector(".fermer button").onclick = () => { location.hash = ""; };
+  panneau.querySelector(".fermer button").onclick = quitterFiche;
   panneau.scrollTop = 0;
   panneau.querySelectorAll("[data-loupe]").forEach(el => el.onclick = () => loupe(el.dataset.loupe, el.dataset.legende));
-  panneau.onclick = e => { if (e.target === panneau) location.hash = ""; };
+  panneau.onclick = e => { if (e.target === panneau) quitterFiche(); };
 }
-const fermer = () => { panneau.hidden = true; panneau.innerHTML = ""; document.body.style.overflow = ""; };
+function fermer(){
+  const etaitOuvert = !panneau.hidden;
+  panneau.hidden = true;
+  panneau.innerHTML = "";
+  document.body.style.overflow = "";
+  if (etaitOuvert) window.scrollTo(0, retourY);
+}
 
 function blocGalerie(photos){
   if (!photos.length) return `<div class="galerie"><div class="g-cadre"><div class="sans-photo" style="aspect-ratio:3/2">photos à venir</div></div></div>`;
@@ -671,7 +691,7 @@ function ficheAppart(id){
     ${blocGalerie(a.images || [])}
     <div class="titre-fiche">
       <div>
-        <p class="etiq">${echap(q ? q.nom : "")}${a.statut ? " · " + (ETATS[a.statut] || a.statut) : ""}</p>
+        <p class="etiq${q && q.exclu ? " exclu" : ""}">${echap(q ? q.nom : "")}${q && q.exclu ? " · on ne prend pas" : ""}${a.statut ? " · " + (ETATS[a.statut] || a.statut) : ""}</p>
         <h2 style="margin-top:8px">${echap(a.titre)}</h2>
         ${a.adresse ? `<p class="adresse">${echap(a.adresse)}</p>` : ""}
       </div>
@@ -688,7 +708,8 @@ function ficheAppart(id){
     <div class="actions">
       ${a.lien ? `<a class="bouton plein" href="${echap(a.lien)}" target="_blank" rel="noopener">Voir l'annonce</a>` : ""}
       ${a.carte ? `<a class="bouton" href="${echap(a.carte)}" target="_blank" rel="noopener">Situer sur la carte</a>` : ""}
-      <button class="bouton" data-garder-fiche="${echap(a.id)}" aria-pressed="${GARDES.has(a.id)}">${GARDES.has(a.id) ? "Gardé" : "Garder"}</button>
+      ${q && q.exclu ? `<span class="bouton" style="border-color:var(--brique);color:var(--brique);cursor:default">On ne prend pas</span>`
+        : `<button class="bouton" data-garder-fiche="${echap(a.id)}" aria-pressed="${GARDES.has(a.id)}">${GARDES.has(a.id) ? "Gardé" : "Garder"}</button>`}
     </div>
     ${q ? blocQuartier(a.quartier) : ""}
   `);
@@ -707,8 +728,8 @@ function ficheAppart(id){
 function blocQuartier(id){
   const q = QUARTIERS[id];
   return `<div class="bloc-quartier">
-    <p class="etiq">Le quartier autour — ${echap(q.etiquette)}</p>
-    <h2>${echap(q.nom)}</h2>
+    <p class="etiq${q.exclu ? " exclu" : ""}">Le quartier autour — ${q.exclu ? "on ne prend pas" : echap(q.etiquette)}</p>
+    <h2${q.exclu ? ' class="exclu"' : ''}>${echap(q.nom)}</h2>
     <p class="intro">${echap(q.description)}</p>
     <ul class="reperes">${q.reperes.map(r => `<li>${echap(r)}</li>`).join("")}</ul>
     <div class="mosaique large">${q.photos.map(p => `<figure data-loupe="${p.image}" data-legende="${echap(p.legende)}"><img src="${p.vignette}" alt="${echap(p.legende)}" loading="lazy"><figcaption>${echap(p.legende)}</figcaption></figure>`).join("")}</div>
@@ -726,7 +747,7 @@ function ficheQuartier(id){
   ouvrir(`
     ${blocGalerie(q.photos)}
     <div class="titre-fiche">
-      <div><p class="etiq">${echap(q.etiquette)}</p><h2 style="margin-top:8px">${echap(q.nom)}</h2></div>
+      <div><p class="etiq${q.exclu ? " exclu" : ""}">${q.exclu ? "On ne prend pas" : echap(q.etiquette)}</p><h2 style="margin-top:8px"${q.exclu ? ' class="exclu"' : ''}>${echap(q.nom)}</h2></div>
     </div>
     <p style="margin-top:22px;max-width:66ch;font-size:17px">${echap(q.description)}</p>
     <div class="deux-cols">
@@ -780,14 +801,17 @@ function router(){
 document.addEventListener("keydown", e => {
   if (e.key === "Escape"){
     if (!vue.hidden){ vue.hidden = true; vue.innerHTML = ""; return; }
-    if (!panneau.hidden) location.hash = "";
+    if (!panneau.hidden) quitterFiche();
   }
   if (!panneau.hidden && panneau._montrer && vue.hidden){
     if (e.key === "ArrowLeft") panneau._montrer(galerie.i - 1);
     if (e.key === "ArrowRight") panneau._montrer(galerie.i + 1);
   }
 });
-window.addEventListener("hashchange", router);
+window.addEventListener("hashchange", () => {
+  if (/^#(appart|quartier)\//.test(location.hash)) history.replaceState({fiche:true}, "");
+  router();
+});
 
 theme(); sommaire(); filtres(); liste(); echange(); quartiers(); credits(); router();
 </script>
