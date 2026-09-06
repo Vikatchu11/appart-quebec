@@ -1,12 +1,12 @@
 <meta charset="utf-8">
-<meta name="color-scheme" content="light">
+<meta name="color-scheme" content="light dark">
 <title>Notre appart à Québec</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=Libre+Franklin:wght@400;500;600&display=swap">
 <style>
 :root{
-  color-scheme:light;
+  color-scheme:light dark;
   --papier:#F2F1EC; --feuille:#FFFFFF; --creux:#E9E7E0;
   --encre:#16171A; --encre-2:#55575D; --encre-3:#8A8B90;
   --filet:#DBD8D0; --filet-fort:#C4C0B6;
@@ -205,6 +205,33 @@ footer{margin-top:80px;border-top:1px solid var(--filet);padding:26px 0 64px;col
 footer h3{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--encre-3);margin:0 0 10px}
 .credits{display:grid;gap:5px;padding:0;margin:0;list-style:none;font-size:12px}
 .credits a{color:var(--encre-3)}
+/* — version sombre : même papier, encre inversée — */
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="clair"]){
+    --papier:#141518; --feuille:#1B1C20; --creux:#26272C;
+    --encre:#EDEBE4; --encre-2:#A8A69E; --encre-3:#7B7A75;
+    --filet:#2D2E33; --filet-fort:#3F4046;
+    --accent:#93B7DC; --accent-clair:#B6D0EC;
+    --bleu:#84AACE; --ocre:#C6A75B; --vert:#84B694; --brique:#D5836E; --gris:#7B7A75;
+  }
+}
+:root[data-theme="sombre"]{
+  --papier:#141518; --feuille:#1B1C20; --creux:#26272C;
+  --encre:#EDEBE4; --encre-2:#A8A69E; --encre-3:#7B7A75;
+  --filet:#2D2E33; --filet-fort:#3F4046;
+  --accent:#93B7DC; --accent-clair:#B6D0EC;
+  --bleu:#84AACE; --ocre:#C6A75B; --vert:#84B694; --brique:#D5836E; --gris:#7B7A75;
+}
+.barre{background:color-mix(in srgb, var(--papier) 94%, transparent)}
+.fermer button{background:var(--feuille)}
+.nav-g{background:color-mix(in srgb, var(--feuille) 92%, transparent)}
+.bouton:hover,.bouton.plein{color:var(--papier)}
+/* interrupteur de thème */
+.theme{display:flex;align-items:baseline;gap:9px;margin-left:26px;font-size:12.5px;color:var(--encre-3)}
+.theme button{font-size:12.5px;color:var(--encre-3);padding-bottom:2px;border-bottom:1px solid transparent}
+.theme button:hover{color:var(--encre)}
+.theme button[aria-pressed="true"]{color:var(--encre);border-bottom-color:var(--encre)}
+
 @media(max-width:620px){
   .ouverture{padding:36px 0 26px}
   .corps{margin-top:-38px}
@@ -221,6 +248,7 @@ footer h3{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:
       <a href="#liste">Les appartements</a>
       <a href="#quartiers">Les quartiers</a>
     </nav>
+    <div class="theme" id="theme"></div>
   </div>
 </header>
 
@@ -721,6 +749,23 @@ function loupe(src, legende){
   vue.onclick = () => { vue.hidden = true; vue.innerHTML = ""; };
 }
 
+/* ————— clair ou sombre ————— */
+function theme(){
+  const choix = localStorage.getItem("theme-appart");
+  if (choix) document.documentElement.dataset.theme = choix;
+  else delete document.documentElement.dataset.theme;
+  const el = $("#theme");
+  if (!el) return;
+  const options = [["", "Système"], ["clair", "Clair"], ["sombre", "Sombre"]];
+  el.innerHTML = options.map(([v, t]) =>
+    `<button data-theme="${v}" aria-pressed="${(choix || "") === v}">${t}</button>`).join("");
+  el.querySelectorAll("button").forEach(b => b.onclick = () => {
+    b.dataset.theme ? localStorage.setItem("theme-appart", b.dataset.theme)
+                    : localStorage.removeItem("theme-appart");
+    theme();
+  });
+}
+
 /* ————— routage ————— */
 function router(){
   const h = location.hash.replace(/^#/, "");
@@ -743,5 +788,5 @@ document.addEventListener("keydown", e => {
 });
 window.addEventListener("hashchange", router);
 
-sommaire(); filtres(); liste(); echange(); quartiers(); credits(); router();
+theme(); sommaire(); filtres(); liste(); echange(); quartiers(); credits(); router();
 </script>

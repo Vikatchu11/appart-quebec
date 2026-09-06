@@ -73,6 +73,12 @@ python3 scripts/build.py
 
 5. Republier `site.html` (même adresse, Lou n'a pas besoin d'un nouveau lien).
 
+## Clair ou sombre
+
+La page suit le réglage du système et se bascule à la main depuis la barre du
+haut (Système / Clair / Sombre) ; le choix est retenu par navigateur. Les deux
+palettes partagent la même mise en page et la même typographie.
+
 ## Les notes
 
 Chaque appartement se note sur 5, par demi-points : une ligne pour Victorien, une
