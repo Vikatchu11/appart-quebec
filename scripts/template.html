@@ -369,7 +369,56 @@ const basculerGarde = id => {
 /* ————— notes, par demi-point ————— */
 const PERSONNES = {victorien:"Victorien", lou:"Lou"};
 const NOTES = Object.assign({victorien:{}, lou:{}}, JSON.parse(localStorage.getItem("notes-appart") || "{}"));
-const sauverNotes = () => localStorage.setItem("notes-appart", JSON.stringify(NOTES));
+const sauverNotes = () => { localStorage.setItem("notes-appart", JSON.stringify(NOTES)); envoyerNotes(); };
+
+/* Notes partagées : si le site tourne derrière la fonction /api/notes, les deux
+   téléphones lisent et écrivent le même document. Sinon on reste en local. */
+const API = "/api/notes";
+let synchro = null;            // null = inconnu, true = partagé, false = local seulement
+let envoiEnAttente = null;
+
+const fusionner = distant => {
+  let change = false;
+  for (const qui of ["victorien", "lou"]) {
+    for (const [id, note] of Object.entries(distant?.[qui] || {})) {
+      if (NOTES[qui][id] !== note) { NOTES[qui][id] = note; change = true; }
+    }
+    for (const id of Object.keys(NOTES[qui])) {
+      if (distant?.[qui] && !(id in distant[qui])) { delete NOTES[qui][id]; change = true; }
+    }
+  }
+  return change;
+};
+
+async function relireNotes(){
+  try {
+    const r = await fetch(API, {cache: "no-store"});
+    if (!r.ok) throw 0;
+    const distant = await r.json();
+    const change = fusionner(distant);
+    if (synchro !== true) { synchro = true; echange(); }
+    if (change) { localStorage.setItem("notes-appart", JSON.stringify(NOTES)); filtres(); liste(); rafraichirFiche(); }
+  } catch (e) {
+    if (synchro === null) { synchro = false; echange(); }
+  }
+}
+
+function envoyerNotes(){
+  if (synchro === false) return;
+  clearTimeout(envoiEnAttente);
+  envoiEnAttente = setTimeout(async () => {
+    try {
+      const r = await fetch(API, {method: "PUT", headers: {"content-type": "application/json"},
+                                  body: JSON.stringify(NOTES)});
+      if (!r.ok) throw 0;
+      if (synchro !== true) { synchro = true; echange(); }
+      etat.derniereSynchro = new Date();
+      const t = $("#etat-synchro"); if (t) t.textContent = "enregistré";
+    } catch (e) {
+      const t = $("#etat-synchro"); if (t) t.textContent = "hors ligne — gardé sur cet appareil";
+    }
+  }, 400);
+}
 const noterAppart = (personne, id, n) => { if (n) NOTES[personne][id] = n; else delete NOTES[personne][id]; sauverNotes(); };
 const moyenne = id => {
   const v = [NOTES.victorien[id], NOTES.lou[id]].filter(n => typeof n === "number");
@@ -404,11 +453,17 @@ function echange(){
   const el = $("#echange");
   if (!el) return;
   if (!APPARTS.length){ el.remove(); return; }
+  if (synchro === true){
+    el.innerHTML = `<span>Les notes sont partagées : Victorien et Lou voient les mêmes, sur tous leurs appareils.</span>
+      <span id="etat-synchro" style="color:var(--encre-3)"></span>`;
+    return;
+  }
   const combien = combienDeNotes();
-  el.innerHTML = `<span>Les notes restent sur cet appareil. Pour que l'autre les voie, envoyez-lui votre code.</span>
-    <button class="lien" id="btn-exporter">Copier nos notes${combien ? ` (${combien})` : ""}</button>
-    <button class="lien" id="btn-importer">Coller les notes reçues</button>
+  el.innerHTML = `<span>${synchro === false ? "Pas de synchronisation ici : les notes restent sur cet appareil." : "Chargement des notes…"}</span>
+    ${synchro === false ? `<button class="lien" id="btn-exporter">Copier nos notes${combien ? ` (${combien})` : ""}</button>
+    <button class="lien" id="btn-importer">Coller les notes reçues</button>` : ""}
     <div class="zone" id="zone-echange" hidden></div>`;
+  if (synchro !== false) return;
   const zone = $("#zone-echange");
   $("#btn-exporter").onclick = async () => {
     if (!combien) return message(zone, "Aucun appartement n'a encore été noté.");
@@ -432,6 +487,7 @@ function echange(){
     $("#code-recu").focus();
   };
 }
+
 const message = (zone, texte) => { zone.hidden = false; zone.innerHTML = `<p style="margin:0;color:var(--accent)">${echap(texte)}</p>`; };
 
 function blocBarre(id, personne){
@@ -603,7 +659,7 @@ function quartiers(){
 
 function credits(){
   const vus = new Set(), lignes = [];
-  Object.values(QUARTIERS).forEach(q => q.photos.forEach(p => {
+  Object.values(QUARTIERS).forEach(q => [...q.photos, ...(q.noel || [])].forEach(p => {
     if (vus.has(p.source)) return;
     vus.add(p.source);
     lignes.push(`<li><a href="${p.source}" target="_blank" rel="noopener">${echap(p.legende)}</a> — ${echap(p.auteur)}, ${echap(p.licence)}, Wikimedia Commons</li>`);
@@ -725,6 +781,12 @@ function ficheAppart(id){
   panneau.querySelectorAll("[data-quartier]").forEach(b => b.onclick = () => location.hash = "quartier/" + b.dataset.quartier);
 }
 
+function mosaiqueNoel(q){
+  if (!q.noel || !q.noel.length) return "";
+  return `<p class="etiq" style="margin-top:30px">Le quartier à Noël</p>
+    <div class="mosaique">${q.noel.map(p => `<figure data-loupe="${p.image}" data-legende="${echap(p.legende)}"><img src="${p.vignette}" alt="${echap(p.legende)}" loading="lazy"><figcaption>${echap(p.legende)}</figcaption></figure>`).join("")}</div>`;
+}
+
 function blocQuartier(id){
   const q = QUARTIERS[id];
   return `<div class="bloc-quartier">
@@ -733,6 +795,7 @@ function blocQuartier(id){
     <p class="intro">${echap(q.description)}</p>
     <ul class="reperes">${q.reperes.map(r => `<li>${echap(r)}</li>`).join("")}</ul>
     <div class="mosaique large">${q.photos.map(p => `<figure data-loupe="${p.image}" data-legende="${echap(p.legende)}"><img src="${p.vignette}" alt="${echap(p.legende)}" loading="lazy"><figcaption>${echap(p.legende)}</figcaption></figure>`).join("")}</div>
+    ${mosaiqueNoel(q)}
     <div class="actions">
       <button class="bouton" data-quartier="${id}">Voir le quartier en grand</button>
       <a class="bouton" href="${echap(q.carte)}" target="_blank" rel="noopener">Ouvrir le secteur dans Maps</a>
@@ -757,7 +820,8 @@ function ficheQuartier(id){
           : `<p style="color:var(--encre-3);margin:11px 0 0">Aucun appartement repéré dans ce secteur pour l'instant.</p>`}
       </div>
     </div>
-    <div class="actions"><a class="bouton" href="${echap(q.carte)}" target="_blank" rel="noopener">Ouvrir le secteur dans Maps</a></div>
+    ${mosaiqueNoel(q)}
+    <div class="actions" style="margin-top:30px"><a class="bouton" href="${echap(q.carte)}" target="_blank" rel="noopener">Ouvrir le secteur dans Maps</a></div>
   `);
   brancherGalerie();
   panneau.querySelectorAll("[data-appart]").forEach(b => b.onclick = () => location.hash = "appart/" + b.dataset.appart);
@@ -814,4 +878,7 @@ window.addEventListener("hashchange", () => {
 });
 
 theme(); sommaire(); filtres(); liste(); echange(); quartiers(); credits(); router();
+relireNotes();
+setInterval(() => { if (document.visibilityState === "visible") relireNotes(); }, 20000);
+document.addEventListener("visibilitychange", () => { if (document.visibilityState === "visible") relireNotes(); });
 </script>

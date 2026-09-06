@@ -13,13 +13,6 @@
     "carte": "https://www.google.com/maps/search/Avenue+Cartier,+Qu%C3%A9bec,+QC",
     "photos": [
       {
-        "f": "01-cartier-soir.jpg",
-        "legende": "L'avenue Cartier à la tombée du jour",
-        "auteur": "Wilfredor",
-        "licence": "CC0",
-        "source": "https://commons.wikimedia.org/wiki/File:Avenue_Cartier_illuminated_at_night_in_Quebec_City.jpg"
-      },
-      {
         "f": "07-grande-allee.jpg",
         "legende": "La Grande Allée et ses terrasses",
         "auteur": "Jeangagnon",
@@ -34,11 +27,11 @@
         "source": "https://commons.wikimedia.org/wiki/File:Avenue_Cartier_2012-07-08.jpg"
       },
       {
-        "f": "03-cartier-automne.jpg",
-        "legende": "Les abat-jour de Cartier, en automne",
-        "auteur": "David Wilson",
-        "licence": "CC BY 2.0",
-        "source": "https://commons.wikimedia.org/wiki/File:Avenue_Cartier,_Qu%C3%A9bec_2016.jpg"
+        "f": "01-cartier-soir.jpg",
+        "legende": "L'avenue Cartier à la tombée du jour",
+        "auteur": "Wilfredor",
+        "licence": "CC0",
+        "source": "https://commons.wikimedia.org/wiki/File:Avenue_Cartier_illuminated_at_night_in_Quebec_City.jpg"
       },
       {
         "f": "06-plaines.jpg",
@@ -48,6 +41,13 @@
         "source": "https://commons.wikimedia.org/wiki/File:People_relaxing_in_the_Plains_of_Abraham.jpg"
       },
       {
+        "f": "03-cartier-automne.jpg",
+        "legende": "Les abat-jour de Cartier, en automne",
+        "auteur": "David Wilson",
+        "licence": "CC BY 2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Avenue_Cartier,_Qu%C3%A9bec_2016.jpg"
+      },
+      {
         "f": "05-rue-montcalm.jpg",
         "legende": "Une rue résidentielle de Montcalm",
         "auteur": "100budget",
@@ -55,18 +55,41 @@
         "source": "https://commons.wikimedia.org/wiki/File:Quartier-montcalm.jpg"
       },
       {
-        "f": "08-velo-neige.jpg",
-        "legende": "Un vélo qui passe l'hiver dehors, Québec",
-        "auteur": "Wilfredor",
-        "licence": "CC0",
-        "source": "https://commons.wikimedia.org/wiki/File:Bike_on_a_snowy_street_in_Quebec_City_at_night.jpg"
-      },
-      {
         "f": "04-cartier-foule.jpg",
         "legende": "Un samedi après-midi sur Cartier",
         "auteur": "Wilfredor",
         "licence": "CC BY-SA 4.0",
         "source": "https://commons.wikimedia.org/wiki/File:Crowd_on_Avenue_Cartier_in_Quebec_City.jpg"
+      },
+      {
+        "f": "08-velo-neige.jpg",
+        "legende": "Un vélo qui passe l'hiver dehors, Québec",
+        "auteur": "Wilfredor",
+        "licence": "CC0",
+        "source": "https://commons.wikimedia.org/wiki/File:Bike_on_a_snowy_street_in_Quebec_City_at_night.jpg"
+      }
+    ],
+    "noel": [
+      {
+        "f": "_noel/couronne.jpg",
+        "legende": "Une couronne sur un mur de pierre, en haute-ville",
+        "auteur": "Wilfredor",
+        "licence": "CC0",
+        "source": "https://commons.wikimedia.org/wiki/File:Christmas_wreath_on_a_stone_wall,_Quebec_City.jpg"
+      },
+      {
+        "f": "_noel/marche-jour.jpg",
+        "legende": "Le marché de Noël allemand, à 20 min à pied par la Grande Allée",
+        "auteur": "Jeangagnon",
+        "licence": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Marche_de_Noel_allemand_de_Quebec_-_03.jpg"
+      },
+      {
+        "f": "_noel/patinoire.jpg",
+        "legende": "La patinoire de la place D'Youville, au bout de la Grande Allée",
+        "auteur": "Wilfredor",
+        "licence": "CC0",
+        "source": "https://commons.wikimedia.org/wiki/File:Ice_rink_at_Place_D%E2%80%99Youville,_Quebec_City.jpg"
       }
     ]
   },
@@ -91,6 +114,27 @@
         "source": "https://commons.wikimedia.org/wiki/File:Rue_Maguire-Qu%C3%A9bec.jpg"
       },
       {
+        "f": "06-promenade.jpg",
+        "legende": "La promenade Samuel-De Champlain et le pont de Québec",
+        "auteur": "Cephas",
+        "licence": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Promenade_Samuel-De_Champlain-C.jpg"
+      },
+      {
+        "f": "05-marina-fleuve.jpg",
+        "legende": "La marina de Sillery et le fleuve",
+        "auteur": "Malimage",
+        "licence": "CC BY-SA 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:WPQc-171_Parc_du_Bois-de-Coulonge_-_Marina_de_Sillery.JPG"
+      },
+      {
+        "f": "04-bois-de-coulonge.jpg",
+        "legende": "Le parc du Bois-de-Coulonge",
+        "auteur": "Wilfredor",
+        "licence": "CC0",
+        "source": "https://commons.wikimedia.org/wiki/File:Parc_publique_du_Bois-de-Coulonge,_Quebec_ville,_Canada_002.jpg"
+      },
+      {
         "f": "02-krieghoff.jpg",
         "legende": "Le Café Krieghoff, 1326 avenue Maguire",
         "auteur": "Dcflyer",
@@ -103,27 +147,29 @@
         "auteur": "Dcflyer",
         "licence": "CC BY-SA 4.0",
         "source": "https://commons.wikimedia.org/wiki/File:1326,_avenue_Maguire,_Sillery_(Qu%C3%A9bec),_2023-02-17.jpg"
-      },
+      }
+    ],
+    "noel": [
       {
-        "f": "04-bois-de-coulonge.jpg",
-        "legende": "Le parc du Bois-de-Coulonge",
+        "f": "_noel/couronne.jpg",
+        "legende": "Une couronne sur un mur de pierre, à Québec",
         "auteur": "Wilfredor",
         "licence": "CC0",
-        "source": "https://commons.wikimedia.org/wiki/File:Parc_publique_du_Bois-de-Coulonge,_Quebec_ville,_Canada_002.jpg"
+        "source": "https://commons.wikimedia.org/wiki/File:Christmas_wreath_on_a_stone_wall,_Quebec_City.jpg"
       },
       {
-        "f": "05-marina-fleuve.jpg",
-        "legende": "La marina de Sillery et le fleuve",
-        "auteur": "Malimage",
-        "licence": "CC BY-SA 3.0",
-        "source": "https://commons.wikimedia.org/wiki/File:WPQc-171_Parc_du_Bois-de-Coulonge_-_Marina_de_Sillery.JPG"
+        "f": "_noel/marche-soir.jpg",
+        "legende": "Le marché de Noël du Vieux-Québec, à 35 min de bus",
+        "auteur": "Wilfredor",
+        "licence": "CC0",
+        "source": "https://commons.wikimedia.org/wiki/File:Christmas_markets_in_Quebec_City.jpg"
       },
       {
-        "f": "06-promenade.jpg",
-        "legende": "La promenade Samuel-De Champlain et le pont de Québec",
-        "auteur": "Cephas",
+        "f": "_noel/sapin-place-royale.jpg",
+        "legende": "Le sapin de la place Royale",
+        "auteur": "EgorovaSvetlana",
         "licence": "CC BY-SA 4.0",
-        "source": "https://commons.wikimedia.org/wiki/File:Promenade_Samuel-De_Champlain-C.jpg"
+        "source": "https://commons.wikimedia.org/wiki/File:Christmas_Trees_in_Place_Royale_32_Rue_Sous-le-Fort_Qu%C3%A9bec_Canada.jpg"
       }
     ]
   },
@@ -140,13 +186,6 @@
     ],
     "carte": "https://www.google.com/maps/search/Quartier+Saint-Sacrement,+Qu%C3%A9bec,+QC",
     "photos": [
-      {
-        "f": "01-eglise.jpg",
-        "legende": "L'église du Très-Saint-Sacrement, chemin Sainte-Foy",
-        "auteur": "Jeangagnon",
-        "licence": "CC BY-SA 4.0",
-        "source": "https://commons.wikimedia.org/wiki/File:Eglise_du_Tres-Saint-Sacrement_-_06.jpg"
-      },
       {
         "f": "04-rue-arbres.jpg",
         "legende": "Rue résidentielle bordée d'arbres, Québec",
@@ -169,6 +208,13 @@
         "source": "https://commons.wikimedia.org/wiki/File:Autumn_street_corner_in_Quebec_City.jpg"
       },
       {
+        "f": "01-eglise.jpg",
+        "legende": "L'église du Très-Saint-Sacrement, chemin Sainte-Foy",
+        "auteur": "Jeangagnon",
+        "licence": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Eglise_du_Tres-Saint-Sacrement_-_06.jpg"
+      },
+      {
         "f": "07-parc-des-braves.jpg",
         "legende": "Le parc des Braves, la ville en contrebas",
         "auteur": "Wilfredor",
@@ -188,6 +234,29 @@
         "auteur": "Wilfredor",
         "licence": "CC BY-SA 4.0",
         "source": "https://commons.wikimedia.org/wiki/File:Avenue_Belv%C3%A9d%C3%A8re,_Qu%C3%A9bec,_QC.jpg"
+      }
+    ],
+    "noel": [
+      {
+        "f": "_noel/couronne.jpg",
+        "legende": "Une couronne sur un mur de pierre, à Québec",
+        "auteur": "Wilfredor",
+        "licence": "CC0",
+        "source": "https://commons.wikimedia.org/wiki/File:Christmas_wreath_on_a_stone_wall,_Quebec_City.jpg"
+      },
+      {
+        "f": "_noel/marche-jour.jpg",
+        "legende": "Le marché de Noël allemand, à 20 min de bus",
+        "auteur": "Jeangagnon",
+        "licence": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Marche_de_Noel_allemand_de_Quebec_-_03.jpg"
+      },
+      {
+        "f": "_noel/patinoire.jpg",
+        "legende": "La patinoire de la place D'Youville, à 20 min de bus",
+        "auteur": "Wilfredor",
+        "licence": "CC0",
+        "source": "https://commons.wikimedia.org/wiki/File:Ice_rink_at_Place_D%E2%80%99Youville,_Quebec_City.jpg"
       }
     ]
   },
@@ -212,11 +281,11 @@
         "source": "https://commons.wikimedia.org/wiki/File:Rue_Saint-Jean_-_Vue_a%C3%A9rienne_2024.jpg"
       },
       {
-        "f": "02-saint-jean-nuit.jpg",
-        "legende": "La rue Saint-Jean illuminée, le soir",
-        "auteur": "Wilfredor",
-        "licence": "CC0",
-        "source": "https://commons.wikimedia.org/wiki/File:Rue_Saint-Jean_at_night_with_Christmas_lights,_Quebec_City.jpg"
+        "f": "04-saint-jean-ete.jpg",
+        "legende": "La rue Saint-Jean un après-midi d'été",
+        "auteur": "Jeangagnon",
+        "licence": "CC BY-SA 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Rue_Saint-Jean,_Quebec_32.jpg"
       },
       {
         "f": "03-toits.jpg",
@@ -226,11 +295,11 @@
         "source": "https://commons.wikimedia.org/wiki/File:Quartier_Saint-Jean-Baptiste_06-2026.jpg"
       },
       {
-        "f": "04-saint-jean-ete.jpg",
-        "legende": "La rue Saint-Jean un après-midi d'été",
-        "auteur": "Jeangagnon",
-        "licence": "CC BY-SA 3.0",
-        "source": "https://commons.wikimedia.org/wiki/File:Rue_Saint-Jean,_Quebec_32.jpg"
+        "f": "02-saint-jean-nuit.jpg",
+        "legende": "La rue Saint-Jean illuminée, le soir",
+        "auteur": "Wilfredor",
+        "licence": "CC0",
+        "source": "https://commons.wikimedia.org/wiki/File:Rue_Saint-Jean_at_night_with_Christmas_lights,_Quebec_City.jpg"
       },
       {
         "f": "05-coin-hiver.jpg",
@@ -238,6 +307,29 @@
         "auteur": "DXR",
         "licence": "CC BY-SA 4.0",
         "source": "https://commons.wikimedia.org/wiki/File:Corner_of_Rue_Saint-Jean_and_Rue_d%27Auteuil,_Qu%C3%A9bec_20170412_1.jpg"
+      }
+    ],
+    "noel": [
+      {
+        "f": "_noel/il-teatro.jpg",
+        "legende": "La place D'Youville décorée, au bout de la rue Saint-Jean",
+        "auteur": "Wilfredor",
+        "licence": "CC0",
+        "source": "https://commons.wikimedia.org/wiki/File:Il_Teatro,_quebec_city.jpg"
+      },
+      {
+        "f": "_noel/patinoire.jpg",
+        "legende": "La patinoire de la place D'Youville, à 5 min à pied",
+        "auteur": "Wilfredor",
+        "licence": "CC0",
+        "source": "https://commons.wikimedia.org/wiki/File:Ice_rink_at_Place_D%E2%80%99Youville,_Quebec_City.jpg"
+      },
+      {
+        "f": "_noel/marche-soir.jpg",
+        "legende": "Le marché de Noël, de l'autre côté des fortifications",
+        "auteur": "Wilfredor",
+        "licence": "CC0",
+        "source": "https://commons.wikimedia.org/wiki/File:Christmas_markets_in_Quebec_City.jpg"
       }
     ]
   },
@@ -255,13 +347,6 @@
     "carte": "https://www.google.com/maps/search/Maizerets,+Qu%C3%A9bec,+QC",
     "photos": [
       {
-        "f": "01-maison-hiver.jpg",
-        "legende": "La maison Maizerets, un soir d'hiver",
-        "auteur": "Wilfredor",
-        "licence": "CC BY-SA 4.0",
-        "source": "https://commons.wikimedia.org/wiki/File:Domaine_de_Maizerets_02.jpg"
-      },
-      {
         "f": "02-passerelle.jpg",
         "legende": "La passerelle sur l'étang du Domaine",
         "auteur": "Wilfredor",
@@ -269,18 +354,48 @@
         "source": "https://commons.wikimedia.org/wiki/File:Domaine_de_Maizerets_park,_quebec_city_01.jpg"
       },
       {
-        "f": "03-domaine-nuit.jpg",
-        "legende": "Le Domaine de Maizerets sous la neige",
-        "auteur": "Wilfredor",
-        "licence": "CC0",
-        "source": "https://commons.wikimedia.org/wiki/File:Domaine_de_Maizerets,_Qu%C3%A9bec,_Canada.jpg"
-      },
-      {
         "f": "04-arboretum.jpg",
         "legende": "L'arboretum, au printemps",
         "auteur": "Wilfredor",
         "licence": "CC BY-SA 4.0",
         "source": "https://commons.wikimedia.org/wiki/File:Domaine_de_Maizerets_park,_quebec_city_04.jpg"
+      },
+      {
+        "f": "01-maison-hiver.jpg",
+        "legende": "La maison Maizerets, un soir d'hiver",
+        "auteur": "Wilfredor",
+        "licence": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Domaine_de_Maizerets_02.jpg"
+      },
+      {
+        "f": "03-domaine-nuit.jpg",
+        "legende": "Le Domaine de Maizerets sous la neige",
+        "auteur": "Wilfredor",
+        "licence": "CC0",
+        "source": "https://commons.wikimedia.org/wiki/File:Domaine_de_Maizerets,_Qu%C3%A9bec,_Canada.jpg"
+      }
+    ],
+    "noel": [
+      {
+        "f": "_noel/marche-jour.jpg",
+        "legende": "Le marché de Noël allemand, à 55 min de bus",
+        "auteur": "Jeangagnon",
+        "licence": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Marche_de_Noel_allemand_de_Quebec_-_03.jpg"
+      },
+      {
+        "f": "_noel/patinoire.jpg",
+        "legende": "La patinoire de la place D'Youville",
+        "auteur": "Wilfredor",
+        "licence": "CC0",
+        "source": "https://commons.wikimedia.org/wiki/File:Ice_rink_at_Place_D%E2%80%99Youville,_Quebec_City.jpg"
+      },
+      {
+        "f": "_noel/couronne.jpg",
+        "legende": "Une couronne sur un mur de pierre, à Québec",
+        "auteur": "Wilfredor",
+        "licence": "CC0",
+        "source": "https://commons.wikimedia.org/wiki/File:Christmas_wreath_on_a_stone_wall,_Quebec_City.jpg"
       }
     ]
   },
@@ -324,6 +439,29 @@
         "auteur": "Jeangagnon",
         "licence": "CC BY-SA 4.0",
         "source": "https://commons.wikimedia.org/wiki/File:Parc_riviere_Saint-Charles_-_05.jpg"
+      }
+    ],
+    "noel": [
+      {
+        "f": "_noel/marche-soir.jpg",
+        "legende": "Le marché de Noël du Vieux-Québec, à 1 h de bus",
+        "auteur": "Wilfredor",
+        "licence": "CC0",
+        "source": "https://commons.wikimedia.org/wiki/File:Christmas_markets_in_Quebec_City.jpg"
+      },
+      {
+        "f": "_noel/sapin-place-royale.jpg",
+        "legende": "Le sapin de la place Royale",
+        "auteur": "EgorovaSvetlana",
+        "licence": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Christmas_Trees_in_Place_Royale_32_Rue_Sous-le-Fort_Qu%C3%A9bec_Canada.jpg"
+      },
+      {
+        "f": "_noel/couronne.jpg",
+        "legende": "Une couronne sur un mur de pierre, à Québec",
+        "auteur": "Wilfredor",
+        "licence": "CC0",
+        "source": "https://commons.wikimedia.org/wiki/File:Christmas_wreath_on_a_stone_wall,_Quebec_City.jpg"
       }
     ]
   },
@@ -369,7 +507,30 @@
         "source": "https://commons.wikimedia.org/wiki/File:Autumn_trees_at_Jardin_Jean-Paul-L%27Allier.jpg"
       }
     ],
-    "exclu": true
+    "exclu": true,
+    "noel": [
+      {
+        "f": "_noel/simons.jpg",
+        "legende": "Le Simons de la rue Saint-Joseph illuminé, dans le quartier",
+        "auteur": "Wilfredor",
+        "licence": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Simons_building_illuminated_for_Christmas_in_Quebec_City.jpg"
+      },
+      {
+        "f": "_noel/marche-soir.jpg",
+        "legende": "Le marché de Noël, en haut de la côte d'Abraham",
+        "auteur": "Wilfredor",
+        "licence": "CC0",
+        "source": "https://commons.wikimedia.org/wiki/File:Christmas_markets_in_Quebec_City.jpg"
+      },
+      {
+        "f": "_noel/sapin-place-royale.jpg",
+        "legende": "Le sapin de la place Royale, à 15 min à pied",
+        "auteur": "EgorovaSvetlana",
+        "licence": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Christmas_Trees_in_Place_Royale_32_Rue_Sous-le-Fort_Qu%C3%A9bec_Canada.jpg"
+      }
+    ]
   },
   "charlesbourg": {
     "nom": "Charlesbourg · Orsainville",
@@ -404,6 +565,29 @@
         "auteur": "Wilfredor",
         "licence": "CC0",
         "source": "https://commons.wikimedia.org/wiki/File:Saint-Charles-Borrom%C3%A9e_Church,_Charlesbourg,_Quebec_03.jpg"
+      }
+    ],
+    "noel": [
+      {
+        "f": "_noel/marche-jour.jpg",
+        "legende": "Le marché de Noël allemand, à 55 min de bus",
+        "auteur": "Jeangagnon",
+        "licence": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Marche_de_Noel_allemand_de_Quebec_-_03.jpg"
+      },
+      {
+        "f": "_noel/il-teatro.jpg",
+        "legende": "La place D'Youville décorée",
+        "auteur": "Wilfredor",
+        "licence": "CC0",
+        "source": "https://commons.wikimedia.org/wiki/File:Il_Teatro,_quebec_city.jpg"
+      },
+      {
+        "f": "_noel/couronne.jpg",
+        "legende": "Une couronne sur un mur de pierre, à Québec",
+        "auteur": "Wilfredor",
+        "licence": "CC0",
+        "source": "https://commons.wikimedia.org/wiki/File:Christmas_wreath_on_a_stone_wall,_Quebec_City.jpg"
       }
     ]
   },
@@ -441,6 +625,29 @@
         "licence": "CC0",
         "source": "https://commons.wikimedia.org/wiki/File:House_in_the_Parc_de_la_Chute-Montmorency_009.jpg"
       }
+    ],
+    "noel": [
+      {
+        "f": "_noel/sapin-place-royale.jpg",
+        "legende": "Le sapin de la place Royale, à 55 min de bus",
+        "auteur": "EgorovaSvetlana",
+        "licence": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Christmas_Trees_in_Place_Royale_32_Rue_Sous-le-Fort_Qu%C3%A9bec_Canada.jpg"
+      },
+      {
+        "f": "_noel/marche-soir.jpg",
+        "legende": "Le marché de Noël du Vieux-Québec",
+        "auteur": "Wilfredor",
+        "licence": "CC0",
+        "source": "https://commons.wikimedia.org/wiki/File:Christmas_markets_in_Quebec_City.jpg"
+      },
+      {
+        "f": "_noel/patinoire.jpg",
+        "legende": "La patinoire de la place D'Youville",
+        "auteur": "Wilfredor",
+        "licence": "CC0",
+        "source": "https://commons.wikimedia.org/wiki/File:Ice_rink_at_Place_D%E2%80%99Youville,_Quebec_City.jpg"
+      }
     ]
   },
   "val-belair": {
@@ -476,6 +683,29 @@
         "auteur": "Boréal",
         "licence": "CC BY-SA 3.0",
         "source": "https://commons.wikimedia.org/wiki/File:Mont_Belair_-_septembre_2011_-_02.jpg"
+      }
+    ],
+    "noel": [
+      {
+        "f": "_noel/marche-jour.jpg",
+        "legende": "Le marché de Noël allemand, loin d'ici : aucun bus direct",
+        "auteur": "Jeangagnon",
+        "licence": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Marche_de_Noel_allemand_de_Quebec_-_03.jpg"
+      },
+      {
+        "f": "_noel/sapin-place-royale.jpg",
+        "legende": "Le sapin de la place Royale",
+        "auteur": "EgorovaSvetlana",
+        "licence": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Christmas_Trees_in_Place_Royale_32_Rue_Sous-le-Fort_Qu%C3%A9bec_Canada.jpg"
+      },
+      {
+        "f": "_noel/couronne.jpg",
+        "legende": "Une couronne sur un mur de pierre, à Québec",
+        "auteur": "Wilfredor",
+        "licence": "CC0",
+        "source": "https://commons.wikimedia.org/wiki/File:Christmas_wreath_on_a_stone_wall,_Quebec_City.jpg"
       }
     ]
   }

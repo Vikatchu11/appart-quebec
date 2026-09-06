@@ -1,4 +1,10 @@
 # Le site publié se trouve dans docs/ (généré par scripts/build.py --web).
+# Les notes partagées passent par la fonction netlify/functions/notes.mjs,
+# servie sur /api/notes.
 [build]
   publish = "docs"
   command = ""
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"

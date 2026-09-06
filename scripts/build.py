@@ -51,9 +51,12 @@ def encoder(chemin, largeur, qualite, cache):
     return uri
 
 
-def fichier_web(chemin, largeur, qualite, dossier, nom):
+def fichier_web(chemin, largeur, qualite, dossier, nom, _faits=set()):
     """Écrit une version redimensionnée dans docs/ et renvoie son chemin relatif."""
     largeur = min(largeur, taille(chemin))
+    if (dossier, nom) in _faits:
+        return dossier + "/" + nom
+    _faits.add((dossier, nom))
     sortie = os.path.join(RACINE, "docs", dossier)
     os.makedirs(sortie, exist_ok=True)
     subprocess.run(["sips", "-s", "format", "jpeg", "-s", "formatOptions", str(qualite),
@@ -69,14 +72,17 @@ def construire(palier, web=False):
 
     quartiers = json.load(open(os.path.join(RACINE, "data/quartiers.json"), encoding="utf-8"))
     for qid, q in quartiers.items():
-        for p in q["photos"]:
-            chemin = os.path.join(PHOTOS, "quartiers", qid, p["f"])
+        # « _noel/photo.jpg » désigne le dossier commun photos/quartiers/_noel/
+        for p in q.get("photos", []) + q.get("noel", []):
+            partage = p["f"].startswith("_")
+            chemin = os.path.join(PHOTOS, "quartiers", p["f"] if partage else os.path.join(qid, p["f"]))
             if not os.path.exists(chemin):
                 manquantes.append(chemin); continue
             if web:
-                base = os.path.splitext(p["f"])[0]
-                p["vignette"] = fichier_web(chemin, lv, qv, "img/quartiers/" + qid, base + "-v.jpg")
-                p["image"] = fichier_web(chemin, lp, qp, "img/quartiers/" + qid, base + "-p.jpg")
+                dossier = "img/quartiers/" + (os.path.dirname(p["f"]) if partage else qid)
+                base = os.path.splitext(os.path.basename(p["f"]))[0]
+                p["vignette"] = fichier_web(chemin, lv, qv, dossier, base + "-v.jpg")
+                p["image"] = fichier_web(chemin, lp, qp, dossier, base + "-p.jpg")
             else:
                 p["vignette"] = encoder(chemin, lv, qv, cache)
                 p["image"] = encoder(chemin, lp, qp, cache)
@@ -145,7 +151,7 @@ def main():
         total = sum(os.path.getsize(os.path.join(r, f))
                     for r, _, fs in os.walk(os.path.join(RACINE, "docs")) for f in fs)
         n_ph = sum(len(a["images"]) for a in donnees["appartements"]) + \
-               sum(len(q["photos"]) for q in donnees["quartiers"].values())
+               sum(len(q["photos"]) + len(q.get("noel", [])) for q in donnees["quartiers"].values())
         print("docs/ — %.1f Mo · %d appartement(s) · %d photos"
               % (total / 1_048_576, len(donnees["appartements"]), n_ph))
         for m in manquantes:
