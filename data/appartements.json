@@ -1,0 +1,475 @@
+{
+  "maj": "2026-09-05",
+  "appartements": [
+    {
+      "id": "chateau-st-louis-304",
+      "titre": "Château St-Louis — unité 304",
+      "adresse": "135, Grande Allée Ouest",
+      "quartier": "montcalm",
+      "loyer": 1795,
+      "charges": "Tout inclus : électricité, chauffage, eau chaude",
+      "pieces": "3½",
+      "chambres": 1,
+      "etage": "3e",
+      "meuble": "Semi-meublé (laveuse et sécheuse)",
+      "dispo": "2026-09-01",
+      "bail": "À confirmer",
+      "atouts": [
+        "Au coin de l'avenue Cartier et de la Grande Allée",
+        "Accès privé aux plaines d'Abraham par la cour arrière",
+        "Piscine creusée, terrasse et BBQ donnant sur les Plaines",
+        "Salle d'entraînement, ascenseur, immeuble en béton",
+        "Entrées laveuse-sécheuse et lave-vaisselle",
+        "Borne de recharge et station Communauto possibles"
+      ],
+      "bemols": [
+        "Stationnement, rangement et internet en supplément",
+        "Enquête de crédit obligatoire",
+        "Superficie non indiquée dans l'annonce"
+      ],
+      "notes": "Agente de location : Karoline St-Arnaud, texto ou appel au 581-702-2720. Rénové, 3e étage. L'annonce classe l'immeuble dans « Montcalm / Saint-Sacrement ».",
+      "lien": "https://sibelanger.com/appartements-a-louer/chateau-st-louis-unite-304/",
+      "source": "Société immobilière Bélanger",
+      "carte": "https://www.google.com/maps/search/135+Grande+All%C3%A9e+Ouest,+Qu%C3%A9bec,+QC+G1R+2H2",
+      "statut": "a_visiter",
+      "photos": [
+        {
+          "f": "01.jpg",
+          "legende": "Le salon"
+        },
+        {
+          "f": "02.jpg",
+          "legende": "Salon et coin repas, côté fenêtres"
+        },
+        {
+          "f": "04.jpg",
+          "legende": "La cuisine"
+        },
+        {
+          "f": "05.jpg",
+          "legende": "La cuisine, côté fenêtre"
+        },
+        {
+          "f": "06.jpg",
+          "legende": "La chambre"
+        },
+        {
+          "f": "08.jpg",
+          "legende": "La salle de bain"
+        },
+        {
+          "f": "09.jpg",
+          "legende": "La cour arrière : piscine, terrasse et les Plaines derrière"
+        },
+        {
+          "f": "10.jpg",
+          "legende": "La piscine creusée"
+        }
+      ],
+      "coord": [
+        -71.2244136,
+        46.8016343
+      ],
+      "trajets": {
+        "vieux-quebec": {
+          "voiture": {
+            "km": 2.0,
+            "min": 4
+          },
+          "pied": {
+            "km": 2.2,
+            "min": 29
+          }
+        },
+        "cegep-sainte-foy": {
+          "voiture": {
+            "km": 5.7,
+            "min": 12
+          },
+          "pied": {
+            "km": 6.1,
+            "min": 82
+          }
+        }
+      }
+    },
+    {
+      "id": "le-maguire-1411",
+      "titre": "Le Maguire — 3½",
+      "adresse": "1411, avenue Maguire",
+      "quartier": "sillery",
+      "loyer": 1810,
+      "charges": "Eau chaude centralisée incluse",
+      "pieces": "3½",
+      "chambres": 1,
+      "etage": "1er",
+      "meuble": "Non meublé",
+      "dispo": "Immédiatement",
+      "bail": "À confirmer",
+      "atouts": [
+        "Sur l'avenue Maguire, au milieu des commerces",
+        "Immeuble neuf en béton armé, 42 unités (Immostar)",
+        "Comptoirs et îlot de cuisine en quartz",
+        "Climatiseur mural et échangeur d'air",
+        "Balcon ou terrasse selon l'unité",
+        "Stationnement souterrain, rangement, ascenseur",
+        "Animaux de moins de 20 lb acceptés"
+      ],
+      "bemols": [
+        "Au 1er étage : moins de vue, plus de passage",
+        "Stationnement souterrain en supplément",
+        "Photos de l'annonce : unités modèles, pas forcément celle-ci",
+        "Superficie non indiquée"
+      ],
+      "notes": "Annonce DuProprio, en direct avec le locateur (n° 1128242). DuProprio classe l'adresse dans « Montcalm », mais l'avenue Maguire est bien à Sillery — le texte de l'annonce le dit aussi.",
+      "lien": "https://duproprio.com/fr/location/quebec-rive-nord/montcalm/3-1-2-a-louer/hab-1411-avenue-maguire-1128242",
+      "source": "DuProprio",
+      "carte": "https://www.google.com/maps/search/1411+avenue+Maguire,+Qu%C3%A9bec,+QC",
+      "statut": "a_visiter",
+      "photos": [
+        {
+          "f": "01.jpg",
+          "legende": "Cuisine ouverte sur le salon"
+        },
+        {
+          "f": "02.jpg",
+          "legende": "Le salon"
+        },
+        {
+          "f": "03.jpg",
+          "legende": "L'îlot de cuisine en quartz"
+        },
+        {
+          "f": "04.jpg",
+          "legende": "La chambre"
+        },
+        {
+          "f": "05.jpg",
+          "legende": "Le hall de l'immeuble"
+        },
+        {
+          "f": "06.jpg",
+          "legende": "La façade, avenue Maguire"
+        }
+      ],
+      "coord": [
+        -71.2507999,
+        46.7802259
+      ],
+      "trajets": {
+        "vieux-quebec": {
+          "voiture": {
+            "km": 5.5,
+            "min": 10
+          },
+          "pied": {
+            "km": 5.8,
+            "min": 77
+          }
+        },
+        "cegep-sainte-foy": {
+          "voiture": {
+            "km": 4.0,
+            "min": 8
+          },
+          "pied": {
+            "km": 3.8,
+            "min": 51
+          }
+        }
+      }
+    },
+    {
+      "id": "ostra-1212",
+      "titre": "OSTRA — unité 1212",
+      "adresse": "640, rue Saint-Jean",
+      "quartier": "saint-jean-baptiste",
+      "loyer": 1595,
+      "charges": "Tout inclus : électricité, chauffage, eau chaude, climatisation",
+      "pieces": "3½",
+      "chambres": 1,
+      "etage": "12e — dernier étage",
+      "meuble": "Non meublé",
+      "dispo": "Immédiatement",
+      "bail": "À confirmer",
+      "atouts": [
+        "Dernier étage, balcon avec vue dégagée sur la ville et le fleuve",
+        "Air climatisé central, tout inclus",
+        "Terrasse sur le toit, vue 360° avec BBQ",
+        "Piscine intérieure, sauna, gym",
+        "Immeuble en béton de 12 étages, trois ascenseurs",
+        "Restaurant de sushis et boulangerie au rez-de-chaussée",
+        "Le Vieux-Québec et l'avenue Cartier à pied"
+      ],
+      "bemols": [
+        "Entrée pour laveuse seulement (pas de sécheuse mentionnée)",
+        "Stationnement souterrain et internet en supplément",
+        "Enquête de crédit obligatoire",
+        "Rue Saint-Jean : quartier animé tard le soir"
+      ],
+      "notes": "Agente de location : Karoline St-Arnaud, texto ou appel au 581-702-2720. Ce n'est pas un de nos trois quartiers de départ : l'immeuble est dans Saint-Jean-Baptiste, entre les fortifications et Cartier.",
+      "lien": "https://sibelanger.com/appartements-a-louer/640-1212-st-jean-selection/",
+      "source": "Société immobilière Bélanger",
+      "carte": "https://www.google.com/maps/search/640+rue+Saint-Jean,+Qu%C3%A9bec,+QC+G1R+4W9",
+      "statut": "a_visiter",
+      "photos": [
+        {
+          "f": "01.jpg",
+          "legende": "Le salon et la vue vers le fleuve"
+        },
+        {
+          "f": "02.jpg",
+          "legende": "Salon et coin repas"
+        },
+        {
+          "f": "03.jpg",
+          "legende": "La pièce de vie vers la cuisine"
+        },
+        {
+          "f": "04.jpg",
+          "legende": "La cuisine"
+        },
+        {
+          "f": "05.jpg",
+          "legende": "La chambre, fenêtre côté vue"
+        },
+        {
+          "f": "06.jpg",
+          "legende": "La chambre, coin bureau"
+        },
+        {
+          "f": "07.jpg",
+          "legende": "La salle de bain"
+        },
+        {
+          "f": "08.jpg",
+          "legende": "Le balcon, au 12e étage"
+        },
+        {
+          "f": "09.jpg",
+          "legende": "La terrasse sur le toit de l'immeuble"
+        }
+      ],
+      "coord": [
+        -71.2195629,
+        46.8106016
+      ],
+      "trajets": {
+        "vieux-quebec": {
+          "voiture": {
+            "km": 1.8,
+            "min": 4
+          },
+          "pied": {
+            "km": 1.5,
+            "min": 20
+          }
+        },
+        "cegep-sainte-foy": {
+          "voiture": {
+            "km": 6.0,
+            "min": 12
+          },
+          "pied": {
+            "km": 6.7,
+            "min": 89
+          }
+        }
+      }
+    },
+    {
+      "id": "genevieve-lamarre-2068",
+      "titre": "Appartement rue Geneviève-Lamarre",
+      "adresse": "2068-2072, rue Geneviève-Lamarre",
+      "quartier": "maizerets",
+      "coord": [
+        -71.2304429,
+        46.8473032
+      ],
+      "loyer": 1500,
+      "charges": "Non précisé dans l'annonce",
+      "pieces": "5½",
+      "chambres": 3,
+      "etage": "2e",
+      "meuble": "Non meublé",
+      "dispo": "À confirmer",
+      "bail": "À confirmer",
+      "atouts": [
+        "Trois grandes chambres — le plus d'espace des quatre",
+        "Rénové, très lumineux, grandes fenêtres",
+        "Espace laveuse-sécheuse dans le logement",
+        "Balcon et cour intérieure",
+        "Un stationnement inclus",
+        "Le Domaine de Maizerets à côté"
+      ],
+      "bemols": [
+        "Loin du Vieux-Québec comme de Sainte-Foy",
+        "Non-fumeur, aucun animal accepté",
+        "Preuve d'assurance responsabilité civile demandée",
+        "Deux photos de l'annonce sont meublées numériquement",
+        "Superficie non indiquée"
+      ],
+      "notes": "Courtière : Mikchéla St-Louis (Sergic Québec), 418-262-5724. MLS 19985780, en ligne depuis six jours. Quartier Maizerets, à l'est de Limoilou — c'est le seul des quatre qui sort de la haute-ville.",
+      "lien": "https://www.realtor.ca/immobilier/30213455/2068-2072-rue-genevieve-lamarre-quebec-la-cite-limoilou-maizerets",
+      "source": "REALTOR.ca",
+      "carte": "https://www.google.com/maps/search/2068+rue+Genevi%C3%A8ve-Lamarre,+Qu%C3%A9bec,+QC",
+      "statut": "a_visiter",
+      "photos": [
+        {
+          "f": "01.jpg",
+          "legende": "Le salon (photo meublée numériquement par l'annonce)"
+        },
+        {
+          "f": "02.jpg",
+          "legende": "Le salon, tel quel"
+        },
+        {
+          "f": "03.jpg",
+          "legende": "La cuisine"
+        },
+        {
+          "f": "04.jpg",
+          "legende": "La chambre principale"
+        },
+        {
+          "f": "05.jpg",
+          "legende": "La deuxième chambre"
+        },
+        {
+          "f": "06.jpg",
+          "legende": "La troisième chambre"
+        },
+        {
+          "f": "07.jpg",
+          "legende": "La salle de bain"
+        },
+        {
+          "f": "08.jpg",
+          "legende": "Le balcon"
+        },
+        {
+          "f": "09.jpg",
+          "legende": "L'entrée et la cour, le soir"
+        }
+      ],
+      "trajets": {
+        "vieux-quebec": {
+          "voiture": {
+            "km": 5.9,
+            "min": 10
+          },
+          "pied": {
+            "km": 5.3,
+            "min": 70
+          }
+        },
+        "cegep-sainte-foy": {
+          "voiture": {
+            "km": 13.8,
+            "min": 15
+          },
+          "pied": {
+            "km": 10.6,
+            "min": 141
+          }
+        }
+      }
+    },
+    {
+      "id": "colline-410",
+      "titre": "Condo neuf, boulevard de la Colline — 410",
+      "adresse": "11525, boulevard de la Colline, app. 410",
+      "quartier": "loretteville",
+      "coord": [
+        -71.3454684,
+        46.8602405
+      ],
+      "loyer": 1800,
+      "charges": "Non précisé dans l'annonce",
+      "pieces": "3½ + bureau",
+      "chambres": 1,
+      "superficie": 82,
+      "etage": "4e (immeuble de 6)",
+      "meuble": "Non meublé",
+      "dispo": "À confirmer",
+      "bail": "À confirmer",
+      "atouts": [
+        "Neuf : construction 2025, immeuble en béton",
+        "885 pi² (82 m²) — le plus grand espace par personne",
+        "1 chambre + un vrai bureau fermé",
+        "Comptoirs en Dekton, foyer au gaz naturel",
+        "Climatisation centrale et échangeur d'air",
+        "Grande terrasse",
+        "Garage et rangement intérieur inclus",
+        "Piscine intérieure et gym ouverts à l'année"
+      ],
+      "bemols": [
+        "À 15 km du Vieux-Québec : voiture indispensable",
+        "Une seule chambre pour 1 800 $",
+        "Quartier récent, peu de vie de rue à pied",
+        "Photos d'un logement vide, jamais habité"
+      ],
+      "notes": "Courtière : Chantal Dussault, RE/MAX Fortin Delage, 418-580-0488. MLS 10013818, en ligne depuis 25 jours. Le boulevard de la Colline est à la limite de Loretteville et de Neufchâtel, près de l'autoroute Robert-Bourassa.",
+      "lien": "https://www.realtor.ca/immobilier/30142033/11525-boul-de-la-colline-410-quebec-la-haute-saint-charles-loretteville",
+      "source": "REALTOR.ca",
+      "carte": "https://www.google.com/maps/search/11525+boulevard+de+la+Colline,+Qu%C3%A9bec,+QC",
+      "statut": "a_visiter",
+      "photos": [
+        {
+          "f": "01.jpg",
+          "legende": "La cuisine et son îlot"
+        },
+        {
+          "f": "02.jpg",
+          "legende": "La pièce de vie, plafond de béton apparent"
+        },
+        {
+          "f": "03.jpg",
+          "legende": "Le salon, vers la terrasse"
+        },
+        {
+          "f": "04.jpg",
+          "legende": "Le bureau et sa grande fenêtre"
+        },
+        {
+          "f": "05.jpg",
+          "legende": "La chambre"
+        },
+        {
+          "f": "06.jpg",
+          "legende": "La salle de bain"
+        },
+        {
+          "f": "07.jpg",
+          "legende": "La terrasse"
+        },
+        {
+          "f": "08.jpg",
+          "legende": "L'immeuble, boulevard de la Colline"
+        }
+      ],
+      "trajets": {
+        "vieux-quebec": {
+          "voiture": {
+            "km": 14.2,
+            "min": 18
+          },
+          "pied": {
+            "km": 14.2,
+            "min": 189
+          }
+        },
+        "cegep-sainte-foy": {
+          "voiture": {
+            "km": 11.1,
+            "min": 14
+          },
+          "pied": {
+            "km": 13.2,
+            "min": 176
+          }
+        }
+      }
+    }
+  ]
+}

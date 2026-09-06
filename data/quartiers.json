@@ -1,0 +1,330 @@
+{
+  "montcalm": {
+    "nom": "Montcalm · Cartier",
+    "etiquette": "Le plus vivant",
+    "resume": "Cafés, commerces, Plaines d'Abraham : tout se fait à pied depuis l'avenue Cartier.",
+    "description": "Le cœur animé de la haute-ville. L'avenue Cartier concentre les épiceries fines, les terrasses et les Halles du Petit Quartier ; la Grande Allée et les Plaines d'Abraham sont à deux rues. Les rues résidentielles autour (Saunders, Fraser, Bourlamaque) sont bordées de triplex en brique avec escaliers extérieurs. C'est le quartier le plus cher des trois, et celui où on a le moins besoin d'une voiture.",
+    "reperes": [
+      "Avenue Cartier et les Halles du Petit Quartier",
+      "Plaines d'Abraham · parc des Champs-de-Bataille",
+      "Musée national des beaux-arts du Québec",
+      "Grande Allée et le Vieux-Québec à 20 min à pied"
+    ],
+    "carte": "https://www.google.com/maps/search/Avenue+Cartier,+Qu%C3%A9bec,+QC",
+    "photos": [
+      {
+        "f": "01-cartier-soir.jpg",
+        "legende": "L'avenue Cartier à la tombée du jour",
+        "auteur": "Wilfredor",
+        "licence": "CC0",
+        "source": "https://commons.wikimedia.org/wiki/File:Avenue_Cartier_illuminated_at_night_in_Quebec_City.jpg"
+      },
+      {
+        "f": "07-grande-allee.jpg",
+        "legende": "La Grande Allée et ses terrasses",
+        "auteur": "Jeangagnon",
+        "licence": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Grande_Allee,_Quebec_027.jpg"
+      },
+      {
+        "f": "02-cartier-ete.jpg",
+        "legende": "L'avenue Cartier en été",
+        "auteur": "Asclepias",
+        "licence": "CC BY-SA 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Avenue_Cartier_2012-07-08.jpg"
+      },
+      {
+        "f": "03-cartier-automne.jpg",
+        "legende": "Les abat-jour de Cartier, en automne",
+        "auteur": "David Wilson",
+        "licence": "CC BY 2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Avenue_Cartier,_Qu%C3%A9bec_2016.jpg"
+      },
+      {
+        "f": "06-plaines.jpg",
+        "legende": "Les plaines d'Abraham, au bout de la rue",
+        "auteur": "Wilfredor",
+        "licence": "CC0",
+        "source": "https://commons.wikimedia.org/wiki/File:People_relaxing_in_the_Plains_of_Abraham.jpg"
+      },
+      {
+        "f": "05-rue-montcalm.jpg",
+        "legende": "Une rue résidentielle de Montcalm",
+        "auteur": "100budget",
+        "licence": "CC BY-SA 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Quartier-montcalm.jpg"
+      },
+      {
+        "f": "08-velo-neige.jpg",
+        "legende": "Un vélo qui passe l'hiver dehors, Québec",
+        "auteur": "Wilfredor",
+        "licence": "CC0",
+        "source": "https://commons.wikimedia.org/wiki/File:Bike_on_a_snowy_street_in_Quebec_City_at_night.jpg"
+      },
+      {
+        "f": "04-cartier-foule.jpg",
+        "legende": "Un samedi après-midi sur Cartier",
+        "auteur": "Wilfredor",
+        "licence": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Crowd_on_Avenue_Cartier_in_Quebec_City.jpg"
+      }
+    ]
+  },
+  "sillery": {
+    "nom": "Sillery · Maguire",
+    "etiquette": "Le plus calme",
+    "resume": "Une avenue soignée et résidentielle, avec le fleuve et le Bois-de-Coulonge tout près.",
+    "description": "Plus vert, plus tranquille, plus bourgeois. L'avenue Maguire fait office de rue principale sur quelques centaines de mètres — boulangeries, restos, Café Krieghoff — et le reste est résidentiel, avec de grands arbres et des maisons cossues. Le parc du Bois-de-Coulonge et la vue sur le fleuve sont à dix minutes à pied. Le compromis : c'est plus loin du centre et la voiture devient utile.",
+    "reperes": [
+      "Avenue Maguire et ses commerces",
+      "Parc du Bois-de-Coulonge",
+      "Marina de Sillery et promenade Samuel-De Champlain",
+      "Domaine Cataraqui"
+    ],
+    "carte": "https://www.google.com/maps/search/Avenue+Maguire,+Sillery,+Qu%C3%A9bec,+QC",
+    "photos": [
+      {
+        "f": "01-maguire.jpg",
+        "legende": "L'avenue Maguire",
+        "auteur": "Gilbert Bochenek",
+        "licence": "Domaine public",
+        "source": "https://commons.wikimedia.org/wiki/File:Rue_Maguire-Qu%C3%A9bec.jpg"
+      },
+      {
+        "f": "02-krieghoff.jpg",
+        "legende": "Le Café Krieghoff, 1326 avenue Maguire",
+        "auteur": "Dcflyer",
+        "licence": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Le_Caf%C3%A9_Krieghoff_1326,_avenue_Maguire,_Sillery,_Qu%C3%A9bec,_mai_2018_(01).jpg"
+      },
+      {
+        "f": "03-maguire-hiver.jpg",
+        "legende": "Maguire un matin de tempête",
+        "auteur": "Dcflyer",
+        "licence": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:1326,_avenue_Maguire,_Sillery_(Qu%C3%A9bec),_2023-02-17.jpg"
+      },
+      {
+        "f": "04-bois-de-coulonge.jpg",
+        "legende": "Le parc du Bois-de-Coulonge",
+        "auteur": "Wilfredor",
+        "licence": "CC0",
+        "source": "https://commons.wikimedia.org/wiki/File:Parc_publique_du_Bois-de-Coulonge,_Quebec_ville,_Canada_002.jpg"
+      },
+      {
+        "f": "05-marina-fleuve.jpg",
+        "legende": "La marina de Sillery et le fleuve",
+        "auteur": "Malimage",
+        "licence": "CC BY-SA 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:WPQc-171_Parc_du_Bois-de-Coulonge_-_Marina_de_Sillery.JPG"
+      },
+      {
+        "f": "06-promenade.jpg",
+        "legende": "La promenade Samuel-De Champlain et le pont de Québec",
+        "auteur": "Cephas",
+        "licence": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Promenade_Samuel-De_Champlain-C.jpg"
+      }
+    ]
+  },
+  "saint-sacrement": {
+    "nom": "Saint-Sacrement",
+    "etiquette": "Le compromis",
+    "resume": "Plus résidentiel que Montcalm, toujours à distance de marche de Cartier et des services.",
+    "description": "Coincé entre Montcalm et Sainte-Foy, le quartier vit autour du chemin Sainte-Foy : épiceries, pharmacies, petits restos, et l'hôpital du Saint-Sacrement. Derrière l'artère, des rues résidentielles calmes et arborées, avec des loyers en général plus doux que sur Cartier. L'avenue Cartier reste à une quinzaine de minutes de marche, et le bus passe souvent sur le chemin Sainte-Foy.",
+    "reperes": [
+      "Chemin Sainte-Foy et ses commerces",
+      "Église du Très-Saint-Sacrement",
+      "Hôpital du Saint-Sacrement",
+      "Avenues Belvédère et des Érables vers Montcalm"
+    ],
+    "carte": "https://www.google.com/maps/search/Quartier+Saint-Sacrement,+Qu%C3%A9bec,+QC",
+    "photos": [
+      {
+        "f": "01-eglise.jpg",
+        "legende": "L'église du Très-Saint-Sacrement, chemin Sainte-Foy",
+        "auteur": "Jeangagnon",
+        "licence": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Eglise_du_Tres-Saint-Sacrement_-_06.jpg"
+      },
+      {
+        "f": "04-rue-arbres.jpg",
+        "legende": "Rue résidentielle bordée d'arbres, Québec",
+        "auteur": "Wilfredor",
+        "licence": "CC0",
+        "source": "https://commons.wikimedia.org/wiki/File:Tree-lined_residential_street_in_Quebec_City_in_autumn.jpg"
+      },
+      {
+        "f": "02-chemin-sainte-foy.jpg",
+        "legende": "Le chemin Sainte-Foy vu d'en haut",
+        "auteur": "Gabriel Picard",
+        "licence": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Chemin_Sainte-Foy_-_Avenue_du_Chanoine-Scott.jpg"
+      },
+      {
+        "f": "05-coin-automne.jpg",
+        "legende": "Coin de rue en automne, Québec",
+        "auteur": "Wilfredor",
+        "licence": "CC0",
+        "source": "https://commons.wikimedia.org/wiki/File:Autumn_street_corner_in_Quebec_City.jpg"
+      },
+      {
+        "f": "07-parc-des-braves.jpg",
+        "legende": "Le parc des Braves, la ville en contrebas",
+        "auteur": "Wilfredor",
+        "licence": "CC0",
+        "source": "https://commons.wikimedia.org/wiki/File:Snow-covered_Parc_des_Braves_in_Quebec_City.jpg"
+      },
+      {
+        "f": "03-heure-bleue.jpg",
+        "legende": "Chemin Sainte-Foy à l'heure bleue",
+        "auteur": "Wilfredor",
+        "licence": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Chemin_Sainte-Foy_at_blue_hour,_Quebec_City.jpg"
+      },
+      {
+        "f": "06-bus-hiver.jpg",
+        "legende": "Le bus sur l'avenue Belvédère, l'hiver",
+        "auteur": "Wilfredor",
+        "licence": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Avenue_Belv%C3%A9d%C3%A8re,_Qu%C3%A9bec,_QC.jpg"
+      }
+    ]
+  },
+  "saint-jean-baptiste": {
+    "nom": "Saint-Jean-Baptiste",
+    "etiquette": "Le plus urbain",
+    "resume": "Le faubourg de la rue Saint-Jean : dense, commerçant, à dix minutes du Vieux-Québec.",
+    "description": "Le quartier le plus dense et le plus animé de la haute-ville, accroché à la falaise entre les fortifications et Saint-Roch. Tout se passe sur la rue Saint-Jean : épiceries, bars, disquaires, l'église Saint-Jean-Baptiste au milieu. Les rues autour sont étroites, bordées de maisons en rangée et d'escaliers extérieurs. Le Vieux-Québec est à dix minutes à pied, l'avenue Cartier à un quart d'heure. C'est vivant tard le soir — ce qui plaît ou non.",
+    "reperes": [
+      "La rue Saint-Jean et ses commerces",
+      "L'église Saint-Jean-Baptiste",
+      "Le Vieux-Québec à 10 min à pied",
+      "L'escalier vers Saint-Roch et la Basse-Ville"
+    ],
+    "carte": "https://www.google.com/maps/search/Quartier+Saint-Jean-Baptiste,+Qu%C3%A9bec,+QC",
+    "photos": [
+      {
+        "f": "01-vue-aerienne.jpg",
+        "legende": "Le faubourg vu d'en haut, la rue Saint-Jean au centre",
+        "auteur": "Gabriel Picard",
+        "licence": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Rue_Saint-Jean_-_Vue_a%C3%A9rienne_2024.jpg"
+      },
+      {
+        "f": "02-saint-jean-nuit.jpg",
+        "legende": "La rue Saint-Jean illuminée, le soir",
+        "auteur": "Wilfredor",
+        "licence": "CC0",
+        "source": "https://commons.wikimedia.org/wiki/File:Rue_Saint-Jean_at_night_with_Christmas_lights,_Quebec_City.jpg"
+      },
+      {
+        "f": "03-toits.jpg",
+        "legende": "Les toits du quartier Saint-Jean-Baptiste",
+        "auteur": "Gabriel Picard",
+        "licence": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Quartier_Saint-Jean-Baptiste_06-2026.jpg"
+      },
+      {
+        "f": "04-saint-jean-ete.jpg",
+        "legende": "La rue Saint-Jean un après-midi d'été",
+        "auteur": "Jeangagnon",
+        "licence": "CC BY-SA 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Rue_Saint-Jean,_Quebec_32.jpg"
+      },
+      {
+        "f": "05-coin-hiver.jpg",
+        "legende": "Coin Saint-Jean et d'Auteuil, en hiver",
+        "auteur": "DXR",
+        "licence": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Corner_of_Rue_Saint-Jean_and_Rue_d%27Auteuil,_Qu%C3%A9bec_20170412_1.jpg"
+      }
+    ]
+  },
+  "maizerets": {
+    "nom": "Maizerets",
+    "etiquette": "Le plus abordable",
+    "resume": "À l'est de Limoilou, autour d'un grand parc — loin du centre, mais nettement moins cher.",
+    "description": "Quartier résidentiel de l'est de la ville, entre Limoilou et Beauport, organisé autour du Domaine de Maizerets : 27 hectares de parc, un arboretum, des étangs et une maison du 17e siècle. Les rues sont larges, calmes, avec des duplex et des maisons d'après-guerre. Les loyers y sont sensiblement plus bas qu'en haute-ville, mais on est à bonne distance du Vieux-Québec comme de Sainte-Foy, et le corridor autoroutier n'est pas loin.",
+    "reperes": [
+      "Le Domaine de Maizerets et son arboretum",
+      "Le corridor du Littoral, à vélo jusqu'au centre",
+      "La 1re Avenue et les commerces de Limoilou",
+      "L'autoroute Dufferin-Montmorency, à deux pas"
+    ],
+    "carte": "https://www.google.com/maps/search/Maizerets,+Qu%C3%A9bec,+QC",
+    "photos": [
+      {
+        "f": "01-maison-hiver.jpg",
+        "legende": "La maison Maizerets, un soir d'hiver",
+        "auteur": "Wilfredor",
+        "licence": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Domaine_de_Maizerets_02.jpg"
+      },
+      {
+        "f": "02-passerelle.jpg",
+        "legende": "La passerelle sur l'étang du Domaine",
+        "auteur": "Wilfredor",
+        "licence": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Domaine_de_Maizerets_park,_quebec_city_01.jpg"
+      },
+      {
+        "f": "03-domaine-nuit.jpg",
+        "legende": "Le Domaine de Maizerets sous la neige",
+        "auteur": "Wilfredor",
+        "licence": "CC0",
+        "source": "https://commons.wikimedia.org/wiki/File:Domaine_de_Maizerets,_Qu%C3%A9bec,_Canada.jpg"
+      },
+      {
+        "f": "04-arboretum.jpg",
+        "legende": "L'arboretum, au printemps",
+        "auteur": "Wilfredor",
+        "licence": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Domaine_de_Maizerets_park,_quebec_city_04.jpg"
+      }
+    ]
+  },
+  "loretteville": {
+    "nom": "Loretteville",
+    "etiquette": "Le plus au large",
+    "resume": "Au nord-ouest, le long de la rivière Saint-Charles : espace, verdure et voiture obligatoire.",
+    "description": "Ancienne ville devenue quartier de Québec, à une quinzaine de kilomètres du centre. On y vient pour l'espace : des immeubles récents le long du boulevard de la Colline, la rivière Saint-Charles et son parc linéaire, la piste cyclable des Cheminots qui descend jusqu'à la ville. La rue Racine garde le petit noyau commercial du vieux Loretteville, et Wendake est juste à côté. Le revers est simple : sans voiture, la vie quotidienne devient compliquée.",
+    "reperes": [
+      "Le parc linéaire de la rivière Saint-Charles",
+      "La piste cyclable des Cheminots",
+      "La rue Racine, le noyau du vieux Loretteville",
+      "L'autoroute Robert-Bourassa, accès direct au centre"
+    ],
+    "carte": "https://www.google.com/maps/search/Loretteville,+Qu%C3%A9bec,+QC",
+    "photos": [
+      {
+        "f": "01-parc-lineaire.jpg",
+        "legende": "Le parc linéaire de la rivière Saint-Charles, la ville au fond",
+        "auteur": "Judicieux",
+        "licence": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Parc_lin%C3%A9aire_de_la_rivi%C3%A8re_Saint-Charles.jpg"
+      },
+      {
+        "f": "02-rue-racine.jpg",
+        "legende": "La rue Racine, au cœur du vieux Loretteville",
+        "auteur": "Pierre-Olivier Fortin",
+        "licence": "CC BY-SA 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Rue_Racine,_Loretteville.jpg"
+      },
+      {
+        "f": "03-sentier.jpg",
+        "legende": "Un sentier le long de la rivière",
+        "auteur": "Jeangagnon",
+        "licence": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Parc_riviere_Saint-Charles_-_01.jpg"
+      },
+      {
+        "f": "04-riviere.jpg",
+        "legende": "La rivière Saint-Charles, l'été",
+        "auteur": "Jeangagnon",
+        "licence": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Parc_riviere_Saint-Charles_-_05.jpg"
+      }
+    ]
+  }
+}

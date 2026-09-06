@@ -1,0 +1,752 @@
+<meta charset="utf-8">
+<title>Notre appart à Québec</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+:root{
+  --nuit:#0A1220; --surface:#101B2C; --surface-h:#152437; --trait:#22364E; --trait-fort:#31496618;
+  --or:#E3A857; --or-clair:#F5CE93; --givre:#8FB6D9; --rose:#E4788B; --menthe:#6FBF9B;
+  --texte:#ECF2F9; --doux:#9CB1C8; --faible:#6E8399;
+  --ombre:0 18px 40px -22px rgba(0,0,0,.85);
+  --r:14px;
+  --dis:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  --corps:"IBM Plex Sans","Helvetica Neue",Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--nuit);color:var(--texte);font-family:var(--corps);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block}
+a{color:var(--or-clair);text-decoration-color:#E3A85766;text-underline-offset:3px}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--or);outline-offset:3px;border-radius:6px}
+h1,h2,h3{font-family:var(--dis);font-weight:700;letter-spacing:-.02em;line-height:1.1;text-wrap:balance;margin:0}
+.enveloppe{width:min(1180px,100% - 40px);margin-inline:auto}
+.oeil{font-family:var(--mono);font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--or);margin:0}
+
+/* — barre — */
+.barre{position:sticky;top:0;z-index:40;background:rgba(10,18,32,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--trait)}
+.barre-int{display:flex;align-items:center;gap:18px;height:60px}
+.marque{display:flex;align-items:center;gap:10px;font-family:var(--dis);font-weight:800;letter-spacing:-.02em;font-size:17px}
+.pastille{width:9px;height:9px;border-radius:50%;background:var(--or);box-shadow:0 0 0 4px #E3A85722}
+.barre nav{margin-left:auto;display:flex;gap:4px}
+.barre nav a{font-size:14px;color:var(--doux);text-decoration:none;padding:7px 12px;border-radius:99px}
+.barre nav a:hover{color:var(--texte);background:var(--surface-h)}
+
+/* — ouverture — */
+.hero{position:relative;margin-top:14px;border-radius:var(--r);overflow:hidden;isolation:isolate}
+.hero img{width:100%;height:clamp(230px,34vw,330px);object-fit:cover;filter:saturate(.92)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,18,32,.25) 0%,rgba(10,18,32,.62) 45%,rgba(10,18,32,.96) 100%)}
+.hero-txt{position:absolute;z-index:2;left:0;right:0;bottom:0;padding:26px clamp(20px,4vw,38px)}
+.hero-txt h1{font-size:clamp(30px,5vw,50px);font-weight:800}
+.hero-txt p{margin:10px 0 0;max-width:56ch;color:#D5E1EE;font-size:16.5px}
+.chiffres{display:flex;flex-wrap:wrap;gap:10px 34px;margin:22px 0 0;padding:0;list-style:none}
+.chiffres div{font-family:var(--mono);font-size:20px;font-variant-numeric:tabular-nums}
+.chiffres span{display:block;font-family:var(--corps);font-size:12.5px;color:var(--faible);letter-spacing:.04em}
+
+section{margin-top:62px}
+.tete{display:flex;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:22px}
+.tete h2{font-size:clamp(24px,3.4vw,34px)}
+.tete p{margin:6px 0 0;color:var(--doux);max-width:62ch}
+
+/* — filtres — */
+.filtres{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 24px}
+.puce{border:1px solid var(--trait);border-radius:99px;padding:7px 15px;font-size:13.5px;color:var(--doux);transition:.15s}
+.puce:hover{border-color:#3B5677;color:var(--texte)}
+.puce[aria-pressed="true"]{background:var(--or);border-color:var(--or);color:#1A1206;font-weight:600}
+.tri{margin-left:auto;display:flex;align-items:center;gap:8px;font-size:13px;color:var(--faible)}
+.tri select{background:var(--surface);border:1px solid var(--trait);color:var(--texte);border-radius:99px;padding:7px 12px;font-size:13.5px;font-family:var(--corps)}
+
+/* — grille d'appartements — */
+.grille{display:grid;grid-template-columns:repeat(auto-fill,minmax(285px,1fr));gap:22px}
+.carte{position:relative;background:var(--surface);border:1px solid var(--trait);border-radius:var(--r);overflow:hidden;text-align:left;width:100%;padding:0;display:flex;flex-direction:column;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+.carte:hover{transform:translateY(-3px);border-color:#3A5678;box-shadow:var(--ombre)}
+.carte-photo{position:relative;aspect-ratio:4/3;background:var(--surface-h)}
+.carte-photo img{width:100%;height:100%;object-fit:cover}
+.sans-photo{width:100%;height:100%;display:grid;place-items:center;color:var(--faible);font-family:var(--mono);font-size:12px;letter-spacing:.1em}
+.prix{position:absolute;left:12px;bottom:12px;background:rgba(10,18,32,.86);backdrop-filter:blur(6px);border:1px solid #ffffff1f;border-radius:8px;padding:5px 10px;font-family:var(--mono);font-size:15px;font-variant-numeric:tabular-nums}
+.etat{position:absolute;left:12px;top:12px;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;padding:5px 9px;border-radius:6px;background:rgba(10,18,32,.8);border:1px solid currentColor}
+.etat.a_visiter{color:var(--givre)} .etat.visite_prevue{color:var(--or)} .etat.visite{color:var(--menthe)} .etat.ecarte{color:var(--faible)}
+.carte.ecarte .carte-photo img{filter:grayscale(.85) brightness(.7)}
+.carte-corps{padding:16px 17px 18px;display:flex;flex-direction:column;gap:7px;flex:1}
+.carte-corps h3{font-size:19px}
+.lieu{font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--or);margin:0}
+.adresse{margin:0;color:var(--doux);font-size:14px}
+.faits{display:flex;flex-wrap:wrap;gap:6px 14px;margin:6px 0 0;padding:0;list-style:none;font-size:13.5px;color:var(--doux);font-family:var(--mono);font-variant-numeric:tabular-nums;border-top:1px solid var(--trait);padding-top:11px}
+.btn-coeur{position:absolute;right:12px;top:12px;z-index:3;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:rgba(10,18,32,.82);border:1px solid #ffffff22;font-size:15px;line-height:1;transition:.15s}
+.btn-coeur:hover{transform:scale(1.08)}
+.btn-coeur[aria-pressed="true"]{background:var(--rose);border-color:var(--rose)}
+
+/* — distances — */
+.trajets{margin-top:28px}
+.trajets .cadre{overflow-x:auto}
+.trajets table{width:100%;min-width:430px;border-collapse:collapse;font-size:14.5px;margin-top:6px}
+.trajets th{text-align:left;font-family:var(--mono);font-size:11px;font-weight:400;letter-spacing:.11em;text-transform:uppercase;color:var(--faible);padding:0 14px 9px 0;white-space:nowrap}
+.trajets td{padding:11px 14px 11px 0;border-top:1px solid var(--trait);vertical-align:baseline}
+.trajets td.lieu{font-weight:600}
+.trajets td.n{font-family:var(--mono);font-variant-numeric:tabular-nums;color:var(--doux);white-space:nowrap}
+.trajets td.n strong{color:var(--texte);font-weight:500}
+.trajets td:last-child{text-align:right;padding-right:0}
+.trajets a{font-size:13px;white-space:nowrap}
+.trajets .source{margin:12px 0 0;font-size:12px;color:var(--faible)}
+.trajets-mini{margin:8px 0 0;font-family:var(--mono);font-size:12px;color:var(--faible);font-variant-numeric:tabular-nums;line-height:1.5}
+
+/* — notes — */
+.echange{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin:0 0 26px;padding:13px 16px;border:1px solid var(--trait);border-radius:12px;background:var(--surface);font-size:13.5px;color:var(--doux)}
+.echange .lien{color:var(--or-clair);text-decoration:underline;text-underline-offset:3px;font-weight:600}
+.echange textarea{width:100%;min-height:74px;background:var(--nuit);border:1px solid var(--trait);border-radius:9px;color:var(--texte);font-family:var(--mono);font-size:12px;padding:10px;resize:vertical}
+.echange .zone{flex-basis:100%;display:grid;gap:9px;justify-items:start}
+.notes{margin-top:30px;border:1px solid var(--trait);border-radius:12px;background:var(--surface);padding:18px 20px 20px}
+.note-ligne{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:11px 0;border-bottom:1px solid var(--trait)}
+.note-nom{width:88px;font-size:15px;font-weight:600}
+.etoiles{display:flex;gap:2px}
+.etoiles button{font-size:23px;line-height:1;color:var(--trait);padding:2px;transition:color .12s,transform .12s}
+.etoiles.active button{color:#3E5673}
+.etoiles.active button:hover{transform:scale(1.15)}
+.etoiles button.pleine{color:var(--or)}
+.note-val{margin-left:auto;font-family:var(--mono);font-size:15px;font-variant-numeric:tabular-nums;color:var(--doux)}
+.effacer{font-size:12px;color:var(--faible);text-decoration:underline;text-underline-offset:3px}
+.moyenne{display:flex;align-items:baseline;gap:14px;padding-top:15px}
+.moyenne span{font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--faible);font-family:var(--mono)}
+.moyenne strong{font-family:var(--mono);font-size:30px;font-weight:500;color:var(--or-clair);font-variant-numeric:tabular-nums}
+.moyenne strong small{font-size:14px;color:var(--faible)}
+.moyenne em{font-style:normal;font-size:13.5px;color:var(--faible);margin-left:auto}
+.note-mini{display:flex;align-items:center;gap:9px;font-family:var(--mono);font-size:13px;font-variant-numeric:tabular-nums;color:var(--or);padding-top:10px;margin-top:auto}
+.note-mini .detail{color:var(--faible);font-size:12px}
+
+/* — vide — */
+.vide{border:1px dashed var(--trait);border-radius:var(--r);padding:34px;display:grid;gap:14px;justify-items:start;background:linear-gradient(180deg,#101B2C 0%,#0C1524 100%)}
+.vide h3{font-size:20px}
+.vide p{margin:0;color:var(--doux);max-width:60ch}
+.vide ul{margin:0;padding-left:18px;color:var(--doux);font-size:14.5px}
+
+/* — quartiers — */
+.quartiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
+.qcarte{text-align:left;padding:0;background:var(--surface);border:1px solid var(--trait);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:.18s}
+.qcarte:hover{border-color:#3A5678;box-shadow:var(--ombre);transform:translateY(-3px)}
+.qcarte img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.qcarte-corps{padding:18px 18px 20px;display:flex;flex-direction:column;gap:8px;flex:1}
+.qcarte h3{font-size:21px}
+.qcarte p{margin:0;color:var(--doux);font-size:14.5px}
+.qcarte .lire{margin-top:auto;padding-top:12px;color:var(--or-clair);font-size:14px;font-weight:600}
+
+/* — panneau — */
+.panneau{position:fixed;inset:0;z-index:80;background:rgba(6,11,19,.78);backdrop-filter:blur(4px);overflow-y:auto;overscroll-behavior:contain}
+.panneau-int{width:min(1000px,100% - 28px);margin:28px auto 60px;background:var(--nuit);border:1px solid var(--trait);border-radius:18px;overflow:hidden;box-shadow:0 40px 90px -30px #000}
+.fermer{position:sticky;top:0;z-index:5;display:flex;justify-content:flex-end;padding:12px;background:linear-gradient(180deg,rgba(10,18,32,.95),transparent)}
+.fermer button{width:38px;height:38px;border-radius:50%;background:var(--surface);border:1px solid var(--trait);font-size:16px}
+.panneau-corps{padding:0 clamp(18px,4vw,38px) 40px;margin-top:-50px}
+.galerie{margin:0 0 26px}
+.galerie-grande{position:relative;border-radius:12px;overflow:hidden;background:var(--surface-h)}
+.galerie-grande img{width:100%;max-height:min(62vh,560px);object-fit:cover;aspect-ratio:3/2}
+.nav-g{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;background:rgba(10,18,32,.8);border:1px solid #ffffff24;display:grid;place-items:center}
+.nav-g.prec{left:12px} .nav-g.suiv{right:12px}
+.compteur{position:absolute;right:14px;bottom:12px;font-family:var(--mono);font-size:12px;background:rgba(10,18,32,.82);border:1px solid #ffffff1f;padding:4px 9px;border-radius:6px}
+.legende{margin:9px 2px 0;font-size:13px;color:var(--faible)}
+.vignettes{display:flex;gap:8px;overflow-x:auto;padding:10px 2px 2px;scrollbar-width:thin}
+.vignettes img{width:96px;height:66px;object-fit:cover;border-radius:7px;opacity:.5;cursor:pointer;flex:0 0 auto;border:1px solid transparent}
+.vignettes img[aria-current="true"],.vignettes img:hover{opacity:1;border-color:var(--or)}
+.titre-fiche{display:flex;flex-wrap:wrap;align-items:flex-end;gap:12px 24px;padding-bottom:18px;border-bottom:1px solid var(--trait)}
+.titre-fiche h2{font-size:clamp(24px,3.6vw,34px)}
+.titre-fiche .loyer{margin-left:auto;font-family:var(--mono);font-size:26px;font-variant-numeric:tabular-nums;color:var(--or-clair)}
+.titre-fiche .loyer small{display:block;font-family:var(--corps);font-size:12px;color:var(--faible);text-align:right;letter-spacing:.03em}
+.details{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:0;margin:24px 0 0;padding:0}
+.details div{padding:14px 16px 14px 0;border-bottom:1px solid var(--trait)}
+.details dt{font-size:12px;color:var(--faible);letter-spacing:.05em;margin-bottom:3px}
+.details dd{margin:0;font-family:var(--mono);font-size:15.5px;font-variant-numeric:tabular-nums}
+.deux-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:26px;margin-top:26px}
+.liste-plus,.liste-moins{margin:8px 0 0;padding:0;list-style:none;display:grid;gap:6px;font-size:15px}
+.liste-plus li::before{content:"+ ";color:var(--menthe);font-family:var(--mono)}
+.liste-moins li::before{content:"– ";color:var(--rose);font-family:var(--mono)}
+.mot{margin:8px 0 0;color:var(--doux);font-style:italic}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.bouton{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:99px;font-size:14.5px;font-weight:600;text-decoration:none;border:1px solid var(--trait);background:var(--surface);color:var(--texte)}
+.bouton:hover{border-color:#3A5678;background:var(--surface-h)}
+.bouton.plein{background:var(--or);border-color:var(--or);color:#1A1206}
+.bouton.plein:hover{background:var(--or-clair);border-color:var(--or-clair)}
+.bloc-quartier{margin-top:44px;padding-top:32px;border-top:1px solid var(--trait)}
+.bloc-quartier .intro{color:var(--doux);max-width:66ch;margin:10px 0 0}
+.mosaique{display:grid;grid-template-columns:repeat(auto-fit,minmax(228px,1fr));gap:12px;margin-top:18px}
+@media(min-width:760px){
+  .mosaique.large figure:first-child{grid-column:span 2;grid-row:span 2;height:100%}
+  .mosaique.large figure:first-child img{height:100%;aspect-ratio:auto;min-height:100%}
+}
+.mosaique figure{margin:0;position:relative;border-radius:10px;overflow:hidden;cursor:pointer}
+.mosaique img{width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .3s}
+.mosaique figure:hover img{transform:scale(1.04)}
+.mosaique figcaption{position:absolute;left:0;right:0;bottom:0;padding:26px 12px 10px;font-size:12.5px;line-height:1.35;color:#E8EEF6;background:linear-gradient(transparent,rgba(6,11,19,.9))}
+.reperes{margin:14px 0 0;padding:0;list-style:none;display:grid;gap:7px;font-size:15px;color:var(--doux)}
+.reperes li::before{content:"◆";color:var(--or);font-size:9px;vertical-align:middle;margin-right:9px}
+.note-locale{font-size:12.5px;color:var(--faible);margin:10px 0 0}
+
+/* — visionneuse — */
+.loupe{position:fixed;inset:0;z-index:120;background:rgba(4,8,14,.95);display:grid;place-items:center;padding:24px}
+.loupe img{max-width:100%;max-height:88vh;object-fit:contain;border-radius:8px}
+.loupe p{position:absolute;bottom:22px;left:0;right:0;text-align:center;color:var(--doux);font-size:13px;margin:0}
+
+footer{margin-top:76px;border-top:1px solid var(--trait);padding:26px 0 60px;color:var(--faible);font-size:13px}
+footer h3{font-size:13px;font-family:var(--corps);font-weight:600;color:var(--doux);margin:0 0 8px}
+.credits{display:flex;flex-wrap:wrap;gap:4px 14px;padding:0;margin:0;list-style:none;font-size:12px}
+.credits a{color:var(--faible)}
+@media (max-width:640px){
+  .barre nav a{padding:7px 9px}
+  .panneau-int{margin:14px auto 40px;border-radius:14px}
+  .titre-fiche .loyer{margin-left:0}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<header class="barre">
+  <div class="enveloppe barre-int">
+    <span class="marque"><span class="pastille"></span>Notre appart à Québec</span>
+    <nav>
+      <a href="#liste">Appartements</a>
+      <a href="#quartiers">Quartiers</a>
+    </nav>
+  </div>
+</header>
+
+<main class="enveloppe">
+  <div class="hero">
+    <img id="hero-img" alt="">
+    <div class="hero-txt">
+      <p class="oeil">Québec · haute-ville</p>
+      <h1>Les appartements qu'on a repérés</h1>
+      <p id="hero-sous">Chaque fiche : les photos de l'appart, tous les détails, et l'ambiance du quartier autour.</p>
+    </div>
+  </div>
+  <ul class="chiffres" id="chiffres"></ul>
+
+  <section id="liste">
+    <div class="tete">
+      <div>
+        <p class="oeil">La liste</p>
+        <h2>Les appartements</h2>
+        <p id="sous-liste">Clique sur une fiche pour voir toutes les photos et les détails.</p>
+      </div>
+    </div>
+    <div class="filtres" id="filtres"></div>
+    <div class="echange" id="echange"></div>
+    <div class="grille" id="grille"></div>
+  </section>
+
+  <section id="quartiers">
+    <div class="tete">
+      <div>
+        <p class="oeil">Les quartiers</p>
+        <h2>Voir l'ambiance avant de choisir</h2>
+        <p>Les trois secteurs qu'on vise, en photos : les rues, les commerces, les parcs.</p>
+      </div>
+    </div>
+    <div class="quartiers" id="grille-quartiers"></div>
+  </section>
+
+  <footer>
+    <h3>Photos des quartiers</h3>
+    <ul class="credits" id="credits"></ul>
+    <p style="margin-top:16px">Les photos des appartements proviennent des annonces d'origine, dont le lien figure sur chaque fiche.</p>
+  </footer>
+</main>
+
+<div class="panneau" id="panneau" hidden></div>
+<div class="loupe" id="loupe" hidden></div>
+
+<script>
+const DONNEES = /*__DONNEES__*/null;
+const $ = (s, r = document) => r.querySelector(s);
+const QUARTIERS = DONNEES.quartiers;
+const APPARTS = DONNEES.appartements;
+
+const ETATS = {a_visiter:"À visiter", visite_prevue:"Visite prévue", visite:"Visité", ecarte:"Écarté"};
+const MOIS = ["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"];
+const argent = n => new Intl.NumberFormat("fr-CA",{maximumFractionDigits:0}).format(n) + " $";
+const date = s => {
+  if (!s) return "—";
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(s);
+  if (!m) return s;
+  const j = +m[3];
+  return (j === 1 ? "1er" : j) + " " + MOIS[+m[2]-1] + " " + m[1];
+};
+const echap = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+/* coups de cœur — gardés sur cet appareil uniquement */
+const COEURS = new Set(JSON.parse(localStorage.getItem("coeurs-appart") || "[]"));
+const basculerCoeur = id => {
+  COEURS.has(id) ? COEURS.delete(id) : COEURS.add(id);
+  localStorage.setItem("coeurs-appart", JSON.stringify([...COEURS]));
+};
+
+/* ————— distances vers les points de repère ————— */
+const REPERES = [
+  {cle: "vieux-quebec", nom: "Vieux-Québec", court: "Vieux-Québec", coord: [-71.2050539, 46.8113081]},
+  {cle: "cegep-sainte-foy", nom: "Cégep de Sainte-Foy", court: "Cégep", coord: [-71.2868410, 46.7866582]},
+];
+const duree = m => m < 60 ? m + " min" : Math.floor(m / 60) + " h " + String(m % 60).padStart(2, "0");
+const km = n => n.toLocaleString("fr-CA", {minimumFractionDigits: 1, maximumFractionDigits: 1}) + " km";
+
+function itineraire(a, rep, mode){
+  return "https://www.google.com/maps/dir/?api=1&origin=" + a.coord[1] + "," + a.coord[0] +
+         "&destination=" + rep.coord[1] + "," + rep.coord[0] + "&travelmode=" + mode;
+}
+
+function blocTrajets(a){
+  if (!a.trajets || !a.coord) return "";
+  const lignes = REPERES.filter(r => a.trajets[r.cle]).map(r => {
+    const t = a.trajets[r.cle];
+    return `<tr>
+      <td class="lieu">${echap(r.nom)}</td>
+      <td class="n">${km(t.voiture.km)}</td>
+      <td class="n"><strong>${duree(t.voiture.min)}</strong></td>
+      <td class="n">${duree(t.pied.min)}</td>
+      <td><a href="${itineraire(a, r, "driving")}" target="_blank" rel="noopener">Itinéraire ↗</a></td>
+    </tr>`;
+  }).join("");
+  return `<div class="trajets">
+    <p class="oeil">Distances</p>
+    <div class="cadre"><table>
+      <thead><tr><th>Depuis l'appartement</th><th>Distance</th><th>En voiture</th><th>À pied</th><th></th></tr></thead>
+      <tbody>${lignes}</tbody>
+    </table></div>
+    <p class="source">Trajets par la route, calculés sur OpenStreetMap. Hors circulation et hors transport en commun — le lien ouvre l'itinéraire réel.</p>
+  </div>`;
+}
+
+function trajetsMini(a){
+  if (!a.trajets) return "";
+  const bouts = REPERES.filter(r => a.trajets[r.cle])
+    .map(r => `${r.court} ${a.trajets[r.cle].voiture.min} min`).join(" · ");
+  return `<p class="trajets-mini" title="En voiture">En voiture — ${bouts}</p>`;
+}
+
+/* ————— notes : une par personne, gardées sur cet appareil ————— */
+const PERSONNES = {victorien: "Victorien", lou: "Lou"};
+const NOTES = Object.assign({victorien: {}, lou: {}}, JSON.parse(localStorage.getItem("notes-appart") || "{}"));
+
+const sauverNotes = () => localStorage.setItem("notes-appart", JSON.stringify(NOTES));
+const noterAppart = (personne, id, n) => { if (n) NOTES[personne][id] = n; else delete NOTES[personne][id]; sauverNotes(); };
+const moyenne = id => {
+  const v = [NOTES.victorien[id], NOTES.lou[id]].filter(n => typeof n === "number");
+  return v.length ? v.reduce((a, b) => a + b, 0) / v.length : null;
+};
+const combienDeNotes = () => Object.keys(NOTES.victorien).length + Object.keys(NOTES.lou).length;
+const nombre = n => n.toLocaleString("fr-CA", {minimumFractionDigits: n % 1 ? 1 : 0, maximumFractionDigits: 1});
+
+function codeNotes(){
+  const utile = {victorien: {}, lou: {}};
+  Object.keys(PERSONNES).forEach(k => Object.entries(NOTES[k]).forEach(([id, n]) => {
+    if (APPARTS.some(a => a.id === id)) utile[k][id] = n;
+  }));
+  return "APPART1." + btoa(unescape(encodeURIComponent(JSON.stringify(utile))));
+}
+
+function lireCode(code){
+  const brut = String(code || "").trim().replace(/\s+/g, "");
+  if (!brut.startsWith("APPART1.")) return "Ce code ne vient pas de ce site — il commence par APPART1.";
+  let d;
+  try { d = JSON.parse(decodeURIComponent(escape(atob(brut.slice(8))))); }
+  catch (e) { return "Code illisible — il a dû être coupé au copier-coller."; }
+  if (d && d.qui && d.notes) d = {[d.qui]: d.notes};   // ancien format
+  let n = 0;
+  Object.keys(PERSONNES).forEach(k => Object.entries(d[k] || {}).forEach(([id, note]) => {
+    if (typeof note === "number") { NOTES[k][id] = note; n++; }
+  }));
+  sauverNotes();
+  return n ? {ok: `${n} note${n > 1 ? "s" : ""} ${n > 1 ? "ajoutées" : "ajoutée"}.`} : "Ce code ne contenait aucune note.";
+}
+
+function echange(){
+  const el = $("#echange");
+  if (!el) return;
+  if (!APPARTS.length){ el.remove(); return; }
+  const combien = combienDeNotes();
+  el.innerHTML = `
+    <span>Les notes sont gardées sur cet appareil. Pour que l'autre les voie, envoie-lui ton code.</span>
+    <button class="lien" id="btn-exporter">Copier nos notes${combien ? ` (${combien})` : ""}</button>
+    <button class="lien" id="btn-importer">Coller les notes reçues</button>
+    <div class="zone" id="zone-echange" hidden></div>`;
+  const zone = $("#zone-echange");
+  $("#btn-exporter").onclick = async () => {
+    if (!combien) return message(zone, "Aucun appartement n'a encore été noté.");
+    const code = codeNotes();
+    let copie = false;
+    try { await navigator.clipboard.writeText(code); copie = true; } catch (e) {}
+    zone.hidden = false;
+    zone.innerHTML = `<p style="margin:0">${copie ? "Code copié — colle-le dans un message." : "Copie ce code et envoie-le :"}</p>
+      <textarea readonly>${code}</textarea>`;
+    zone.querySelector("textarea").select();
+  };
+  $("#btn-importer").onclick = () => {
+    zone.hidden = false;
+    zone.innerHTML = `<p style="margin:0">Colle ici le code reçu :</p>
+      <textarea id="code-recu" placeholder="APPART1.…"></textarea>
+      <button class="bouton" id="valider-code">Ajouter ces notes</button>`;
+    $("#valider-code").onclick = () => {
+      const r = lireCode($("#code-recu").value);
+      if (typeof r === "string") return message(zone, r);
+      message(zone, r.ok);
+      filtres(); liste(); rafraichirFiche();
+    };
+    $("#code-recu").focus();
+  };
+}
+
+function message(zone, texte){
+  zone.hidden = false;
+  zone.innerHTML = `<p style="margin:0;color:var(--or-clair)">${echap(texte)}</p>`;
+}
+
+function blocEtoiles(id, personne){
+  const n = NOTES[personne][id];
+  return `<div class="note-ligne">
+    <span class="note-nom">${PERSONNES[personne]}</span>
+    <div class="etoiles active" data-personne="${personne}" role="group" aria-label="Note de ${PERSONNES[personne]} sur 5">
+      ${[1,2,3,4,5].map(i => `<button class="${n >= i ? "pleine" : ""}" data-n="${i}" aria-label="Mettre ${i} sur 5">★</button>`).join("")}
+    </div>
+    <span class="note-val">${n ? n + "/5" : "à noter"}</span>
+    ${n ? `<button class="effacer" data-effacer="${personne}">effacer</button>` : ""}
+  </div>`;
+}
+
+function blocNotes(id){
+  const moy = moyenne(id);
+  return `<div class="notes" id="bloc-notes" data-id="${echap(id)}">
+    <p class="oeil">Nos notes</p>
+    ${blocEtoiles(id, "victorien")}
+    ${blocEtoiles(id, "lou")}
+    <div class="moyenne">
+      <span>Moyenne</span>
+      <strong>${moy === null ? "—" : nombre(moy)}<small>/5</small></strong>
+      <em>${moy === null ? "personne n'a encore noté" : (NOTES.victorien[id] && NOTES.lou[id] ? "sur vos deux notes" : "sur une seule note")}</em>
+    </div>
+  </div>`;
+}
+
+function brancherNotes(id){
+  panneau.querySelectorAll(".etoiles button").forEach(b => b.onclick = () => {
+    const personne = b.closest(".etoiles").dataset.personne;
+    const n = +b.dataset.n;
+    noterAppart(personne, id, NOTES[personne][id] === n ? 0 : n);
+    rafraichirFiche(); filtres(); liste(); echange();
+  });
+  panneau.querySelectorAll("[data-effacer]").forEach(b => b.onclick = () => {
+    noterAppart(b.dataset.effacer, id, 0);
+    rafraichirFiche(); filtres(); liste(); echange();
+  });
+}
+
+function rafraichirFiche(){
+  const bloc = $("#bloc-notes", panneau);
+  if (!bloc) return;
+  const id = bloc.dataset.id;
+  bloc.outerHTML = blocNotes(id);
+  brancherNotes(id);
+}
+
+/* ————— ouverture ————— */
+$("#hero-img").src = QUARTIERS.montcalm.photos[0].image;
+$("#hero-img").alt = QUARTIERS.montcalm.photos[0].legende;
+
+function chiffres(){
+  const el = $("#chiffres");
+  if (!APPARTS.length){ el.remove(); return; }
+  const loyers = APPARTS.map(a => a.loyer).filter(Boolean);
+  const secteurs = new Set(APPARTS.map(a => a.quartier));
+  const items = [
+    [APPARTS.length, APPARTS.length > 1 ? "appartements en lice" : "appartement en lice"],
+    [loyers.length ? (Math.min(...loyers) === Math.max(...loyers) ? argent(loyers[0]) : argent(Math.min(...loyers)) + " – " + argent(Math.max(...loyers))) : "—", "fourchette de loyer"],
+    [secteurs.size, secteurs.size > 1 ? "quartiers" : "quartier"],
+  ];
+  if (DONNEES.maj) items.push([date(DONNEES.maj), "dernière mise à jour"]);
+  el.innerHTML = items.map(([v, l]) => `<li><div>${echap(v)}</div><span>${l}</span></li>`).join("");
+}
+
+/* ————— liste ————— */
+const etat = {filtre: "tous", tri: "ajout"};
+
+function filtres(){
+  const el = $("#filtres");
+  if (!APPARTS.length){ el.remove(); $("#sous-liste").textContent = "La liste se remplit au fur et à mesure des trouvailles."; return; }
+  const secteurs = Object.keys(QUARTIERS).filter(q => APPARTS.some(a => a.quartier === q));
+  const puces = [["tous", "Tous"], ...secteurs.map(q => [q, QUARTIERS[q].nom])];
+  if (COEURS.size) puces.push(["coeurs", "Coups de cœur"]);
+  if (APPARTS.some(a => moyenne(a.id) !== null)) puces.push(["notes", "Notés"]);
+  el.innerHTML = puces.map(([v, t]) => `<button class="puce" data-filtre="${v}" aria-pressed="${etat.filtre===v}">${echap(t)}</button>`).join("")
+    + `<label class="tri">Trier <select id="tri">
+         <option value="ajout">Ordre d'ajout</option>
+         <option value="prix">Loyer croissant</option>
+         <option value="prix-desc">Loyer décroissant</option>
+         <option value="note">Meilleure moyenne</option>
+         <option value="dispo">Disponibilité</option>
+       </select></label>`;
+  el.querySelectorAll(".puce").forEach(b => b.onclick = () => { etat.filtre = b.dataset.filtre; filtres(); liste(); });
+  $("#tri").value = etat.tri;
+  $("#tri").onchange = e => { etat.tri = e.target.value; liste(); };
+}
+
+function selection(){
+  let l = APPARTS.slice();
+  if (etat.filtre === "coeurs") l = l.filter(a => COEURS.has(a.id));
+  else if (etat.filtre === "notes") l = l.filter(a => moyenne(a.id) !== null);
+  else if (etat.filtre !== "tous") l = l.filter(a => a.quartier === etat.filtre);
+  const p = a => a.loyer || Infinity;
+  if (etat.tri === "prix") l.sort((a, b) => p(a) - p(b));
+  if (etat.tri === "prix-desc") l.sort((a, b) => p(b) - p(a));
+  if (etat.tri === "dispo") l.sort((a, b) => String(a.dispo || "9").localeCompare(String(b.dispo || "9")));
+  if (etat.tri === "note") l.sort((a, b) => (moyenne(b.id) ?? -1) - (moyenne(a.id) ?? -1));
+  return l;
+}
+
+function liste(){
+  const g = $("#grille");
+  if (!APPARTS.length){
+    g.classList.remove("grille");
+    g.innerHTML = `<div class="vide">
+      <p class="oeil">En attente</p>
+      <h3>Aucun appartement pour l'instant</h3>
+      <p>Les annonces repérées seront ajoutées ici au fil de l'eau. Chaque fiche contiendra :</p>
+      <ul>
+        <li>toutes les photos de l'annonce, en grand ;</li>
+        <li>le loyer, ce qui est inclus, la superficie, l'étage, la date de disponibilité ;</li>
+        <li>les bons points et les réserves, notés à la visite ;</li>
+        <li>le lien vers l'annonce d'origine et la position sur la carte ;</li>
+        <li>les photos du quartier autour.</li>
+      </ul>
+      <p>En attendant, les trois quartiers sont juste en dessous.</p>
+    </div>`;
+    return;
+  }
+  const l = selection();
+  if (!l.length){ g.innerHTML = `<div class="vide"><h3>Rien dans cette sélection</h3><p>Change de filtre pour revoir les autres appartements.</p></div>`; return; }
+  g.innerHTML = l.map(a => {
+    const q = QUARTIERS[a.quartier];
+    const ph = a.images && a.images[0];
+    const faits = [a.pieces, a.superficie ? a.superficie + " m²" : null, a.dispo ? "Libre le " + date(a.dispo) : null].filter(Boolean);
+    return `<div class="carte ${a.statut === "ecarte" ? "ecarte" : ""}">
+      <button class="carte-photo" data-appart="${echap(a.id)}" aria-label="Ouvrir la fiche : ${echap(a.titre)}" style="border:0;padding:0;display:block;width:100%">
+        ${ph ? `<img src="${ph.vignette}" alt="${echap(a.titre)}" loading="lazy">` : `<div class="sans-photo">SANS PHOTO</div>`}
+        ${a.loyer ? `<span class="prix">${argent(a.loyer)}<span style="color:var(--faible)">/mois</span></span>` : ""}
+        ${a.statut ? `<span class="etat ${a.statut}">${ETATS[a.statut] || a.statut}</span>` : ""}
+      </button>
+      <button class="btn-coeur" data-coeur="${echap(a.id)}" aria-pressed="${COEURS.has(a.id)}" aria-label="Marquer comme coup de cœur" title="Coup de cœur (sur cet appareil)">${COEURS.has(a.id) ? "♥" : "♡"}</button>
+      <button class="carte-corps" data-appart="${echap(a.id)}" style="border:0;text-align:left;background:none">
+        <p class="lieu">${echap(q ? q.nom : a.quartier || "")}</p>
+        <h3>${echap(a.titre)}</h3>
+        ${a.adresse ? `<p class="adresse">${echap(a.adresse)}</p>` : ""}
+        ${faits.length ? `<ul class="faits">${faits.map(f => `<li>${echap(f)}</li>`).join("")}</ul>` : ""}
+        ${trajetsMini(a)}
+        ${moyenne(a.id) === null ? "" : `<p class="note-mini">★ ${nombre(moyenne(a.id))}/5 <span class="detail">${["victorien","lou"].filter(k => NOTES[k][a.id]).map(k => PERSONNES[k][0] + " " + NOTES[k][a.id]).join(" · ")}</span></p>`}
+      </button>
+    </div>`;
+  }).join("");
+  g.classList.add("grille");
+  g.querySelectorAll("[data-appart]").forEach(b => b.onclick = () => location.hash = "appart/" + b.dataset.appart);
+  g.querySelectorAll("[data-coeur]").forEach(b => b.onclick = e => {
+    e.stopPropagation(); basculerCoeur(b.dataset.coeur); filtres(); liste();
+  });
+}
+
+/* ————— quartiers ————— */
+function quartiers(){
+  $("#grille-quartiers").innerHTML = Object.entries(QUARTIERS).map(([id, q]) => `
+    <button class="qcarte" data-quartier="${id}">
+      <img src="${q.photos[0].vignette}" alt="${echap(q.photos[0].legende)}" loading="lazy">
+      <div class="qcarte-corps">
+        <p class="oeil">${echap(q.etiquette)}</p>
+        <h3>${echap(q.nom)}</h3>
+        <p>${echap(q.resume)}</p>
+        <span class="lire">Voir le quartier en photos →</span>
+      </div>
+    </button>`).join("");
+  document.querySelectorAll("[data-quartier]").forEach(b => b.onclick = () => location.hash = "quartier/" + b.dataset.quartier);
+}
+
+function credits(){
+  const vus = new Set();
+  const lignes = [];
+  Object.values(QUARTIERS).forEach(q => q.photos.forEach(p => {
+    if (vus.has(p.source)) return;
+    vus.add(p.source);
+    lignes.push(`<li><a href="${p.source}" target="_blank" rel="noopener">${echap(p.legende)}</a> — ${echap(p.auteur)}, ${echap(p.licence)}, via Wikimedia Commons</li>`);
+  }));
+  $("#credits").innerHTML = lignes.join("");
+}
+
+/* ————— panneau ————— */
+const panneau = $("#panneau");
+let galerie = {photos: [], i: 0};
+
+function ouvrir(html){
+  panneau.innerHTML = `<div class="panneau-int"><div class="fermer"><button aria-label="Fermer">✕</button></div><div class="panneau-corps">${html}</div></div>`;
+  panneau.hidden = false;
+  document.body.style.overflow = "hidden";
+  panneau.querySelector(".fermer button").onclick = () => { location.hash = ""; };
+  panneau.scrollTop = 0;
+  panneau.querySelectorAll("[data-loupe]").forEach(el => el.onclick = () => loupe(el.dataset.loupe, el.dataset.legende));
+  panneau.onclick = e => { if (e.target === panneau) location.hash = ""; };
+}
+
+function fermer(){
+  panneau.hidden = true; panneau.innerHTML = ""; document.body.style.overflow = "";
+}
+
+function blocGalerie(photos){
+  if (!photos.length) return `<div class="galerie"><div class="galerie-grande"><div class="sans-photo" style="aspect-ratio:3/2">PHOTOS À VENIR</div></div></div>`;
+  galerie = {photos, i: 0};
+  return `<div class="galerie">
+    <div class="galerie-grande">
+      <img id="g-img" src="${photos[0].image}" alt="">
+      ${photos.length > 1 ? `<button class="nav-g prec" aria-label="Photo précédente">‹</button><button class="nav-g suiv" aria-label="Photo suivante">›</button><span class="compteur"><span id="g-n">1</span>/${photos.length}</span>` : ""}
+    </div>
+    ${photos[0].legende ? `<p class="legende" id="g-leg">${echap(photos[0].legende)}</p>` : ""}
+    ${photos.length > 1 ? `<div class="vignettes" id="g-vig">${photos.map((p, i) => `<img src="${p.vignette}" alt="" data-i="${i}" aria-current="${i === 0}">`).join("")}</div>` : ""}
+  </div>`;
+}
+
+function brancherGalerie(){
+  const img = $("#g-img", panneau);
+  if (!img || galerie.photos.length < 2) return;
+  const montrer = i => {
+    galerie.i = (i + galerie.photos.length) % galerie.photos.length;
+    const p = galerie.photos[galerie.i];
+    img.src = p.image;
+    const n = $("#g-n", panneau); if (n) n.textContent = galerie.i + 1;
+    const leg = $("#g-leg", panneau); if (leg) leg.textContent = p.legende || "";
+    panneau.querySelectorAll("#g-vig img").forEach((v, k) => v.setAttribute("aria-current", k === galerie.i));
+  };
+  panneau.querySelector(".prec").onclick = () => montrer(galerie.i - 1);
+  panneau.querySelector(".suiv").onclick = () => montrer(galerie.i + 1);
+  panneau.querySelectorAll("#g-vig img").forEach(v => v.onclick = () => montrer(+v.dataset.i));
+  img.style.cursor = "zoom-in";
+  img.onclick = () => loupe(galerie.photos[galerie.i].image, galerie.photos[galerie.i].legende || "");
+  panneau.dataset.galerie = "1";
+  panneau._montrer = montrer;
+}
+
+function ficheAppart(id){
+  const a = APPARTS.find(x => x.id === id);
+  if (!a) { location.hash = ""; return; }
+  const q = QUARTIERS[a.quartier];
+  const det = [
+    ["Loyer", a.loyer ? argent(a.loyer) + " / mois" : "—"],
+    ["Pièces", a.pieces || "—"],
+    ["Chambres", a.chambres ?? "—"],
+    ["Superficie", a.superficie ? a.superficie + " m²" : "—"],
+    ["Étage", a.etage || "—"],
+    ["Disponible", date(a.dispo)],
+    ["Bail", a.bail || "—"],
+    ["Meublé", typeof a.meuble === "string" ? a.meuble : (a.meuble === undefined ? "—" : (a.meuble ? "Oui" : "Non"))],
+    ["Inclus", a.charges || "—"],
+    ["Source", a.source || "—"],
+  ];
+  ouvrir(`
+    ${blocGalerie(a.images || [])}
+    <div class="titre-fiche">
+      <div>
+        <p class="oeil">${echap(q ? q.nom : "")}${a.statut ? " · " + (ETATS[a.statut] || a.statut) : ""}</p>
+        <h2>${echap(a.titre)}</h2>
+        ${a.adresse ? `<p style="margin:6px 0 0;color:var(--doux)">${echap(a.adresse)}</p>` : ""}
+      </div>
+      ${a.loyer ? `<div class="loyer">${argent(a.loyer)}<small>par mois</small></div>` : ""}
+    </div>
+    <dl class="details">${det.map(([t, v]) => `<div><dt>${t}</dt><dd>${echap(v)}</dd></div>`).join("")}</dl>
+    ${blocTrajets(a)}
+    ${(a.atouts && a.atouts.length) || (a.bemols && a.bemols.length) || a.notes ? `<div class="deux-cols">
+      ${a.atouts && a.atouts.length ? `<div><p class="oeil">Ce qui plaît</p><ul class="liste-plus">${a.atouts.map(x => `<li>${echap(x)}</li>`).join("")}</ul></div>` : ""}
+      ${a.bemols && a.bemols.length ? `<div><p class="oeil">Les réserves</p><ul class="liste-moins">${a.bemols.map(x => `<li>${echap(x)}</li>`).join("")}</ul></div>` : ""}
+      ${a.notes ? `<div><p class="oeil">Notes</p><p class="mot">${echap(a.notes)}</p></div>` : ""}
+    </div>` : ""}
+    ${blocNotes(a.id)}
+    <div class="actions">
+      ${a.lien ? `<a class="bouton plein" href="${echap(a.lien)}" target="_blank" rel="noopener">Voir l'annonce ↗</a>` : ""}
+      ${a.carte || a.adresse ? `<a class="bouton" href="${a.carte ? echap(a.carte) : "https://www.google.com/maps/search/" + encodeURIComponent(a.adresse + ", Québec, QC")}" target="_blank" rel="noopener">Ouvrir dans Maps ↗</a>` : ""}
+      <button class="bouton" data-coeur-fiche="${echap(a.id)}" aria-pressed="${COEURS.has(a.id)}">${COEURS.has(a.id) ? "♥ Coup de cœur" : "♡ Coup de cœur"}</button>
+    </div>
+    <p class="note-locale">Les coups de cœur restent sur cet appareil : ils ne sont pas partagés avec l'autre personne.</p>
+    ${q ? blocQuartier(a.quartier) : ""}
+  `);
+  brancherGalerie();
+  brancherNotes(a.id);
+  const bc = panneau.querySelector("[data-coeur-fiche]");
+  if (bc) bc.onclick = () => {
+    basculerCoeur(a.id);
+    bc.setAttribute("aria-pressed", COEURS.has(a.id));
+    bc.textContent = (COEURS.has(a.id) ? "♥" : "♡") + " Coup de cœur";
+    filtres(); liste();
+  };
+  panneau.querySelectorAll("[data-quartier]").forEach(b => b.onclick = () => location.hash = "quartier/" + b.dataset.quartier);
+}
+
+function blocQuartier(id){
+  const q = QUARTIERS[id];
+  return `<div class="bloc-quartier">
+    <p class="oeil">Le quartier autour — ${echap(q.etiquette)}</p>
+    <h2 style="font-size:26px">${echap(q.nom)}</h2>
+    <p class="intro">${echap(q.description)}</p>
+    <ul class="reperes">${q.reperes.map(r => `<li>${echap(r)}</li>`).join("")}</ul>
+    <div class="mosaique large">${q.photos.map(p => `<figure data-loupe="${p.image}" data-legende="${echap(p.legende)}"><img src="${p.vignette}" alt="${echap(p.legende)}" loading="lazy"><figcaption>${echap(p.legende)}</figcaption></figure>`).join("")}</div>
+    <div class="actions">
+      <button class="bouton" data-quartier="${id}">Voir le quartier en grand</button>
+      <a class="bouton" href="${echap(q.carte)}" target="_blank" rel="noopener">Ouvrir le secteur dans Maps ↗</a>
+    </div>
+  </div>`;
+}
+
+function ficheQuartier(id){
+  const q = QUARTIERS[id];
+  if (!q) { location.hash = ""; return; }
+  const ici = APPARTS.filter(a => a.quartier === id);
+  ouvrir(`
+    ${blocGalerie(q.photos)}
+    <div class="titre-fiche">
+      <div>
+        <p class="oeil">${echap(q.etiquette)}</p>
+        <h2>${echap(q.nom)}</h2>
+      </div>
+    </div>
+    <p style="margin-top:20px;max-width:66ch;font-size:17px">${echap(q.description)}</p>
+    <div class="deux-cols">
+      <div><p class="oeil">Les repères</p><ul class="reperes">${q.reperes.map(r => `<li>${echap(r)}</li>`).join("")}</ul></div>
+      <div>
+        <p class="oeil">Nos appartements ici</p>
+        ${ici.length ? `<ul class="reperes">${ici.map(a => `<li><button data-appart="${echap(a.id)}" style="color:var(--or-clair);text-decoration:underline;text-underline-offset:3px">${echap(a.titre)}</button>${a.loyer ? ` — <span style="font-family:var(--mono)">${argent(a.loyer)}</span>` : ""}</li>`).join("")}</ul>`
+          : `<p style="color:var(--faible);margin:10px 0 0">Aucun appartement repéré dans ce secteur pour l'instant.</p>`}
+      </div>
+    </div>
+    <div class="actions"><a class="bouton" href="${echap(q.carte)}" target="_blank" rel="noopener">Ouvrir le secteur dans Maps ↗</a></div>
+  `);
+  brancherGalerie();
+  panneau.querySelectorAll("[data-appart]").forEach(b => b.onclick = () => location.hash = "appart/" + b.dataset.appart);
+}
+
+/* ————— visionneuse ————— */
+const vue = $("#loupe");
+function loupe(src, legende){
+  vue.innerHTML = `<img src="${src}" alt="${echap(legende || "")}">${legende ? `<p>${echap(legende)} — clic ou Échap pour fermer</p>` : ""}`;
+  vue.hidden = false;
+  vue.onclick = () => { vue.hidden = true; vue.innerHTML = ""; };
+}
+
+/* ————— routage ————— */
+function router(){
+  const h = location.hash.replace(/^#/, "");
+  const [type, id] = h.split("/");
+  if (type === "appart" && id) return ficheAppart(decodeURIComponent(id));
+  if (type === "quartier" && id) return ficheQuartier(decodeURIComponent(id));
+  fermer();
+  if (h === "liste" || h === "quartiers") document.getElementById(h)?.scrollIntoView({behavior: "smooth"});
+}
+
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape"){
+    if (!vue.hidden){ vue.hidden = true; vue.innerHTML = ""; return; }
+    if (!panneau.hidden) location.hash = "";
+  }
+  if (!panneau.hidden && panneau._montrer && vue.hidden){
+    if (e.key === "ArrowLeft") panneau._montrer(galerie.i - 1);
+    if (e.key === "ArrowRight") panneau._montrer(galerie.i + 1);
+  }
+});
+window.addEventListener("hashchange", router);
+
+chiffres(); filtres(); liste(); echange(); quartiers(); credits(); router();
+</script>
