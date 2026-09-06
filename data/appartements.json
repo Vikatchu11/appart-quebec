@@ -933,6 +933,444 @@
           }
         }
       }
+    },
+    {
+      "id": "robitaille-507",
+      "titre": "Condo 785 pi², La Cité Verte — 507",
+      "adresse": "1195, rue Louis-Adolphe-Robitaille, app. 507",
+      "quartier": "saint-sacrement",
+      "coord": [
+        -71.2511567,
+        46.7977718
+      ],
+      "loyer": 1950,
+      "charges": "Chauffage, électricité et électroménagers inclus",
+      "pieces": "3½",
+      "chambres": 1,
+      "superficie": 73,
+      "etage": "5e",
+      "meuble": "Non meublé",
+      "dispo": "Immédiatement",
+      "bail": "À confirmer",
+      "atouts": [
+        "3 mois gratuits offerts par le propriétaire",
+        "785 pi² (73 m²) pour un 3½ — très généreux",
+        "Chauffage et électricité inclus",
+        "Piscine et gymnase dans l'immeuble",
+        "La Cité Verte, écoquartier proche du chemin Sainte-Foy",
+        "18 min de bus du Cégep de Sainte-Foy"
+      ],
+      "bemols": [
+        "1 950 $ — dans le haut de la fourchette",
+        "Le logement est vide sur les photos : difficile de juger",
+        "34 min de bus jusqu'au Vieux-Québec",
+        "Annonce en ligne depuis 88 jours"
+      ],
+      "notes": "MLS 12912199. « 3 mois gratuits » : à faire préciser — c'est souvent étalé sur un bail de 12 mois, ce qui revient à un rabais mensuel.",
+      "lien": "https://www.realtor.ca/immobilier/29876354/1195-rue-louis-adolphe-robitaille-507-quebec-la-cite-limoilou-saint-sacrement",
+      "source": "REALTOR.ca",
+      "carte": "https://www.google.com/maps/search/1195+rue+Louis-Adolphe-Robitaille,+Qu%C3%A9bec,+QC",
+      "statut": "a_visiter",
+      "photos": [
+        {
+          "f": "01.jpg",
+          "legende": "La pièce de vie, poutres apparentes"
+        },
+        {
+          "f": "02.jpg",
+          "legende": "La cuisine"
+        },
+        {
+          "f": "03.jpg",
+          "legende": "La cuisine, côté mur"
+        },
+        {
+          "f": "04.jpg",
+          "legende": "La chambre"
+        },
+        {
+          "f": "05.jpg",
+          "legende": "La vue depuis la fenêtre"
+        },
+        {
+          "f": "06.jpg",
+          "legende": "L'immeuble, dans La Cité Verte"
+        }
+      ],
+      "trajets": {
+        "vieux-quebec": {
+          "bus": {
+            "min": 34
+          },
+          "pied": {
+            "min": 61
+          },
+          "velo": {
+            "min": 18
+          }
+        },
+        "cegep-sainte-foy": {
+          "bus": {
+            "min": 18
+          },
+          "pied": {
+            "min": 46
+          },
+          "velo": {
+            "min": 12
+          }
+        }
+      }
+    },
+    {
+      "id": "robitaille-312",
+      "titre": "Condo semi-meublé, La Cité Verte — 312",
+      "adresse": "1195, rue Louis-Adolphe-Robitaille, app. 312",
+      "quartier": "saint-sacrement",
+      "coord": [
+        -71.2511567,
+        46.7977718
+      ],
+      "loyer": 1850,
+      "charges": "Climatisation, chauffage et eau chaude inclus",
+      "pieces": "3½ + bureau fermé",
+      "chambres": 1,
+      "superficie": 70,
+      "etage": "3e",
+      "meuble": "Semi-meublé, clé en main",
+      "dispo": "Immédiatement",
+      "bail": "À confirmer",
+      "atouts": [
+        "Plafonds de 10 pieds, aire ouverte, très lumineux",
+        "Un bureau fermé en plus de la chambre",
+        "Semi-meublé, clé en main",
+        "Climatisation, chauffage et eau chaude inclus",
+        "Piscine et salle d'entraînement",
+        "Construction 2011, écoquartier La Cité Verte",
+        "18 min de bus du Cégep de Sainte-Foy"
+      ],
+      "bemols": [
+        "Stationnement intérieur en supplément (100 $/mois)",
+        "Semi-meublé : peu de place pour vos propres meubles",
+        "34 min de bus jusqu'au Vieux-Québec",
+        "Annonce en ligne depuis 145 jours"
+      ],
+      "notes": "MLS 10600957. Même immeuble que le 507, un étage plus bas et 100 $ moins cher, mais meublé et avec un bureau fermé.",
+      "lien": "https://www.realtor.ca/immobilier/29595958/1195-rue-louis-adolphe-robitaille-312-quebec-la-cite-limoilou-saint-sacrement",
+      "source": "REALTOR.ca",
+      "carte": "https://www.google.com/maps/search/1195+rue+Louis-Adolphe-Robitaille,+Qu%C3%A9bec,+QC",
+      "statut": "a_visiter",
+      "photos": [
+        {
+          "f": "01.jpg",
+          "legende": "Le salon"
+        },
+        {
+          "f": "02.jpg",
+          "legende": "Le salon, vers les fenêtres"
+        },
+        {
+          "f": "03.jpg",
+          "legende": "La salle à manger"
+        },
+        {
+          "f": "04.jpg",
+          "legende": "Le bureau fermé"
+        },
+        {
+          "f": "05.jpg",
+          "legende": "La chambre"
+        },
+        {
+          "f": "06.jpg",
+          "legende": "La salle de bain"
+        }
+      ],
+      "trajets": {
+        "vieux-quebec": {
+          "bus": {
+            "min": 34
+          },
+          "pied": {
+            "min": 61
+          },
+          "velo": {
+            "min": 18
+          }
+        },
+        "cegep-sainte-foy": {
+          "bus": {
+            "min": 18
+          },
+          "pied": {
+            "min": 46
+          },
+          "velo": {
+            "min": 12
+          }
+        }
+      }
+    },
+    {
+      "id": "chateau-st-louis-815",
+      "titre": "Château St-Louis — unité 815",
+      "adresse": "135, Grande Allée Ouest, app. 815",
+      "quartier": "montcalm",
+      "coord": [
+        -71.2244136,
+        46.8016343
+      ],
+      "loyer": 1695,
+      "charges": "À confirmer",
+      "pieces": "4½",
+      "chambres": 2,
+      "superficie": 63,
+      "etage": "8e (immeuble de 11)",
+      "meuble": "Non meublé",
+      "dispo": "À confirmer",
+      "bail": "À confirmer",
+      "atouts": [
+        "Deux chambres pour 1 695 $ — le meilleur rapport de l'immeuble",
+        "8e étage : lumière et dégagement",
+        "Au coin de Cartier et de la Grande Allée",
+        "Accès privé aux plaines d'Abraham par la cour",
+        "Piscine, terrasse, BBQ, salle d'entraînement",
+        "21 min de bus, 26 min à pied du Vieux-Québec"
+      ],
+      "bemols": [
+        "679 pi² (63 m²) pour deux chambres : compact",
+        "Ce qui est inclus n'est pas précisé dans l'annonce",
+        "Annonce en ligne depuis 89 jours"
+      ],
+      "notes": "MLS 10779445. Même immeuble que l'unité 304, mais deux chambres et 100 $ de moins par mois.",
+      "lien": "https://www.realtor.ca/immobilier/29868687/135-grande-allee-o-815-quebec-la-cite-limoilou-montcalm",
+      "source": "REALTOR.ca",
+      "carte": "https://www.google.com/maps/search/135+Grande+All%C3%A9e+Ouest,+Qu%C3%A9bec,+QC",
+      "statut": "a_visiter",
+      "photos": [
+        {
+          "f": "01.jpg",
+          "legende": "Le salon"
+        },
+        {
+          "f": "02.jpg"
+        },
+        {
+          "f": "03.jpg"
+        },
+        {
+          "f": "04.jpg"
+        },
+        {
+          "f": "05.jpg"
+        },
+        {
+          "f": "06.jpg"
+        },
+        {
+          "f": "07.jpg",
+          "legende": "La cour arrière et l'immeuble"
+        }
+      ],
+      "trajets": {
+        "vieux-quebec": {
+          "bus": {
+            "min": 21
+          },
+          "pied": {
+            "min": 26
+          },
+          "velo": {
+            "min": 12
+          }
+        },
+        "cegep-sainte-foy": {
+          "bus": {
+            "min": 32
+          },
+          "pied": {
+            "min": 76
+          },
+          "velo": {
+            "min": 21
+          }
+        }
+      }
+    },
+    {
+      "id": "chateau-st-louis-207",
+      "titre": "Château St-Louis — unité 207",
+      "adresse": "135, Grande Allée Ouest, app. 207",
+      "quartier": "montcalm",
+      "coord": [
+        -71.2244136,
+        46.8016343
+      ],
+      "loyer": 1675,
+      "charges": "À confirmer",
+      "pieces": "3½",
+      "chambres": 1,
+      "superficie": 56,
+      "etage": "2e (immeuble de 11)",
+      "meuble": "Non meublé",
+      "dispo": "À confirmer",
+      "bail": "À confirmer",
+      "atouts": [
+        "Le moins cher des trois unités du Château St-Louis",
+        "Au coin de Cartier et de la Grande Allée",
+        "Accès privé aux plaines d'Abraham par la cour",
+        "Piscine, terrasse, BBQ, salle d'entraînement",
+        "21 min de bus, 26 min à pied du Vieux-Québec"
+      ],
+      "bemols": [
+        "605 pi² (56 m²) : le plus petit de l'immeuble",
+        "2e étage : peu de vue, plus de bruit de la Grande Allée",
+        "Ce qui est inclus n'est pas précisé",
+        "Annonce en ligne depuis 94 jours"
+      ],
+      "notes": "MLS 10799821. Troisième unité libre dans le même immeuble : 207 à 1 675 $, 304 à 1 795 $ et 815 à 1 695 $ (deux chambres).",
+      "lien": "https://www.realtor.ca/immobilier/29850085/135-grande-allee-o-207-quebec-la-cite-limoilou-montcalm",
+      "source": "REALTOR.ca",
+      "carte": "https://www.google.com/maps/search/135+Grande+All%C3%A9e+Ouest,+Qu%C3%A9bec,+QC",
+      "statut": "a_visiter",
+      "photos": [
+        {
+          "f": "01.jpg",
+          "legende": "La cuisine, ouverte sur la pièce de vie"
+        },
+        {
+          "f": "02.jpg"
+        },
+        {
+          "f": "03.jpg"
+        },
+        {
+          "f": "04.jpg"
+        },
+        {
+          "f": "05.jpg"
+        },
+        {
+          "f": "06.jpg"
+        },
+        {
+          "f": "07.jpg",
+          "legende": "L'entrée du Château St-Louis"
+        }
+      ],
+      "trajets": {
+        "vieux-quebec": {
+          "bus": {
+            "min": 21
+          },
+          "pied": {
+            "min": 26
+          },
+          "velo": {
+            "min": 12
+          }
+        },
+        "cegep-sainte-foy": {
+          "bus": {
+            "min": 32
+          },
+          "pied": {
+            "min": 76
+          },
+          "velo": {
+            "min": 21
+          }
+        }
+      }
+    },
+    {
+      "id": "st-louis-716",
+      "titre": "Condo 944 pi², chemin Saint-Louis",
+      "adresse": "3044, chemin Saint-Louis, app. 716",
+      "quartier": "sillery",
+      "coord": [
+        -71.2894149,
+        46.7586817
+      ],
+      "loyer": 1845,
+      "charges": "À confirmer",
+      "pieces": "3½ + bureau",
+      "chambres": 1,
+      "superficie": 88,
+      "etage": "7e (immeuble de 8)",
+      "meuble": "Non meublé",
+      "dispo": "À confirmer",
+      "bail": "À confirmer",
+      "atouts": [
+        "944 pi² (88 m²) — le plus grand 3½ de la liste",
+        "Un bureau en plus de la chambre",
+        "7e étage, dans un immeuble de 8",
+        "Piscine intérieure chauffée",
+        "Climatiseur mural et échangeur d'air",
+        "Buanderie dans le logement"
+      ],
+      "bemols": [
+        "Annonce quasi vide : « voir courtier inscripteur »",
+        "42 min de bus du Vieux-Québec, 2 h à pied",
+        "Secteur Saint-Louis : très résidentiel, peu de vie de rue",
+        "Ce qui est inclus n'est pas précisé"
+      ],
+      "notes": "MLS 26844695, en ligne depuis 52 jours. L'annonce ne donne aucune description : il faudra appeler le courtier pour tout — inclusions, disponibilité, stationnement.",
+      "lien": "https://www.realtor.ca/immobilier/30036545/3044-ch-st-louis-716-quebec-sainte-foysillerycap-rouge-saint-louis",
+      "source": "REALTOR.ca",
+      "carte": "https://www.google.com/maps/search/3044+chemin+Saint-Louis,+Qu%C3%A9bec,+QC",
+      "statut": "a_visiter",
+      "photos": [
+        {
+          "f": "01.jpg",
+          "legende": "La cuisine et la pièce de vie"
+        },
+        {
+          "f": "02.jpg"
+        },
+        {
+          "f": "03.jpg"
+        },
+        {
+          "f": "04.jpg"
+        },
+        {
+          "f": "05.jpg"
+        },
+        {
+          "f": "06.jpg"
+        },
+        {
+          "f": "07.jpg"
+        },
+        {
+          "f": "08.jpg"
+        }
+      ],
+      "trajets": {
+        "vieux-quebec": {
+          "bus": {
+            "min": 42
+          },
+          "pied": {
+            "min": 127
+          },
+          "velo": {
+            "min": 42
+          }
+        },
+        "cegep-sainte-foy": {
+          "bus": {
+            "min": 35
+          },
+          "pied": {
+            "min": 63
+          },
+          "velo": {
+            "min": 19
+          }
+        }
+      }
     }
   ]
 }

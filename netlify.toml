@@ -1,0 +1,4 @@
+# Le site publié se trouve dans docs/ (généré par scripts/build.py --web).
+[build]
+  publish = "docs"
+  command = ""

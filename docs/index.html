@@ -7,251 +7,262 @@
 <title>Notre appart à Québec</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=Libre+Franklin:wght@400;500;600&display=swap">
 <style>
 :root{
-  --nuit:#0A1220; --surface:#101B2C; --surface-h:#152437; --trait:#22364E; --trait-fort:#31496618;
-  --or:#E3A857; --or-clair:#F5CE93; --givre:#8FB6D9; --rose:#E4788B; --menthe:#6FBF9B;
-  --texte:#ECF2F9; --doux:#9CB1C8; --faible:#6E8399;
-  --ombre:0 18px 40px -22px rgba(0,0,0,.85);
-  --r:14px;
-  --dis:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
-  --corps:"IBM Plex Sans","Helvetica Neue",Arial,sans-serif;
-  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --papier:#F2F1EC; --feuille:#FFFFFF; --creux:#E9E7E0;
+  --encre:#16171A; --encre-2:#55575D; --encre-3:#8A8B90;
+  --filet:#DBD8D0; --filet-fort:#C4C0B6;
+  --accent:#1C3A5B; --accent-clair:#325B85;
+  --bleu:#3E6A93; --ocre:#8A6A1E; --vert:#3D6A50; --brique:#9B3B2C; --gris:#9A9A95;
+  --serif:"Newsreader",Georgia,"Times New Roman",serif;
+  --sans:"Libre Franklin","Helvetica Neue",Arial,sans-serif;
 }
 *{box-sizing:border-box}
-body{margin:0;background:var(--nuit);color:var(--texte);font-family:var(--corps);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
-img{display:block}
-a{color:var(--or-clair);text-decoration-color:#E3A85766;text-underline-offset:3px}
-button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
-:focus-visible{outline:2px solid var(--or);outline-offset:3px;border-radius:6px}
-h1,h2,h3{font-family:var(--dis);font-weight:700;letter-spacing:-.02em;line-height:1.1;text-wrap:balance;margin:0}
-.enveloppe{width:min(1180px,100% - 40px);margin-inline:auto}
-.oeil{font-family:var(--mono);font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--or);margin:0}
+body{margin:0;background:var(--papier);color:var(--encre);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:0}
+a{color:var(--accent);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+a:hover{color:var(--accent-clair)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.12;letter-spacing:-.005em;text-wrap:balance;margin:0}
+.enveloppe{width:min(1220px,100% - 44px);margin-inline:auto}
+.etiq{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--encre-3);margin:0}
+.chiffre{font-variant-numeric:tabular-nums lining-nums}
 
-/* — barre — */
-.barre{position:sticky;top:0;z-index:40;background:rgba(10,18,32,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--trait)}
-.barre-int{display:flex;align-items:center;gap:18px;height:60px}
-.marque{display:flex;align-items:center;gap:10px;font-family:var(--dis);font-weight:800;letter-spacing:-.02em;font-size:17px}
-.pastille{width:9px;height:9px;border-radius:50%;background:var(--or);box-shadow:0 0 0 4px #E3A85722}
-.barre nav{margin-left:auto;display:flex;gap:4px}
-.barre nav a{font-size:14px;color:var(--doux);text-decoration:none;padding:7px 12px;border-radius:99px}
-.barre nav a:hover{color:var(--texte);background:var(--surface-h)}
+/* en-tête */
+.barre{position:sticky;top:0;z-index:40;background:rgba(242,241,236,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--filet)}
+.barre-int{display:flex;align-items:baseline;gap:26px;height:58px}
+.marque{font-family:var(--serif);font-size:19px;letter-spacing:-.01em}
+.marque em{font-style:italic;color:var(--encre-2)}
+.barre nav{margin-left:auto;display:flex;gap:22px}
+.barre nav a{font-size:13.5px;color:var(--encre-2);text-decoration:none;padding-bottom:2px;border-bottom:1px solid transparent}
+.barre nav a:hover{color:var(--encre);border-bottom-color:var(--encre)}
 
-/* — ouverture — */
-.hero{position:relative;margin-top:14px;border-radius:var(--r);overflow:hidden;isolation:isolate}
-.hero img{width:100%;height:clamp(230px,34vw,330px);object-fit:cover;filter:saturate(.92)}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,18,32,.25) 0%,rgba(10,18,32,.62) 45%,rgba(10,18,32,.96) 100%)}
-.hero-txt{position:absolute;z-index:2;left:0;right:0;bottom:0;padding:26px clamp(20px,4vw,38px)}
-.hero-txt h1{font-size:clamp(30px,5vw,50px);font-weight:800}
-.hero-txt p{margin:10px 0 0;max-width:56ch;color:#D5E1EE;font-size:16.5px}
-.chiffres{display:flex;flex-wrap:wrap;gap:10px 34px;margin:22px 0 0;padding:0;list-style:none}
-.chiffres div{font-family:var(--mono);font-size:20px;font-variant-numeric:tabular-nums}
-.chiffres span{display:block;font-family:var(--corps);font-size:12.5px;color:var(--faible);letter-spacing:.04em}
+/* ouverture */
+.ouverture{padding:56px 0 34px;display:grid;gap:22px;grid-template-columns:minmax(0,1fr);max-width:none}
+.ouverture h1{font-size:clamp(38px,6vw,68px);font-weight:300;max-width:15ch}
+.ouverture .chapo{font-size:17.5px;color:var(--encre-2);max-width:56ch;margin:0}
+.bande{margin:0 0 12px;border-top:1px solid var(--filet-fort);border-bottom:1px solid var(--filet-fort)}
+.bande img{width:100%;height:clamp(190px,26vw,300px);object-fit:cover}
+.bande figcaption{font-size:12px;color:var(--encre-3);padding:7px 0 8px}
+.sommaire{display:flex;flex-wrap:wrap;gap:0;border-top:1px solid var(--filet);margin:0;padding:0;list-style:none}
+.sommaire li{flex:1 1 190px;padding:16px 22px 18px 0;border-right:1px solid var(--filet)}
+.sommaire li:last-child{border-right:0}
+.sommaire b{display:block;font-family:var(--serif);font-size:27px;font-weight:400;font-variant-numeric:tabular-nums}
+.sommaire span{font-size:12.5px;color:var(--encre-3)}
 
-section{margin-top:62px}
-.tete{display:flex;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:22px}
-.tete h2{font-size:clamp(24px,3.4vw,34px)}
-.tete p{margin:6px 0 0;color:var(--doux);max-width:62ch}
+section{margin-top:64px}
+.tete{border-bottom:1px solid var(--encre);padding-bottom:12px;margin-bottom:26px;display:flex;align-items:flex-end;gap:18px;flex-wrap:wrap}
+.tete h2{font-size:clamp(25px,3.2vw,34px)}
+.tete .compte{margin-left:auto;font-size:13px;color:var(--encre-3)}
+.intro-section{margin:-14px 0 24px;color:var(--encre-2);max-width:62ch;font-size:15.5px}
 
-/* — filtres — */
-.filtres{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 24px}
-.puce{border:1px solid var(--trait);border-radius:99px;padding:7px 15px;font-size:13.5px;color:var(--doux);transition:.15s}
-.puce:hover{border-color:#3B5677;color:var(--texte)}
-.puce[aria-pressed="true"]{background:var(--or);border-color:var(--or);color:#1A1206;font-weight:600}
-.tri{margin-left:auto;display:flex;align-items:center;gap:8px;font-size:13px;color:var(--faible)}
-.tri select{background:var(--surface);border:1px solid var(--trait);color:var(--texte);border-radius:99px;padding:7px 12px;font-size:13.5px;font-family:var(--corps)}
+/* filtres */
+.filtres{display:flex;flex-wrap:wrap;align-items:center;gap:18px;margin:0 0 30px;padding-bottom:14px;border-bottom:1px solid var(--filet)}
+.puce{font-size:13.5px;color:var(--encre-2);padding-bottom:3px;border-bottom:1.5px solid transparent}
+.puce:hover{color:var(--encre)}
+.puce[aria-pressed="true"]{color:var(--encre);border-bottom-color:var(--encre);font-weight:600}
+.tri{margin-left:auto;display:flex;align-items:center;gap:9px;font-size:13px;color:var(--encre-3)}
+.tri select{font-family:var(--sans);font-size:13.5px;color:var(--encre);background:none;border:0;border-bottom:1px solid var(--filet-fort);padding:3px 2px}
 
-/* — grille d'appartements — */
-.grille{display:grid;grid-template-columns:repeat(auto-fill,minmax(285px,1fr));gap:22px}
-.carte{position:relative;background:var(--surface);border:1px solid var(--trait);border-radius:var(--r);overflow:hidden;text-align:left;width:100%;padding:0;display:flex;flex-direction:column;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
-.carte:hover{transform:translateY(-3px);border-color:#3A5678;box-shadow:var(--ombre)}
-.carte-photo{position:relative;aspect-ratio:4/3;background:var(--surface-h)}
-.carte-photo img{width:100%;height:100%;object-fit:cover}
-.sans-photo{width:100%;height:100%;display:grid;place-items:center;color:var(--faible);font-family:var(--mono);font-size:12px;letter-spacing:.1em}
-.prix{position:absolute;left:12px;bottom:12px;background:rgba(10,18,32,.86);backdrop-filter:blur(6px);border:1px solid #ffffff1f;border-radius:8px;padding:5px 10px;font-family:var(--mono);font-size:15px;font-variant-numeric:tabular-nums}
-.etat{position:absolute;left:12px;top:12px;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;padding:5px 9px;border-radius:6px;background:rgba(10,18,32,.8);border:1px solid currentColor}
-.etat.a_visiter{color:var(--givre)} .etat.visite_prevue{color:var(--or)} .etat.visite{color:var(--menthe)} .etat.ecarte{color:var(--faible)}
-.carte.ecarte .carte-photo img{filter:grayscale(.85) brightness(.7)}
-.carte-corps{padding:16px 17px 18px;display:flex;flex-direction:column;gap:7px;flex:1}
-.carte-corps h3{font-size:19px}
-.lieu{font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--or);margin:0}
-.adresse{margin:0;color:var(--doux);font-size:14px}
-.faits{display:flex;flex-wrap:wrap;gap:6px 14px;margin:6px 0 0;padding:0;list-style:none;font-size:13.5px;color:var(--doux);font-family:var(--mono);font-variant-numeric:tabular-nums;border-top:1px solid var(--trait);padding-top:11px}
-.btn-coeur{position:absolute;right:12px;top:12px;z-index:3;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:rgba(10,18,32,.82);border:1px solid #ffffff22;font-size:15px;line-height:1;transition:.15s}
-.btn-coeur:hover{transform:scale(1.08)}
-.btn-coeur[aria-pressed="true"]{background:var(--rose);border-color:var(--rose)}
+/* liste */
+.grille{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:42px 30px}
+.carte{display:flex;flex-direction:column;gap:0;text-align:left}
+.carte-photo{position:relative;overflow:hidden;background:var(--creux);border:0;width:100%;display:block;padding:0}
+.carte-photo img{width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .5s cubic-bezier(.2,.6,.2,1)}
+.carte:hover .carte-photo img{transform:scale(1.03)}
+.sans-photo{aspect-ratio:4/3;display:grid;place-items:center;color:var(--encre-3);font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.carte-texte{padding:14px 0 0;text-align:left;display:flex;flex-direction:column;gap:5px;flex:1;width:100%}
+.ligne-haut{display:flex;align-items:baseline;gap:14px}
+.ligne-haut h3{font-size:21px;flex:1}
+.loyer-carte{font-family:var(--serif);font-size:21px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.adresse{margin:0;color:var(--encre-2);font-size:14px}
+.meta{margin:9px 0 0;padding:9px 0 0;border-top:1px solid var(--filet);display:flex;flex-wrap:wrap;gap:4px 16px;font-size:13px;color:var(--encre-2);font-variant-numeric:tabular-nums}
+.pied-carte{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:auto;padding-top:11px}
+.statut{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:600;letter-spacing:.13em;text-transform:uppercase}
+.statut::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor;flex:0 0 auto}
+.statut.a_visiter{color:var(--bleu)} .statut.visite_prevue{color:var(--ocre)}
+.statut.visite{color:var(--vert)} .statut.ecarte{color:var(--gris)}
+.carte.ecarte .carte-photo img{filter:grayscale(1);opacity:.55}
+.garder{font-size:12.5px;color:var(--encre-3);border-bottom:1px solid var(--filet-fort);padding-bottom:1px}
+.garder:hover{color:var(--encre);border-bottom-color:var(--encre)}
+.garder[aria-pressed="true"]{color:var(--accent);border-bottom-color:var(--accent);font-weight:600}
+.note-carte{display:flex;align-items:center;gap:9px;font-size:13px;color:var(--encre-2);font-variant-numeric:tabular-nums}
 
-/* — distances — */
-.trajets{margin-top:28px}
+/* quartiers */
+.quartiers{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:40px 30px}
+.qcarte{text-align:left;display:flex;flex-direction:column}
+.qcarte img{width:100%;aspect-ratio:5/4;object-fit:cover;transition:transform .5s cubic-bezier(.2,.6,.2,1)}
+.qcarte .cadre-img{overflow:hidden;background:var(--creux)}
+.qcarte:hover img{transform:scale(1.03)}
+.qcarte h3{font-size:22px;margin-top:12px}
+.qcarte p{margin:6px 0 0;color:var(--encre-2);font-size:14.5px}
+.qcarte .lire{margin-top:11px;font-size:13px;color:var(--accent);border-bottom:1px solid var(--filet-fort);align-self:flex-start;padding-bottom:1px}
+.qcarte:hover .lire{border-bottom-color:var(--accent)}
+
+/* échange de notes */
+.echange{margin:0 0 30px;padding:14px 0;border-top:1px solid var(--filet);border-bottom:1px solid var(--filet);display:flex;flex-wrap:wrap;align-items:center;gap:8px 20px;font-size:13.5px;color:var(--encre-2)}
+.echange .lien{color:var(--accent);border-bottom:1px solid var(--filet-fort);padding-bottom:1px;font-size:13.5px}
+.echange .lien:hover{border-bottom-color:var(--accent)}
+.echange .zone{flex-basis:100%;display:grid;gap:10px;justify-items:start;padding-top:4px}
+.echange textarea{width:100%;min-height:70px;background:var(--feuille);border:1px solid var(--filet-fort);color:var(--encre);font-family:var(--sans);font-size:13px;padding:11px;resize:vertical}
+
+/* fiche */
+.panneau{position:fixed;inset:0;z-index:80;background:rgba(22,23,26,.42);overflow-y:auto;overscroll-behavior:contain}
+.feuille{width:min(1060px,100% - 26px);margin:26px auto 60px;background:var(--feuille);border:1px solid var(--filet-fort)}
+.fermer{position:sticky;top:0;z-index:5;display:flex;justify-content:flex-end;padding:11px 11px 0}
+.fermer button{width:34px;height:34px;border:1px solid var(--filet-fort);background:var(--feuille);font-size:15px;line-height:1;color:var(--encre-2)}
+.fermer button:hover{color:var(--encre);border-color:var(--encre)}
+.corps{padding:0 clamp(20px,4vw,44px) 46px;margin-top:-45px}
+.galerie{margin-bottom:30px}
+.g-cadre{position:relative;background:var(--creux)}
+.g-cadre img{width:100%;max-height:min(64vh,600px);aspect-ratio:3/2;object-fit:cover;cursor:zoom-in}
+.nav-g{position:absolute;top:50%;transform:translateY(-50%);width:38px;height:52px;background:rgba(255,255,255,.9);border:1px solid var(--filet-fort);font-size:16px;color:var(--encre)}
+.nav-g.prec{left:0;border-left:0} .nav-g.suiv{right:0;border-right:0}
+.g-bas{display:flex;align-items:baseline;gap:16px;padding:9px 1px 0}
+.g-bas .legende{font-size:13px;color:var(--encre-2);flex:1}
+.g-bas .compteur{font-size:12.5px;color:var(--encre-3);font-variant-numeric:tabular-nums}
+.vignettes{display:flex;gap:7px;overflow-x:auto;padding:10px 1px 2px}
+.vignettes img{width:88px;height:60px;object-fit:cover;flex:0 0 auto;opacity:.45;cursor:pointer;border:1px solid transparent}
+.vignettes img[aria-current="true"],.vignettes img:hover{opacity:1;border-color:var(--encre)}
+.titre-fiche{display:flex;flex-wrap:wrap;align-items:flex-end;gap:12px 28px;padding-bottom:20px;border-bottom:1px solid var(--encre)}
+.titre-fiche h2{font-size:clamp(27px,4vw,40px);font-weight:300}
+.titre-fiche .adresse{font-size:15px;margin-top:7px}
+.loyer-fiche{margin-left:auto;text-align:right}
+.loyer-fiche b{display:block;font-family:var(--serif);font-size:34px;font-weight:400;font-variant-numeric:tabular-nums}
+.loyer-fiche span{font-size:12px;color:var(--encre-3)}
+.details{display:grid;grid-template-columns:repeat(auto-fit,minmax(158px,1fr));gap:0;margin:0;padding:0}
+.details div{padding:15px 18px 15px 0;border-bottom:1px solid var(--filet)}
+.details dt{font-size:11px;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--encre-3);margin-bottom:4px}
+.details dd{margin:0;font-size:15.5px;font-variant-numeric:tabular-nums}
+.deux-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:34px;margin-top:32px}
+.liste-plus,.liste-moins{margin:11px 0 0;padding:0;list-style:none;display:grid;gap:8px;font-size:15px}
+.liste-plus li,.liste-moins li{padding-left:20px;position:relative}
+.liste-plus li::before{content:"+";position:absolute;left:0;color:var(--vert)}
+.liste-moins li::before{content:"–";position:absolute;left:0;color:var(--brique)}
+.mot{margin:11px 0 0;color:var(--encre-2);font-size:15px}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px}
+.bouton{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;font-size:14px;text-decoration:none;border:1px solid var(--encre);color:var(--encre);background:none}
+.bouton:hover{background:var(--encre);color:var(--papier)}
+.bouton.plein{background:var(--encre);color:var(--papier)}
+.bouton.plein:hover{background:var(--accent);border-color:var(--accent)}
+
+/* trajets */
+.trajets{margin-top:34px}
 .trajets .cadre{overflow-x:auto}
-.trajets table{width:100%;min-width:430px;border-collapse:collapse;font-size:14.5px;margin-top:6px}
-.trajets th{text-align:left;font-family:var(--mono);font-size:11px;font-weight:400;letter-spacing:.11em;text-transform:uppercase;color:var(--faible);padding:0 14px 9px 0;white-space:nowrap}
-.trajets td{padding:11px 14px 11px 0;border-top:1px solid var(--trait);vertical-align:baseline}
-.trajets td.lieu{font-weight:600}
-.trajets td.n{font-family:var(--mono);font-variant-numeric:tabular-nums;color:var(--doux);white-space:nowrap}
-.trajets td.n strong{color:var(--texte);font-weight:500}
+.trajets table{width:100%;min-width:430px;border-collapse:collapse;font-size:15px;margin-top:10px}
+.trajets th{text-align:left;font-size:11px;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--encre-3);padding:0 16px 10px 0;white-space:nowrap}
+.trajets td{padding:12px 16px 12px 0;border-top:1px solid var(--filet);font-variant-numeric:tabular-nums;white-space:nowrap}
+.trajets td.lieu{font-weight:500;white-space:normal}
+.trajets td.n{color:var(--encre-2)}
+.trajets td.n b{color:var(--encre);font-weight:600}
 .trajets td:last-child{text-align:right;padding-right:0}
-.trajets a{font-size:13px;white-space:nowrap}
-.trajets .source{margin:12px 0 0;font-size:12px;color:var(--faible)}
-.trajets-mini{margin:8px 0 0;font-family:var(--mono);font-size:12px;color:var(--faible);font-variant-numeric:tabular-nums;line-height:1.5}
+.trajets .source{margin:14px 0 0;font-size:12.5px;color:var(--encre-3);max-width:70ch}
+.trajets-carte{font-size:12.5px;color:var(--encre-3);font-variant-numeric:tabular-nums}
 
-/* — notes — */
-.echange{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin:0 0 26px;padding:13px 16px;border:1px solid var(--trait);border-radius:12px;background:var(--surface);font-size:13.5px;color:var(--doux)}
-.echange .lien{color:var(--or-clair);text-decoration:underline;text-underline-offset:3px;font-weight:600}
-.echange textarea{width:100%;min-height:74px;background:var(--nuit);border:1px solid var(--trait);border-radius:9px;color:var(--texte);font-family:var(--mono);font-size:12px;padding:10px;resize:vertical}
-.echange .zone{flex-basis:100%;display:grid;gap:9px;justify-items:start}
-.notes{margin-top:30px;border:1px solid var(--trait);border-radius:12px;background:var(--surface);padding:18px 20px 20px}
-.note-ligne{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:11px 0;border-bottom:1px solid var(--trait)}
-.note-nom{width:88px;font-size:15px;font-weight:600}
-.etoiles{display:flex;gap:2px}
-.etoiles button{font-size:23px;line-height:1;color:var(--trait);padding:2px;transition:color .12s,transform .12s}
-.etoiles.active button{color:#3E5673}
-.etoiles.active button:hover{transform:scale(1.15)}
-.etoiles button.pleine{color:var(--or)}
-.note-val{margin-left:auto;font-family:var(--mono);font-size:15px;font-variant-numeric:tabular-nums;color:var(--doux)}
-.effacer{font-size:12px;color:var(--faible);text-decoration:underline;text-underline-offset:3px}
-.moyenne{display:flex;align-items:baseline;gap:14px;padding-top:15px}
-.moyenne span{font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--faible);font-family:var(--mono)}
-.moyenne strong{font-family:var(--mono);font-size:30px;font-weight:500;color:var(--or-clair);font-variant-numeric:tabular-nums}
-.moyenne strong small{font-size:14px;color:var(--faible)}
-.moyenne em{font-style:normal;font-size:13.5px;color:var(--faible);margin-left:auto}
-.note-mini{display:flex;align-items:center;gap:9px;font-family:var(--mono);font-size:13px;font-variant-numeric:tabular-nums;color:var(--or);padding-top:10px;margin-top:auto}
-.note-mini .detail{color:var(--faible);font-size:12px}
+/* notes */
+.notes{margin-top:34px;padding-top:22px;border-top:1px solid var(--encre)}
+.note-ligne{display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding:13px 0;border-bottom:1px solid var(--filet)}
+.note-nom{width:96px;font-size:15px;font-weight:500}
+.note-barre{display:flex;gap:4px}
+.seg{position:relative;flex:0 0 34px;height:11px;background:var(--creux);display:flex;border-radius:1px;overflow:hidden}
+.seg.pleine{background:var(--accent)}
+.seg.demie{background:linear-gradient(to right,var(--accent) 0 50%,var(--creux) 50% 100%)}
+.seg button{flex:1 1 50%;height:100%}
+.note-barre:hover .seg{outline:1px solid var(--filet-fort);outline-offset:0}
+.note-val{margin-left:auto;font-size:14.5px;color:var(--encre-2);font-variant-numeric:tabular-nums}
+.effacer{font-size:12px;color:var(--encre-3);border-bottom:1px solid var(--filet-fort);padding-bottom:1px}
+.effacer:hover{color:var(--brique);border-bottom-color:var(--brique)}
+.moyenne{display:flex;align-items:baseline;gap:16px;padding-top:17px}
+.moyenne .etiq{margin:0}
+.moyenne b{font-family:var(--serif);font-size:31px;font-weight:400;font-variant-numeric:tabular-nums}
+.moyenne b small{font-size:14px;color:var(--encre-3)}
+.moyenne em{font-style:normal;font-size:13px;color:var(--encre-3);margin-left:auto}
 
-/* — vide — */
-.vide{border:1px dashed var(--trait);border-radius:var(--r);padding:34px;display:grid;gap:14px;justify-items:start;background:linear-gradient(180deg,#101B2C 0%,#0C1524 100%)}
-.vide h3{font-size:20px}
-.vide p{margin:0;color:var(--doux);max-width:60ch}
-.vide ul{margin:0;padding-left:18px;color:var(--doux);font-size:14.5px}
-
-/* — quartiers — */
-.quartiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
-.qcarte{text-align:left;padding:0;background:var(--surface);border:1px solid var(--trait);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:.18s}
-.qcarte:hover{border-color:#3A5678;box-shadow:var(--ombre);transform:translateY(-3px)}
-.qcarte img{width:100%;aspect-ratio:16/10;object-fit:cover}
-.qcarte-corps{padding:18px 18px 20px;display:flex;flex-direction:column;gap:8px;flex:1}
-.qcarte h3{font-size:21px}
-.qcarte p{margin:0;color:var(--doux);font-size:14.5px}
-.qcarte .lire{margin-top:auto;padding-top:12px;color:var(--or-clair);font-size:14px;font-weight:600}
-
-/* — panneau — */
-.panneau{position:fixed;inset:0;z-index:80;background:rgba(6,11,19,.78);backdrop-filter:blur(4px);overflow-y:auto;overscroll-behavior:contain}
-.panneau-int{width:min(1000px,100% - 28px);margin:28px auto 60px;background:var(--nuit);border:1px solid var(--trait);border-radius:18px;overflow:hidden;box-shadow:0 40px 90px -30px #000}
-.fermer{position:sticky;top:0;z-index:5;display:flex;justify-content:flex-end;padding:12px;background:linear-gradient(180deg,rgba(10,18,32,.95),transparent)}
-.fermer button{width:38px;height:38px;border-radius:50%;background:var(--surface);border:1px solid var(--trait);font-size:16px}
-.panneau-corps{padding:0 clamp(18px,4vw,38px) 40px;margin-top:-50px}
-.galerie{margin:0 0 26px}
-.galerie-grande{position:relative;border-radius:12px;overflow:hidden;background:var(--surface-h)}
-.galerie-grande img{width:100%;max-height:min(62vh,560px);object-fit:cover;aspect-ratio:3/2}
-.nav-g{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;background:rgba(10,18,32,.8);border:1px solid #ffffff24;display:grid;place-items:center}
-.nav-g.prec{left:12px} .nav-g.suiv{right:12px}
-.compteur{position:absolute;right:14px;bottom:12px;font-family:var(--mono);font-size:12px;background:rgba(10,18,32,.82);border:1px solid #ffffff1f;padding:4px 9px;border-radius:6px}
-.legende{margin:9px 2px 0;font-size:13px;color:var(--faible)}
-.vignettes{display:flex;gap:8px;overflow-x:auto;padding:10px 2px 2px;scrollbar-width:thin}
-.vignettes img{width:96px;height:66px;object-fit:cover;border-radius:7px;opacity:.5;cursor:pointer;flex:0 0 auto;border:1px solid transparent}
-.vignettes img[aria-current="true"],.vignettes img:hover{opacity:1;border-color:var(--or)}
-.titre-fiche{display:flex;flex-wrap:wrap;align-items:flex-end;gap:12px 24px;padding-bottom:18px;border-bottom:1px solid var(--trait)}
-.titre-fiche h2{font-size:clamp(24px,3.6vw,34px)}
-.titre-fiche .loyer{margin-left:auto;font-family:var(--mono);font-size:26px;font-variant-numeric:tabular-nums;color:var(--or-clair)}
-.titre-fiche .loyer small{display:block;font-family:var(--corps);font-size:12px;color:var(--faible);text-align:right;letter-spacing:.03em}
-.details{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:0;margin:24px 0 0;padding:0}
-.details div{padding:14px 16px 14px 0;border-bottom:1px solid var(--trait)}
-.details dt{font-size:12px;color:var(--faible);letter-spacing:.05em;margin-bottom:3px}
-.details dd{margin:0;font-family:var(--mono);font-size:15.5px;font-variant-numeric:tabular-nums}
-.deux-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:26px;margin-top:26px}
-.liste-plus,.liste-moins{margin:8px 0 0;padding:0;list-style:none;display:grid;gap:6px;font-size:15px}
-.liste-plus li::before{content:"+ ";color:var(--menthe);font-family:var(--mono)}
-.liste-moins li::before{content:"– ";color:var(--rose);font-family:var(--mono)}
-.mot{margin:8px 0 0;color:var(--doux);font-style:italic}
-.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
-.bouton{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:99px;font-size:14.5px;font-weight:600;text-decoration:none;border:1px solid var(--trait);background:var(--surface);color:var(--texte)}
-.bouton:hover{border-color:#3A5678;background:var(--surface-h)}
-.bouton.plein{background:var(--or);border-color:var(--or);color:#1A1206}
-.bouton.plein:hover{background:var(--or-clair);border-color:var(--or-clair)}
-.bloc-quartier{margin-top:44px;padding-top:32px;border-top:1px solid var(--trait)}
-.bloc-quartier .intro{color:var(--doux);max-width:66ch;margin:10px 0 0}
-.mosaique{display:grid;grid-template-columns:repeat(auto-fit,minmax(228px,1fr));gap:12px;margin-top:18px}
-@media(min-width:760px){
-  .mosaique.large figure:first-child{grid-column:span 2;grid-row:span 2;height:100%}
-  .mosaique.large figure:first-child img{height:100%;aspect-ratio:auto;min-height:100%}
-}
-.mosaique figure{margin:0;position:relative;border-radius:10px;overflow:hidden;cursor:pointer}
-.mosaique img{width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .3s}
+/* quartier dans la fiche */
+.bloc-quartier{margin-top:44px;padding-top:26px;border-top:1px solid var(--encre)}
+.bloc-quartier h2{font-size:27px;margin-top:6px}
+.bloc-quartier .intro{color:var(--encre-2);max-width:66ch;margin:12px 0 0;font-size:15.5px}
+.reperes{margin:16px 0 0;padding:0;list-style:none;display:grid;gap:8px;font-size:15px;color:var(--encre-2)}
+.reperes li{padding-left:18px;position:relative}
+.reperes li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:1px;background:var(--encre-3)}
+.mosaique{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:12px;margin-top:22px}
+.mosaique figure{margin:0;overflow:hidden;background:var(--creux);cursor:zoom-in}
+.mosaique img{width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .5s cubic-bezier(.2,.6,.2,1)}
 .mosaique figure:hover img{transform:scale(1.04)}
-.mosaique figcaption{position:absolute;left:0;right:0;bottom:0;padding:26px 12px 10px;font-size:12.5px;line-height:1.35;color:#E8EEF6;background:linear-gradient(transparent,rgba(6,11,19,.9))}
-.reperes{margin:14px 0 0;padding:0;list-style:none;display:grid;gap:7px;font-size:15px;color:var(--doux)}
-.reperes li::before{content:"◆";color:var(--or);font-size:9px;vertical-align:middle;margin-right:9px}
-.note-locale{font-size:12.5px;color:var(--faible);margin:10px 0 0}
-
-/* — visionneuse — */
-.loupe{position:fixed;inset:0;z-index:120;background:rgba(4,8,14,.95);display:grid;place-items:center;padding:24px}
-.loupe img{max-width:100%;max-height:88vh;object-fit:contain;border-radius:8px}
-.loupe p{position:absolute;bottom:22px;left:0;right:0;text-align:center;color:var(--doux);font-size:13px;margin:0}
-
-footer{margin-top:76px;border-top:1px solid var(--trait);padding:26px 0 60px;color:var(--faible);font-size:13px}
-footer h3{font-size:13px;font-family:var(--corps);font-weight:600;color:var(--doux);margin:0 0 8px}
-.credits{display:flex;flex-wrap:wrap;gap:4px 14px;padding:0;margin:0;list-style:none;font-size:12px}
-.credits a{color:var(--faible)}
-@media (max-width:640px){
-  .barre nav a{padding:7px 9px}
-  .panneau-int{margin:14px auto 40px;border-radius:14px}
-  .titre-fiche .loyer{margin-left:0}
+.mosaique figcaption{font-size:12px;color:var(--encre-3);padding:6px 0 2px;line-height:1.35}
+@media(min-width:820px){
+  .mosaique.large figure:first-child{grid-column:span 2;grid-row:span 2}
+  .mosaique.large figure:first-child img{height:calc(100% - 26px);aspect-ratio:auto;min-height:260px}
 }
-@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* vide, visionneuse, pied */
+.vide{border:1px solid var(--filet-fort);padding:34px;display:grid;gap:12px;justify-items:start;background:var(--feuille)}
+.vide h3{font-size:21px}
+.loupe{position:fixed;inset:0;z-index:120;background:rgba(20,21,24,.94);display:grid;place-items:center;padding:24px;cursor:zoom-out}
+.loupe img{max-width:100%;max-height:88vh;object-fit:contain}
+.loupe p{position:absolute;bottom:20px;left:0;right:0;text-align:center;color:#D9D7D0;font-size:13px;margin:0}
+footer{margin-top:80px;border-top:1px solid var(--filet);padding:26px 0 64px;color:var(--encre-3);font-size:12.5px}
+footer h3{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--encre-3);margin:0 0 10px}
+.credits{display:grid;gap:5px;padding:0;margin:0;list-style:none;font-size:12px}
+.credits a{color:var(--encre-3)}
+@media(max-width:620px){
+  .ouverture{padding:36px 0 26px}
+  .corps{margin-top:-38px}
+  .loyer-fiche{margin-left:0;text-align:left}
+  .note-nom{width:auto}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 
 </head>
 <body>
 <header class="barre">
   <div class="enveloppe barre-int">
-    <span class="marque"><span class="pastille"></span>Notre appart à Québec</span>
+    <span class="marque">Notre appart <em>à Québec</em></span>
     <nav>
-      <a href="#liste">Appartements</a>
-      <a href="#quartiers">Quartiers</a>
+      <a href="#liste">Les appartements</a>
+      <a href="#quartiers">Les quartiers</a>
     </nav>
   </div>
 </header>
 
 <main class="enveloppe">
-  <div class="hero">
-    <img id="hero-img" alt="">
-    <div class="hero-txt">
-      <p class="oeil">Québec · haute-ville</p>
-      <h1>Les appartements qu'on a repérés</h1>
-      <p id="hero-sous">Chaque fiche : les photos de l'appart, tous les détails, et l'ambiance du quartier autour.</p>
-    </div>
+  <div class="ouverture">
+    <p class="etiq">Recherche de logement · Québec</p>
+    <h1>Tout ce qu'on a trouvé, au même endroit</h1>
+    <p class="chapo">Chaque fiche rassemble les photos de l'annonce, les détails, le temps de trajet en bus et l'ambiance du quartier autour. On note chacun de son côté, la moyenne fait le reste.</p>
   </div>
-  <ul class="chiffres" id="chiffres"></ul>
+  <figure class="bande" style="margin-block:0">
+    <img id="hero-img" alt="">
+    <figcaption id="hero-legende"></figcaption>
+  </figure>
+  <ul class="sommaire" id="sommaire"></ul>
 
   <section id="liste">
     <div class="tete">
-      <div>
-        <p class="oeil">La liste</p>
-        <h2>Les appartements</h2>
-        <p id="sous-liste">Clique sur une fiche pour voir toutes les photos et les détails.</p>
-      </div>
+      <h2>Les appartements</h2>
+      <span class="compte" id="compte"></span>
     </div>
-    <div class="filtres" id="filtres"></div>
     <div class="echange" id="echange"></div>
+    <div class="filtres" id="filtres"></div>
     <div class="grille" id="grille"></div>
   </section>
 
   <section id="quartiers">
     <div class="tete">
-      <div>
-        <p class="oeil">Les quartiers</p>
-        <h2>Voir l'ambiance avant de choisir</h2>
-        <p>Les trois secteurs qu'on vise, en photos : les rues, les commerces, les parcs.</p>
-      </div>
+      <h2>Les quartiers</h2>
+      <span class="compte" id="compte-quartiers"></span>
     </div>
+    <p class="intro-section">Un secteur par fiche : le caractère du coin, les repères à pied, et les photos des rues.</p>
     <div class="quartiers" id="grille-quartiers"></div>
   </section>
 
   <footer>
-    <h3>Photos des quartiers</h3>
+    <h3>Photographies des quartiers</h3>
     <ul class="credits" id="credits"></ul>
-    <p style="margin-top:16px">Les photos des appartements proviennent des annonces d'origine, dont le lien figure sur chaque fiche.</p>
+    <p style="margin-top:18px">Les photos des logements proviennent des annonces d'origine, dont le lien figure sur chaque fiche.</p>
   </footer>
 </main>
 
@@ -259,7 +270,7 @@ footer h3{font-size:13px;font-family:var(--corps);font-weight:600;color:var(--do
 <div class="loupe" id="loupe" hidden></div>
 
 <script>
-const DONNEES = {"quartiers": {"montcalm": {"nom": "Montcalm · Cartier", "etiquette": "Le plus vivant", "resume": "Cafés, commerces, Plaines d'Abraham : tout se fait à pied depuis l'avenue Cartier.", "description": "Le cœur animé de la haute-ville. L'avenue Cartier concentre les épiceries fines, les terrasses et les Halles du Petit Quartier ; la Grande Allée et les Plaines d'Abraham sont à deux rues. Les rues résidentielles autour (Saunders, Fraser, Bourlamaque) sont bordées de triplex en brique avec escaliers extérieurs. C'est le quartier le plus cher des trois, et celui où on a le moins besoin d'une voiture.", "reperes": ["Avenue Cartier et les Halles du Petit Quartier", "Plaines d'Abraham · parc des Champs-de-Bataille", "Musée national des beaux-arts du Québec", "Grande Allée et le Vieux-Québec à 20 min à pied"], "carte": "https://www.google.com/maps/search/Avenue+Cartier,+Qu%C3%A9bec,+QC", "photos": [{"f": "01-cartier-soir.jpg", "legende": "L'avenue Cartier à la tombée du jour", "auteur": "Wilfredor", "licence": "CC0", "source": "https://commons.wikimedia.org/wiki/File:Avenue_Cartier_illuminated_at_night_in_Quebec_City.jpg", "vignette": "img/quartiers/montcalm/01-cartier-soir-v.jpg", "image": "img/quartiers/montcalm/01-cartier-soir-p.jpg"}, {"f": "07-grande-allee.jpg", "legende": "La Grande Allée et ses terrasses", "auteur": "Jeangagnon", "licence": "CC BY-SA 4.0", "source": "https://commons.wikimedia.org/wiki/File:Grande_Allee,_Quebec_027.jpg", "vignette": "img/quartiers/montcalm/07-grande-allee-v.jpg", "image": "img/quartiers/montcalm/07-grande-allee-p.jpg"}, {"f": "02-cartier-ete.jpg", "legende": "L'avenue Cartier en été", "auteur": "Asclepias", "licence": "CC BY-SA 3.0", "source": "https://commons.wikimedia.org/wiki/File:Avenue_Cartier_2012-07-08.jpg", "vignette": "img/quartiers/montcalm/02-cartier-ete-v.jpg", "image": "img/quartiers/montcalm/02-cartier-ete-p.jpg"}, {"f": "03-cartier-automne.jpg", "legende": "Les abat-jour de Cartier, en automne", "auteur": "David Wilson", "licence": "CC BY 2.0", "source": "https://commons.wikimedia.org/wiki/File:Avenue_Cartier,_Qu%C3%A9bec_2016.jpg", "vignette": "img/quartiers/montcalm/03-cartier-automne-v.jpg", "image": "img/quartiers/montcalm/03-cartier-automne-p.jpg"}, {"f": "06-plaines.jpg", "legende": "Les plaines d'Abraham, au bout de la rue", "auteur": "Wilfredor", "licence": "CC0", "source": "https://commons.wikimedia.org/wiki/File:People_relaxing_in_the_Plains_of_Abraham.jpg", "vignette": "img/quartiers/montcalm/06-plaines-v.jpg", "image": "img/quartiers/montcalm/06-plaines-p.jpg"}, {"f": "05-rue-montcalm.jpg", "legende": "Une rue résidentielle de Montcalm", "auteur": "100budget", "licence": "CC BY-SA 3.0", "source": "https://commons.wikimedia.org/wiki/File:Quartier-montcalm.jpg", "vignette": "img/quartiers/montcalm/05-rue-montcalm-v.jpg", "image": "img/quartiers/montcalm/05-rue-montcalm-p.jpg"}, {"f": "08-velo-neige.jpg", "legende": "Un vélo qui passe l'hiver dehors, Québec", "auteur": "Wilfredor", "licence": "CC0", "source": "https://commons.wikimedia.org/wiki/File:Bike_on_a_snowy_street_in_Quebec_City_at_night.jpg", "vignette": "img/quartiers/montcalm/08-velo-neige-v.jpg", "image": "img/quartiers/montcalm/08-velo-neige-p.jpg"}, {"f": "04-cartier-foule.jpg", "legende": "Un samedi après-midi sur Cartier", "auteur": "Wilfredor", "licence": "CC BY-SA 4.0", "source": "https://commons.wikimedia.org/wiki/File:Crowd_on_Avenue_Cartier_in_Quebec_City.jpg", "vignette": "img/quartiers/montcalm/04-cartier-foule-v.jpg", "image": "img/quartiers/montcalm/04-cartier-foule-p.jpg"}]}, "sillery": {"nom": "Sillery · Maguire", "etiquette": "Le plus calme", "resume": "Une avenue soignée et résidentielle, avec le fleuve et le Bois-de-Coulonge tout près.", "description": "Plus vert, plus tranquille, plus bourgeois. L'avenue Maguire fait office de rue principale sur quelques centaines de mètres — boulangeries, restos, Café Krieghoff — et le reste est résidentiel, avec de grands arbres et des maisons cossues. Le parc du Bois-de-Coulonge et la vue sur le fleuve sont à dix minutes à pied. Le compromis : c'est plus loin du centre et la voiture devient utile.", "reperes": ["Avenue Maguire et ses commerces", "Parc du Bois-de-Coulonge", "Marina de Sillery et promenade Samuel-De Champlain", "Domaine Cataraqui"], "carte": "https://www.google.com/maps/search/Avenue+Maguire,+Sillery,+Qu%C3%A9bec,+QC", "photos": [{"f": "01-maguire.jpg", "legende": "L'avenue Maguire", "auteur": "Gilbert Bochenek", "licence": "Domaine public", "source": "https://commons.wikimedia.org/wiki/File:Rue_Maguire-Qu%C3%A9bec.jpg", "vignette": "img/quartiers/sillery/01-maguire-v.jpg", "image": "img/quartiers/sillery/01-maguire-p.jpg"}, {"f": "02-krieghoff.jpg", "legende": "Le Café Krieghoff, 1326 avenue Maguire", "auteur": "Dcflyer", "licence": "CC BY-SA 4.0", "source": "https://commons.wikimedia.org/wiki/File:Le_Caf%C3%A9_Krieghoff_1326,_avenue_Maguire,_Sillery,_Qu%C3%A9bec,_mai_2018_(01).jpg", "vignette": "img/quartiers/sillery/02-krieghoff-v.jpg", "image": "img/quartiers/sillery/02-krieghoff-p.jpg"}, {"f": "03-maguire-hiver.jpg", "legende": "Maguire un matin de tempête", "auteur": "Dcflyer", "licence": "CC BY-SA 4.0", "source": "https://commons.wikimedia.org/wiki/File:1326,_avenue_Maguire,_Sillery_(Qu%C3%A9bec),_2023-02-17.jpg", "vignette": "img/quartiers/sillery/03-maguire-hiver-v.jpg", "image": "img/quartiers/sillery/03-maguire-hiver-p.jpg"}, {"f": "04-bois-de-coulonge.jpg", "legende": "Le parc du Bois-de-Coulonge", "auteur": "Wilfredor", "licence": "CC0", "source": "https://commons.wikimedia.org/wiki/File:Parc_publique_du_Bois-de-Coulonge,_Quebec_ville,_Canada_002.jpg", "vignette": "img/quartiers/sillery/04-bois-de-coulonge-v.jpg", "image": "img/quartiers/sillery/04-bois-de-coulonge-p.jpg"}, {"f": "05-marina-fleuve.jpg", "legende": "La marina de Sillery et le fleuve", "auteur": "Malimage", "licence": "CC BY-SA 3.0", "source": "https://commons.wikimedia.org/wiki/File:WPQc-171_Parc_du_Bois-de-Coulonge_-_Marina_de_Sillery.JPG", "vignette": "img/quartiers/sillery/05-marina-fleuve-v.jpg", "image": "img/quartiers/sillery/05-marina-fleuve-p.jpg"}, {"f": "06-promenade.jpg", "legende": "La promenade Samuel-De Champlain et le pont de Québec", "auteur": "Cephas", "licence": "CC BY-SA 4.0", "source": "https://commons.wikimedia.org/wiki/File:Promenade_Samuel-De_Champlain-C.jpg", "vignette": "img/quartiers/sillery/06-promenade-v.jpg", "image": "img/quartiers/sillery/06-promenade-p.jpg"}]}, "saint-sacrement": {"nom": "Saint-Sacrement", "etiquette": "Le compromis", "resume": "Plus résidentiel que Montcalm, toujours à distance de marche de Cartier et des services.", "description": "Coincé entre Montcalm et Sainte-Foy, le quartier vit autour du chemin Sainte-Foy : épiceries, pharmacies, petits restos, et l'hôpital du Saint-Sacrement. Derrière l'artère, des rues résidentielles calmes et arborées, avec des loyers en général plus doux que sur Cartier. L'avenue Cartier reste à une quinzaine de minutes de marche, et le bus passe souvent sur le chemin Sainte-Foy.", "reperes": ["Chemin Sainte-Foy et ses commerces", "Église du Très-Saint-Sacrement", "Hôpital du Saint-Sacrement", "Avenues Belvédère et des Érables vers Montcalm"], "carte": "https://www.google.com/maps/search/Quartier+Saint-Sacrement,+Qu%C3%A9bec,+QC", "photos": [{"f": "01-eglise.jpg", "legende": "L'église du Très-Saint-Sacrement, chemin Sainte-Foy", "auteur": "Jeangagnon", "licence": "CC BY-SA 4.0", "source": "https://commons.wikimedia.org/wiki/File:Eglise_du_Tres-Saint-Sacrement_-_06.jpg", "vignette": "img/quartiers/saint-sacrement/01-eglise-v.jpg", "image": "img/quartiers/saint-sacrement/01-eglise-p.jpg"}, {"f": "04-rue-arbres.jpg", "legende": "Rue résidentielle bordée d'arbres, Québec", "auteur": "Wilfredor", "licence": "CC0", "source": "https://commons.wikimedia.org/wiki/File:Tree-lined_residential_street_in_Quebec_City_in_autumn.jpg", "vignette": "img/quartiers/saint-sacrement/04-rue-arbres-v.jpg", "image": "img/quartiers/saint-sacrement/04-rue-arbres-p.jpg"}, {"f": "02-chemin-sainte-foy.jpg", "legende": "Le chemin Sainte-Foy vu d'en haut", "auteur": "Gabriel Picard", "licence": "CC BY-SA 4.0", "source": "https://commons.wikimedia.org/wiki/File:Chemin_Sainte-Foy_-_Avenue_du_Chanoine-Scott.jpg", "vignette": "img/quartiers/saint-sacrement/02-chemin-sainte-foy-v.jpg", "image": "img/quartiers/saint-sacrement/02-chemin-sainte-foy-p.jpg"}, {"f": "05-coin-automne.jpg", "legende": "Coin de rue en automne, Québec", "auteur": "Wilfredor", "licence": "CC0", "source": "https://commons.wikimedia.org/wiki/File:Autumn_street_corner_in_Quebec_City.jpg", "vignette": "img/quartiers/saint-sacrement/05-coin-automne-v.jpg", "image": "img/quartiers/saint-sacrement/05-coin-automne-p.jpg"}, {"f": "07-parc-des-braves.jpg", "legende": "Le parc des Braves, la ville en contrebas", "auteur": "Wilfredor", "licence": "CC0", "source": "https://commons.wikimedia.org/wiki/File:Snow-covered_Parc_des_Braves_in_Quebec_City.jpg", "vignette": "img/quartiers/saint-sacrement/07-parc-des-braves-v.jpg", "image": "img/quartiers/saint-sacrement/07-parc-des-braves-p.jpg"}, {"f": "03-heure-bleue.jpg", "legende": "Chemin Sainte-Foy à l'heure bleue", "auteur": "Wilfredor", "licence": "CC BY-SA 4.0", "source": "https://commons.wikimedia.org/wiki/File:Chemin_Sainte-Foy_at_blue_hour,_Quebec_City.jpg", "vignette": "img/quartiers/saint-sacrement/03-heure-bleue-v.jpg", "image": "img/quartiers/saint-sacrement/03-heure-bleue-p.jpg"}, {"f": "06-bus-hiver.jpg", "legende": "Le bus sur l'avenue Belvédère, l'hiver", "auteur": "Wilfredor", "licence": "CC BY-SA 4.0", "source": "https://commons.wikimedia.org/wiki/File:Avenue_Belv%C3%A9d%C3%A8re,_Qu%C3%A9bec,_QC.jpg", "vignette": "img/quartiers/saint-sacrement/06-bus-hiver-v.jpg", "image": "img/quartiers/saint-sacrement/06-bus-hiver-p.jpg"}]}, "saint-jean-baptiste": {"nom": "Saint-Jean-Baptiste", "etiquette": "Le plus urbain", "resume": "Le faubourg de la rue Saint-Jean : dense, commerçant, à dix minutes du Vieux-Québec.", "description": "Le quartier le plus dense et le plus animé de la haute-ville, accroché à la falaise entre les fortifications et Saint-Roch. Tout se passe sur la rue Saint-Jean : épiceries, bars, disquaires, l'église Saint-Jean-Baptiste au milieu. Les rues autour sont étroites, bordées de maisons en rangée et d'escaliers extérieurs. Le Vieux-Québec est à dix minutes à pied, l'avenue Cartier à un quart d'heure. C'est vivant tard le soir — ce qui plaît ou non.", "reperes": ["La rue Saint-Jean et ses commerces", "L'église Saint-Jean-Baptiste", "Le Vieux-Québec à 10 min à pied", "L'escalier vers Saint-Roch et la Basse-Ville"], "carte": "https://www.google.com/maps/search/Quartier+Saint-Jean-Baptiste,+Qu%C3%A9bec,+QC", "photos": [{"f": "01-vue-aerienne.jpg", "legende": "Le faubourg vu d'en haut, la rue Saint-Jean au centre", "auteur": "Gabriel Picard", "licence": "CC BY-SA 4.0", "source": "https://commons.wikimedia.org/wiki/File:Rue_Saint-Jean_-_Vue_a%C3%A9rienne_2024.jpg", "vignette": "img/quartiers/saint-jean-baptiste/01-vue-aerienne-v.jpg", "image": "img/quartiers/saint-jean-baptiste/01-vue-aerienne-p.jpg"}, {"f": "02-saint-jean-nuit.jpg", "legende": "La rue Saint-Jean illuminée, le soir", "auteur": "Wilfredor", "licence": "CC0", "source": "https://commons.wikimedia.org/wiki/File:Rue_Saint-Jean_at_night_with_Christmas_lights,_Quebec_City.jpg", "vignette": "img/quartiers/saint-jean-baptiste/02-saint-jean-nuit-v.jpg", "image": "img/quartiers/saint-jean-baptiste/02-saint-jean-nuit-p.jpg"}, {"f": "03-toits.jpg", "legende": "Les toits du quartier Saint-Jean-Baptiste", "auteur": "Gabriel Picard", "licence": "CC BY-SA 4.0", "source": "https://commons.wikimedia.org/wiki/File:Quartier_Saint-Jean-Baptiste_06-2026.jpg", "vignette": "img/quartiers/saint-jean-baptiste/03-toits-v.jpg", "image": "img/quartiers/saint-jean-baptiste/03-toits-p.jpg"}, {"f": "04-saint-jean-ete.jpg", "legende": "La rue Saint-Jean un après-midi d'été", "auteur": "Jeangagnon", "licence": "CC BY-SA 3.0", "source": "https://commons.wikimedia.org/wiki/File:Rue_Saint-Jean,_Quebec_32.jpg", "vignette": "img/quartiers/saint-jean-baptiste/04-saint-jean-ete-v.jpg", "image": "img/quartiers/saint-jean-baptiste/04-saint-jean-ete-p.jpg"}, {"f": "05-coin-hiver.jpg", "legende": "Coin Saint-Jean et d'Auteuil, en hiver", "auteur": "DXR", "licence": "CC BY-SA 4.0", "source": "https://commons.wikimedia.org/wiki/File:Corner_of_Rue_Saint-Jean_and_Rue_d%27Auteuil,_Qu%C3%A9bec_20170412_1.jpg", "vignette": "img/quartiers/saint-jean-baptiste/05-coin-hiver-v.jpg", "image": "img/quartiers/saint-jean-baptiste/05-coin-hiver-p.jpg"}]}, "maizerets": {"nom": "Maizerets", "etiquette": "Le plus abordable", "resume": "À l'est de Limoilou, autour d'un grand parc — loin du centre, mais nettement moins cher.", "description": "Quartier résidentiel de l'est de la ville, entre Limoilou et Beauport, organisé autour du Domaine de Maizerets : 27 hectares de parc, un arboretum, des étangs et une maison du 17e siècle. Les rues sont larges, calmes, avec des duplex et des maisons d'après-guerre. Les loyers y sont sensiblement plus bas qu'en haute-ville, mais on est à bonne distance du Vieux-Québec comme de Sainte-Foy, et le corridor autoroutier n'est pas loin.", "reperes": ["Le Domaine de Maizerets et son arboretum", "Le corridor du Littoral, à vélo jusqu'au centre", "La 1re Avenue et les commerces de Limoilou", "L'autoroute Dufferin-Montmorency, à deux pas"], "carte": "https://www.google.com/maps/search/Maizerets,+Qu%C3%A9bec,+QC", "photos": [{"f": "01-maison-hiver.jpg", "legende": "La maison Maizerets, un soir d'hiver", "auteur": "Wilfredor", "licence": "CC BY-SA 4.0", "source": "https://commons.wikimedia.org/wiki/File:Domaine_de_Maizerets_02.jpg", "vignette": "img/quartiers/maizerets/01-maison-hiver-v.jpg", "image": "img/quartiers/maizerets/01-maison-hiver-p.jpg"}, {"f": "02-passerelle.jpg", "legende": "La passerelle sur l'étang du Domaine", "auteur": "Wilfredor", "licence": "CC BY-SA 4.0", "source": "https://commons.wikimedia.org/wiki/File:Domaine_de_Maizerets_park,_quebec_city_01.jpg", "vignette": "img/quartiers/maizerets/02-passerelle-v.jpg", "image": "img/quartiers/maizerets/02-passerelle-p.jpg"}, {"f": "03-domaine-nuit.jpg", "legende": "Le Domaine de Maizerets sous la neige", "auteur": "Wilfredor", "licence": "CC0", "source": "https://commons.wikimedia.org/wiki/File:Domaine_de_Maizerets,_Qu%C3%A9bec,_Canada.jpg", "vignette": "img/quartiers/maizerets/03-domaine-nuit-v.jpg", "image": "img/quartiers/maizerets/03-domaine-nuit-p.jpg"}, {"f": "04-arboretum.jpg", "legende": "L'arboretum, au printemps", "auteur": "Wilfredor", "licence": "CC BY-SA 4.0", "source": "https://commons.wikimedia.org/wiki/File:Domaine_de_Maizerets_park,_quebec_city_04.jpg", "vignette": "img/quartiers/maizerets/04-arboretum-v.jpg", "image": "img/quartiers/maizerets/04-arboretum-p.jpg"}]}, "loretteville": {"nom": "Loretteville", "etiquette": "Le plus au large", "resume": "Au nord-ouest, le long de la rivière Saint-Charles : espace, verdure et voiture obligatoire.", "description": "Ancienne ville devenue quartier de Québec, à une quinzaine de kilomètres du centre. On y vient pour l'espace : des immeubles récents le long du boulevard de la Colline, la rivière Saint-Charles et son parc linéaire, la piste cyclable des Cheminots qui descend jusqu'à la ville. La rue Racine garde le petit noyau commercial du vieux Loretteville, et Wendake est juste à côté. Le revers est simple : sans voiture, la vie quotidienne devient compliquée.", "reperes": ["Le parc linéaire de la rivière Saint-Charles", "La piste cyclable des Cheminots", "La rue Racine, le noyau du vieux Loretteville", "L'autoroute Robert-Bourassa, accès direct au centre"], "carte": "https://www.google.com/maps/search/Loretteville,+Qu%C3%A9bec,+QC", "photos": [{"f": "01-parc-lineaire.jpg", "legende": "Le parc linéaire de la rivière Saint-Charles, la ville au fond", "auteur": "Judicieux", "licence": "CC BY-SA 4.0", "source": "https://commons.wikimedia.org/wiki/File:Parc_lin%C3%A9aire_de_la_rivi%C3%A8re_Saint-Charles.jpg", "vignette": "img/quartiers/loretteville/01-parc-lineaire-v.jpg", "image": "img/quartiers/loretteville/01-parc-lineaire-p.jpg"}, {"f": "02-rue-racine.jpg", "legende": "La rue Racine, au cœur du vieux Loretteville", "auteur": "Pierre-Olivier Fortin", "licence": "CC BY-SA 3.0", "source": "https://commons.wikimedia.org/wiki/File:Rue_Racine,_Loretteville.jpg", "vignette": "img/quartiers/loretteville/02-rue-racine-v.jpg", "image": "img/quartiers/loretteville/02-rue-racine-p.jpg"}, {"f": "03-sentier.jpg", "legende": "Un sentier le long de la rivière", "auteur": "Jeangagnon", "licence": "CC BY-SA 4.0", "source": "https://commons.wikimedia.org/wiki/File:Parc_riviere_Saint-Charles_-_01.jpg", "vignette": "img/quartiers/loretteville/03-sentier-v.jpg", "image": "img/quartiers/loretteville/03-sentier-p.jpg"}, {"f": "04-riviere.jpg", "legende": "La rivière Saint-Charles, l'été", "auteur": "Jeangagnon", "licence": "CC BY-SA 4.0", "source": "https://commons.wikimedia.org/wiki/File:Parc_riviere_Saint-Charles_-_05.jpg", "vignette": "img/quartiers/loretteville/04-riviere-v.jpg", "image": "img/quartiers/loretteville/04-riviere-p.jpg"}]}, "saint-roch": {"nom": "Saint-Roch", "etiquette": "Le plus bouillonnant", "resume": "La basse-ville qui bouge : rue Saint-Joseph, restos, salles de spectacle, tout à pied.", "description": "Le quartier qui a le plus changé à Québec. La rue Saint-Joseph aligne les restaurants, les cafés, les disquaires et les salles de spectacle sur un kilomètre ; le jardin Jean-Paul-L'Allier fait respirer le tout. C'est plat — donc marchable et cyclable — bien desservi par le bus, et à quinze minutes à pied du Vieux-Québec par la côte ou l'ascenseur du Faubourg. En contrepartie, c'est dense, parfois bruyant, et la haute-ville se mérite par une montée.", "reperes": ["La rue Saint-Joseph et ses commerces", "Le jardin Jean-Paul-L'Allier", "La côte d'Abraham vers la haute-ville", "Le Grand Théâtre et le Diamant, à pied"], "carte": "https://www.google.com/maps/search/Quartier+Saint-Roch,+Qu%C3%A9bec,+QC", "photos": [{"f": "01-saint-joseph.jpg", "legende": "La rue Saint-Joseph", "auteur": "Lacombelle", "licence": "CC BY-SA 4.0", "source": "https://commons.wikimedia.org/wiki/File:Rue_Saint-Joseph_Qu%C3%A9bec.jpg", "vignette": "img/quartiers/saint-roch/01-saint-joseph-v.jpg", "image": "img/quartiers/saint-roch/01-saint-joseph-p.jpg"}, {"f": "02-trottoir.jpg", "legende": "Les trottoirs de Saint-Joseph, en automne", "auteur": "Wilfredor", "licence": "CC0", "source": "https://commons.wikimedia.org/wiki/File:Rue_Saint-Joseph,_Quebec_City,_Quebec,_Canada_2340_19.jpg", "vignette": "img/quartiers/saint-roch/02-trottoir-v.jpg", "image": "img/quartiers/saint-roch/02-trottoir-p.jpg"}, {"f": "03-coin-hiver.jpg", "legende": "Un édifice de coin, l'hiver", "auteur": "Wilfredor", "licence": "CC BY-SA 4.0", "source": "https://commons.wikimedia.org/wiki/File:Corner_building_in_Saint-Roch,_Quebec_City.jpg", "vignette": "img/quartiers/saint-roch/03-coin-hiver-v.jpg", "image": "img/quartiers/saint-roch/03-coin-hiver-p.jpg"}, {"f": "04-jardin-automne.jpg", "legende": "Le jardin Jean-Paul-L'Allier", "auteur": "Wilfredor", "licence": "CC0", "source": "https://commons.wikimedia.org/wiki/File:Autumn_trees_at_Jardin_Jean-Paul-L%27Allier.jpg", "vignette": "img/quartiers/saint-roch/04-jardin-automne-v.jpg", "image": "img/quartiers/saint-roch/04-jardin-automne-p.jpg"}]}, "charlesbourg": {"nom": "Charlesbourg · Orsainville", "etiquette": "Le plus familial", "resume": "Banlieue verte au nord de la ville, organisée autour du Trait-Carré historique.", "description": "Ancienne ville de banlieue rattachée à Québec, à une dizaine de kilomètres au nord du centre. Son cœur historique, le Trait-Carré, garde le plan en étoile hérité du Régime français, avec le Moulin des Jésuites et l'église Saint-Charles-Borromée. Orsainville, au nord-est, est plus récent : bungalows, immeubles neufs, grandes surfaces et beaucoup de vert, avec la forêt qui commence au bout des rues. C'est calme et familial ; en transport en commun, le centre-ville reste loin.", "reperes": ["Le Trait-Carré et le Moulin des Jésuites", "L'église Saint-Charles-Borromée", "Le parc Henri-Casault et les boisés d'Orsainville", "Les Galeries Charlesbourg"], "carte": "https://www.google.com/maps/search/Orsainville,+Charlesbourg,+Qu%C3%A9bec,+QC", "photos": [{"f": "01-moulin.jpg", "legende": "Le Moulin des Jésuites, au Trait-Carré", "auteur": "Gilbert Bochenek", "licence": "CC BY-SA 3.0", "source": "https://commons.wikimedia.org/wiki/File:Moulin_des_J%C3%A9suites-Qu%C3%A9bec-1.JPG", "vignette": "img/quartiers/charlesbourg/01-moulin-v.jpg", "image": "img/quartiers/charlesbourg/01-moulin-p.jpg"}, {"f": "02-eglise.jpg", "legende": "L'église Saint-Charles-Borromée", "auteur": "Bouchecl", "licence": "CC BY-SA 3.0", "source": "https://commons.wikimedia.org/wiki/File:%C3%89glise_Saint-Charles_Borrom%C3%A9e_-_Charlesbourg_02.JPG", "vignette": "img/quartiers/charlesbourg/02-eglise-v.jpg", "image": "img/quartiers/charlesbourg/02-eglise-p.jpg"}, {"f": "03-eglise-interieur.jpg", "legende": "L'intérieur de l'église Saint-Charles-Borromée", "auteur": "Wilfredor", "licence": "CC0", "source": "https://commons.wikimedia.org/wiki/File:Saint-Charles-Borrom%C3%A9e_Church,_Charlesbourg,_Quebec_03.jpg", "vignette": "img/quartiers/charlesbourg/03-eglise-interieur-v.jpg", "image": "img/quartiers/charlesbourg/03-eglise-interieur-p.jpg"}]}, "beauport": {"nom": "Beauport · Laurentides", "etiquette": "Le plus près de la nature", "resume": "À l'est, entre la chute Montmorency et l'avenue Royale — grand, vert, et loin en bus.", "description": "Arrondissement de l'est, ancien village devenu banlieue. Le secteur Laurentides est résidentiel et récent : jumelés, terrains, rues tranquilles. Le patrimoine est du côté du Vieux-Bourg et de l'avenue Royale, et la chute Montmorency — plus haute que le Niagara — est à quelques minutes. C'est vert, familial, avec de l'espace pour le prix ; en bus, le centre-ville demande près d'une heure.", "reperes": ["La chute Montmorency", "L'avenue Royale et le Vieux-Bourg", "Les Galeries de la Canardière et les services", "L'autoroute Félix-Leclerc vers le centre"], "carte": "https://www.google.com/maps/search/Laurentides,+Beauport,+Qu%C3%A9bec,+QC", "photos": [{"f": "01-chute.jpg", "legende": "La chute Montmorency", "auteur": "Eric Fortin", "licence": "CC BY-SA 3.0", "source": "https://commons.wikimedia.org/wiki/File:Chute-Montmorency.jpg", "vignette": "img/quartiers/beauport/01-chute-v.jpg", "image": "img/quartiers/beauport/01-chute-p.jpg"}, {"f": "02-avenue-royale.jpg", "legende": "Une maison ancienne de l'avenue Royale", "auteur": "The Cosmonaut", "licence": "CC BY-SA 2.5", "source": "https://commons.wikimedia.org/wiki/File:Avenue_Royale.jpg", "vignette": "img/quartiers/beauport/02-avenue-royale-v.jpg", "image": "img/quartiers/beauport/02-avenue-royale-p.jpg"}, {"f": "03-maison-parc.jpg", "legende": "Une maison au bord du parc de la Chute-Montmorency", "auteur": "Wilfredor", "licence": "CC0", "source": "https://commons.wikimedia.org/wiki/File:House_in_the_Parc_de_la_Chute-Montmorency_009.jpg", "vignette": "img/quartiers/beauport/03-maison-parc-v.jpg", "image": "img/quartiers/beauport/03-maison-parc-p.jpg"}]}, "val-belair": {"nom": "Val-Bélair", "etiquette": "Le plus au vert", "resume": "Au pied du mont Bélair : forêt, sentiers, tranquillité — et très peu de bus.", "description": "Le secteur le plus éloigné et le plus rural de la ville, à l'ouest, au pied du mont Bélair. On y vient pour la nature : randonnée, vélo de montagne, ski, la tourbière et les sentiers commencent au bout des rues. Les maisons sont sur de grands terrains, l'air est calme. Le revers est net : le réseau de bus y est très mince — Google ne propose même aucun trajet en transport en commun vers le centre en soirée.", "reperes": ["Le mont Bélair et ses sentiers", "La tourbière et les boisés", "La base de plein air de Sainte-Foy, plus au sud", "L'autoroute Henri-IV, à une quinzaine de minutes"], "carte": "https://www.google.com/maps/search/Val-B%C3%A9lair,+Qu%C3%A9bec,+QC", "photos": [{"f": "01-tourbiere.jpg", "legende": "La tourbière du mont Bélair", "auteur": "Cephas", "licence": "CC BY-SA 4.0", "source": "https://commons.wikimedia.org/wiki/File:Tourbi%C3%A8re_du_Mont_B%C3%A9lair_01.jpg", "vignette": "img/quartiers/val-belair/01-tourbiere-v.jpg", "image": "img/quartiers/val-belair/01-tourbiere-p.jpg"}, {"f": "02-mont-belair.jpg", "legende": "Le mont Bélair vu des champs", "auteur": "Boréal", "licence": "CC BY-SA 3.0", "source": "https://commons.wikimedia.org/wiki/File:Mont_Belair_-_septembre_2011_-_01.jpg", "vignette": "img/quartiers/val-belair/02-mont-belair-v.jpg", "image": "img/quartiers/val-belair/02-mont-belair-p.jpg"}, {"f": "03-boise.jpg", "legende": "Les boisés au pied du mont", "auteur": "Boréal", "licence": "CC BY-SA 3.0", "source": "https://commons.wikimedia.org/wiki/File:Mont_Belair_-_septembre_2011_-_02.jpg", "vignette": "img/quartiers/val-belair/03-boise-v.jpg", "image": "img/quartiers/val-belair/03-boise-p.jpg"}]}}, "appartements": [{"id": "chateau-st-louis-304", "titre": "Château St-Louis — unité 304", "adresse": "135, Grande Allée Ouest", "quartier": "montcalm", "loyer": 1795, "charges": "Tout inclus : électricité, chauffage, eau chaude", "pieces": "3½", "chambres": 1, "etage": "3e", "meuble": "Semi-meublé (laveuse et sécheuse)", "dispo": "2026-09-01", "bail": "À confirmer", "atouts": ["Au coin de l'avenue Cartier et de la Grande Allée", "Accès privé aux plaines d'Abraham par la cour arrière", "Piscine creusée, terrasse et BBQ donnant sur les Plaines", "Salle d'entraînement, ascenseur, immeuble en béton", "Entrées laveuse-sécheuse et lave-vaisselle", "Borne de recharge et station Communauto possibles"], "bemols": ["Stationnement, rangement et internet en supplément", "Enquête de crédit obligatoire", "Superficie non indiquée dans l'annonce"], "notes": "Agente de location : Karoline St-Arnaud, texto ou appel au 581-702-2720. Rénové, 3e étage. L'annonce classe l'immeuble dans « Montcalm / Saint-Sacrement ».", "lien": "https://sibelanger.com/appartements-a-louer/chateau-st-louis-unite-304/", "source": "Société immobilière Bélanger", "carte": "https://www.google.com/maps/search/135+Grande+All%C3%A9e+Ouest,+Qu%C3%A9bec,+QC+G1R+2H2", "statut": "a_visiter", "photos": [{"f": "01.jpg", "legende": "Le salon"}, {"f": "02.jpg", "legende": "Salon et coin repas, côté fenêtres"}, {"f": "04.jpg", "legende": "La cuisine"}, {"f": "05.jpg", "legende": "La cuisine, côté fenêtre"}, {"f": "06.jpg", "legende": "La chambre"}, {"f": "08.jpg", "legende": "La salle de bain"}, {"f": "09.jpg", "legende": "La cour arrière : piscine, terrasse et les Plaines derrière"}, {"f": "10.jpg", "legende": "La piscine creusée"}], "coord": [-71.2244136, 46.8016343], "trajets": {"vieux-quebec": {"bus": {"min": 21}, "pied": {"min": 26}, "velo": {"min": 12}}, "cegep-sainte-foy": {"bus": {"min": 32}, "pied": {"min": 76}, "velo": {"min": 21}}}, "images": [{"vignette": "img/apparts/chateau-st-louis-304/01-v.jpg", "image": "img/apparts/chateau-st-louis-304/01-p.jpg", "legende": "Le salon"}, {"vignette": "img/apparts/chateau-st-louis-304/02-v.jpg", "image": "img/apparts/chateau-st-louis-304/02-p.jpg", "legende": "Salon et coin repas, côté fenêtres"}, {"vignette": "img/apparts/chateau-st-louis-304/04-v.jpg", "image": "img/apparts/chateau-st-louis-304/04-p.jpg", "legende": "La cuisine"}, {"vignette": "img/apparts/chateau-st-louis-304/05-v.jpg", "image": "img/apparts/chateau-st-louis-304/05-p.jpg", "legende": "La cuisine, côté fenêtre"}, {"vignette": "img/apparts/chateau-st-louis-304/06-v.jpg", "image": "img/apparts/chateau-st-louis-304/06-p.jpg", "legende": "La chambre"}, {"vignette": "img/apparts/chateau-st-louis-304/08-v.jpg", "image": "img/apparts/chateau-st-louis-304/08-p.jpg", "legende": "La salle de bain"}, {"vignette": "img/apparts/chateau-st-louis-304/09-v.jpg", "image": "img/apparts/chateau-st-louis-304/09-p.jpg", "legende": "La cour arrière : piscine, terrasse et les Plaines derrière"}, {"vignette": "img/apparts/chateau-st-louis-304/10-v.jpg", "image": "img/apparts/chateau-st-louis-304/10-p.jpg", "legende": "La piscine creusée"}]}, {"id": "le-maguire-1411", "titre": "Le Maguire — 3½", "adresse": "1411, avenue Maguire", "quartier": "sillery", "loyer": 1810, "charges": "Eau chaude centralisée incluse", "pieces": "3½", "chambres": 1, "etage": "1er", "meuble": "Non meublé", "dispo": "Immédiatement", "bail": "À confirmer", "atouts": ["Sur l'avenue Maguire, au milieu des commerces", "Immeuble neuf en béton armé, 42 unités (Immostar)", "Comptoirs et îlot de cuisine en quartz", "Climatiseur mural et échangeur d'air", "Balcon ou terrasse selon l'unité", "Stationnement souterrain, rangement, ascenseur", "Animaux de moins de 20 lb acceptés"], "bemols": ["Au 1er étage : moins de vue, plus de passage", "Stationnement souterrain en supplément", "Photos de l'annonce : unités modèles, pas forcément celle-ci", "Superficie non indiquée"], "notes": "Annonce DuProprio, en direct avec le locateur (n° 1128242). DuProprio classe l'adresse dans « Montcalm », mais l'avenue Maguire est bien à Sillery — le texte de l'annonce le dit aussi.", "lien": "https://duproprio.com/fr/location/quebec-rive-nord/montcalm/3-1-2-a-louer/hab-1411-avenue-maguire-1128242", "source": "DuProprio", "carte": "https://www.google.com/maps/search/1411+avenue+Maguire,+Qu%C3%A9bec,+QC", "statut": "a_visiter", "photos": [{"f": "01.jpg", "legende": "Cuisine ouverte sur le salon"}, {"f": "02.jpg", "legende": "Le salon"}, {"f": "03.jpg", "legende": "L'îlot de cuisine en quartz"}, {"f": "04.jpg", "legende": "La chambre"}, {"f": "05.jpg", "legende": "Le hall de l'immeuble"}, {"f": "06.jpg", "legende": "La façade, avenue Maguire"}], "coord": [-71.2507999, 46.7802259], "trajets": {"vieux-quebec": {"bus": {"min": 37}, "pied": {"min": 74}, "velo": {"min": 25}}, "cegep-sainte-foy": {"bus": {"min": 32}, "pied": {"min": 49}, "velo": {"min": 13}}}, "images": [{"vignette": "img/apparts/le-maguire-1411/01-v.jpg", "image": "img/apparts/le-maguire-1411/01-p.jpg", "legende": "Cuisine ouverte sur le salon"}, {"vignette": "img/apparts/le-maguire-1411/02-v.jpg", "image": "img/apparts/le-maguire-1411/02-p.jpg", "legende": "Le salon"}, {"vignette": "img/apparts/le-maguire-1411/03-v.jpg", "image": "img/apparts/le-maguire-1411/03-p.jpg", "legende": "L'îlot de cuisine en quartz"}, {"vignette": "img/apparts/le-maguire-1411/04-v.jpg", "image": "img/apparts/le-maguire-1411/04-p.jpg", "legende": "La chambre"}, {"vignette": "img/apparts/le-maguire-1411/05-v.jpg", "image": "img/apparts/le-maguire-1411/05-p.jpg", "legende": "Le hall de l'immeuble"}, {"vignette": "img/apparts/le-maguire-1411/06-v.jpg", "image": "img/apparts/le-maguire-1411/06-p.jpg", "legende": "La façade, avenue Maguire"}]}, {"id": "ostra-1212", "titre": "OSTRA — unité 1212", "adresse": "640, rue Saint-Jean", "quartier": "saint-jean-baptiste", "loyer": 1595, "charges": "Tout inclus : électricité, chauffage, eau chaude, climatisation", "pieces": "3½", "chambres": 1, "etage": "12e — dernier étage", "meuble": "Non meublé", "dispo": "Immédiatement", "bail": "À confirmer", "atouts": ["Dernier étage, balcon avec vue dégagée sur la ville et le fleuve", "Air climatisé central, tout inclus", "Terrasse sur le toit, vue 360° avec BBQ", "Piscine intérieure, sauna, gym", "Immeuble en béton de 12 étages, trois ascenseurs", "Restaurant de sushis et boulangerie au rez-de-chaussée", "Le Vieux-Québec et l'avenue Cartier à pied"], "bemols": ["Entrée pour laveuse seulement (pas de sécheuse mentionnée)", "Stationnement souterrain et internet en supplément", "Enquête de crédit obligatoire", "Rue Saint-Jean : quartier animé tard le soir"], "notes": "Agente de location : Karoline St-Arnaud, texto ou appel au 581-702-2720. Ce n'est pas un de nos trois quartiers de départ : l'immeuble est dans Saint-Jean-Baptiste, entre les fortifications et Cartier.", "lien": "https://sibelanger.com/appartements-a-louer/640-1212-st-jean-selection/", "source": "Société immobilière Bélanger", "carte": "https://www.google.com/maps/search/640+rue+Saint-Jean,+Qu%C3%A9bec,+QC+G1R+4W9", "statut": "a_visiter", "photos": [{"f": "01.jpg", "legende": "Le salon et la vue vers le fleuve"}, {"f": "02.jpg", "legende": "Salon et coin repas"}, {"f": "03.jpg", "legende": "La pièce de vie vers la cuisine"}, {"f": "04.jpg", "legende": "La cuisine"}, {"f": "05.jpg", "legende": "La chambre, fenêtre côté vue"}, {"f": "06.jpg", "legende": "La chambre, coin bureau"}, {"f": "07.jpg", "legende": "La salle de bain"}, {"f": "08.jpg", "legende": "Le balcon, au 12e étage"}, {"f": "09.jpg", "legende": "La terrasse sur le toit de l'immeuble"}], "coord": [-71.2195629, 46.8106016], "trajets": {"vieux-quebec": {"bus": {"min": 20}, "pied": {"min": 22}, "velo": {"min": 10}}, "cegep-sainte-foy": {"bus": {"min": 28}, "pied": {"min": 82}, "velo": {"min": 20}}}, "images": [{"vignette": "img/apparts/ostra-1212/01-v.jpg", "image": "img/apparts/ostra-1212/01-p.jpg", "legende": "Le salon et la vue vers le fleuve"}, {"vignette": "img/apparts/ostra-1212/02-v.jpg", "image": "img/apparts/ostra-1212/02-p.jpg", "legende": "Salon et coin repas"}, {"vignette": "img/apparts/ostra-1212/03-v.jpg", "image": "img/apparts/ostra-1212/03-p.jpg", "legende": "La pièce de vie vers la cuisine"}, {"vignette": "img/apparts/ostra-1212/04-v.jpg", "image": "img/apparts/ostra-1212/04-p.jpg", "legende": "La cuisine"}, {"vignette": "img/apparts/ostra-1212/05-v.jpg", "image": "img/apparts/ostra-1212/05-p.jpg", "legende": "La chambre, fenêtre côté vue"}, {"vignette": "img/apparts/ostra-1212/06-v.jpg", "image": "img/apparts/ostra-1212/06-p.jpg", "legende": "La chambre, coin bureau"}, {"vignette": "img/apparts/ostra-1212/07-v.jpg", "image": "img/apparts/ostra-1212/07-p.jpg", "legende": "La salle de bain"}, {"vignette": "img/apparts/ostra-1212/08-v.jpg", "image": "img/apparts/ostra-1212/08-p.jpg", "legende": "Le balcon, au 12e étage"}, {"vignette": "img/apparts/ostra-1212/09-v.jpg", "image": "img/apparts/ostra-1212/09-p.jpg", "legende": "La terrasse sur le toit de l'immeuble"}]}, {"id": "genevieve-lamarre-2068", "titre": "Appartement rue Geneviève-Lamarre", "adresse": "2068-2072, rue Geneviève-Lamarre", "quartier": "maizerets", "coord": [-71.2304429, 46.8473032], "loyer": 1500, "charges": "Non précisé dans l'annonce", "pieces": "5½", "chambres": 3, "etage": "2e", "meuble": "Non meublé", "dispo": "À confirmer", "bail": "À confirmer", "atouts": ["Trois grandes chambres — le plus d'espace des quatre", "Rénové, très lumineux, grandes fenêtres", "Espace laveuse-sécheuse dans le logement", "Balcon et cour intérieure", "Un stationnement inclus", "Le Domaine de Maizerets à côté"], "bemols": ["Loin du Vieux-Québec comme de Sainte-Foy", "Non-fumeur, aucun animal accepté", "Preuve d'assurance responsabilité civile demandée", "Deux photos de l'annonce sont meublées numériquement", "Superficie non indiquée"], "notes": "Courtière : Mikchéla St-Louis (Sergic Québec), 418-262-5724. MLS 19985780, en ligne depuis six jours. Quartier Maizerets, à l'est de Limoilou — c'est le seul des quatre qui sort de la haute-ville.", "lien": "https://www.realtor.ca/immobilier/30213455/2068-2072-rue-genevieve-lamarre-quebec-la-cite-limoilou-maizerets", "source": "REALTOR.ca", "carte": "https://www.google.com/maps/search/2068+rue+Genevi%C3%A8ve-Lamarre,+Qu%C3%A9bec,+QC", "statut": "a_visiter", "photos": [{"f": "01.jpg", "legende": "Le salon (photo meublée numériquement par l'annonce)"}, {"f": "02.jpg", "legende": "Le salon, tel quel"}, {"f": "03.jpg", "legende": "La cuisine"}, {"f": "04.jpg", "legende": "La chambre principale"}, {"f": "05.jpg", "legende": "La deuxième chambre"}, {"f": "06.jpg", "legende": "La troisième chambre"}, {"f": "07.jpg", "legende": "La salle de bain"}, {"f": "08.jpg", "legende": "Le balcon"}, {"f": "09.jpg", "legende": "L'entrée et la cour, le soir"}], "trajets": {"vieux-quebec": {"bus": {"min": 56}, "pied": {"min": 75}, "velo": {"min": 23}}, "cegep-sainte-foy": {"bus": {"min": 59}, "pied": {"min": 148}, "velo": {"min": 42}}}, "images": [{"vignette": "img/apparts/genevieve-lamarre-2068/01-v.jpg", "image": "img/apparts/genevieve-lamarre-2068/01-p.jpg", "legende": "Le salon (photo meublée numériquement par l'annonce)"}, {"vignette": "img/apparts/genevieve-lamarre-2068/02-v.jpg", "image": "img/apparts/genevieve-lamarre-2068/02-p.jpg", "legende": "Le salon, tel quel"}, {"vignette": "img/apparts/genevieve-lamarre-2068/03-v.jpg", "image": "img/apparts/genevieve-lamarre-2068/03-p.jpg", "legende": "La cuisine"}, {"vignette": "img/apparts/genevieve-lamarre-2068/04-v.jpg", "image": "img/apparts/genevieve-lamarre-2068/04-p.jpg", "legende": "La chambre principale"}, {"vignette": "img/apparts/genevieve-lamarre-2068/05-v.jpg", "image": "img/apparts/genevieve-lamarre-2068/05-p.jpg", "legende": "La deuxième chambre"}, {"vignette": "img/apparts/genevieve-lamarre-2068/06-v.jpg", "image": "img/apparts/genevieve-lamarre-2068/06-p.jpg", "legende": "La troisième chambre"}, {"vignette": "img/apparts/genevieve-lamarre-2068/07-v.jpg", "image": "img/apparts/genevieve-lamarre-2068/07-p.jpg", "legende": "La salle de bain"}, {"vignette": "img/apparts/genevieve-lamarre-2068/08-v.jpg", "image": "img/apparts/genevieve-lamarre-2068/08-p.jpg", "legende": "Le balcon"}, {"vignette": "img/apparts/genevieve-lamarre-2068/09-v.jpg", "image": "img/apparts/genevieve-lamarre-2068/09-p.jpg", "legende": "L'entrée et la cour, le soir"}]}, {"id": "colline-410", "titre": "Condo neuf, boulevard de la Colline — 410", "adresse": "11525, boulevard de la Colline, app. 410", "quartier": "loretteville", "coord": [-71.3454684, 46.8602405], "loyer": 1800, "charges": "Non précisé dans l'annonce", "pieces": "3½ + bureau", "chambres": 1, "superficie": 82, "etage": "4e (immeuble de 6)", "meuble": "Non meublé", "dispo": "À confirmer", "bail": "À confirmer", "atouts": ["Neuf : construction 2025, immeuble en béton", "885 pi² (82 m²) — le plus grand espace par personne", "1 chambre + un vrai bureau fermé", "Comptoirs en Dekton, foyer au gaz naturel", "Climatisation centrale et échangeur d'air", "Grande terrasse", "Garage et rangement intérieur inclus", "Piscine intérieure et gym ouverts à l'année"], "bemols": ["À 15 km du Vieux-Québec : voiture indispensable", "Une seule chambre pour 1 800 $", "Quartier récent, peu de vie de rue à pied", "Photos d'un logement vide, jamais habité"], "notes": "Courtière : Chantal Dussault, RE/MAX Fortin Delage, 418-580-0488. MLS 10013818, en ligne depuis 25 jours. Le boulevard de la Colline est à la limite de Loretteville et de Neufchâtel, près de l'autoroute Robert-Bourassa.", "lien": "https://www.realtor.ca/immobilier/30142033/11525-boul-de-la-colline-410-quebec-la-haute-saint-charles-loretteville", "source": "REALTOR.ca", "carte": "https://www.google.com/maps/search/11525+boulevard+de+la+Colline,+Qu%C3%A9bec,+QC", "statut": "a_visiter", "photos": [{"f": "01.jpg", "legende": "La cuisine et son îlot"}, {"f": "02.jpg", "legende": "La pièce de vie, plafond de béton apparent"}, {"f": "03.jpg", "legende": "Le salon, vers la terrasse"}, {"f": "04.jpg", "legende": "Le bureau et sa grande fenêtre"}, {"f": "05.jpg", "legende": "La chambre"}, {"f": "06.jpg", "legende": "La salle de bain"}, {"f": "07.jpg", "legende": "La terrasse"}, {"f": "08.jpg", "legende": "L'immeuble, boulevard de la Colline"}], "trajets": {"vieux-quebec": {"bus": {"min": 64}, "pied": {"min": 186}, "velo": {"min": 50}}, "cegep-sainte-foy": {"bus": {"min": 42}, "pied": {"min": 179}, "velo": {"min": 44}}}, "images": [{"vignette": "img/apparts/colline-410/01-v.jpg", "image": "img/apparts/colline-410/01-p.jpg", "legende": "La cuisine et son îlot"}, {"vignette": "img/apparts/colline-410/02-v.jpg", "image": "img/apparts/colline-410/02-p.jpg", "legende": "La pièce de vie, plafond de béton apparent"}, {"vignette": "img/apparts/colline-410/03-v.jpg", "image": "img/apparts/colline-410/03-p.jpg", "legende": "Le salon, vers la terrasse"}, {"vignette": "img/apparts/colline-410/04-v.jpg", "image": "img/apparts/colline-410/04-p.jpg", "legende": "Le bureau et sa grande fenêtre"}, {"vignette": "img/apparts/colline-410/05-v.jpg", "image": "img/apparts/colline-410/05-p.jpg", "legende": "La chambre"}, {"vignette": "img/apparts/colline-410/06-v.jpg", "image": "img/apparts/colline-410/06-p.jpg", "legende": "La salle de bain"}, {"vignette": "img/apparts/colline-410/07-v.jpg", "image": "img/apparts/colline-410/07-p.jpg", "legende": "La terrasse"}, {"vignette": "img/apparts/colline-410/08-v.jpg", "image": "img/apparts/colline-410/08-p.jpg", "legende": "L'immeuble, boulevard de la Colline"}]}, {"id": "des-loutres-4", "titre": "4½ neuf, rue des Loutres", "adresse": "7256, rue des Loutres, app. 4", "quartier": "charlesbourg", "coord": [-71.2923407, 46.8886284], "loyer": 1991, "charges": "Internet haute vitesse et 2 stationnements inclus", "pieces": "4½", "chambres": 2, "etage": "1er (immeuble de 3)", "meuble": "Non meublé", "dispo": "2026-11-01", "bail": "À confirmer", "atouts": ["Neuf : construction 2024", "Vue complète sur la forêt", "Chambre principale avec walk-in", "Cuisine spacieuse, salle de lavage distincte", "Thermopompe murale (chauffage et climatisation)", "Internet haute vitesse inclus", "Animaux permis sous conditions"], "bemols": ["Le plus cher de la liste, à 1 991 $", "Presque une heure de bus du Vieux-Québec", "Deux stationnements inclus… dont vous n'avez pas l'usage", "Cul-de-sac résidentiel : rien à pied", "Enquête de crédit"], "notes": "MLS 21118905, en ligne depuis 36 jours. Libre au 1er novembre 2026. Orsainville, à la limite nord de la ville.", "lien": "https://www.realtor.ca/immobilier/30098753/7256-rue-des-loutres-4-quebec-charlesbourg-orsainville", "source": "REALTOR.ca", "carte": "https://www.google.com/maps/search/7256+rue+des+Loutres,+Qu%C3%A9bec,+QC", "statut": "a_visiter", "photos": [{"f": "01.jpg", "legende": "Le salon"}, {"f": "02.jpg", "legende": "La salle à manger, vue sur la forêt"}, {"f": "03.jpg", "legende": "La cuisine et son îlot"}, {"f": "04.jpg", "legende": "La cuisine, côté électros"}, {"f": "05.jpg", "legende": "La chambre principale"}, {"f": "06.jpg", "legende": "La deuxième chambre"}, {"f": "07.jpg", "legende": "La salle de bain"}, {"f": "08.jpg", "legende": "Le couloir de l'immeuble"}], "trajets": {"vieux-quebec": {"bus": {"min": 57}, "pied": {"min": 161}, "velo": {"min": 47}}, "cegep-sainte-foy": {"bus": {"min": 66}, "pied": {"min": 212}, "velo": {"min": 60}}}, "images": [{"vignette": "img/apparts/des-loutres-4/01-v.jpg", "image": "img/apparts/des-loutres-4/01-p.jpg", "legende": "Le salon"}, {"vignette": "img/apparts/des-loutres-4/02-v.jpg", "image": "img/apparts/des-loutres-4/02-p.jpg", "legende": "La salle à manger, vue sur la forêt"}, {"vignette": "img/apparts/des-loutres-4/03-v.jpg", "image": "img/apparts/des-loutres-4/03-p.jpg", "legende": "La cuisine et son îlot"}, {"vignette": "img/apparts/des-loutres-4/04-v.jpg", "image": "img/apparts/des-loutres-4/04-p.jpg", "legende": "La cuisine, côté électros"}, {"vignette": "img/apparts/des-loutres-4/05-v.jpg", "image": "img/apparts/des-loutres-4/05-p.jpg", "legende": "La chambre principale"}, {"vignette": "img/apparts/des-loutres-4/06-v.jpg", "image": "img/apparts/des-loutres-4/06-p.jpg", "legende": "La deuxième chambre"}, {"vignette": "img/apparts/des-loutres-4/07-v.jpg", "image": "img/apparts/des-loutres-4/07-p.jpg", "legende": "La salle de bain"}, {"vignette": "img/apparts/des-loutres-4/08-v.jpg", "image": "img/apparts/des-loutres-4/08-p.jpg", "legende": "Le couloir de l'immeuble"}]}, {"id": "st-jean-491", "titre": "3½ semi-meublé, rue Saint-Jean", "adresse": "491, rue Saint-Jean, app. 1", "quartier": "saint-jean-baptiste", "coord": [-71.2212317, 46.8093712], "loyer": 1050, "charges": "Non précisé dans l'annonce", "pieces": "3½", "chambres": 1, "etage": "2e", "meuble": "Semi-meublé", "dispo": "Immédiatement", "bail": "À confirmer", "atouts": ["De loin le moins cher : 1 050 $", "En plein cœur de la rue Saint-Jean", "Vaste, avec de grandes fenêtres", "Espace laveuse-sécheuse", "Animaux acceptés sous conditions", "20 min de bus du Vieux-Québec, 23 min à pied"], "bemols": ["En ligne depuis 331 jours — à vérifier qu'il est toujours libre", "Deux photos seulement dans l'annonce", "Mobilier existant très daté sur les photos", "Au-dessus des commerces : bruit de la rue Saint-Jean"], "notes": "Courtière : Marie-Pier Belley, 418-694-2026. MLS 13162241. L'ancienneté de l'annonce (près d'un an) mérite un appel avant de s'emballer.", "lien": "https://www.realtor.ca/immobilier/28974470/491-rue-st-jean-1-quebec-la-cite-limoilou-saint-jean-baptiste", "source": "REALTOR.ca", "carte": "https://www.google.com/maps/search/491+rue+Saint-Jean,+Qu%C3%A9bec,+QC", "statut": "a_visiter", "photos": [{"f": "01.jpg", "legende": "Le salon, meublé tel quel"}, {"f": "02.jpg", "legende": "Le salon, autre angle"}, {"f": "03.jpg", "legende": "L'immeuble, rue Saint-Jean"}], "trajets": {"vieux-quebec": {"bus": {"min": 20}, "pied": {"min": 23}, "velo": {"min": 8}}, "cegep-sainte-foy": {"bus": {"min": 28}, "pied": {"min": 79}, "velo": {"min": 21}}}, "images": [{"vignette": "img/apparts/st-jean-491/01-v.jpg", "image": "img/apparts/st-jean-491/01-p.jpg", "legende": "Le salon, meublé tel quel"}, {"vignette": "img/apparts/st-jean-491/02-v.jpg", "image": "img/apparts/st-jean-491/02-p.jpg", "legende": "Le salon, autre angle"}, {"vignette": "img/apparts/st-jean-491/03-v.jpg", "image": "img/apparts/st-jean-491/03-p.jpg", "legende": "L'immeuble, rue Saint-Jean"}]}, {"id": "jerome-610", "titre": "Duplex sur deux étages, rue Jérôme", "adresse": "610, rue Jérôme, app. 2", "quartier": "saint-roch", "coord": [-71.2289913, 46.8091716], "loyer": 1850, "charges": "Meublé et équipé", "pieces": "5½ sur deux étages", "chambres": 2, "superficie": 98, "etage": "2e et 3e", "meuble": "Entièrement meublé et équipé", "dispo": "2026-09-15", "bail": "À confirmer", "atouts": ["1 056 pi² (98 m²) sur deux étages", "Entièrement rénové en 2022", "Deux terrasses", "Un espace bureau en plus des deux chambres", "Salle de bain + salle d'eau", "Climatiseur mural", "Meublé et équipé : rien à acheter", "Saint-Roch à pied, 27 min de bus du Vieux-Québec"], "bemols": ["Meublé : peu de place pour vos propres meubles", "Non-fumeur, animaux non permis", "Immeuble de 1947, rénové mais ancien", "Libre à la mi-septembre — c'est bientôt"], "notes": "MLS 16809546, en ligne depuis 93 jours. Duplex de 1947 entièrement rénové en 2022, loué meublé.", "lien": "https://www.realtor.ca/immobilier/29856772/610-rue-jerome-2-quebec-la-cite-limoilou-saint-roch", "source": "REALTOR.ca", "carte": "https://www.google.com/maps/search/610+rue+J%C3%A9r%C3%B4me,+Qu%C3%A9bec,+QC", "statut": "a_visiter", "photos": [{"f": "01.jpg", "legende": "Le salon et la salle à manger"}, {"f": "02.jpg", "legende": "Le salon, vers la cuisine"}, {"f": "03.jpg", "legende": "La cuisine et son îlot"}, {"f": "04.jpg", "legende": "La cuisine, côté fenêtres"}, {"f": "05.jpg", "legende": "La chambre principale"}, {"f": "06.jpg", "legende": "La deuxième chambre"}, {"f": "07.jpg", "legende": "L'espace bureau et l'escalier"}, {"f": "08.jpg", "legende": "Le salon, autre angle"}], "trajets": {"vieux-quebec": {"bus": {"min": 27}, "pied": {"min": 35}, "velo": {"min": 16}}, "cegep-sainte-foy": {"bus": {"min": 26}, "pied": {"min": 79}, "velo": {"min": 24}}}, "images": [{"vignette": "img/apparts/jerome-610/01-v.jpg", "image": "img/apparts/jerome-610/01-p.jpg", "legende": "Le salon et la salle à manger"}, {"vignette": "img/apparts/jerome-610/02-v.jpg", "image": "img/apparts/jerome-610/02-p.jpg", "legende": "Le salon, vers la cuisine"}, {"vignette": "img/apparts/jerome-610/03-v.jpg", "image": "img/apparts/jerome-610/03-p.jpg", "legende": "La cuisine et son îlot"}, {"vignette": "img/apparts/jerome-610/04-v.jpg", "image": "img/apparts/jerome-610/04-p.jpg", "legende": "La cuisine, côté fenêtres"}, {"vignette": "img/apparts/jerome-610/05-v.jpg", "image": "img/apparts/jerome-610/05-p.jpg", "legende": "La chambre principale"}, {"vignette": "img/apparts/jerome-610/06-v.jpg", "image": "img/apparts/jerome-610/06-p.jpg", "legende": "La deuxième chambre"}, {"vignette": "img/apparts/jerome-610/07-v.jpg", "image": "img/apparts/jerome-610/07-p.jpg", "legende": "L'espace bureau et l'escalier"}, {"vignette": "img/apparts/jerome-610/08-v.jpg", "image": "img/apparts/jerome-610/08-p.jpg", "legende": "Le salon, autre angle"}]}, {"id": "ste-therese-476a", "titre": "Jumelé 3 chambres, avenue Sainte-Thérèse", "adresse": "476A, avenue Sainte-Thérèse", "quartier": "beauport", "coord": [-71.213941, 46.8967685], "loyer": 1850, "charges": "2 stationnements inclus", "pieces": "5½", "chambres": 3, "superficie": 56, "etage": "Jumelé avec sous-sol aménagé", "meuble": "Non meublé", "dispo": "À confirmer", "bail": "1 an (bail de transition)", "atouts": ["Une maison entière, pas un appartement", "3 chambres et un sous-sol aménagé", "Grande terrasse couverte", "Construction 2013", "Terrain de 4 484 pi²"], "bemols": ["Bail d'un an seulement — l'annonce parle d'un « entre-deux »", "Près d'une heure de bus du Vieux-Québec, 1 h 17 du Cégep", "604 pi² au rez-de-chaussée : le sous-sol fait le reste", "Deux stationnements dont vous n'avez pas l'usage"], "notes": "MLS 20506315, en ligne depuis 44 jours. Secteur Laurentides, à Beauport. L'annonce vise explicitement une location d'un an.", "lien": "https://www.realtor.ca/immobilier/30071843/476a-av-ste-therese-quebec-beauport-laurentides", "source": "REALTOR.ca", "carte": "https://www.google.com/maps/search/476+avenue+Sainte-Th%C3%A9r%C3%A8se,+Qu%C3%A9bec,+QC", "statut": "a_visiter", "photos": [{"f": "01.jpg", "legende": "Le salon"}, {"f": "02.jpg", "legende": "Le salon, côté fenêtre"}, {"f": "03.jpg", "legende": "La salle à manger, vers la terrasse"}, {"f": "04.jpg", "legende": "La cuisine"}, {"f": "05.jpg", "legende": "La cuisine vue de l'entrée"}, {"f": "06.jpg", "legende": "La chambre principale"}, {"f": "07.jpg", "legende": "La terrasse couverte"}, {"f": "08.jpg", "legende": "Le jumelé, avenue Sainte-Thérèse"}], "trajets": {"vieux-quebec": {"bus": {"min": 57}, "pied": {"min": 163}, "velo": {"min": 44}}, "cegep-sainte-foy": {"bus": {"min": 77}, "pied": {"min": 238}, "velo": {"min": 68}}}, "images": [{"vignette": "img/apparts/ste-therese-476a/01-v.jpg", "image": "img/apparts/ste-therese-476a/01-p.jpg", "legende": "Le salon"}, {"vignette": "img/apparts/ste-therese-476a/02-v.jpg", "image": "img/apparts/ste-therese-476a/02-p.jpg", "legende": "Le salon, côté fenêtre"}, {"vignette": "img/apparts/ste-therese-476a/03-v.jpg", "image": "img/apparts/ste-therese-476a/03-p.jpg", "legende": "La salle à manger, vers la terrasse"}, {"vignette": "img/apparts/ste-therese-476a/04-v.jpg", "image": "img/apparts/ste-therese-476a/04-p.jpg", "legende": "La cuisine"}, {"vignette": "img/apparts/ste-therese-476a/05-v.jpg", "image": "img/apparts/ste-therese-476a/05-p.jpg", "legende": "La cuisine vue de l'entrée"}, {"vignette": "img/apparts/ste-therese-476a/06-v.jpg", "image": "img/apparts/ste-therese-476a/06-p.jpg", "legende": "La chambre principale"}, {"vignette": "img/apparts/ste-therese-476a/07-v.jpg", "image": "img/apparts/ste-therese-476a/07-p.jpg", "legende": "La terrasse couverte"}, {"vignette": "img/apparts/ste-therese-476a/08-v.jpg", "image": "img/apparts/ste-therese-476a/08-p.jpg", "legende": "Le jumelé, avenue Sainte-Thérèse"}]}, {"id": "montagne-1635b", "titre": "3½ dans une maison, au pied du mont Bélair", "adresse": "1635, avenue de la Montagne Ouest, app. B", "quartier": "val-belair", "coord": [-71.4565788, 46.8250974], "loyer": 1200, "charges": "Non précisé dans l'annonce", "pieces": "3½", "chambres": 1, "etage": "Logement dans une maison de 1970", "meuble": "Non meublé", "dispo": "Immédiatement", "bail": "À confirmer", "atouts": ["1 200 $ — le deuxième moins cher", "Vastes pièces, grande chambre, beaucoup de rangement", "Deux entrées indépendantes (porte et porte-patio)", "Au pied du mont Bélair : randonnée, vélo, ski", "Stationnement disponible", "Terrain de 3 561 m²"], "bemols": ["Aucun trajet en bus proposé vers le centre — c'est le point noir", "1 h 25 de vélo du Vieux-Québec, 5 h à pied", "Logement dans la maison d'un propriétaire", "Maison de 1970, finitions d'époque sur les photos", "Annonce en ligne depuis 93 jours, libre « dès le 1er juillet »"], "notes": "MLS 27453629. Sans voiture, ce secteur est difficilement tenable : Google ne trouve aucun itinéraire de bus vers le Vieux-Québec ni vers le Cégep aux heures testées. À vérifier auprès du RTC pour les heures de pointe.", "lien": "https://www.realtor.ca/immobilier/29852588/1635-av-de-la-montagne-o-b-quebec-la-haute-saint-charles-val-belair", "source": "REALTOR.ca", "carte": "https://www.google.com/maps/search/1635+avenue+de+la+Montagne+Ouest,+Qu%C3%A9bec,+QC", "statut": "a_visiter", "photos": [{"f": "01.jpg", "legende": "Le salon"}, {"f": "02.jpg", "legende": "La cuisine"}, {"f": "03.jpg", "legende": "La cuisine, vers l'entrée"}, {"f": "04.jpg", "legende": "La chambre"}, {"f": "05.jpg", "legende": "La salle de bain"}, {"f": "06.jpg", "legende": "La buanderie"}, {"f": "07.jpg", "legende": "La maison, avenue de la Montagne"}], "trajets": {"vieux-quebec": {"bus": null, "pied": {"min": 300}, "velo": {"min": 85}}, "cegep-sainte-foy": {"bus": null, "pied": {"min": 242}, "velo": {"min": 61}}}, "images": [{"vignette": "img/apparts/montagne-1635b/01-v.jpg", "image": "img/apparts/montagne-1635b/01-p.jpg", "legende": "Le salon"}, {"vignette": "img/apparts/montagne-1635b/02-v.jpg", "image": "img/apparts/montagne-1635b/02-p.jpg", "legende": "La cuisine"}, {"vignette": "img/apparts/montagne-1635b/03-v.jpg", "image": "img/apparts/montagne-1635b/03-p.jpg", "legende": "La cuisine, vers l'entrée"}, {"vignette": "img/apparts/montagne-1635b/04-v.jpg", "image": "img/apparts/montagne-1635b/04-p.jpg", "legende": "La chambre"}, {"vignette": "img/apparts/montagne-1635b/05-v.jpg", "image": "img/apparts/montagne-1635b/05-p.jpg", "legende": "La salle de bain"}, {"vignette": "img/apparts/montagne-1635b/06-v.jpg", "image": "img/apparts/montagne-1635b/06-p.jpg", "legende": "La buanderie"}, {"vignette": "img/apparts/montagne-1635b/07-v.jpg", "image": "img/apparts/montagne-1635b/07-p.jpg", "legende": "La maison, avenue de la Montagne"}]}], "maj": "2026-09-05"};
+const DONNEES = {"quartiers": {"montcalm": {"nom": "Montcalm · Cartier", "etiquette": "Le plus vivant", "resume": "Cafés, commerces, Plaines d'Abraham : tout se fait à pied depuis l'avenue Cartier.", "description": "Le cœur animé de la haute-ville. L'avenue Cartier concentre les épiceries fines, les terrasses et les Halles du Petit Quartier ; la Grande Allée et les Plaines d'Abraham sont à deux rues. Les rues résidentielles autour (Saunders, Fraser, Bourlamaque) sont bordées de triplex en brique avec escaliers extérieurs. C'est le quartier le plus cher des trois, et celui où on a le moins besoin d'une voiture.", "reperes": ["Avenue Cartier et les Halles du Petit Quartier", "Plaines d'Abraham · parc des Champs-de-Bataille", "Musée national des beaux-arts du Québec", "Grande Allée et le Vieux-Québec à 20 min à pied"], "carte": "https://www.google.com/maps/search/Avenue+Cartier,+Qu%C3%A9bec,+QC", "photos": [{"f": "01-cartier-soir.jpg", "legende": "L'avenue Cartier à la tombée du jour", "auteur": "Wilfredor", "licence": "CC0", "source": "https://commons.wikimedia.org/wiki/File:Avenue_Cartier_illuminated_at_night_in_Quebec_City.jpg", "vignette": "img/quartiers/montcalm/01-cartier-soir-v.jpg", "image": "img/quartiers/montcalm/01-cartier-soir-p.jpg"}, {"f": "07-grande-allee.jpg", "legende": "La Grande Allée et ses terrasses", "auteur": "Jeangagnon", "licence": "CC BY-SA 4.0", "source": "https://commons.wikimedia.org/wiki/File:Grande_Allee,_Quebec_027.jpg", "vignette": "img/quartiers/montcalm/07-grande-allee-v.jpg", "image": "img/quartiers/montcalm/07-grande-allee-p.jpg"}, {"f": "02-cartier-ete.jpg", "legende": "L'avenue Cartier en été", "auteur": "Asclepias", "licence": "CC BY-SA 3.0", "source": "https://commons.wikimedia.org/wiki/File:Avenue_Cartier_2012-07-08.jpg", "vignette": "img/quartiers/montcalm/02-cartier-ete-v.jpg", "image": "img/quartiers/montcalm/02-cartier-ete-p.jpg"}, {"f": "03-cartier-automne.jpg", "legende": "Les abat-jour de Cartier, en automne", "auteur": "David Wilson", "licence": "CC BY 2.0", "source": "https://commons.wikimedia.org/wiki/File:Avenue_Cartier,_Qu%C3%A9bec_2016.jpg", "vignette": "img/quartiers/montcalm/03-cartier-automne-v.jpg", "image": "img/quartiers/montcalm/03-cartier-automne-p.jpg"}, {"f": "06-plaines.jpg", "legende": "Les plaines d'Abraham, au bout de la rue", "auteur": "Wilfredor", "licence": "CC0", "source": "https://commons.wikimedia.org/wiki/File:People_relaxing_in_the_Plains_of_Abraham.jpg", "vignette": "img/quartiers/montcalm/06-plaines-v.jpg", "image": "img/quartiers/montcalm/06-plaines-p.jpg"}, {"f": "05-rue-montcalm.jpg", "legende": "Une rue résidentielle de Montcalm", "auteur": "100budget", "licence": "CC BY-SA 3.0", "source": "https://commons.wikimedia.org/wiki/File:Quartier-montcalm.jpg", "vignette": "img/quartiers/montcalm/05-rue-montcalm-v.jpg", "image": "img/quartiers/montcalm/05-rue-montcalm-p.jpg"}, {"f": "08-velo-neige.jpg", "legende": "Un vélo qui passe l'hiver dehors, Québec", "auteur": "Wilfredor", "licence": "CC0", "source": "https://commons.wikimedia.org/wiki/File:Bike_on_a_snowy_street_in_Quebec_City_at_night.jpg", "vignette": "img/quartiers/montcalm/08-velo-neige-v.jpg", "image": "img/quartiers/montcalm/08-velo-neige-p.jpg"}, {"f": "04-cartier-foule.jpg", "legende": "Un samedi après-midi sur Cartier", "auteur": "Wilfredor", "licence": "CC BY-SA 4.0", "source": "https://commons.wikimedia.org/wiki/File:Crowd_on_Avenue_Cartier_in_Quebec_City.jpg", "vignette": "img/quartiers/montcalm/04-cartier-foule-v.jpg", "image": "img/quartiers/montcalm/04-cartier-foule-p.jpg"}]}, "sillery": {"nom": "Sillery · Maguire", "etiquette": "Le plus calme", "resume": "Une avenue soignée et résidentielle, avec le fleuve et le Bois-de-Coulonge tout près.", "description": "Plus vert, plus tranquille, plus bourgeois. L'avenue Maguire fait office de rue principale sur quelques centaines de mètres — boulangeries, restos, Café Krieghoff — et le reste est résidentiel, avec de grands arbres et des maisons cossues. Le parc du Bois-de-Coulonge et la vue sur le fleuve sont à dix minutes à pied. Le compromis : c'est plus loin du centre et la voiture devient utile.", "reperes": ["Avenue Maguire et ses commerces", "Parc du Bois-de-Coulonge", "Marina de Sillery et promenade Samuel-De Champlain", "Domaine Cataraqui"], "carte": "https://www.google.com/maps/search/Avenue+Maguire,+Sillery,+Qu%C3%A9bec,+QC", "photos": [{"f": "01-maguire.jpg", "legende": "L'avenue Maguire", "auteur": "Gilbert Bochenek", "licence": "Domaine public", "source": "https://commons.wikimedia.org/wiki/File:Rue_Maguire-Qu%C3%A9bec.jpg", "vignette": "img/quartiers/sillery/01-maguire-v.jpg", "image": "img/quartiers/sillery/01-maguire-p.jpg"}, {"f": "02-krieghoff.jpg", "legende": "Le Café Krieghoff, 1326 avenue Maguire", "auteur": "Dcflyer", "licence": "CC BY-SA 4.0", "source": "https://commons.wikimedia.org/wiki/File:Le_Caf%C3%A9_Krieghoff_1326,_avenue_Maguire,_Sillery,_Qu%C3%A9bec,_mai_2018_(01).jpg", "vignette": "img/quartiers/sillery/02-krieghoff-v.jpg", "image": "img/quartiers/sillery/02-krieghoff-p.jpg"}, {"f": "03-maguire-hiver.jpg", "legende": "Maguire un matin de tempête", "auteur": "Dcflyer", "licence": "CC BY-SA 4.0", "source": "https://commons.wikimedia.org/wiki/File:1326,_avenue_Maguire,_Sillery_(Qu%C3%A9bec),_2023-02-17.jpg", "vignette": "img/quartiers/sillery/03-maguire-hiver-v.jpg", "image": "img/quartiers/sillery/03-maguire-hiver-p.jpg"}, {"f": "04-bois-de-coulonge.jpg", "legende": "Le parc du Bois-de-Coulonge", "auteur": "Wilfredor", "licence": "CC0", "source": "https://commons.wikimedia.org/wiki/File:Parc_publique_du_Bois-de-Coulonge,_Quebec_ville,_Canada_002.jpg", "vignette": "img/quartiers/sillery/04-bois-de-coulonge-v.jpg", "image": "img/quartiers/sillery/04-bois-de-coulonge-p.jpg"}, {"f": "05-marina-fleuve.jpg", "legende": "La marina de Sillery et le fleuve", "auteur": "Malimage", "licence": "CC BY-SA 3.0", "source": "https://commons.wikimedia.org/wiki/File:WPQc-171_Parc_du_Bois-de-Coulonge_-_Marina_de_Sillery.JPG", "vignette": "img/quartiers/sillery/05-marina-fleuve-v.jpg", "image": "img/quartiers/sillery/05-marina-fleuve-p.jpg"}, {"f": "06-promenade.jpg", "legende": "La promenade Samuel-De Champlain et le pont de Québec", "auteur": "Cephas", "licence": "CC BY-SA 4.0", "source": "https://commons.wikimedia.org/wiki/File:Promenade_Samuel-De_Champlain-C.jpg", "vignette": "img/quartiers/sillery/06-promenade-v.jpg", "image": "img/quartiers/sillery/06-promenade-p.jpg"}]}, "saint-sacrement": {"nom": "Saint-Sacrement", "etiquette": "Le compromis", "resume": "Plus résidentiel que Montcalm, toujours à distance de marche de Cartier et des services.", "description": "Coincé entre Montcalm et Sainte-Foy, le quartier vit autour du chemin Sainte-Foy : épiceries, pharmacies, petits restos, et l'hôpital du Saint-Sacrement. Derrière l'artère, des rues résidentielles calmes et arborées, avec des loyers en général plus doux que sur Cartier. L'avenue Cartier reste à une quinzaine de minutes de marche, et le bus passe souvent sur le chemin Sainte-Foy.", "reperes": ["Chemin Sainte-Foy et ses commerces", "Église du Très-Saint-Sacrement", "Hôpital du Saint-Sacrement", "Avenues Belvédère et des Érables vers Montcalm"], "carte": "https://www.google.com/maps/search/Quartier+Saint-Sacrement,+Qu%C3%A9bec,+QC", "photos": [{"f": "01-eglise.jpg", "legende": "L'église du Très-Saint-Sacrement, chemin Sainte-Foy", "auteur": "Jeangagnon", "licence": "CC BY-SA 4.0", "source": "https://commons.wikimedia.org/wiki/File:Eglise_du_Tres-Saint-Sacrement_-_06.jpg", "vignette": "img/quartiers/saint-sacrement/01-eglise-v.jpg", "image": "img/quartiers/saint-sacrement/01-eglise-p.jpg"}, {"f": "04-rue-arbres.jpg", "legende": "Rue résidentielle bordée d'arbres, Québec", "auteur": "Wilfredor", "licence": "CC0", "source": "https://commons.wikimedia.org/wiki/File:Tree-lined_residential_street_in_Quebec_City_in_autumn.jpg", "vignette": "img/quartiers/saint-sacrement/04-rue-arbres-v.jpg", "image": "img/quartiers/saint-sacrement/04-rue-arbres-p.jpg"}, {"f": "02-chemin-sainte-foy.jpg", "legende": "Le chemin Sainte-Foy vu d'en haut", "auteur": "Gabriel Picard", "licence": "CC BY-SA 4.0", "source": "https://commons.wikimedia.org/wiki/File:Chemin_Sainte-Foy_-_Avenue_du_Chanoine-Scott.jpg", "vignette": "img/quartiers/saint-sacrement/02-chemin-sainte-foy-v.jpg", "image": "img/quartiers/saint-sacrement/02-chemin-sainte-foy-p.jpg"}, {"f": "05-coin-automne.jpg", "legende": "Coin de rue en automne, Québec", "auteur": "Wilfredor", "licence": "CC0", "source": "https://commons.wikimedia.org/wiki/File:Autumn_street_corner_in_Quebec_City.jpg", "vignette": "img/quartiers/saint-sacrement/05-coin-automne-v.jpg", "image": "img/quartiers/saint-sacrement/05-coin-automne-p.jpg"}, {"f": "07-parc-des-braves.jpg", "legende": "Le parc des Braves, la ville en contrebas", "auteur": "Wilfredor", "licence": "CC0", "source": "https://commons.wikimedia.org/wiki/File:Snow-covered_Parc_des_Braves_in_Quebec_City.jpg", "vignette": "img/quartiers/saint-sacrement/07-parc-des-braves-v.jpg", "image": "img/quartiers/saint-sacrement/07-parc-des-braves-p.jpg"}, {"f": "03-heure-bleue.jpg", "legende": "Chemin Sainte-Foy à l'heure bleue", "auteur": "Wilfredor", "licence": "CC BY-SA 4.0", "source": "https://commons.wikimedia.org/wiki/File:Chemin_Sainte-Foy_at_blue_hour,_Quebec_City.jpg", "vignette": "img/quartiers/saint-sacrement/03-heure-bleue-v.jpg", "image": "img/quartiers/saint-sacrement/03-heure-bleue-p.jpg"}, {"f": "06-bus-hiver.jpg", "legende": "Le bus sur l'avenue Belvédère, l'hiver", "auteur": "Wilfredor", "licence": "CC BY-SA 4.0", "source": "https://commons.wikimedia.org/wiki/File:Avenue_Belv%C3%A9d%C3%A8re,_Qu%C3%A9bec,_QC.jpg", "vignette": "img/quartiers/saint-sacrement/06-bus-hiver-v.jpg", "image": "img/quartiers/saint-sacrement/06-bus-hiver-p.jpg"}]}, "saint-jean-baptiste": {"nom": "Saint-Jean-Baptiste", "etiquette": "Le plus urbain", "resume": "Le faubourg de la rue Saint-Jean : dense, commerçant, à dix minutes du Vieux-Québec.", "description": "Le quartier le plus dense et le plus animé de la haute-ville, accroché à la falaise entre les fortifications et Saint-Roch. Tout se passe sur la rue Saint-Jean : épiceries, bars, disquaires, l'église Saint-Jean-Baptiste au milieu. Les rues autour sont étroites, bordées de maisons en rangée et d'escaliers extérieurs. Le Vieux-Québec est à dix minutes à pied, l'avenue Cartier à un quart d'heure. C'est vivant tard le soir — ce qui plaît ou non.", "reperes": ["La rue Saint-Jean et ses commerces", "L'église Saint-Jean-Baptiste", "Le Vieux-Québec à 10 min à pied", "L'escalier vers Saint-Roch et la Basse-Ville"], "carte": "https://www.google.com/maps/search/Quartier+Saint-Jean-Baptiste,+Qu%C3%A9bec,+QC", "photos": [{"f": "01-vue-aerienne.jpg", "legende": "Le faubourg vu d'en haut, la rue Saint-Jean au centre", "auteur": "Gabriel Picard", "licence": "CC BY-SA 4.0", "source": "https://commons.wikimedia.org/wiki/File:Rue_Saint-Jean_-_Vue_a%C3%A9rienne_2024.jpg", "vignette": "img/quartiers/saint-jean-baptiste/01-vue-aerienne-v.jpg", "image": "img/quartiers/saint-jean-baptiste/01-vue-aerienne-p.jpg"}, {"f": "02-saint-jean-nuit.jpg", "legende": "La rue Saint-Jean illuminée, le soir", "auteur": "Wilfredor", "licence": "CC0", "source": "https://commons.wikimedia.org/wiki/File:Rue_Saint-Jean_at_night_with_Christmas_lights,_Quebec_City.jpg", "vignette": "img/quartiers/saint-jean-baptiste/02-saint-jean-nuit-v.jpg", "image": "img/quartiers/saint-jean-baptiste/02-saint-jean-nuit-p.jpg"}, {"f": "03-toits.jpg", "legende": "Les toits du quartier Saint-Jean-Baptiste", "auteur": "Gabriel Picard", "licence": "CC BY-SA 4.0", "source": "https://commons.wikimedia.org/wiki/File:Quartier_Saint-Jean-Baptiste_06-2026.jpg", "vignette": "img/quartiers/saint-jean-baptiste/03-toits-v.jpg", "image": "img/quartiers/saint-jean-baptiste/03-toits-p.jpg"}, {"f": "04-saint-jean-ete.jpg", "legende": "La rue Saint-Jean un après-midi d'été", "auteur": "Jeangagnon", "licence": "CC BY-SA 3.0", "source": "https://commons.wikimedia.org/wiki/File:Rue_Saint-Jean,_Quebec_32.jpg", "vignette": "img/quartiers/saint-jean-baptiste/04-saint-jean-ete-v.jpg", "image": "img/quartiers/saint-jean-baptiste/04-saint-jean-ete-p.jpg"}, {"f": "05-coin-hiver.jpg", "legende": "Coin Saint-Jean et d'Auteuil, en hiver", "auteur": "DXR", "licence": "CC BY-SA 4.0", "source": "https://commons.wikimedia.org/wiki/File:Corner_of_Rue_Saint-Jean_and_Rue_d%27Auteuil,_Qu%C3%A9bec_20170412_1.jpg", "vignette": "img/quartiers/saint-jean-baptiste/05-coin-hiver-v.jpg", "image": "img/quartiers/saint-jean-baptiste/05-coin-hiver-p.jpg"}]}, "maizerets": {"nom": "Maizerets", "etiquette": "Le plus abordable", "resume": "À l'est de Limoilou, autour d'un grand parc — loin du centre, mais nettement moins cher.", "description": "Quartier résidentiel de l'est de la ville, entre Limoilou et Beauport, organisé autour du Domaine de Maizerets : 27 hectares de parc, un arboretum, des étangs et une maison du 17e siècle. Les rues sont larges, calmes, avec des duplex et des maisons d'après-guerre. Les loyers y sont sensiblement plus bas qu'en haute-ville, mais on est à bonne distance du Vieux-Québec comme de Sainte-Foy, et le corridor autoroutier n'est pas loin.", "reperes": ["Le Domaine de Maizerets et son arboretum", "Le corridor du Littoral, à vélo jusqu'au centre", "La 1re Avenue et les commerces de Limoilou", "L'autoroute Dufferin-Montmorency, à deux pas"], "carte": "https://www.google.com/maps/search/Maizerets,+Qu%C3%A9bec,+QC", "photos": [{"f": "01-maison-hiver.jpg", "legende": "La maison Maizerets, un soir d'hiver", "auteur": "Wilfredor", "licence": "CC BY-SA 4.0", "source": "https://commons.wikimedia.org/wiki/File:Domaine_de_Maizerets_02.jpg", "vignette": "img/quartiers/maizerets/01-maison-hiver-v.jpg", "image": "img/quartiers/maizerets/01-maison-hiver-p.jpg"}, {"f": "02-passerelle.jpg", "legende": "La passerelle sur l'étang du Domaine", "auteur": "Wilfredor", "licence": "CC BY-SA 4.0", "source": "https://commons.wikimedia.org/wiki/File:Domaine_de_Maizerets_park,_quebec_city_01.jpg", "vignette": "img/quartiers/maizerets/02-passerelle-v.jpg", "image": "img/quartiers/maizerets/02-passerelle-p.jpg"}, {"f": "03-domaine-nuit.jpg", "legende": "Le Domaine de Maizerets sous la neige", "auteur": "Wilfredor", "licence": "CC0", "source": "https://commons.wikimedia.org/wiki/File:Domaine_de_Maizerets,_Qu%C3%A9bec,_Canada.jpg", "vignette": "img/quartiers/maizerets/03-domaine-nuit-v.jpg", "image": "img/quartiers/maizerets/03-domaine-nuit-p.jpg"}, {"f": "04-arboretum.jpg", "legende": "L'arboretum, au printemps", "auteur": "Wilfredor", "licence": "CC BY-SA 4.0", "source": "https://commons.wikimedia.org/wiki/File:Domaine_de_Maizerets_park,_quebec_city_04.jpg", "vignette": "img/quartiers/maizerets/04-arboretum-v.jpg", "image": "img/quartiers/maizerets/04-arboretum-p.jpg"}]}, "loretteville": {"nom": "Loretteville", "etiquette": "Le plus au large", "resume": "Au nord-ouest, le long de la rivière Saint-Charles : espace, verdure et voiture obligatoire.", "description": "Ancienne ville devenue quartier de Québec, à une quinzaine de kilomètres du centre. On y vient pour l'espace : des immeubles récents le long du boulevard de la Colline, la rivière Saint-Charles et son parc linéaire, la piste cyclable des Cheminots qui descend jusqu'à la ville. La rue Racine garde le petit noyau commercial du vieux Loretteville, et Wendake est juste à côté. Le revers est simple : sans voiture, la vie quotidienne devient compliquée.", "reperes": ["Le parc linéaire de la rivière Saint-Charles", "La piste cyclable des Cheminots", "La rue Racine, le noyau du vieux Loretteville", "L'autoroute Robert-Bourassa, accès direct au centre"], "carte": "https://www.google.com/maps/search/Loretteville,+Qu%C3%A9bec,+QC", "photos": [{"f": "01-parc-lineaire.jpg", "legende": "Le parc linéaire de la rivière Saint-Charles, la ville au fond", "auteur": "Judicieux", "licence": "CC BY-SA 4.0", "source": "https://commons.wikimedia.org/wiki/File:Parc_lin%C3%A9aire_de_la_rivi%C3%A8re_Saint-Charles.jpg", "vignette": "img/quartiers/loretteville/01-parc-lineaire-v.jpg", "image": "img/quartiers/loretteville/01-parc-lineaire-p.jpg"}, {"f": "02-rue-racine.jpg", "legende": "La rue Racine, au cœur du vieux Loretteville", "auteur": "Pierre-Olivier Fortin", "licence": "CC BY-SA 3.0", "source": "https://commons.wikimedia.org/wiki/File:Rue_Racine,_Loretteville.jpg", "vignette": "img/quartiers/loretteville/02-rue-racine-v.jpg", "image": "img/quartiers/loretteville/02-rue-racine-p.jpg"}, {"f": "03-sentier.jpg", "legende": "Un sentier le long de la rivière", "auteur": "Jeangagnon", "licence": "CC BY-SA 4.0", "source": "https://commons.wikimedia.org/wiki/File:Parc_riviere_Saint-Charles_-_01.jpg", "vignette": "img/quartiers/loretteville/03-sentier-v.jpg", "image": "img/quartiers/loretteville/03-sentier-p.jpg"}, {"f": "04-riviere.jpg", "legende": "La rivière Saint-Charles, l'été", "auteur": "Jeangagnon", "licence": "CC BY-SA 4.0", "source": "https://commons.wikimedia.org/wiki/File:Parc_riviere_Saint-Charles_-_05.jpg", "vignette": "img/quartiers/loretteville/04-riviere-v.jpg", "image": "img/quartiers/loretteville/04-riviere-p.jpg"}]}, "saint-roch": {"nom": "Saint-Roch", "etiquette": "Le plus bouillonnant", "resume": "La basse-ville qui bouge : rue Saint-Joseph, restos, salles de spectacle, tout à pied.", "description": "Le quartier qui a le plus changé à Québec. La rue Saint-Joseph aligne les restaurants, les cafés, les disquaires et les salles de spectacle sur un kilomètre ; le jardin Jean-Paul-L'Allier fait respirer le tout. C'est plat — donc marchable et cyclable — bien desservi par le bus, et à quinze minutes à pied du Vieux-Québec par la côte ou l'ascenseur du Faubourg. En contrepartie, c'est dense, parfois bruyant, et la haute-ville se mérite par une montée.", "reperes": ["La rue Saint-Joseph et ses commerces", "Le jardin Jean-Paul-L'Allier", "La côte d'Abraham vers la haute-ville", "Le Grand Théâtre et le Diamant, à pied"], "carte": "https://www.google.com/maps/search/Quartier+Saint-Roch,+Qu%C3%A9bec,+QC", "photos": [{"f": "01-saint-joseph.jpg", "legende": "La rue Saint-Joseph", "auteur": "Lacombelle", "licence": "CC BY-SA 4.0", "source": "https://commons.wikimedia.org/wiki/File:Rue_Saint-Joseph_Qu%C3%A9bec.jpg", "vignette": "img/quartiers/saint-roch/01-saint-joseph-v.jpg", "image": "img/quartiers/saint-roch/01-saint-joseph-p.jpg"}, {"f": "02-trottoir.jpg", "legende": "Les trottoirs de Saint-Joseph, en automne", "auteur": "Wilfredor", "licence": "CC0", "source": "https://commons.wikimedia.org/wiki/File:Rue_Saint-Joseph,_Quebec_City,_Quebec,_Canada_2340_19.jpg", "vignette": "img/quartiers/saint-roch/02-trottoir-v.jpg", "image": "img/quartiers/saint-roch/02-trottoir-p.jpg"}, {"f": "03-coin-hiver.jpg", "legende": "Un édifice de coin, l'hiver", "auteur": "Wilfredor", "licence": "CC BY-SA 4.0", "source": "https://commons.wikimedia.org/wiki/File:Corner_building_in_Saint-Roch,_Quebec_City.jpg", "vignette": "img/quartiers/saint-roch/03-coin-hiver-v.jpg", "image": "img/quartiers/saint-roch/03-coin-hiver-p.jpg"}, {"f": "04-jardin-automne.jpg", "legende": "Le jardin Jean-Paul-L'Allier", "auteur": "Wilfredor", "licence": "CC0", "source": "https://commons.wikimedia.org/wiki/File:Autumn_trees_at_Jardin_Jean-Paul-L%27Allier.jpg", "vignette": "img/quartiers/saint-roch/04-jardin-automne-v.jpg", "image": "img/quartiers/saint-roch/04-jardin-automne-p.jpg"}]}, "charlesbourg": {"nom": "Charlesbourg · Orsainville", "etiquette": "Le plus familial", "resume": "Banlieue verte au nord de la ville, organisée autour du Trait-Carré historique.", "description": "Ancienne ville de banlieue rattachée à Québec, à une dizaine de kilomètres au nord du centre. Son cœur historique, le Trait-Carré, garde le plan en étoile hérité du Régime français, avec le Moulin des Jésuites et l'église Saint-Charles-Borromée. Orsainville, au nord-est, est plus récent : bungalows, immeubles neufs, grandes surfaces et beaucoup de vert, avec la forêt qui commence au bout des rues. C'est calme et familial ; en transport en commun, le centre-ville reste loin.", "reperes": ["Le Trait-Carré et le Moulin des Jésuites", "L'église Saint-Charles-Borromée", "Le parc Henri-Casault et les boisés d'Orsainville", "Les Galeries Charlesbourg"], "carte": "https://www.google.com/maps/search/Orsainville,+Charlesbourg,+Qu%C3%A9bec,+QC", "photos": [{"f": "01-moulin.jpg", "legende": "Le Moulin des Jésuites, au Trait-Carré", "auteur": "Gilbert Bochenek", "licence": "CC BY-SA 3.0", "source": "https://commons.wikimedia.org/wiki/File:Moulin_des_J%C3%A9suites-Qu%C3%A9bec-1.JPG", "vignette": "img/quartiers/charlesbourg/01-moulin-v.jpg", "image": "img/quartiers/charlesbourg/01-moulin-p.jpg"}, {"f": "02-eglise.jpg", "legende": "L'église Saint-Charles-Borromée", "auteur": "Bouchecl", "licence": "CC BY-SA 3.0", "source": "https://commons.wikimedia.org/wiki/File:%C3%89glise_Saint-Charles_Borrom%C3%A9e_-_Charlesbourg_02.JPG", "vignette": "img/quartiers/charlesbourg/02-eglise-v.jpg", "image": "img/quartiers/charlesbourg/02-eglise-p.jpg"}, {"f": "03-eglise-interieur.jpg", "legende": "L'intérieur de l'église Saint-Charles-Borromée", "auteur": "Wilfredor", "licence": "CC0", "source": "https://commons.wikimedia.org/wiki/File:Saint-Charles-Borrom%C3%A9e_Church,_Charlesbourg,_Quebec_03.jpg", "vignette": "img/quartiers/charlesbourg/03-eglise-interieur-v.jpg", "image": "img/quartiers/charlesbourg/03-eglise-interieur-p.jpg"}]}, "beauport": {"nom": "Beauport · Laurentides", "etiquette": "Le plus près de la nature", "resume": "À l'est, entre la chute Montmorency et l'avenue Royale — grand, vert, et loin en bus.", "description": "Arrondissement de l'est, ancien village devenu banlieue. Le secteur Laurentides est résidentiel et récent : jumelés, terrains, rues tranquilles. Le patrimoine est du côté du Vieux-Bourg et de l'avenue Royale, et la chute Montmorency — plus haute que le Niagara — est à quelques minutes. C'est vert, familial, avec de l'espace pour le prix ; en bus, le centre-ville demande près d'une heure.", "reperes": ["La chute Montmorency", "L'avenue Royale et le Vieux-Bourg", "Les Galeries de la Canardière et les services", "L'autoroute Félix-Leclerc vers le centre"], "carte": "https://www.google.com/maps/search/Laurentides,+Beauport,+Qu%C3%A9bec,+QC", "photos": [{"f": "01-chute.jpg", "legende": "La chute Montmorency", "auteur": "Eric Fortin", "licence": "CC BY-SA 3.0", "source": "https://commons.wikimedia.org/wiki/File:Chute-Montmorency.jpg", "vignette": "img/quartiers/beauport/01-chute-v.jpg", "image": "img/quartiers/beauport/01-chute-p.jpg"}, {"f": "02-avenue-royale.jpg", "legende": "Une maison ancienne de l'avenue Royale", "auteur": "The Cosmonaut", "licence": "CC BY-SA 2.5", "source": "https://commons.wikimedia.org/wiki/File:Avenue_Royale.jpg", "vignette": "img/quartiers/beauport/02-avenue-royale-v.jpg", "image": "img/quartiers/beauport/02-avenue-royale-p.jpg"}, {"f": "03-maison-parc.jpg", "legende": "Une maison au bord du parc de la Chute-Montmorency", "auteur": "Wilfredor", "licence": "CC0", "source": "https://commons.wikimedia.org/wiki/File:House_in_the_Parc_de_la_Chute-Montmorency_009.jpg", "vignette": "img/quartiers/beauport/03-maison-parc-v.jpg", "image": "img/quartiers/beauport/03-maison-parc-p.jpg"}]}, "val-belair": {"nom": "Val-Bélair", "etiquette": "Le plus au vert", "resume": "Au pied du mont Bélair : forêt, sentiers, tranquillité — et très peu de bus.", "description": "Le secteur le plus éloigné et le plus rural de la ville, à l'ouest, au pied du mont Bélair. On y vient pour la nature : randonnée, vélo de montagne, ski, la tourbière et les sentiers commencent au bout des rues. Les maisons sont sur de grands terrains, l'air est calme. Le revers est net : le réseau de bus y est très mince — Google ne propose même aucun trajet en transport en commun vers le centre en soirée.", "reperes": ["Le mont Bélair et ses sentiers", "La tourbière et les boisés", "La base de plein air de Sainte-Foy, plus au sud", "L'autoroute Henri-IV, à une quinzaine de minutes"], "carte": "https://www.google.com/maps/search/Val-B%C3%A9lair,+Qu%C3%A9bec,+QC", "photos": [{"f": "01-tourbiere.jpg", "legende": "La tourbière du mont Bélair", "auteur": "Cephas", "licence": "CC BY-SA 4.0", "source": "https://commons.wikimedia.org/wiki/File:Tourbi%C3%A8re_du_Mont_B%C3%A9lair_01.jpg", "vignette": "img/quartiers/val-belair/01-tourbiere-v.jpg", "image": "img/quartiers/val-belair/01-tourbiere-p.jpg"}, {"f": "02-mont-belair.jpg", "legende": "Le mont Bélair vu des champs", "auteur": "Boréal", "licence": "CC BY-SA 3.0", "source": "https://commons.wikimedia.org/wiki/File:Mont_Belair_-_septembre_2011_-_01.jpg", "vignette": "img/quartiers/val-belair/02-mont-belair-v.jpg", "image": "img/quartiers/val-belair/02-mont-belair-p.jpg"}, {"f": "03-boise.jpg", "legende": "Les boisés au pied du mont", "auteur": "Boréal", "licence": "CC BY-SA 3.0", "source": "https://commons.wikimedia.org/wiki/File:Mont_Belair_-_septembre_2011_-_02.jpg", "vignette": "img/quartiers/val-belair/03-boise-v.jpg", "image": "img/quartiers/val-belair/03-boise-p.jpg"}]}}, "appartements": [{"id": "chateau-st-louis-304", "titre": "Château St-Louis — unité 304", "adresse": "135, Grande Allée Ouest", "quartier": "montcalm", "loyer": 1795, "charges": "Tout inclus : électricité, chauffage, eau chaude", "pieces": "3½", "chambres": 1, "etage": "3e", "meuble": "Semi-meublé (laveuse et sécheuse)", "dispo": "2026-09-01", "bail": "À confirmer", "atouts": ["Au coin de l'avenue Cartier et de la Grande Allée", "Accès privé aux plaines d'Abraham par la cour arrière", "Piscine creusée, terrasse et BBQ donnant sur les Plaines", "Salle d'entraînement, ascenseur, immeuble en béton", "Entrées laveuse-sécheuse et lave-vaisselle", "Borne de recharge et station Communauto possibles"], "bemols": ["Stationnement, rangement et internet en supplément", "Enquête de crédit obligatoire", "Superficie non indiquée dans l'annonce"], "notes": "Agente de location : Karoline St-Arnaud, texto ou appel au 581-702-2720. Rénové, 3e étage. L'annonce classe l'immeuble dans « Montcalm / Saint-Sacrement ».", "lien": "https://sibelanger.com/appartements-a-louer/chateau-st-louis-unite-304/", "source": "Société immobilière Bélanger", "carte": "https://www.google.com/maps/search/135+Grande+All%C3%A9e+Ouest,+Qu%C3%A9bec,+QC+G1R+2H2", "statut": "a_visiter", "photos": [{"f": "01.jpg", "legende": "Le salon"}, {"f": "02.jpg", "legende": "Salon et coin repas, côté fenêtres"}, {"f": "04.jpg", "legende": "La cuisine"}, {"f": "05.jpg", "legende": "La cuisine, côté fenêtre"}, {"f": "06.jpg", "legende": "La chambre"}, {"f": "08.jpg", "legende": "La salle de bain"}, {"f": "09.jpg", "legende": "La cour arrière : piscine, terrasse et les Plaines derrière"}, {"f": "10.jpg", "legende": "La piscine creusée"}], "coord": [-71.2244136, 46.8016343], "trajets": {"vieux-quebec": {"bus": {"min": 21}, "pied": {"min": 26}, "velo": {"min": 12}}, "cegep-sainte-foy": {"bus": {"min": 32}, "pied": {"min": 76}, "velo": {"min": 21}}}, "images": [{"vignette": "img/apparts/chateau-st-louis-304/01-v.jpg", "image": "img/apparts/chateau-st-louis-304/01-p.jpg", "legende": "Le salon"}, {"vignette": "img/apparts/chateau-st-louis-304/02-v.jpg", "image": "img/apparts/chateau-st-louis-304/02-p.jpg", "legende": "Salon et coin repas, côté fenêtres"}, {"vignette": "img/apparts/chateau-st-louis-304/04-v.jpg", "image": "img/apparts/chateau-st-louis-304/04-p.jpg", "legende": "La cuisine"}, {"vignette": "img/apparts/chateau-st-louis-304/05-v.jpg", "image": "img/apparts/chateau-st-louis-304/05-p.jpg", "legende": "La cuisine, côté fenêtre"}, {"vignette": "img/apparts/chateau-st-louis-304/06-v.jpg", "image": "img/apparts/chateau-st-louis-304/06-p.jpg", "legende": "La chambre"}, {"vignette": "img/apparts/chateau-st-louis-304/08-v.jpg", "image": "img/apparts/chateau-st-louis-304/08-p.jpg", "legende": "La salle de bain"}, {"vignette": "img/apparts/chateau-st-louis-304/09-v.jpg", "image": "img/apparts/chateau-st-louis-304/09-p.jpg", "legende": "La cour arrière : piscine, terrasse et les Plaines derrière"}, {"vignette": "img/apparts/chateau-st-louis-304/10-v.jpg", "image": "img/apparts/chateau-st-louis-304/10-p.jpg", "legende": "La piscine creusée"}]}, {"id": "le-maguire-1411", "titre": "Le Maguire — 3½", "adresse": "1411, avenue Maguire", "quartier": "sillery", "loyer": 1810, "charges": "Eau chaude centralisée incluse", "pieces": "3½", "chambres": 1, "etage": "1er", "meuble": "Non meublé", "dispo": "Immédiatement", "bail": "À confirmer", "atouts": ["Sur l'avenue Maguire, au milieu des commerces", "Immeuble neuf en béton armé, 42 unités (Immostar)", "Comptoirs et îlot de cuisine en quartz", "Climatiseur mural et échangeur d'air", "Balcon ou terrasse selon l'unité", "Stationnement souterrain, rangement, ascenseur", "Animaux de moins de 20 lb acceptés"], "bemols": ["Au 1er étage : moins de vue, plus de passage", "Stationnement souterrain en supplément", "Photos de l'annonce : unités modèles, pas forcément celle-ci", "Superficie non indiquée"], "notes": "Annonce DuProprio, en direct avec le locateur (n° 1128242). DuProprio classe l'adresse dans « Montcalm », mais l'avenue Maguire est bien à Sillery — le texte de l'annonce le dit aussi.", "lien": "https://duproprio.com/fr/location/quebec-rive-nord/montcalm/3-1-2-a-louer/hab-1411-avenue-maguire-1128242", "source": "DuProprio", "carte": "https://www.google.com/maps/search/1411+avenue+Maguire,+Qu%C3%A9bec,+QC", "statut": "a_visiter", "photos": [{"f": "01.jpg", "legende": "Cuisine ouverte sur le salon"}, {"f": "02.jpg", "legende": "Le salon"}, {"f": "03.jpg", "legende": "L'îlot de cuisine en quartz"}, {"f": "04.jpg", "legende": "La chambre"}, {"f": "05.jpg", "legende": "Le hall de l'immeuble"}, {"f": "06.jpg", "legende": "La façade, avenue Maguire"}], "coord": [-71.2507999, 46.7802259], "trajets": {"vieux-quebec": {"bus": {"min": 37}, "pied": {"min": 74}, "velo": {"min": 25}}, "cegep-sainte-foy": {"bus": {"min": 32}, "pied": {"min": 49}, "velo": {"min": 13}}}, "images": [{"vignette": "img/apparts/le-maguire-1411/01-v.jpg", "image": "img/apparts/le-maguire-1411/01-p.jpg", "legende": "Cuisine ouverte sur le salon"}, {"vignette": "img/apparts/le-maguire-1411/02-v.jpg", "image": "img/apparts/le-maguire-1411/02-p.jpg", "legende": "Le salon"}, {"vignette": "img/apparts/le-maguire-1411/03-v.jpg", "image": "img/apparts/le-maguire-1411/03-p.jpg", "legende": "L'îlot de cuisine en quartz"}, {"vignette": "img/apparts/le-maguire-1411/04-v.jpg", "image": "img/apparts/le-maguire-1411/04-p.jpg", "legende": "La chambre"}, {"vignette": "img/apparts/le-maguire-1411/05-v.jpg", "image": "img/apparts/le-maguire-1411/05-p.jpg", "legende": "Le hall de l'immeuble"}, {"vignette": "img/apparts/le-maguire-1411/06-v.jpg", "image": "img/apparts/le-maguire-1411/06-p.jpg", "legende": "La façade, avenue Maguire"}]}, {"id": "ostra-1212", "titre": "OSTRA — unité 1212", "adresse": "640, rue Saint-Jean", "quartier": "saint-jean-baptiste", "loyer": 1595, "charges": "Tout inclus : électricité, chauffage, eau chaude, climatisation", "pieces": "3½", "chambres": 1, "etage": "12e — dernier étage", "meuble": "Non meublé", "dispo": "Immédiatement", "bail": "À confirmer", "atouts": ["Dernier étage, balcon avec vue dégagée sur la ville et le fleuve", "Air climatisé central, tout inclus", "Terrasse sur le toit, vue 360° avec BBQ", "Piscine intérieure, sauna, gym", "Immeuble en béton de 12 étages, trois ascenseurs", "Restaurant de sushis et boulangerie au rez-de-chaussée", "Le Vieux-Québec et l'avenue Cartier à pied"], "bemols": ["Entrée pour laveuse seulement (pas de sécheuse mentionnée)", "Stationnement souterrain et internet en supplément", "Enquête de crédit obligatoire", "Rue Saint-Jean : quartier animé tard le soir"], "notes": "Agente de location : Karoline St-Arnaud, texto ou appel au 581-702-2720. Ce n'est pas un de nos trois quartiers de départ : l'immeuble est dans Saint-Jean-Baptiste, entre les fortifications et Cartier.", "lien": "https://sibelanger.com/appartements-a-louer/640-1212-st-jean-selection/", "source": "Société immobilière Bélanger", "carte": "https://www.google.com/maps/search/640+rue+Saint-Jean,+Qu%C3%A9bec,+QC+G1R+4W9", "statut": "a_visiter", "photos": [{"f": "01.jpg", "legende": "Le salon et la vue vers le fleuve"}, {"f": "02.jpg", "legende": "Salon et coin repas"}, {"f": "03.jpg", "legende": "La pièce de vie vers la cuisine"}, {"f": "04.jpg", "legende": "La cuisine"}, {"f": "05.jpg", "legende": "La chambre, fenêtre côté vue"}, {"f": "06.jpg", "legende": "La chambre, coin bureau"}, {"f": "07.jpg", "legende": "La salle de bain"}, {"f": "08.jpg", "legende": "Le balcon, au 12e étage"}, {"f": "09.jpg", "legende": "La terrasse sur le toit de l'immeuble"}], "coord": [-71.2195629, 46.8106016], "trajets": {"vieux-quebec": {"bus": {"min": 20}, "pied": {"min": 22}, "velo": {"min": 10}}, "cegep-sainte-foy": {"bus": {"min": 28}, "pied": {"min": 82}, "velo": {"min": 20}}}, "images": [{"vignette": "img/apparts/ostra-1212/01-v.jpg", "image": "img/apparts/ostra-1212/01-p.jpg", "legende": "Le salon et la vue vers le fleuve"}, {"vignette": "img/apparts/ostra-1212/02-v.jpg", "image": "img/apparts/ostra-1212/02-p.jpg", "legende": "Salon et coin repas"}, {"vignette": "img/apparts/ostra-1212/03-v.jpg", "image": "img/apparts/ostra-1212/03-p.jpg", "legende": "La pièce de vie vers la cuisine"}, {"vignette": "img/apparts/ostra-1212/04-v.jpg", "image": "img/apparts/ostra-1212/04-p.jpg", "legende": "La cuisine"}, {"vignette": "img/apparts/ostra-1212/05-v.jpg", "image": "img/apparts/ostra-1212/05-p.jpg", "legende": "La chambre, fenêtre côté vue"}, {"vignette": "img/apparts/ostra-1212/06-v.jpg", "image": "img/apparts/ostra-1212/06-p.jpg", "legende": "La chambre, coin bureau"}, {"vignette": "img/apparts/ostra-1212/07-v.jpg", "image": "img/apparts/ostra-1212/07-p.jpg", "legende": "La salle de bain"}, {"vignette": "img/apparts/ostra-1212/08-v.jpg", "image": "img/apparts/ostra-1212/08-p.jpg", "legende": "Le balcon, au 12e étage"}, {"vignette": "img/apparts/ostra-1212/09-v.jpg", "image": "img/apparts/ostra-1212/09-p.jpg", "legende": "La terrasse sur le toit de l'immeuble"}]}, {"id": "genevieve-lamarre-2068", "titre": "Appartement rue Geneviève-Lamarre", "adresse": "2068-2072, rue Geneviève-Lamarre", "quartier": "maizerets", "coord": [-71.2304429, 46.8473032], "loyer": 1500, "charges": "Non précisé dans l'annonce", "pieces": "5½", "chambres": 3, "etage": "2e", "meuble": "Non meublé", "dispo": "À confirmer", "bail": "À confirmer", "atouts": ["Trois grandes chambres — le plus d'espace des quatre", "Rénové, très lumineux, grandes fenêtres", "Espace laveuse-sécheuse dans le logement", "Balcon et cour intérieure", "Un stationnement inclus", "Le Domaine de Maizerets à côté"], "bemols": ["Loin du Vieux-Québec comme de Sainte-Foy", "Non-fumeur, aucun animal accepté", "Preuve d'assurance responsabilité civile demandée", "Deux photos de l'annonce sont meublées numériquement", "Superficie non indiquée"], "notes": "Courtière : Mikchéla St-Louis (Sergic Québec), 418-262-5724. MLS 19985780, en ligne depuis six jours. Quartier Maizerets, à l'est de Limoilou — c'est le seul des quatre qui sort de la haute-ville.", "lien": "https://www.realtor.ca/immobilier/30213455/2068-2072-rue-genevieve-lamarre-quebec-la-cite-limoilou-maizerets", "source": "REALTOR.ca", "carte": "https://www.google.com/maps/search/2068+rue+Genevi%C3%A8ve-Lamarre,+Qu%C3%A9bec,+QC", "statut": "a_visiter", "photos": [{"f": "01.jpg", "legende": "Le salon (photo meublée numériquement par l'annonce)"}, {"f": "02.jpg", "legende": "Le salon, tel quel"}, {"f": "03.jpg", "legende": "La cuisine"}, {"f": "04.jpg", "legende": "La chambre principale"}, {"f": "05.jpg", "legende": "La deuxième chambre"}, {"f": "06.jpg", "legende": "La troisième chambre"}, {"f": "07.jpg", "legende": "La salle de bain"}, {"f": "08.jpg", "legende": "Le balcon"}, {"f": "09.jpg", "legende": "L'entrée et la cour, le soir"}], "trajets": {"vieux-quebec": {"bus": {"min": 56}, "pied": {"min": 75}, "velo": {"min": 23}}, "cegep-sainte-foy": {"bus": {"min": 59}, "pied": {"min": 148}, "velo": {"min": 42}}}, "images": [{"vignette": "img/apparts/genevieve-lamarre-2068/01-v.jpg", "image": "img/apparts/genevieve-lamarre-2068/01-p.jpg", "legende": "Le salon (photo meublée numériquement par l'annonce)"}, {"vignette": "img/apparts/genevieve-lamarre-2068/02-v.jpg", "image": "img/apparts/genevieve-lamarre-2068/02-p.jpg", "legende": "Le salon, tel quel"}, {"vignette": "img/apparts/genevieve-lamarre-2068/03-v.jpg", "image": "img/apparts/genevieve-lamarre-2068/03-p.jpg", "legende": "La cuisine"}, {"vignette": "img/apparts/genevieve-lamarre-2068/04-v.jpg", "image": "img/apparts/genevieve-lamarre-2068/04-p.jpg", "legende": "La chambre principale"}, {"vignette": "img/apparts/genevieve-lamarre-2068/05-v.jpg", "image": "img/apparts/genevieve-lamarre-2068/05-p.jpg", "legende": "La deuxième chambre"}, {"vignette": "img/apparts/genevieve-lamarre-2068/06-v.jpg", "image": "img/apparts/genevieve-lamarre-2068/06-p.jpg", "legende": "La troisième chambre"}, {"vignette": "img/apparts/genevieve-lamarre-2068/07-v.jpg", "image": "img/apparts/genevieve-lamarre-2068/07-p.jpg", "legende": "La salle de bain"}, {"vignette": "img/apparts/genevieve-lamarre-2068/08-v.jpg", "image": "img/apparts/genevieve-lamarre-2068/08-p.jpg", "legende": "Le balcon"}, {"vignette": "img/apparts/genevieve-lamarre-2068/09-v.jpg", "image": "img/apparts/genevieve-lamarre-2068/09-p.jpg", "legende": "L'entrée et la cour, le soir"}]}, {"id": "colline-410", "titre": "Condo neuf, boulevard de la Colline — 410", "adresse": "11525, boulevard de la Colline, app. 410", "quartier": "loretteville", "coord": [-71.3454684, 46.8602405], "loyer": 1800, "charges": "Non précisé dans l'annonce", "pieces": "3½ + bureau", "chambres": 1, "superficie": 82, "etage": "4e (immeuble de 6)", "meuble": "Non meublé", "dispo": "À confirmer", "bail": "À confirmer", "atouts": ["Neuf : construction 2025, immeuble en béton", "885 pi² (82 m²) — le plus grand espace par personne", "1 chambre + un vrai bureau fermé", "Comptoirs en Dekton, foyer au gaz naturel", "Climatisation centrale et échangeur d'air", "Grande terrasse", "Garage et rangement intérieur inclus", "Piscine intérieure et gym ouverts à l'année"], "bemols": ["À 15 km du Vieux-Québec : voiture indispensable", "Une seule chambre pour 1 800 $", "Quartier récent, peu de vie de rue à pied", "Photos d'un logement vide, jamais habité"], "notes": "Courtière : Chantal Dussault, RE/MAX Fortin Delage, 418-580-0488. MLS 10013818, en ligne depuis 25 jours. Le boulevard de la Colline est à la limite de Loretteville et de Neufchâtel, près de l'autoroute Robert-Bourassa.", "lien": "https://www.realtor.ca/immobilier/30142033/11525-boul-de-la-colline-410-quebec-la-haute-saint-charles-loretteville", "source": "REALTOR.ca", "carte": "https://www.google.com/maps/search/11525+boulevard+de+la+Colline,+Qu%C3%A9bec,+QC", "statut": "a_visiter", "photos": [{"f": "01.jpg", "legende": "La cuisine et son îlot"}, {"f": "02.jpg", "legende": "La pièce de vie, plafond de béton apparent"}, {"f": "03.jpg", "legende": "Le salon, vers la terrasse"}, {"f": "04.jpg", "legende": "Le bureau et sa grande fenêtre"}, {"f": "05.jpg", "legende": "La chambre"}, {"f": "06.jpg", "legende": "La salle de bain"}, {"f": "07.jpg", "legende": "La terrasse"}, {"f": "08.jpg", "legende": "L'immeuble, boulevard de la Colline"}], "trajets": {"vieux-quebec": {"bus": {"min": 64}, "pied": {"min": 186}, "velo": {"min": 50}}, "cegep-sainte-foy": {"bus": {"min": 42}, "pied": {"min": 179}, "velo": {"min": 44}}}, "images": [{"vignette": "img/apparts/colline-410/01-v.jpg", "image": "img/apparts/colline-410/01-p.jpg", "legende": "La cuisine et son îlot"}, {"vignette": "img/apparts/colline-410/02-v.jpg", "image": "img/apparts/colline-410/02-p.jpg", "legende": "La pièce de vie, plafond de béton apparent"}, {"vignette": "img/apparts/colline-410/03-v.jpg", "image": "img/apparts/colline-410/03-p.jpg", "legende": "Le salon, vers la terrasse"}, {"vignette": "img/apparts/colline-410/04-v.jpg", "image": "img/apparts/colline-410/04-p.jpg", "legende": "Le bureau et sa grande fenêtre"}, {"vignette": "img/apparts/colline-410/05-v.jpg", "image": "img/apparts/colline-410/05-p.jpg", "legende": "La chambre"}, {"vignette": "img/apparts/colline-410/06-v.jpg", "image": "img/apparts/colline-410/06-p.jpg", "legende": "La salle de bain"}, {"vignette": "img/apparts/colline-410/07-v.jpg", "image": "img/apparts/colline-410/07-p.jpg", "legende": "La terrasse"}, {"vignette": "img/apparts/colline-410/08-v.jpg", "image": "img/apparts/colline-410/08-p.jpg", "legende": "L'immeuble, boulevard de la Colline"}]}, {"id": "des-loutres-4", "titre": "4½ neuf, rue des Loutres", "adresse": "7256, rue des Loutres, app. 4", "quartier": "charlesbourg", "coord": [-71.2923407, 46.8886284], "loyer": 1991, "charges": "Internet haute vitesse et 2 stationnements inclus", "pieces": "4½", "chambres": 2, "etage": "1er (immeuble de 3)", "meuble": "Non meublé", "dispo": "2026-11-01", "bail": "À confirmer", "atouts": ["Neuf : construction 2024", "Vue complète sur la forêt", "Chambre principale avec walk-in", "Cuisine spacieuse, salle de lavage distincte", "Thermopompe murale (chauffage et climatisation)", "Internet haute vitesse inclus", "Animaux permis sous conditions"], "bemols": ["Le plus cher de la liste, à 1 991 $", "Presque une heure de bus du Vieux-Québec", "Deux stationnements inclus… dont vous n'avez pas l'usage", "Cul-de-sac résidentiel : rien à pied", "Enquête de crédit"], "notes": "MLS 21118905, en ligne depuis 36 jours. Libre au 1er novembre 2026. Orsainville, à la limite nord de la ville.", "lien": "https://www.realtor.ca/immobilier/30098753/7256-rue-des-loutres-4-quebec-charlesbourg-orsainville", "source": "REALTOR.ca", "carte": "https://www.google.com/maps/search/7256+rue+des+Loutres,+Qu%C3%A9bec,+QC", "statut": "a_visiter", "photos": [{"f": "01.jpg", "legende": "Le salon"}, {"f": "02.jpg", "legende": "La salle à manger, vue sur la forêt"}, {"f": "03.jpg", "legende": "La cuisine et son îlot"}, {"f": "04.jpg", "legende": "La cuisine, côté électros"}, {"f": "05.jpg", "legende": "La chambre principale"}, {"f": "06.jpg", "legende": "La deuxième chambre"}, {"f": "07.jpg", "legende": "La salle de bain"}, {"f": "08.jpg", "legende": "Le couloir de l'immeuble"}], "trajets": {"vieux-quebec": {"bus": {"min": 57}, "pied": {"min": 161}, "velo": {"min": 47}}, "cegep-sainte-foy": {"bus": {"min": 66}, "pied": {"min": 212}, "velo": {"min": 60}}}, "images": [{"vignette": "img/apparts/des-loutres-4/01-v.jpg", "image": "img/apparts/des-loutres-4/01-p.jpg", "legende": "Le salon"}, {"vignette": "img/apparts/des-loutres-4/02-v.jpg", "image": "img/apparts/des-loutres-4/02-p.jpg", "legende": "La salle à manger, vue sur la forêt"}, {"vignette": "img/apparts/des-loutres-4/03-v.jpg", "image": "img/apparts/des-loutres-4/03-p.jpg", "legende": "La cuisine et son îlot"}, {"vignette": "img/apparts/des-loutres-4/04-v.jpg", "image": "img/apparts/des-loutres-4/04-p.jpg", "legende": "La cuisine, côté électros"}, {"vignette": "img/apparts/des-loutres-4/05-v.jpg", "image": "img/apparts/des-loutres-4/05-p.jpg", "legende": "La chambre principale"}, {"vignette": "img/apparts/des-loutres-4/06-v.jpg", "image": "img/apparts/des-loutres-4/06-p.jpg", "legende": "La deuxième chambre"}, {"vignette": "img/apparts/des-loutres-4/07-v.jpg", "image": "img/apparts/des-loutres-4/07-p.jpg", "legende": "La salle de bain"}, {"vignette": "img/apparts/des-loutres-4/08-v.jpg", "image": "img/apparts/des-loutres-4/08-p.jpg", "legende": "Le couloir de l'immeuble"}]}, {"id": "st-jean-491", "titre": "3½ semi-meublé, rue Saint-Jean", "adresse": "491, rue Saint-Jean, app. 1", "quartier": "saint-jean-baptiste", "coord": [-71.2212317, 46.8093712], "loyer": 1050, "charges": "Non précisé dans l'annonce", "pieces": "3½", "chambres": 1, "etage": "2e", "meuble": "Semi-meublé", "dispo": "Immédiatement", "bail": "À confirmer", "atouts": ["De loin le moins cher : 1 050 $", "En plein cœur de la rue Saint-Jean", "Vaste, avec de grandes fenêtres", "Espace laveuse-sécheuse", "Animaux acceptés sous conditions", "20 min de bus du Vieux-Québec, 23 min à pied"], "bemols": ["En ligne depuis 331 jours — à vérifier qu'il est toujours libre", "Deux photos seulement dans l'annonce", "Mobilier existant très daté sur les photos", "Au-dessus des commerces : bruit de la rue Saint-Jean"], "notes": "Courtière : Marie-Pier Belley, 418-694-2026. MLS 13162241. L'ancienneté de l'annonce (près d'un an) mérite un appel avant de s'emballer.", "lien": "https://www.realtor.ca/immobilier/28974470/491-rue-st-jean-1-quebec-la-cite-limoilou-saint-jean-baptiste", "source": "REALTOR.ca", "carte": "https://www.google.com/maps/search/491+rue+Saint-Jean,+Qu%C3%A9bec,+QC", "statut": "a_visiter", "photos": [{"f": "01.jpg", "legende": "Le salon, meublé tel quel"}, {"f": "02.jpg", "legende": "Le salon, autre angle"}, {"f": "03.jpg", "legende": "L'immeuble, rue Saint-Jean"}], "trajets": {"vieux-quebec": {"bus": {"min": 20}, "pied": {"min": 23}, "velo": {"min": 8}}, "cegep-sainte-foy": {"bus": {"min": 28}, "pied": {"min": 79}, "velo": {"min": 21}}}, "images": [{"vignette": "img/apparts/st-jean-491/01-v.jpg", "image": "img/apparts/st-jean-491/01-p.jpg", "legende": "Le salon, meublé tel quel"}, {"vignette": "img/apparts/st-jean-491/02-v.jpg", "image": "img/apparts/st-jean-491/02-p.jpg", "legende": "Le salon, autre angle"}, {"vignette": "img/apparts/st-jean-491/03-v.jpg", "image": "img/apparts/st-jean-491/03-p.jpg", "legende": "L'immeuble, rue Saint-Jean"}]}, {"id": "jerome-610", "titre": "Duplex sur deux étages, rue Jérôme", "adresse": "610, rue Jérôme, app. 2", "quartier": "saint-roch", "coord": [-71.2289913, 46.8091716], "loyer": 1850, "charges": "Meublé et équipé", "pieces": "5½ sur deux étages", "chambres": 2, "superficie": 98, "etage": "2e et 3e", "meuble": "Entièrement meublé et équipé", "dispo": "2026-09-15", "bail": "À confirmer", "atouts": ["1 056 pi² (98 m²) sur deux étages", "Entièrement rénové en 2022", "Deux terrasses", "Un espace bureau en plus des deux chambres", "Salle de bain + salle d'eau", "Climatiseur mural", "Meublé et équipé : rien à acheter", "Saint-Roch à pied, 27 min de bus du Vieux-Québec"], "bemols": ["Meublé : peu de place pour vos propres meubles", "Non-fumeur, animaux non permis", "Immeuble de 1947, rénové mais ancien", "Libre à la mi-septembre — c'est bientôt"], "notes": "MLS 16809546, en ligne depuis 93 jours. Duplex de 1947 entièrement rénové en 2022, loué meublé.", "lien": "https://www.realtor.ca/immobilier/29856772/610-rue-jerome-2-quebec-la-cite-limoilou-saint-roch", "source": "REALTOR.ca", "carte": "https://www.google.com/maps/search/610+rue+J%C3%A9r%C3%B4me,+Qu%C3%A9bec,+QC", "statut": "a_visiter", "photos": [{"f": "01.jpg", "legende": "Le salon et la salle à manger"}, {"f": "02.jpg", "legende": "Le salon, vers la cuisine"}, {"f": "03.jpg", "legende": "La cuisine et son îlot"}, {"f": "04.jpg", "legende": "La cuisine, côté fenêtres"}, {"f": "05.jpg", "legende": "La chambre principale"}, {"f": "06.jpg", "legende": "La deuxième chambre"}, {"f": "07.jpg", "legende": "L'espace bureau et l'escalier"}, {"f": "08.jpg", "legende": "Le salon, autre angle"}], "trajets": {"vieux-quebec": {"bus": {"min": 27}, "pied": {"min": 35}, "velo": {"min": 16}}, "cegep-sainte-foy": {"bus": {"min": 26}, "pied": {"min": 79}, "velo": {"min": 24}}}, "images": [{"vignette": "img/apparts/jerome-610/01-v.jpg", "image": "img/apparts/jerome-610/01-p.jpg", "legende": "Le salon et la salle à manger"}, {"vignette": "img/apparts/jerome-610/02-v.jpg", "image": "img/apparts/jerome-610/02-p.jpg", "legende": "Le salon, vers la cuisine"}, {"vignette": "img/apparts/jerome-610/03-v.jpg", "image": "img/apparts/jerome-610/03-p.jpg", "legende": "La cuisine et son îlot"}, {"vignette": "img/apparts/jerome-610/04-v.jpg", "image": "img/apparts/jerome-610/04-p.jpg", "legende": "La cuisine, côté fenêtres"}, {"vignette": "img/apparts/jerome-610/05-v.jpg", "image": "img/apparts/jerome-610/05-p.jpg", "legende": "La chambre principale"}, {"vignette": "img/apparts/jerome-610/06-v.jpg", "image": "img/apparts/jerome-610/06-p.jpg", "legende": "La deuxième chambre"}, {"vignette": "img/apparts/jerome-610/07-v.jpg", "image": "img/apparts/jerome-610/07-p.jpg", "legende": "L'espace bureau et l'escalier"}, {"vignette": "img/apparts/jerome-610/08-v.jpg", "image": "img/apparts/jerome-610/08-p.jpg", "legende": "Le salon, autre angle"}]}, {"id": "ste-therese-476a", "titre": "Jumelé 3 chambres, avenue Sainte-Thérèse", "adresse": "476A, avenue Sainte-Thérèse", "quartier": "beauport", "coord": [-71.213941, 46.8967685], "loyer": 1850, "charges": "2 stationnements inclus", "pieces": "5½", "chambres": 3, "superficie": 56, "etage": "Jumelé avec sous-sol aménagé", "meuble": "Non meublé", "dispo": "À confirmer", "bail": "1 an (bail de transition)", "atouts": ["Une maison entière, pas un appartement", "3 chambres et un sous-sol aménagé", "Grande terrasse couverte", "Construction 2013", "Terrain de 4 484 pi²"], "bemols": ["Bail d'un an seulement — l'annonce parle d'un « entre-deux »", "Près d'une heure de bus du Vieux-Québec, 1 h 17 du Cégep", "604 pi² au rez-de-chaussée : le sous-sol fait le reste", "Deux stationnements dont vous n'avez pas l'usage"], "notes": "MLS 20506315, en ligne depuis 44 jours. Secteur Laurentides, à Beauport. L'annonce vise explicitement une location d'un an.", "lien": "https://www.realtor.ca/immobilier/30071843/476a-av-ste-therese-quebec-beauport-laurentides", "source": "REALTOR.ca", "carte": "https://www.google.com/maps/search/476+avenue+Sainte-Th%C3%A9r%C3%A8se,+Qu%C3%A9bec,+QC", "statut": "a_visiter", "photos": [{"f": "01.jpg", "legende": "Le salon"}, {"f": "02.jpg", "legende": "Le salon, côté fenêtre"}, {"f": "03.jpg", "legende": "La salle à manger, vers la terrasse"}, {"f": "04.jpg", "legende": "La cuisine"}, {"f": "05.jpg", "legende": "La cuisine vue de l'entrée"}, {"f": "06.jpg", "legende": "La chambre principale"}, {"f": "07.jpg", "legende": "La terrasse couverte"}, {"f": "08.jpg", "legende": "Le jumelé, avenue Sainte-Thérèse"}], "trajets": {"vieux-quebec": {"bus": {"min": 57}, "pied": {"min": 163}, "velo": {"min": 44}}, "cegep-sainte-foy": {"bus": {"min": 77}, "pied": {"min": 238}, "velo": {"min": 68}}}, "images": [{"vignette": "img/apparts/ste-therese-476a/01-v.jpg", "image": "img/apparts/ste-therese-476a/01-p.jpg", "legende": "Le salon"}, {"vignette": "img/apparts/ste-therese-476a/02-v.jpg", "image": "img/apparts/ste-therese-476a/02-p.jpg", "legende": "Le salon, côté fenêtre"}, {"vignette": "img/apparts/ste-therese-476a/03-v.jpg", "image": "img/apparts/ste-therese-476a/03-p.jpg", "legende": "La salle à manger, vers la terrasse"}, {"vignette": "img/apparts/ste-therese-476a/04-v.jpg", "image": "img/apparts/ste-therese-476a/04-p.jpg", "legende": "La cuisine"}, {"vignette": "img/apparts/ste-therese-476a/05-v.jpg", "image": "img/apparts/ste-therese-476a/05-p.jpg", "legende": "La cuisine vue de l'entrée"}, {"vignette": "img/apparts/ste-therese-476a/06-v.jpg", "image": "img/apparts/ste-therese-476a/06-p.jpg", "legende": "La chambre principale"}, {"vignette": "img/apparts/ste-therese-476a/07-v.jpg", "image": "img/apparts/ste-therese-476a/07-p.jpg", "legende": "La terrasse couverte"}, {"vignette": "img/apparts/ste-therese-476a/08-v.jpg", "image": "img/apparts/ste-therese-476a/08-p.jpg", "legende": "Le jumelé, avenue Sainte-Thérèse"}]}, {"id": "montagne-1635b", "titre": "3½ dans une maison, au pied du mont Bélair", "adresse": "1635, avenue de la Montagne Ouest, app. B", "quartier": "val-belair", "coord": [-71.4565788, 46.8250974], "loyer": 1200, "charges": "Non précisé dans l'annonce", "pieces": "3½", "chambres": 1, "etage": "Logement dans une maison de 1970", "meuble": "Non meublé", "dispo": "Immédiatement", "bail": "À confirmer", "atouts": ["1 200 $ — le deuxième moins cher", "Vastes pièces, grande chambre, beaucoup de rangement", "Deux entrées indépendantes (porte et porte-patio)", "Au pied du mont Bélair : randonnée, vélo, ski", "Stationnement disponible", "Terrain de 3 561 m²"], "bemols": ["Aucun trajet en bus proposé vers le centre — c'est le point noir", "1 h 25 de vélo du Vieux-Québec, 5 h à pied", "Logement dans la maison d'un propriétaire", "Maison de 1970, finitions d'époque sur les photos", "Annonce en ligne depuis 93 jours, libre « dès le 1er juillet »"], "notes": "MLS 27453629. Sans voiture, ce secteur est difficilement tenable : Google ne trouve aucun itinéraire de bus vers le Vieux-Québec ni vers le Cégep aux heures testées. À vérifier auprès du RTC pour les heures de pointe.", "lien": "https://www.realtor.ca/immobilier/29852588/1635-av-de-la-montagne-o-b-quebec-la-haute-saint-charles-val-belair", "source": "REALTOR.ca", "carte": "https://www.google.com/maps/search/1635+avenue+de+la+Montagne+Ouest,+Qu%C3%A9bec,+QC", "statut": "a_visiter", "photos": [{"f": "01.jpg", "legende": "Le salon"}, {"f": "02.jpg", "legende": "La cuisine"}, {"f": "03.jpg", "legende": "La cuisine, vers l'entrée"}, {"f": "04.jpg", "legende": "La chambre"}, {"f": "05.jpg", "legende": "La salle de bain"}, {"f": "06.jpg", "legende": "La buanderie"}, {"f": "07.jpg", "legende": "La maison, avenue de la Montagne"}], "trajets": {"vieux-quebec": {"bus": null, "pied": {"min": 300}, "velo": {"min": 85}}, "cegep-sainte-foy": {"bus": null, "pied": {"min": 242}, "velo": {"min": 61}}}, "images": [{"vignette": "img/apparts/montagne-1635b/01-v.jpg", "image": "img/apparts/montagne-1635b/01-p.jpg", "legende": "Le salon"}, {"vignette": "img/apparts/montagne-1635b/02-v.jpg", "image": "img/apparts/montagne-1635b/02-p.jpg", "legende": "La cuisine"}, {"vignette": "img/apparts/montagne-1635b/03-v.jpg", "image": "img/apparts/montagne-1635b/03-p.jpg", "legende": "La cuisine, vers l'entrée"}, {"vignette": "img/apparts/montagne-1635b/04-v.jpg", "image": "img/apparts/montagne-1635b/04-p.jpg", "legende": "La chambre"}, {"vignette": "img/apparts/montagne-1635b/05-v.jpg", "image": "img/apparts/montagne-1635b/05-p.jpg", "legende": "La salle de bain"}, {"vignette": "img/apparts/montagne-1635b/06-v.jpg", "image": "img/apparts/montagne-1635b/06-p.jpg", "legende": "La buanderie"}, {"vignette": "img/apparts/montagne-1635b/07-v.jpg", "image": "img/apparts/montagne-1635b/07-p.jpg", "legende": "La maison, avenue de la Montagne"}]}, {"id": "robitaille-507", "titre": "Condo 785 pi², La Cité Verte — 507", "adresse": "1195, rue Louis-Adolphe-Robitaille, app. 507", "quartier": "saint-sacrement", "coord": [-71.2511567, 46.7977718], "loyer": 1950, "charges": "Chauffage, électricité et électroménagers inclus", "pieces": "3½", "chambres": 1, "superficie": 73, "etage": "5e", "meuble": "Non meublé", "dispo": "Immédiatement", "bail": "À confirmer", "atouts": ["3 mois gratuits offerts par le propriétaire", "785 pi² (73 m²) pour un 3½ — très généreux", "Chauffage et électricité inclus", "Piscine et gymnase dans l'immeuble", "La Cité Verte, écoquartier proche du chemin Sainte-Foy", "18 min de bus du Cégep de Sainte-Foy"], "bemols": ["1 950 $ — dans le haut de la fourchette", "Le logement est vide sur les photos : difficile de juger", "34 min de bus jusqu'au Vieux-Québec", "Annonce en ligne depuis 88 jours"], "notes": "MLS 12912199. « 3 mois gratuits » : à faire préciser — c'est souvent étalé sur un bail de 12 mois, ce qui revient à un rabais mensuel.", "lien": "https://www.realtor.ca/immobilier/29876354/1195-rue-louis-adolphe-robitaille-507-quebec-la-cite-limoilou-saint-sacrement", "source": "REALTOR.ca", "carte": "https://www.google.com/maps/search/1195+rue+Louis-Adolphe-Robitaille,+Qu%C3%A9bec,+QC", "statut": "a_visiter", "photos": [{"f": "01.jpg", "legende": "La pièce de vie, poutres apparentes"}, {"f": "02.jpg", "legende": "La cuisine"}, {"f": "03.jpg", "legende": "La cuisine, côté mur"}, {"f": "04.jpg", "legende": "La chambre"}, {"f": "05.jpg", "legende": "La vue depuis la fenêtre"}, {"f": "06.jpg", "legende": "L'immeuble, dans La Cité Verte"}], "trajets": {"vieux-quebec": {"bus": {"min": 34}, "pied": {"min": 61}, "velo": {"min": 18}}, "cegep-sainte-foy": {"bus": {"min": 18}, "pied": {"min": 46}, "velo": {"min": 12}}}, "images": [{"vignette": "img/apparts/robitaille-507/01-v.jpg", "image": "img/apparts/robitaille-507/01-p.jpg", "legende": "La pièce de vie, poutres apparentes"}, {"vignette": "img/apparts/robitaille-507/02-v.jpg", "image": "img/apparts/robitaille-507/02-p.jpg", "legende": "La cuisine"}, {"vignette": "img/apparts/robitaille-507/03-v.jpg", "image": "img/apparts/robitaille-507/03-p.jpg", "legende": "La cuisine, côté mur"}, {"vignette": "img/apparts/robitaille-507/04-v.jpg", "image": "img/apparts/robitaille-507/04-p.jpg", "legende": "La chambre"}, {"vignette": "img/apparts/robitaille-507/05-v.jpg", "image": "img/apparts/robitaille-507/05-p.jpg", "legende": "La vue depuis la fenêtre"}, {"vignette": "img/apparts/robitaille-507/06-v.jpg", "image": "img/apparts/robitaille-507/06-p.jpg", "legende": "L'immeuble, dans La Cité Verte"}]}, {"id": "robitaille-312", "titre": "Condo semi-meublé, La Cité Verte — 312", "adresse": "1195, rue Louis-Adolphe-Robitaille, app. 312", "quartier": "saint-sacrement", "coord": [-71.2511567, 46.7977718], "loyer": 1850, "charges": "Climatisation, chauffage et eau chaude inclus", "pieces": "3½ + bureau fermé", "chambres": 1, "superficie": 70, "etage": "3e", "meuble": "Semi-meublé, clé en main", "dispo": "Immédiatement", "bail": "À confirmer", "atouts": ["Plafonds de 10 pieds, aire ouverte, très lumineux", "Un bureau fermé en plus de la chambre", "Semi-meublé, clé en main", "Climatisation, chauffage et eau chaude inclus", "Piscine et salle d'entraînement", "Construction 2011, écoquartier La Cité Verte", "18 min de bus du Cégep de Sainte-Foy"], "bemols": ["Stationnement intérieur en supplément (100 $/mois)", "Semi-meublé : peu de place pour vos propres meubles", "34 min de bus jusqu'au Vieux-Québec", "Annonce en ligne depuis 145 jours"], "notes": "MLS 10600957. Même immeuble que le 507, un étage plus bas et 100 $ moins cher, mais meublé et avec un bureau fermé.", "lien": "https://www.realtor.ca/immobilier/29595958/1195-rue-louis-adolphe-robitaille-312-quebec-la-cite-limoilou-saint-sacrement", "source": "REALTOR.ca", "carte": "https://www.google.com/maps/search/1195+rue+Louis-Adolphe-Robitaille,+Qu%C3%A9bec,+QC", "statut": "a_visiter", "photos": [{"f": "01.jpg", "legende": "Le salon"}, {"f": "02.jpg", "legende": "Le salon, vers les fenêtres"}, {"f": "03.jpg", "legende": "La salle à manger"}, {"f": "04.jpg", "legende": "Le bureau fermé"}, {"f": "05.jpg", "legende": "La chambre"}, {"f": "06.jpg", "legende": "La salle de bain"}], "trajets": {"vieux-quebec": {"bus": {"min": 34}, "pied": {"min": 61}, "velo": {"min": 18}}, "cegep-sainte-foy": {"bus": {"min": 18}, "pied": {"min": 46}, "velo": {"min": 12}}}, "images": [{"vignette": "img/apparts/robitaille-312/01-v.jpg", "image": "img/apparts/robitaille-312/01-p.jpg", "legende": "Le salon"}, {"vignette": "img/apparts/robitaille-312/02-v.jpg", "image": "img/apparts/robitaille-312/02-p.jpg", "legende": "Le salon, vers les fenêtres"}, {"vignette": "img/apparts/robitaille-312/03-v.jpg", "image": "img/apparts/robitaille-312/03-p.jpg", "legende": "La salle à manger"}, {"vignette": "img/apparts/robitaille-312/04-v.jpg", "image": "img/apparts/robitaille-312/04-p.jpg", "legende": "Le bureau fermé"}, {"vignette": "img/apparts/robitaille-312/05-v.jpg", "image": "img/apparts/robitaille-312/05-p.jpg", "legende": "La chambre"}, {"vignette": "img/apparts/robitaille-312/06-v.jpg", "image": "img/apparts/robitaille-312/06-p.jpg", "legende": "La salle de bain"}]}, {"id": "chateau-st-louis-815", "titre": "Château St-Louis — unité 815", "adresse": "135, Grande Allée Ouest, app. 815", "quartier": "montcalm", "coord": [-71.2244136, 46.8016343], "loyer": 1695, "charges": "À confirmer", "pieces": "4½", "chambres": 2, "superficie": 63, "etage": "8e (immeuble de 11)", "meuble": "Non meublé", "dispo": "À confirmer", "bail": "À confirmer", "atouts": ["Deux chambres pour 1 695 $ — le meilleur rapport de l'immeuble", "8e étage : lumière et dégagement", "Au coin de Cartier et de la Grande Allée", "Accès privé aux plaines d'Abraham par la cour", "Piscine, terrasse, BBQ, salle d'entraînement", "21 min de bus, 26 min à pied du Vieux-Québec"], "bemols": ["679 pi² (63 m²) pour deux chambres : compact", "Ce qui est inclus n'est pas précisé dans l'annonce", "Annonce en ligne depuis 89 jours"], "notes": "MLS 10779445. Même immeuble que l'unité 304, mais deux chambres et 100 $ de moins par mois.", "lien": "https://www.realtor.ca/immobilier/29868687/135-grande-allee-o-815-quebec-la-cite-limoilou-montcalm", "source": "REALTOR.ca", "carte": "https://www.google.com/maps/search/135+Grande+All%C3%A9e+Ouest,+Qu%C3%A9bec,+QC", "statut": "a_visiter", "photos": [{"f": "01.jpg", "legende": "Le salon"}, {"f": "02.jpg"}, {"f": "03.jpg"}, {"f": "04.jpg"}, {"f": "05.jpg"}, {"f": "06.jpg"}, {"f": "07.jpg", "legende": "La cour arrière et l'immeuble"}], "trajets": {"vieux-quebec": {"bus": {"min": 21}, "pied": {"min": 26}, "velo": {"min": 12}}, "cegep-sainte-foy": {"bus": {"min": 32}, "pied": {"min": 76}, "velo": {"min": 21}}}, "images": [{"vignette": "img/apparts/chateau-st-louis-815/01-v.jpg", "image": "img/apparts/chateau-st-louis-815/01-p.jpg", "legende": "Le salon"}, {"vignette": "img/apparts/chateau-st-louis-815/02-v.jpg", "image": "img/apparts/chateau-st-louis-815/02-p.jpg", "legende": ""}, {"vignette": "img/apparts/chateau-st-louis-815/03-v.jpg", "image": "img/apparts/chateau-st-louis-815/03-p.jpg", "legende": ""}, {"vignette": "img/apparts/chateau-st-louis-815/04-v.jpg", "image": "img/apparts/chateau-st-louis-815/04-p.jpg", "legende": ""}, {"vignette": "img/apparts/chateau-st-louis-815/05-v.jpg", "image": "img/apparts/chateau-st-louis-815/05-p.jpg", "legende": ""}, {"vignette": "img/apparts/chateau-st-louis-815/06-v.jpg", "image": "img/apparts/chateau-st-louis-815/06-p.jpg", "legende": ""}, {"vignette": "img/apparts/chateau-st-louis-815/07-v.jpg", "image": "img/apparts/chateau-st-louis-815/07-p.jpg", "legende": "La cour arrière et l'immeuble"}]}, {"id": "chateau-st-louis-207", "titre": "Château St-Louis — unité 207", "adresse": "135, Grande Allée Ouest, app. 207", "quartier": "montcalm", "coord": [-71.2244136, 46.8016343], "loyer": 1675, "charges": "À confirmer", "pieces": "3½", "chambres": 1, "superficie": 56, "etage": "2e (immeuble de 11)", "meuble": "Non meublé", "dispo": "À confirmer", "bail": "À confirmer", "atouts": ["Le moins cher des trois unités du Château St-Louis", "Au coin de Cartier et de la Grande Allée", "Accès privé aux plaines d'Abraham par la cour", "Piscine, terrasse, BBQ, salle d'entraînement", "21 min de bus, 26 min à pied du Vieux-Québec"], "bemols": ["605 pi² (56 m²) : le plus petit de l'immeuble", "2e étage : peu de vue, plus de bruit de la Grande Allée", "Ce qui est inclus n'est pas précisé", "Annonce en ligne depuis 94 jours"], "notes": "MLS 10799821. Troisième unité libre dans le même immeuble : 207 à 1 675 $, 304 à 1 795 $ et 815 à 1 695 $ (deux chambres).", "lien": "https://www.realtor.ca/immobilier/29850085/135-grande-allee-o-207-quebec-la-cite-limoilou-montcalm", "source": "REALTOR.ca", "carte": "https://www.google.com/maps/search/135+Grande+All%C3%A9e+Ouest,+Qu%C3%A9bec,+QC", "statut": "a_visiter", "photos": [{"f": "01.jpg", "legende": "La cuisine, ouverte sur la pièce de vie"}, {"f": "02.jpg"}, {"f": "03.jpg"}, {"f": "04.jpg"}, {"f": "05.jpg"}, {"f": "06.jpg"}, {"f": "07.jpg", "legende": "L'entrée du Château St-Louis"}], "trajets": {"vieux-quebec": {"bus": {"min": 21}, "pied": {"min": 26}, "velo": {"min": 12}}, "cegep-sainte-foy": {"bus": {"min": 32}, "pied": {"min": 76}, "velo": {"min": 21}}}, "images": [{"vignette": "img/apparts/chateau-st-louis-207/01-v.jpg", "image": "img/apparts/chateau-st-louis-207/01-p.jpg", "legende": "La cuisine, ouverte sur la pièce de vie"}, {"vignette": "img/apparts/chateau-st-louis-207/02-v.jpg", "image": "img/apparts/chateau-st-louis-207/02-p.jpg", "legende": ""}, {"vignette": "img/apparts/chateau-st-louis-207/03-v.jpg", "image": "img/apparts/chateau-st-louis-207/03-p.jpg", "legende": ""}, {"vignette": "img/apparts/chateau-st-louis-207/04-v.jpg", "image": "img/apparts/chateau-st-louis-207/04-p.jpg", "legende": ""}, {"vignette": "img/apparts/chateau-st-louis-207/05-v.jpg", "image": "img/apparts/chateau-st-louis-207/05-p.jpg", "legende": ""}, {"vignette": "img/apparts/chateau-st-louis-207/06-v.jpg", "image": "img/apparts/chateau-st-louis-207/06-p.jpg", "legende": ""}, {"vignette": "img/apparts/chateau-st-louis-207/07-v.jpg", "image": "img/apparts/chateau-st-louis-207/07-p.jpg", "legende": "L'entrée du Château St-Louis"}]}, {"id": "st-louis-716", "titre": "Condo 944 pi², chemin Saint-Louis", "adresse": "3044, chemin Saint-Louis, app. 716", "quartier": "sillery", "coord": [-71.2894149, 46.7586817], "loyer": 1845, "charges": "À confirmer", "pieces": "3½ + bureau", "chambres": 1, "superficie": 88, "etage": "7e (immeuble de 8)", "meuble": "Non meublé", "dispo": "À confirmer", "bail": "À confirmer", "atouts": ["944 pi² (88 m²) — le plus grand 3½ de la liste", "Un bureau en plus de la chambre", "7e étage, dans un immeuble de 8", "Piscine intérieure chauffée", "Climatiseur mural et échangeur d'air", "Buanderie dans le logement"], "bemols": ["Annonce quasi vide : « voir courtier inscripteur »", "42 min de bus du Vieux-Québec, 2 h à pied", "Secteur Saint-Louis : très résidentiel, peu de vie de rue", "Ce qui est inclus n'est pas précisé"], "notes": "MLS 26844695, en ligne depuis 52 jours. L'annonce ne donne aucune description : il faudra appeler le courtier pour tout — inclusions, disponibilité, stationnement.", "lien": "https://www.realtor.ca/immobilier/30036545/3044-ch-st-louis-716-quebec-sainte-foysillerycap-rouge-saint-louis", "source": "REALTOR.ca", "carte": "https://www.google.com/maps/search/3044+chemin+Saint-Louis,+Qu%C3%A9bec,+QC", "statut": "a_visiter", "photos": [{"f": "01.jpg", "legende": "La cuisine et la pièce de vie"}, {"f": "02.jpg"}, {"f": "03.jpg"}, {"f": "04.jpg"}, {"f": "05.jpg"}, {"f": "06.jpg"}, {"f": "07.jpg"}, {"f": "08.jpg"}], "trajets": {"vieux-quebec": {"bus": {"min": 42}, "pied": {"min": 127}, "velo": {"min": 42}}, "cegep-sainte-foy": {"bus": {"min": 35}, "pied": {"min": 63}, "velo": {"min": 19}}}, "images": [{"vignette": "img/apparts/st-louis-716/01-v.jpg", "image": "img/apparts/st-louis-716/01-p.jpg", "legende": "La cuisine et la pièce de vie"}, {"vignette": "img/apparts/st-louis-716/02-v.jpg", "image": "img/apparts/st-louis-716/02-p.jpg", "legende": ""}, {"vignette": "img/apparts/st-louis-716/03-v.jpg", "image": "img/apparts/st-louis-716/03-p.jpg", "legende": ""}, {"vignette": "img/apparts/st-louis-716/04-v.jpg", "image": "img/apparts/st-louis-716/04-p.jpg", "legende": ""}, {"vignette": "img/apparts/st-louis-716/05-v.jpg", "image": "img/apparts/st-louis-716/05-p.jpg", "legende": ""}, {"vignette": "img/apparts/st-louis-716/06-v.jpg", "image": "img/apparts/st-louis-716/06-p.jpg", "legende": ""}, {"vignette": "img/apparts/st-louis-716/07-v.jpg", "image": "img/apparts/st-louis-716/07-p.jpg", "legende": ""}, {"vignette": "img/apparts/st-louis-716/08-v.jpg", "image": "img/apparts/st-louis-716/08-p.jpg", "legende": ""}]}], "maj": "2026-09-05"};
 const $ = (s, r = document) => r.querySelector(s);
 const QUARTIERS = DONNEES.quartiers;
 const APPARTS = DONNEES.appartements;
@@ -267,6 +278,7 @@ const APPARTS = DONNEES.appartements;
 const ETATS = {a_visiter:"À visiter", visite_prevue:"Visite prévue", visite:"Visité", ecarte:"Écarté"};
 const MOIS = ["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"];
 const argent = n => new Intl.NumberFormat("fr-CA",{maximumFractionDigits:0}).format(n) + " $";
+const nombre = n => n.toLocaleString("fr-CA",{minimumFractionDigits: n % 1 ? 1 : 0, maximumFractionDigits: 2});
 const date = s => {
   if (!s) return "—";
   const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(s);
@@ -275,27 +287,16 @@ const date = s => {
   return (j === 1 ? "1er" : j) + " " + MOIS[+m[2]-1] + " " + m[1];
 };
 const echap = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-
-/* coups de cœur — gardés sur cet appareil uniquement */
-const COEURS = new Set(JSON.parse(localStorage.getItem("coeurs-appart") || "[]"));
-const basculerCoeur = id => {
-  COEURS.has(id) ? COEURS.delete(id) : COEURS.add(id);
-  localStorage.setItem("coeurs-appart", JSON.stringify([...COEURS]));
-};
-
-/* ————— distances vers les points de repère ————— */
-const REPERES = [
-  {cle: "vieux-quebec", nom: "Vieux-Québec", court: "Vieux-Québec", coord: [-71.2050539, 46.8113081]},
-  {cle: "cegep-sainte-foy", nom: "Cégep de Sainte-Foy", court: "Cégep", coord: [-71.2868410, 46.7866582]},
-];
 const duree = m => m < 60 ? m + " min" : Math.floor(m / 60) + " h " + String(m % 60).padStart(2, "0");
-const dureeBus = m => duree(m);
-const km = n => n.toLocaleString("fr-CA", {minimumFractionDigits: 1, maximumFractionDigits: 1}) + " km";
 
-function itineraire(a, rep, mode){
-  return "https://www.google.com/maps/dir/?api=1&origin=" + a.coord[1] + "," + a.coord[0] +
-         "&destination=" + rep.coord[1] + "," + rep.coord[0] + "&travelmode=" + mode;
-}
+/* ————— repères de trajet ————— */
+const REPERES = [
+  {cle:"vieux-quebec", nom:"Vieux-Québec", court:"Vieux-Québec", coord:[-71.2050539,46.8113081]},
+  {cle:"cegep-sainte-foy", nom:"Cégep de Sainte-Foy", court:"Cégep", coord:[-71.2868410,46.7866582]},
+];
+const itineraire = (a, rep, mode) =>
+  "https://www.google.com/maps/dir/?api=1&origin=" + a.coord[1] + "," + a.coord[0] +
+  "&destination=" + rep.coord[1] + "," + rep.coord[0] + "&travelmode=" + mode;
 
 function blocTrajets(a){
   if (!a.trajets || !a.coord) return "";
@@ -303,45 +304,50 @@ function blocTrajets(a){
     const t = a.trajets[r.cle];
     return `<tr>
       <td class="lieu">${echap(r.nom)}</td>
-      <td class="n">${t.bus ? `<strong>${duree(t.bus.min)}</strong>` : `<span style="color:var(--rose)">aucun trajet</span>`}</td>
+      <td class="n">${t.bus ? `<b>${duree(t.bus.min)}</b>` : `<span style="color:var(--brique)">aucun trajet</span>`}</td>
       <td class="n">${duree(t.velo.min)}</td>
       <td class="n">${duree(t.pied.min)}</td>
-      <td><a href="${itineraire(a, r, "transit")}" target="_blank" rel="noopener">Horaires ↗</a></td>
+      <td><a href="${itineraire(a, r, "transit")}" target="_blank" rel="noopener">Horaires</a></td>
     </tr>`;
   }).join("");
   return `<div class="trajets">
-    <p class="oeil">Combien de temps pour y aller</p>
+    <p class="etiq">Combien de temps pour y aller</p>
     <div class="cadre"><table>
       <thead><tr><th>Depuis l'appartement</th><th>En bus</th><th>À vélo</th><th>À pied</th><th></th></tr></thead>
       <tbody>${lignes}</tbody>
     </table></div>
-    <p class="source">Temps relevés sur Google Maps (réseau RTC), un samedi en soirée : aux heures de pointe, le bus est souvent plus rapide. « Horaires » ouvre le trajet en bus à l'heure où tu cliques.</p>
+    <p class="source">Temps relevés sur Google Maps (réseau RTC), un samedi en soirée : aux heures de pointe le bus passe plus souvent. « Horaires » ouvre le trajet à l'heure où vous cliquez.</p>
   </div>`;
 }
 
-function trajetsMini(a){
+const trajetsCarte = a => {
   if (!a.trajets) return "";
-  const bouts = REPERES.filter(r => a.trajets[r.cle])
-    .map(r => `${r.court} ${a.trajets[r.cle].bus ? duree(a.trajets[r.cle].bus.min) : "—"}`).join(" · ");
-  return `<p class="trajets-mini" title="Temps de trajet en bus">En bus — ${bouts}</p>`;
-}
+  const b = REPERES.filter(r => a.trajets[r.cle])
+    .map(r => `${r.court} ${a.trajets[r.cle].bus ? duree(a.trajets[r.cle].bus.min) : "—"}`).join("  ·  ");
+  return `<span class="trajets-carte">Bus : ${b}</span>`;
+};
 
-/* ————— notes : une par personne, gardées sur cet appareil ————— */
-const PERSONNES = {victorien: "Victorien", lou: "Lou"};
-const NOTES = Object.assign({victorien: {}, lou: {}}, JSON.parse(localStorage.getItem("notes-appart") || "{}"));
+/* ————— gardés (sur cet appareil) ————— */
+const GARDES = new Set(JSON.parse(localStorage.getItem("gardes-appart") || localStorage.getItem("coeurs-appart") || "[]"));
+const basculerGarde = id => {
+  GARDES.has(id) ? GARDES.delete(id) : GARDES.add(id);
+  localStorage.setItem("gardes-appart", JSON.stringify([...GARDES]));
+};
 
+/* ————— notes, par demi-point ————— */
+const PERSONNES = {victorien:"Victorien", lou:"Lou"};
+const NOTES = Object.assign({victorien:{}, lou:{}}, JSON.parse(localStorage.getItem("notes-appart") || "{}"));
 const sauverNotes = () => localStorage.setItem("notes-appart", JSON.stringify(NOTES));
 const noterAppart = (personne, id, n) => { if (n) NOTES[personne][id] = n; else delete NOTES[personne][id]; sauverNotes(); };
 const moyenne = id => {
   const v = [NOTES.victorien[id], NOTES.lou[id]].filter(n => typeof n === "number");
-  return v.length ? v.reduce((a, b) => a + b, 0) / v.length : null;
+  return v.length ? v.reduce((a,b) => a+b, 0) / v.length : null;
 };
 const combienDeNotes = () => Object.keys(NOTES.victorien).length + Object.keys(NOTES.lou).length;
-const nombre = n => n.toLocaleString("fr-CA", {minimumFractionDigits: n % 1 ? 1 : 0, maximumFractionDigits: 1});
 
 function codeNotes(){
-  const utile = {victorien: {}, lou: {}};
-  Object.keys(PERSONNES).forEach(k => Object.entries(NOTES[k]).forEach(([id, n]) => {
+  const utile = {victorien:{}, lou:{}};
+  Object.keys(PERSONNES).forEach(k => Object.entries(NOTES[k]).forEach(([id,n]) => {
     if (APPARTS.some(a => a.id === id)) utile[k][id] = n;
   }));
   return "APPART1." + btoa(unescape(encodeURIComponent(JSON.stringify(utile))));
@@ -353,13 +359,13 @@ function lireCode(code){
   let d;
   try { d = JSON.parse(decodeURIComponent(escape(atob(brut.slice(8))))); }
   catch (e) { return "Code illisible — il a dû être coupé au copier-coller."; }
-  if (d && d.qui && d.notes) d = {[d.qui]: d.notes};   // ancien format
+  if (d && d.qui && d.notes) d = {[d.qui]: d.notes};
   let n = 0;
   Object.keys(PERSONNES).forEach(k => Object.entries(d[k] || {}).forEach(([id, note]) => {
     if (typeof note === "number") { NOTES[k][id] = note; n++; }
   }));
   sauverNotes();
-  return n ? {ok: `${n} note${n > 1 ? "s" : ""} ${n > 1 ? "ajoutées" : "ajoutée"}.`} : "Ce code ne contenait aucune note.";
+  return n ? {ok:`${n} note${n>1?"s":""} ${n>1?"ajoutées":"ajoutée"}.`} : "Ce code ne contenait aucune note.";
 }
 
 function echange(){
@@ -367,8 +373,7 @@ function echange(){
   if (!el) return;
   if (!APPARTS.length){ el.remove(); return; }
   const combien = combienDeNotes();
-  el.innerHTML = `
-    <span>Les notes sont gardées sur cet appareil. Pour que l'autre les voie, envoie-lui ton code.</span>
+  el.innerHTML = `<span>Les notes restent sur cet appareil. Pour que l'autre les voie, envoyez-lui votre code.</span>
     <button class="lien" id="btn-exporter">Copier nos notes${combien ? ` (${combien})` : ""}</button>
     <button class="lien" id="btn-importer">Coller les notes reçues</button>
     <div class="zone" id="zone-echange" hidden></div>`;
@@ -379,38 +384,36 @@ function echange(){
     let copie = false;
     try { await navigator.clipboard.writeText(code); copie = true; } catch (e) {}
     zone.hidden = false;
-    zone.innerHTML = `<p style="margin:0">${copie ? "Code copié — colle-le dans un message." : "Copie ce code et envoie-le :"}</p>
-      <textarea readonly>${code}</textarea>`;
+    zone.innerHTML = `<p style="margin:0">${copie ? "Code copié — collez-le dans un message." : "Copiez ce code et envoyez-le :"}</p><textarea readonly>${code}</textarea>`;
     zone.querySelector("textarea").select();
   };
   $("#btn-importer").onclick = () => {
     zone.hidden = false;
-    zone.innerHTML = `<p style="margin:0">Colle ici le code reçu :</p>
+    zone.innerHTML = `<p style="margin:0">Collez ici le code reçu :</p>
       <textarea id="code-recu" placeholder="APPART1.…"></textarea>
       <button class="bouton" id="valider-code">Ajouter ces notes</button>`;
     $("#valider-code").onclick = () => {
       const r = lireCode($("#code-recu").value);
       if (typeof r === "string") return message(zone, r);
-      message(zone, r.ok);
-      filtres(); liste(); rafraichirFiche();
+      message(zone, r.ok); filtres(); liste(); rafraichirFiche();
     };
     $("#code-recu").focus();
   };
 }
+const message = (zone, texte) => { zone.hidden = false; zone.innerHTML = `<p style="margin:0;color:var(--accent)">${echap(texte)}</p>`; };
 
-function message(zone, texte){
-  zone.hidden = false;
-  zone.innerHTML = `<p style="margin:0;color:var(--or-clair)">${echap(texte)}</p>`;
-}
-
-function blocEtoiles(id, personne){
-  const n = NOTES[personne][id];
+function blocBarre(id, personne){
+  const n = NOTES[personne][id] || 0;
+  const segs = [1,2,3,4,5].map(i => {
+    const etat = n >= i ? "pleine" : (n >= i - 0.5 ? "demie" : "");
+    return `<span class="seg ${etat}">
+      <button data-v="${i - 0.5}" aria-label="${nombre(i - 0.5)} sur 5"></button>
+      <button data-v="${i}" aria-label="${i} sur 5"></button></span>`;
+  }).join("");
   return `<div class="note-ligne">
     <span class="note-nom">${PERSONNES[personne]}</span>
-    <div class="etoiles active" data-personne="${personne}" role="group" aria-label="Note de ${PERSONNES[personne]} sur 5">
-      ${[1,2,3,4,5].map(i => `<button class="${n >= i ? "pleine" : ""}" data-n="${i}" aria-label="Mettre ${i} sur 5">★</button>`).join("")}
-    </div>
-    <span class="note-val">${n ? n + "/5" : "à noter"}</span>
+    <div class="note-barre" data-personne="${personne}" role="group" aria-label="Note de ${PERSONNES[personne]} sur 5">${segs}</div>
+    <span class="note-val">${n ? nombre(n) + " / 5" : "à noter"}</span>
     ${n ? `<button class="effacer" data-effacer="${personne}">effacer</button>` : ""}
   </div>`;
 }
@@ -418,22 +421,22 @@ function blocEtoiles(id, personne){
 function blocNotes(id){
   const moy = moyenne(id);
   return `<div class="notes" id="bloc-notes" data-id="${echap(id)}">
-    <p class="oeil">Nos notes</p>
-    ${blocEtoiles(id, "victorien")}
-    ${blocEtoiles(id, "lou")}
+    <p class="etiq">Nos notes</p>
+    ${blocBarre(id, "victorien")}
+    ${blocBarre(id, "lou")}
     <div class="moyenne">
-      <span>Moyenne</span>
-      <strong>${moy === null ? "—" : nombre(moy)}<small>/5</small></strong>
+      <span class="etiq">Moyenne</span>
+      <b>${moy === null ? "—" : nombre(moy)}<small> / 5</small></b>
       <em>${moy === null ? "personne n'a encore noté" : (NOTES.victorien[id] && NOTES.lou[id] ? "sur vos deux notes" : "sur une seule note")}</em>
     </div>
   </div>`;
 }
 
 function brancherNotes(id){
-  panneau.querySelectorAll(".etoiles button").forEach(b => b.onclick = () => {
-    const personne = b.closest(".etoiles").dataset.personne;
-    const n = +b.dataset.n;
-    noterAppart(personne, id, NOTES[personne][id] === n ? 0 : n);
+  panneau.querySelectorAll(".note-barre button").forEach(b => b.onclick = () => {
+    const personne = b.closest(".note-barre").dataset.personne;
+    const v = +b.dataset.v;
+    noterAppart(personne, id, NOTES[personne][id] === v ? 0 : v);
     rafraichirFiche(); filtres(); liste(); echange();
   });
   panneau.querySelectorAll("[data-effacer]").forEach(b => b.onclick = () => {
@@ -451,41 +454,43 @@ function rafraichirFiche(){
 }
 
 /* ————— ouverture ————— */
-$("#hero-img").src = QUARTIERS.montcalm.photos[0].image;
-$("#hero-img").alt = QUARTIERS.montcalm.photos[0].legende;
+const heros = QUARTIERS.montcalm ? QUARTIERS.montcalm.photos[0] : Object.values(QUARTIERS)[0].photos[0];
+$("#hero-img").src = heros.image;
+$("#hero-img").alt = heros.legende;
+$("#hero-legende").textContent = heros.legende;
 
-function chiffres(){
-  const el = $("#chiffres");
+function sommaire(){
+  const el = $("#sommaire");
   if (!APPARTS.length){ el.remove(); return; }
   const loyers = APPARTS.map(a => a.loyer).filter(Boolean);
   const secteurs = new Set(APPARTS.map(a => a.quartier));
   const items = [
     [APPARTS.length, APPARTS.length > 1 ? "appartements en lice" : "appartement en lice"],
-    [loyers.length ? (Math.min(...loyers) === Math.max(...loyers) ? argent(loyers[0]) : argent(Math.min(...loyers)) + " – " + argent(Math.max(...loyers))) : "—", "fourchette de loyer"],
-    [secteurs.size, secteurs.size > 1 ? "quartiers" : "quartier"],
+    [loyers.length ? argent(Math.min(...loyers)) + " – " + argent(Math.max(...loyers)) : "—", "fourchette de loyer"],
+    [secteurs.size, secteurs.size > 1 ? "quartiers représentés" : "quartier"],
   ];
   if (DONNEES.maj) items.push([date(DONNEES.maj), "dernière mise à jour"]);
-  el.innerHTML = items.map(([v, l]) => `<li><div>${echap(v)}</div><span>${l}</span></li>`).join("");
+  el.innerHTML = items.map(([v,l]) => `<li><b>${echap(v)}</b><span>${l}</span></li>`).join("");
 }
 
 /* ————— liste ————— */
-const etat = {filtre: "tous", tri: "ajout"};
+const etat = {filtre:"tous", tri:"ajout"};
 
 function filtres(){
   const el = $("#filtres");
-  if (!APPARTS.length){ el.remove(); $("#sous-liste").textContent = "La liste se remplit au fur et à mesure des trouvailles."; return; }
+  if (!APPARTS.length){ el.remove(); return; }
   const secteurs = Object.keys(QUARTIERS).filter(q => APPARTS.some(a => a.quartier === q));
-  const puces = [["tous", "Tous"], ...secteurs.map(q => [q, QUARTIERS[q].nom])];
-  if (COEURS.size) puces.push(["coeurs", "Coups de cœur"]);
-  if (APPARTS.some(a => moyenne(a.id) !== null)) puces.push(["notes", "Notés"]);
-  el.innerHTML = puces.map(([v, t]) => `<button class="puce" data-filtre="${v}" aria-pressed="${etat.filtre===v}">${echap(t)}</button>`).join("")
-    + `<label class="tri">Trier <select id="tri">
-         <option value="ajout">Ordre d'ajout</option>
-         <option value="prix">Loyer croissant</option>
-         <option value="prix-desc">Loyer décroissant</option>
-         <option value="bus">Temps de bus (Vieux-Québec)</option>
-         <option value="note">Meilleure moyenne</option>
-         <option value="dispo">Disponibilité</option>
+  const puces = [["tous","Tous"], ...secteurs.map(q => [q, QUARTIERS[q].nom])];
+  if (GARDES.size) puces.push(["gardes","Gardés"]);
+  if (APPARTS.some(a => moyenne(a.id) !== null)) puces.push(["notes","Notés"]);
+  el.innerHTML = puces.map(([v,t]) => `<button class="puce" data-filtre="${v}" aria-pressed="${etat.filtre===v}">${echap(t)}</button>`).join("")
+    + `<label class="tri">Trier par <select id="tri">
+         <option value="ajout">ordre d'ajout</option>
+         <option value="prix">loyer croissant</option>
+         <option value="prix-desc">loyer décroissant</option>
+         <option value="bus">temps de bus</option>
+         <option value="note">meilleure moyenne</option>
+         <option value="dispo">disponibilité</option>
        </select></label>`;
   el.querySelectorAll(".puce").forEach(b => b.onclick = () => { etat.filtre = b.dataset.filtre; filtres(); liste(); });
   $("#tri").value = etat.tri;
@@ -494,100 +499,91 @@ function filtres(){
 
 function selection(){
   let l = APPARTS.slice();
-  if (etat.filtre === "coeurs") l = l.filter(a => COEURS.has(a.id));
+  if (etat.filtre === "gardes") l = l.filter(a => GARDES.has(a.id));
   else if (etat.filtre === "notes") l = l.filter(a => moyenne(a.id) !== null);
   else if (etat.filtre !== "tous") l = l.filter(a => a.quartier === etat.filtre);
   const p = a => a.loyer || Infinity;
-  if (etat.tri === "prix") l.sort((a, b) => p(a) - p(b));
-  if (etat.tri === "prix-desc") l.sort((a, b) => p(b) - p(a));
-  if (etat.tri === "dispo") l.sort((a, b) => String(a.dispo || "9").localeCompare(String(b.dispo || "9")));
-  if (etat.tri === "note") l.sort((a, b) => (moyenne(b.id) ?? -1) - (moyenne(a.id) ?? -1));
   const bus = x => x.trajets && x.trajets["vieux-quebec"] && x.trajets["vieux-quebec"].bus ? x.trajets["vieux-quebec"].bus.min : Infinity;
-  if (etat.tri === "bus") l.sort((a, b) => bus(a) - bus(b));
+  if (etat.tri === "prix") l.sort((a,b) => p(a) - p(b));
+  if (etat.tri === "prix-desc") l.sort((a,b) => p(b) - p(a));
+  if (etat.tri === "bus") l.sort((a,b) => bus(a) - bus(b));
+  if (etat.tri === "note") l.sort((a,b) => (moyenne(b.id) ?? -1) - (moyenne(a.id) ?? -1));
+  if (etat.tri === "dispo") l.sort((a,b) => String(a.dispo || "z").localeCompare(String(b.dispo || "z")));
   return l;
 }
 
 function liste(){
   const g = $("#grille");
+  const c = $("#compte");
   if (!APPARTS.length){
     g.classList.remove("grille");
-    g.innerHTML = `<div class="vide">
-      <p class="oeil">En attente</p>
-      <h3>Aucun appartement pour l'instant</h3>
-      <p>Les annonces repérées seront ajoutées ici au fil de l'eau. Chaque fiche contiendra :</p>
-      <ul>
-        <li>toutes les photos de l'annonce, en grand ;</li>
-        <li>le loyer, ce qui est inclus, la superficie, l'étage, la date de disponibilité ;</li>
-        <li>les bons points et les réserves, notés à la visite ;</li>
-        <li>le lien vers l'annonce d'origine et la position sur la carte ;</li>
-        <li>les photos du quartier autour.</li>
-      </ul>
-      <p>En attendant, les trois quartiers sont juste en dessous.</p>
-    </div>`;
+    g.innerHTML = `<div class="vide"><p class="etiq">En attente</p><h3>Aucun appartement pour l'instant</h3>
+      <p style="margin:0;color:var(--encre-2)">Les annonces repérées seront ajoutées ici au fil de l'eau.</p></div>`;
     return;
   }
   const l = selection();
-  if (!l.length){ g.innerHTML = `<div class="vide"><h3>Rien dans cette sélection</h3><p>Change de filtre pour revoir les autres appartements.</p></div>`; return; }
+  if (c) c.textContent = l.length === APPARTS.length ? `${APPARTS.length} annonces` : `${l.length} sur ${APPARTS.length}`;
+  if (!l.length){ g.innerHTML = `<div class="vide"><h3>Rien dans cette sélection</h3></div>`; return; }
   g.innerHTML = l.map(a => {
     const q = QUARTIERS[a.quartier];
     const ph = a.images && a.images[0];
-    const faits = [a.pieces, a.superficie ? a.superficie + " m²" : null, a.dispo ? "Libre le " + date(a.dispo) : null].filter(Boolean);
-    return `<div class="carte ${a.statut === "ecarte" ? "ecarte" : ""}">
-      <button class="carte-photo" data-appart="${echap(a.id)}" aria-label="Ouvrir la fiche : ${echap(a.titre)}" style="border:0;padding:0;display:block;width:100%">
-        ${ph ? `<img src="${ph.vignette}" alt="${echap(a.titre)}" loading="lazy">` : `<div class="sans-photo">SANS PHOTO</div>`}
-        ${a.loyer ? `<span class="prix">${argent(a.loyer)}<span style="color:var(--faible)">/mois</span></span>` : ""}
-        ${a.statut ? `<span class="etat ${a.statut}">${ETATS[a.statut] || a.statut}</span>` : ""}
+    const faits = [a.pieces, a.superficie ? a.superficie + " m²" : null,
+                   a.dispo ? (/^\d{4}-/.test(a.dispo) ? "Libre le " + date(a.dispo) : a.dispo) : null].filter(Boolean);
+    const moy = moyenne(a.id);
+    return `<article class="carte ${a.statut === "ecarte" ? "ecarte" : ""}">
+      <button class="carte-photo" data-appart="${echap(a.id)}" aria-label="Ouvrir la fiche : ${echap(a.titre)}">
+        ${ph ? `<img src="${ph.vignette}" alt="${echap(a.titre)}" loading="lazy">` : `<div class="sans-photo">sans photo</div>`}
       </button>
-      <button class="btn-coeur" data-coeur="${echap(a.id)}" aria-pressed="${COEURS.has(a.id)}" aria-label="Marquer comme coup de cœur" title="Coup de cœur (sur cet appareil)">${COEURS.has(a.id) ? "♥" : "♡"}</button>
-      <button class="carte-corps" data-appart="${echap(a.id)}" style="border:0;text-align:left;background:none">
-        <p class="lieu">${echap(q ? q.nom : a.quartier || "")}</p>
-        <h3>${echap(a.titre)}</h3>
+      <button class="carte-texte" data-appart="${echap(a.id)}">
+        <p class="etiq">${echap(q ? q.nom : a.quartier || "")}</p>
+        <span class="ligne-haut"><h3>${echap(a.titre)}</h3>${a.loyer ? `<span class="loyer-carte">${argent(a.loyer)}</span>` : ""}</span>
         ${a.adresse ? `<p class="adresse">${echap(a.adresse)}</p>` : ""}
-        ${faits.length ? `<ul class="faits">${faits.map(f => `<li>${echap(f)}</li>`).join("")}</ul>` : ""}
-        ${trajetsMini(a)}
-        ${moyenne(a.id) === null ? "" : `<p class="note-mini">★ ${nombre(moyenne(a.id))}/5 <span class="detail">${["victorien","lou"].filter(k => NOTES[k][a.id]).map(k => PERSONNES[k][0] + " " + NOTES[k][a.id]).join(" · ")}</span></p>`}
+        ${faits.length ? `<span class="meta">${faits.map(f => `<span>${echap(f)}</span>`).join("")}</span>` : ""}
+        ${a.trajets ? `<span class="meta" style="border:0;padding-top:2px;margin-top:0">${trajetsCarte(a)}</span>` : ""}
       </button>
-    </div>`;
+      <div class="pied-carte">
+        ${a.statut ? `<span class="statut ${a.statut}">${ETATS[a.statut] || a.statut}</span>` : ""}
+        ${moy === null ? "" : `<span class="note-carte">${nombre(moy)} / 5 <span style="color:var(--encre-3)">${["victorien","lou"].filter(k => NOTES[k][a.id]).map(k => PERSONNES[k][0] + " " + nombre(NOTES[k][a.id])).join(" · ")}</span></span>`}
+        <button class="garder" data-garder="${echap(a.id)}" aria-pressed="${GARDES.has(a.id)}" style="margin-left:auto">${GARDES.has(a.id) ? "Gardé" : "Garder"}</button>
+      </div>
+    </article>`;
   }).join("");
   g.classList.add("grille");
   g.querySelectorAll("[data-appart]").forEach(b => b.onclick = () => location.hash = "appart/" + b.dataset.appart);
-  g.querySelectorAll("[data-coeur]").forEach(b => b.onclick = e => {
-    e.stopPropagation(); basculerCoeur(b.dataset.coeur); filtres(); liste();
-  });
+  g.querySelectorAll("[data-garder]").forEach(b => b.onclick = e => { e.stopPropagation(); basculerGarde(b.dataset.garder); filtres(); liste(); });
 }
 
 /* ————— quartiers ————— */
 function quartiers(){
-  $("#grille-quartiers").innerHTML = Object.entries(QUARTIERS).map(([id, q]) => `
+  const c = $("#compte-quartiers");
+  if (c) c.textContent = Object.keys(QUARTIERS).length + " secteurs";
+  $("#grille-quartiers").innerHTML = Object.entries(QUARTIERS).map(([id,q]) => `
     <button class="qcarte" data-quartier="${id}">
-      <img src="${q.photos[0].vignette}" alt="${echap(q.photos[0].legende)}" loading="lazy">
-      <div class="qcarte-corps">
-        <p class="oeil">${echap(q.etiquette)}</p>
-        <h3>${echap(q.nom)}</h3>
-        <p>${echap(q.resume)}</p>
-        <span class="lire">Voir le quartier en photos →</span>
-      </div>
+      <span class="cadre-img"><img src="${q.photos[0].vignette}" alt="${echap(q.photos[0].legende)}" loading="lazy"></span>
+      <p class="etiq" style="margin-top:12px">${echap(q.etiquette)}</p>
+      <h3 style="margin-top:4px">${echap(q.nom)}</h3>
+      <p>${echap(q.resume)}</p>
+      <span class="lire">Voir le quartier</span>
     </button>`).join("");
   document.querySelectorAll("[data-quartier]").forEach(b => b.onclick = () => location.hash = "quartier/" + b.dataset.quartier);
 }
 
 function credits(){
-  const vus = new Set();
-  const lignes = [];
+  const vus = new Set(), lignes = [];
   Object.values(QUARTIERS).forEach(q => q.photos.forEach(p => {
     if (vus.has(p.source)) return;
     vus.add(p.source);
-    lignes.push(`<li><a href="${p.source}" target="_blank" rel="noopener">${echap(p.legende)}</a> — ${echap(p.auteur)}, ${echap(p.licence)}, via Wikimedia Commons</li>`);
+    lignes.push(`<li><a href="${p.source}" target="_blank" rel="noopener">${echap(p.legende)}</a> — ${echap(p.auteur)}, ${echap(p.licence)}, Wikimedia Commons</li>`);
   }));
   $("#credits").innerHTML = lignes.join("");
 }
 
-/* ————— panneau ————— */
+/* ————— fiche ————— */
 const panneau = $("#panneau");
-let galerie = {photos: [], i: 0};
+let galerie = {photos:[], i:0};
 
 function ouvrir(html){
-  panneau.innerHTML = `<div class="panneau-int"><div class="fermer"><button aria-label="Fermer">✕</button></div><div class="panneau-corps">${html}</div></div>`;
+  panneau.innerHTML = `<div class="feuille"><div class="fermer"><button aria-label="Fermer">✕</button></div><div class="corps">${html}</div></div>`;
   panneau.hidden = false;
   document.body.style.overflow = "hidden";
   panneau.querySelector(".fermer button").onclick = () => { location.hash = ""; };
@@ -595,47 +591,44 @@ function ouvrir(html){
   panneau.querySelectorAll("[data-loupe]").forEach(el => el.onclick = () => loupe(el.dataset.loupe, el.dataset.legende));
   panneau.onclick = e => { if (e.target === panneau) location.hash = ""; };
 }
-
-function fermer(){
-  panneau.hidden = true; panneau.innerHTML = ""; document.body.style.overflow = "";
-}
+const fermer = () => { panneau.hidden = true; panneau.innerHTML = ""; document.body.style.overflow = ""; };
 
 function blocGalerie(photos){
-  if (!photos.length) return `<div class="galerie"><div class="galerie-grande"><div class="sans-photo" style="aspect-ratio:3/2">PHOTOS À VENIR</div></div></div>`;
-  galerie = {photos, i: 0};
+  if (!photos.length) return `<div class="galerie"><div class="g-cadre"><div class="sans-photo" style="aspect-ratio:3/2">photos à venir</div></div></div>`;
+  galerie = {photos, i:0};
   return `<div class="galerie">
-    <div class="galerie-grande">
+    <div class="g-cadre">
       <img id="g-img" src="${photos[0].image}" alt="">
-      ${photos.length > 1 ? `<button class="nav-g prec" aria-label="Photo précédente">‹</button><button class="nav-g suiv" aria-label="Photo suivante">›</button><span class="compteur"><span id="g-n">1</span>/${photos.length}</span>` : ""}
+      ${photos.length > 1 ? `<button class="nav-g prec" aria-label="Photo précédente">‹</button><button class="nav-g suiv" aria-label="Photo suivante">›</button>` : ""}
     </div>
-    ${photos[0].legende ? `<p class="legende" id="g-leg">${echap(photos[0].legende)}</p>` : ""}
-    ${photos.length > 1 ? `<div class="vignettes" id="g-vig">${photos.map((p, i) => `<img src="${p.vignette}" alt="" data-i="${i}" aria-current="${i === 0}">`).join("")}</div>` : ""}
+    <div class="g-bas"><span class="legende" id="g-leg">${echap(photos[0].legende || "")}</span>
+      ${photos.length > 1 ? `<span class="compteur"><span id="g-n">1</span> / ${photos.length}</span>` : ""}</div>
+    ${photos.length > 1 ? `<div class="vignettes" id="g-vig">${photos.map((p,i) => `<img src="${p.vignette}" alt="" data-i="${i}" aria-current="${i===0}">`).join("")}</div>` : ""}
   </div>`;
 }
 
 function brancherGalerie(){
   const img = $("#g-img", panneau);
-  if (!img || galerie.photos.length < 2) return;
+  if (!img) return;
+  img.onclick = () => loupe(galerie.photos[galerie.i].image, galerie.photos[galerie.i].legende || "");
+  if (galerie.photos.length < 2) return;
   const montrer = i => {
     galerie.i = (i + galerie.photos.length) % galerie.photos.length;
     const p = galerie.photos[galerie.i];
     img.src = p.image;
     const n = $("#g-n", panneau); if (n) n.textContent = galerie.i + 1;
     const leg = $("#g-leg", panneau); if (leg) leg.textContent = p.legende || "";
-    panneau.querySelectorAll("#g-vig img").forEach((v, k) => v.setAttribute("aria-current", k === galerie.i));
+    panneau.querySelectorAll("#g-vig img").forEach((v,k) => v.setAttribute("aria-current", k === galerie.i));
   };
   panneau.querySelector(".prec").onclick = () => montrer(galerie.i - 1);
   panneau.querySelector(".suiv").onclick = () => montrer(galerie.i + 1);
   panneau.querySelectorAll("#g-vig img").forEach(v => v.onclick = () => montrer(+v.dataset.i));
-  img.style.cursor = "zoom-in";
-  img.onclick = () => loupe(galerie.photos[galerie.i].image, galerie.photos[galerie.i].legende || "");
-  panneau.dataset.galerie = "1";
   panneau._montrer = montrer;
 }
 
 function ficheAppart(id){
   const a = APPARTS.find(x => x.id === id);
-  if (!a) { location.hash = ""; return; }
+  if (!a){ location.hash = ""; return; }
   const q = QUARTIERS[a.quartier];
   const det = [
     ["Loyer", a.loyer ? argent(a.loyer) + " / mois" : "—"],
@@ -643,7 +636,7 @@ function ficheAppart(id){
     ["Chambres", a.chambres ?? "—"],
     ["Superficie", a.superficie ? a.superficie + " m²" : "—"],
     ["Étage", a.etage || "—"],
-    ["Disponible", date(a.dispo)],
+    ["Disponible", /^\d{4}-/.test(a.dispo || "") ? date(a.dispo) : (a.dispo || "—")],
     ["Bail", a.bail || "—"],
     ["Meublé", typeof a.meuble === "string" ? a.meuble : (a.meuble === undefined ? "—" : (a.meuble ? "Oui" : "Non"))],
     ["Inclus", a.charges || "—"],
@@ -653,35 +646,34 @@ function ficheAppart(id){
     ${blocGalerie(a.images || [])}
     <div class="titre-fiche">
       <div>
-        <p class="oeil">${echap(q ? q.nom : "")}${a.statut ? " · " + (ETATS[a.statut] || a.statut) : ""}</p>
-        <h2>${echap(a.titre)}</h2>
-        ${a.adresse ? `<p style="margin:6px 0 0;color:var(--doux)">${echap(a.adresse)}</p>` : ""}
+        <p class="etiq">${echap(q ? q.nom : "")}${a.statut ? " · " + (ETATS[a.statut] || a.statut) : ""}</p>
+        <h2 style="margin-top:8px">${echap(a.titre)}</h2>
+        ${a.adresse ? `<p class="adresse">${echap(a.adresse)}</p>` : ""}
       </div>
-      ${a.loyer ? `<div class="loyer">${argent(a.loyer)}<small>par mois</small></div>` : ""}
+      ${a.loyer ? `<div class="loyer-fiche"><b>${argent(a.loyer)}</b><span>par mois</span></div>` : ""}
     </div>
-    <dl class="details">${det.map(([t, v]) => `<div><dt>${t}</dt><dd>${echap(v)}</dd></div>`).join("")}</dl>
+    <dl class="details">${det.map(([t,v]) => `<div><dt>${t}</dt><dd>${echap(v)}</dd></div>`).join("")}</dl>
     ${blocTrajets(a)}
-    ${(a.atouts && a.atouts.length) || (a.bemols && a.bemols.length) || a.notes ? `<div class="deux-cols">
-      ${a.atouts && a.atouts.length ? `<div><p class="oeil">Ce qui plaît</p><ul class="liste-plus">${a.atouts.map(x => `<li>${echap(x)}</li>`).join("")}</ul></div>` : ""}
-      ${a.bemols && a.bemols.length ? `<div><p class="oeil">Les réserves</p><ul class="liste-moins">${a.bemols.map(x => `<li>${echap(x)}</li>`).join("")}</ul></div>` : ""}
-      ${a.notes ? `<div><p class="oeil">Notes</p><p class="mot">${echap(a.notes)}</p></div>` : ""}
+    ${(a.atouts||[]).length || (a.bemols||[]).length || a.notes ? `<div class="deux-cols">
+      ${(a.atouts||[]).length ? `<div><p class="etiq">Ce qui plaît</p><ul class="liste-plus">${a.atouts.map(x => `<li>${echap(x)}</li>`).join("")}</ul></div>` : ""}
+      ${(a.bemols||[]).length ? `<div><p class="etiq">Les réserves</p><ul class="liste-moins">${a.bemols.map(x => `<li>${echap(x)}</li>`).join("")}</ul></div>` : ""}
+      ${a.notes ? `<div><p class="etiq">À savoir</p><p class="mot">${echap(a.notes)}</p></div>` : ""}
     </div>` : ""}
     ${blocNotes(a.id)}
     <div class="actions">
-      ${a.lien ? `<a class="bouton plein" href="${echap(a.lien)}" target="_blank" rel="noopener">Voir l'annonce ↗</a>` : ""}
-      ${a.carte || a.adresse ? `<a class="bouton" href="${a.carte ? echap(a.carte) : "https://www.google.com/maps/search/" + encodeURIComponent(a.adresse + ", Québec, QC")}" target="_blank" rel="noopener">Ouvrir dans Maps ↗</a>` : ""}
-      <button class="bouton" data-coeur-fiche="${echap(a.id)}" aria-pressed="${COEURS.has(a.id)}">${COEURS.has(a.id) ? "♥ Coup de cœur" : "♡ Coup de cœur"}</button>
+      ${a.lien ? `<a class="bouton plein" href="${echap(a.lien)}" target="_blank" rel="noopener">Voir l'annonce</a>` : ""}
+      ${a.carte ? `<a class="bouton" href="${echap(a.carte)}" target="_blank" rel="noopener">Situer sur la carte</a>` : ""}
+      <button class="bouton" data-garder-fiche="${echap(a.id)}" aria-pressed="${GARDES.has(a.id)}">${GARDES.has(a.id) ? "Gardé" : "Garder"}</button>
     </div>
-    <p class="note-locale">Les coups de cœur restent sur cet appareil : ils ne sont pas partagés avec l'autre personne.</p>
     ${q ? blocQuartier(a.quartier) : ""}
   `);
   brancherGalerie();
   brancherNotes(a.id);
-  const bc = panneau.querySelector("[data-coeur-fiche]");
-  if (bc) bc.onclick = () => {
-    basculerCoeur(a.id);
-    bc.setAttribute("aria-pressed", COEURS.has(a.id));
-    bc.textContent = (COEURS.has(a.id) ? "♥" : "♡") + " Coup de cœur";
+  const bg = panneau.querySelector("[data-garder-fiche]");
+  if (bg) bg.onclick = () => {
+    basculerGarde(a.id);
+    bg.setAttribute("aria-pressed", GARDES.has(a.id));
+    bg.textContent = GARDES.has(a.id) ? "Gardé" : "Garder";
     filtres(); liste();
   };
   panneau.querySelectorAll("[data-quartier]").forEach(b => b.onclick = () => location.hash = "quartier/" + b.dataset.quartier);
@@ -690,40 +682,36 @@ function ficheAppart(id){
 function blocQuartier(id){
   const q = QUARTIERS[id];
   return `<div class="bloc-quartier">
-    <p class="oeil">Le quartier autour — ${echap(q.etiquette)}</p>
-    <h2 style="font-size:26px">${echap(q.nom)}</h2>
+    <p class="etiq">Le quartier autour — ${echap(q.etiquette)}</p>
+    <h2>${echap(q.nom)}</h2>
     <p class="intro">${echap(q.description)}</p>
     <ul class="reperes">${q.reperes.map(r => `<li>${echap(r)}</li>`).join("")}</ul>
     <div class="mosaique large">${q.photos.map(p => `<figure data-loupe="${p.image}" data-legende="${echap(p.legende)}"><img src="${p.vignette}" alt="${echap(p.legende)}" loading="lazy"><figcaption>${echap(p.legende)}</figcaption></figure>`).join("")}</div>
     <div class="actions">
       <button class="bouton" data-quartier="${id}">Voir le quartier en grand</button>
-      <a class="bouton" href="${echap(q.carte)}" target="_blank" rel="noopener">Ouvrir le secteur dans Maps ↗</a>
+      <a class="bouton" href="${echap(q.carte)}" target="_blank" rel="noopener">Ouvrir le secteur dans Maps</a>
     </div>
   </div>`;
 }
 
 function ficheQuartier(id){
   const q = QUARTIERS[id];
-  if (!q) { location.hash = ""; return; }
+  if (!q){ location.hash = ""; return; }
   const ici = APPARTS.filter(a => a.quartier === id);
   ouvrir(`
     ${blocGalerie(q.photos)}
     <div class="titre-fiche">
-      <div>
-        <p class="oeil">${echap(q.etiquette)}</p>
-        <h2>${echap(q.nom)}</h2>
-      </div>
+      <div><p class="etiq">${echap(q.etiquette)}</p><h2 style="margin-top:8px">${echap(q.nom)}</h2></div>
     </div>
-    <p style="margin-top:20px;max-width:66ch;font-size:17px">${echap(q.description)}</p>
+    <p style="margin-top:22px;max-width:66ch;font-size:17px">${echap(q.description)}</p>
     <div class="deux-cols">
-      <div><p class="oeil">Les repères</p><ul class="reperes">${q.reperes.map(r => `<li>${echap(r)}</li>`).join("")}</ul></div>
-      <div>
-        <p class="oeil">Nos appartements ici</p>
-        ${ici.length ? `<ul class="reperes">${ici.map(a => `<li><button data-appart="${echap(a.id)}" style="color:var(--or-clair);text-decoration:underline;text-underline-offset:3px">${echap(a.titre)}</button>${a.loyer ? ` — <span style="font-family:var(--mono)">${argent(a.loyer)}</span>` : ""}</li>`).join("")}</ul>`
-          : `<p style="color:var(--faible);margin:10px 0 0">Aucun appartement repéré dans ce secteur pour l'instant.</p>`}
+      <div><p class="etiq">Les repères</p><ul class="reperes">${q.reperes.map(r => `<li>${echap(r)}</li>`).join("")}</ul></div>
+      <div><p class="etiq">Nos appartements ici</p>
+        ${ici.length ? `<ul class="reperes">${ici.map(a => `<li><button data-appart="${echap(a.id)}" style="color:var(--accent);border-bottom:1px solid var(--filet-fort)">${echap(a.titre)}</button>${a.loyer ? ` — ${argent(a.loyer)}` : ""}</li>`).join("")}</ul>`
+          : `<p style="color:var(--encre-3);margin:11px 0 0">Aucun appartement repéré dans ce secteur pour l'instant.</p>`}
       </div>
     </div>
-    <div class="actions"><a class="bouton" href="${echap(q.carte)}" target="_blank" rel="noopener">Ouvrir le secteur dans Maps ↗</a></div>
+    <div class="actions"><a class="bouton" href="${echap(q.carte)}" target="_blank" rel="noopener">Ouvrir le secteur dans Maps</a></div>
   `);
   brancherGalerie();
   panneau.querySelectorAll("[data-appart]").forEach(b => b.onclick = () => location.hash = "appart/" + b.dataset.appart);
@@ -732,7 +720,7 @@ function ficheQuartier(id){
 /* ————— visionneuse ————— */
 const vue = $("#loupe");
 function loupe(src, legende){
-  vue.innerHTML = `<img src="${src}" alt="${echap(legende || "")}">${legende ? `<p>${echap(legende)} — clic ou Échap pour fermer</p>` : ""}`;
+  vue.innerHTML = `<img src="${src}" alt="${echap(legende || "")}">${legende ? `<p>${echap(legende)}</p>` : ""}`;
   vue.hidden = false;
   vue.onclick = () => { vue.hidden = true; vue.innerHTML = ""; };
 }
@@ -744,7 +732,7 @@ function router(){
   if (type === "appart" && id) return ficheAppart(decodeURIComponent(id));
   if (type === "quartier" && id) return ficheQuartier(decodeURIComponent(id));
   fermer();
-  if (h === "liste" || h === "quartiers") document.getElementById(h)?.scrollIntoView({behavior: "smooth"});
+  if (h === "liste" || h === "quartiers") document.getElementById(h)?.scrollIntoView({behavior:"smooth"});
 }
 
 document.addEventListener("keydown", e => {
@@ -759,7 +747,7 @@ document.addEventListener("keydown", e => {
 });
 window.addEventListener("hashchange", router);
 
-chiffres(); filtres(); liste(); echange(); quartiers(); credits(); router();
+sommaire(); filtres(); liste(); echange(); quartiers(); credits(); router();
 </script>
 
 </body>

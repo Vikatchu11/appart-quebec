@@ -3,8 +3,11 @@
 Site d'une seule page qui liste les appartements repérés, avec toutes leurs photos,
 leurs détails, et les photos des trois quartiers visés.
 
-En ligne : https://claude.ai/code/artifact/f139503c-dc39-4e9b-aa44-8a790c021386
-(privé par défaut — il faut le partager depuis le menu « Partager » de la page.)
+En ligne : https://vikatchu11.github.io/appart-quebec/ (GitHub Pages, dossier `docs/`)
+et via Netlify, branché sur le même dépôt (`netlify.toml` publie `docs/`).
+
+Une copie autonome existe aussi en Artifact privé :
+https://claude.ai/code/artifact/f139503c-dc39-4e9b-aa44-8a790c021386
 
 ## Le contenu
 
@@ -72,9 +75,10 @@ python3 scripts/build.py
 
 ## Les notes
 
-Chaque appartement se note sur 5 : une ligne pour Victorien, une pour Lou, plus la
-moyenne. Les deux lignes sont cliquables sur n'importe quel appareil — pas de
-compte, pas d'étape préalable.
+Chaque appartement se note sur 5, par demi-points : une ligne pour Victorien, une
+pour Lou, plus la moyenne. Les deux lignes sont cliquables sur n'importe quel
+appareil — la moitié gauche d'un bloc donne le demi-point, la moitié droite le
+point entier.
 
 Les notes sont gardées dans le navigateur (`localStorage`) : une page publiée ne
 peut pas les synchroniser toute seule sans restreindre le partage du lien. Pour
